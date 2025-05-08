@@ -136,7 +136,7 @@
     <Q10>0.2</Q10>
   </Reaction>
 
-<Specie name="CaER" id="CaER" kdiff="10." kdiffunit="mu2/s"/>
+<Specie name="CaER" id="CaER" kdiff="1." kdiffunit="mu2/s"/>
   <Specie name="RyRCaM" id="RyRCaM" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="RyRCaMC1" id="RyRCaMC1" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="RyRCaMC2" id="RyRCaMC2" kdiff="0" kdiffunit="mu2/s"/>

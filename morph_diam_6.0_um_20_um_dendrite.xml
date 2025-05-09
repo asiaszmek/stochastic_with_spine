@@ -14,8 +14,29 @@
 <!--PointI as in point of injection-->
     <!-- lengthDensity means you set the number per micron along the segment -->
 
+   <SpineAllocation id="sa1" spineType="spineA" region="dend05"
+		    lengthDensity="1"/>
+   <SpineAllocation id="sa1" spineType="spineA" region="dend06"
+		    lengthDensity="1"/>
+   <SpineAllocation id="sa1" spineType="spineA" region="dend07"
+		    lengthDensity="1"/>
+   <SpineAllocation id="sa1" spineType="spineA" region="dend08"
+		    lengthDensity="1"/>
+   <SpineAllocation id="sa1" spineType="spineA" region="dend09"
+		    lengthDensity="1"/>
+   <SpineAllocation id="sa1" spineType="spineA" region="dend10"
+		    lengthDensity="1"/>
    <SpineAllocation id="sa1" spineType="spineA" region="dend11"
-		     lengthDensity="1"/>
+		    lengthDensity="1"/>
+   <SpineAllocation id="sa1" spineType="spineA" region="dend12"
+		    lengthDensity="1"/>
+   <SpineAllocation id="sa1" spineType="spineA" region="dend13"
+		    lengthDensity="1"/>
+   <SpineAllocation id="sa1" spineType="spineA" region="dend14"
+		    lengthDensity="1"/>
+   <SpineAllocation id="sa1" spineType="spineA" region="dend15"
+		    lengthDensity="1"/>
+   
   <Segment id="seg01" region="dend01">
     <start x="0.0" y="1.0" z="0.0" r="3.0"/>
     <end x="1.0" y="1.0" z="0.0" r="3.0"/>

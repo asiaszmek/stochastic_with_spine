@@ -19,13 +19,13 @@
     <NanoMolarity specieID="CaER"         value="0.79e5"     />
     <NanoMolarity       specieID="CRTP" value="88750"/>
     <NanoMolarity       specieID="CRT" value="11250"/>
-    <NanoMolarity specieID="RyRCaM"      value="8"    />
+    <NanoMolarity specieID="RyR2CaM"      value="8"    />
     <!-- Bartol et al 2015-->
     <NanoMolarity specieID="Cyt_SERCA" value="2351" />
     <NanoMolarity specieID="Cyt_SERCA_Ca" value="370" />
     <NanoMolarity specieID="Cyt_SERCA_Ca2" value="56" />
     
-    <NanoMolarity specieID="LeakER" value="380" />
+    <NanoMolarity specieID="LeakER" value="381" />
  
     <NanoMolarity specieID="STIM_2CaER" value="375" />
     <NanoMolarity specieID="STIM_2" value="22.5" />
@@ -51,10 +51,7 @@
      <NanoMolarity specieID="pmcaCa" value="0"/>
      <NanoMolarity specieID="ncx" value="11000"/>
      <NanoMolarity specieID="ncxCa" value="1000"/>
-     <NanoMolarity specieID="CaER"         value="0"     />
-     <NanoMolarity       specieID="CRTP" value="0"/>
-     <NanoMolarity       specieID="CRT" value="0"/>
-     <NanoMolarity specieID="RyRCaM"      value="0"    />
+     <NanoMolarity specieID="RyR2CaM"      value="0"    />
      
      <NanoMolarity specieID="Cyt_SERCA"       value="0"     />
      <NanoMolarity specieID="Cyt_SERCA_Ca"       value="0"     />
@@ -72,10 +69,7 @@
     <NanoMolarity specieID="pmcaCa" value="0"/>
     <NanoMolarity specieID="ncx" value="11000"/>
     <NanoMolarity specieID="ncxCa" value="1000"/>
-    <NanoMolarity specieID="CaER"         value="0"     />
-    <NanoMolarity       specieID="CRTP" value="0"/>
-    <NanoMolarity       specieID="CRT" value="0"/>
-    <NanoMolarity specieID="RyRCaM"      value="0"    />
+    <NanoMolarity specieID="RyR2CaM"      value="0"    />
     
     <NanoMolarity specieID="Cyt_SERCA"       value="0"     />
     <NanoMolarity specieID="Cyt_SERCA_Ca"       value="0"     />
@@ -93,10 +87,7 @@
     <NanoMolarity specieID="pmcaCa" value="0"/>
     <NanoMolarity specieID="ncx" value="11000"/>
     <NanoMolarity specieID="ncxCa" value="1000"/>
-        <NanoMolarity specieID="CaER"         value="0"     />
-    <NanoMolarity       specieID="CRTP" value="0"/>
-    <NanoMolarity       specieID="CRT" value="0"/>
-    <NanoMolarity specieID="RyRCaM"      value="0"    />
+    <NanoMolarity specieID="RyR2CaM"      value="0"    />
     
     <NanoMolarity specieID="Cyt_SERCA"       value="0"     />
     <NanoMolarity specieID="Cyt_SERCA_Ca"       value="0"     />

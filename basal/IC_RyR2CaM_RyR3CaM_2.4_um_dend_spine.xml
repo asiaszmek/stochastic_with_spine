@@ -70,6 +70,7 @@
   
     <NanoMolarity specieID="RyR2CaM"      value="0"    />
     <NanoMolarity specieID="RyR3CaM"      value="400"    />
+    <NanoMolarity specieID="LeakER" value="25" />
     
 
   </ConcentrationSet>
@@ -84,7 +85,8 @@
     
     <NanoMolarity specieID="RyR2CaM"      value="0"    />
     <NanoMolarity specieID="RyR3CaM"      value="400"    />
-    
+    <NanoMolarity specieID="LeakER" value="25" />
+
   </ConcentrationSet>
 
 </InitialConditions>

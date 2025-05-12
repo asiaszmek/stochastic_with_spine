@@ -69,6 +69,7 @@
     <NanoMolarity specieID="pmcaCa" value="0"/>
     <NanoMolarity specieID="ncx" value="11000"/>
     <NanoMolarity specieID="ncxCa" value="1000"/>
+    <NanoMolarity specieID="Cyt_SERCA"       value="2000"     />
     <NanoMolarity specieID="RyR2CaM"      value="0"    />
     <NanoMolarity specieID="RyR3CaM"      value="400"    />
     <NanoMolarity specieID="LeakER" value="25" />
@@ -83,6 +84,7 @@
     <NanoMolarity specieID="pmcaCa" value="0"/>
     <NanoMolarity specieID="ncx" value="11000"/>
     <NanoMolarity specieID="ncxCa" value="1000"/>
+    <NanoMolarity specieID="Cyt_SERCA"       value="2000"     />
     <NanoMolarity specieID="RyR2CaM"      value="0"    />
     <NanoMolarity specieID="RyR3CaM"      value="400"    />
     <NanoMolarity specieID="LeakER" value="25" />

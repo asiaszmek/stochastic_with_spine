@@ -3,7 +3,7 @@
 <InitialConditions>
   <ConcentrationSet>
     <NanoMolarity specieID="Ca" value="75"/>
-    <NanoMolarity specieID="CaOut" value="2002500"/>
+    <NanoMolarity specieID="CaOut" value="2000000"/>
     <!-- total calbindin = 160 uM -->
     <NanoMolarity specieID="Calbin" value="135000"/>
     <NanoMolarity specieID="CalbinC" value="15000"/>
@@ -29,7 +29,8 @@
  
     <NanoMolarity specieID="STIM_2CaER" value="375" />
     <NanoMolarity specieID="STIM_2" value="22.5" />
-    <NanoMolarity specieID="Fluo4FF" value="100e3" />
+    <NanoMolarity specieID="Fluo4FF" value="92428" />
+    <NanoMolarity specieID="CaFluo4FF" value="7582" />
   </ConcentrationSet>
 
 

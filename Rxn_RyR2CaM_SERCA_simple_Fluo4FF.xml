@@ -399,5 +399,18 @@
     <reverseRate>0</reverseRate>
   </Reaction>
 
+
+<Specie name="Fluo4FF" id="Fluo4FF" kdiff="100" kdiffunit="mu2/s"/>
+  <Specie name="CaFluo4FF" id="CaFluo4FF" kdiff="100" kdiffunit="mu2/s"/>
+<!-- rates from   https://doi.org/10.1073/pnas.1508419112 -->
+  <Reaction name = "CaFluo4FF_buffer" id="CaFluo4FF_buffer">
+    <Reactant specieID="Ca"/>
+    <Reactant specieID="Fluo4FF"/>
+    <Product specieID="CaFluo4FF"/>
+
+    <forwardRate>3e-4</forwardRate>
+    <reverseRate>4.98</reverseRate>
+    <Q10>0.2</Q10>
+  </Reaction>
   
 </ReactionScheme>

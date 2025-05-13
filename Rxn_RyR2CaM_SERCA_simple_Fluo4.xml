@@ -399,5 +399,19 @@
     <reverseRate>0</reverseRate>
   </Reaction>
 
+
+<Specie name="Fluo4FF" id="Fluo4FF" kdiff="100" kdiffunit="mu2/s"/>
+  <Specie name="CaFluo4FF" id="CaFluo4FF" kdiff="100" kdiffunit="mu2/s"/>
+<!-- indicator is  Fluo-4 rates from
+https://doi.org/10.1371/journal.pcbi.1002931  -->
+  <Reaction name = "CaFluo4FF_buffer" id="CaFluo4FF_buffer">
+    <Reactant specieID="Ca"/>
+    <Reactant specieID="Fluo4FF"/>
+    <Product specieID="CaFluo4FF"/>
+
+    <forwardRate>307e-6</forwardRate>
+    <reverseRate>277e-3</reverseRate>
+    <Q10>0.2</Q10>
+  </Reaction>
   
 </ReactionScheme>

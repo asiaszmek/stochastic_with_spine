@@ -29,8 +29,8 @@
  
     <NanoMolarity specieID="STIM_2CaER" value="375" />
     <NanoMolarity specieID="STIM_2" value="22.5" />
-    <NanoMolarity specieID="Fluo4FF" value="92428" />
-    <NanoMolarity specieID="CaFluo4FF" value="7582" />
+    <NanoMolarity specieID="Fluo4FF" value="92200" />
+    <NanoMolarity specieID="CaFluo4FF" value="7800" />
   </ConcentrationSet>
 
 

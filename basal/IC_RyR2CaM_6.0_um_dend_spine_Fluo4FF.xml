@@ -27,7 +27,10 @@
     <NanoMolarity specieID="LeakER" value="77" />
  
     <NanoMolarity specieID="STIM_2CaER" value="80" />
-    <NanoMolarity specieID="Fluo4FF" value="100e3" />
+    <NanoMolarity specieID="Fluo4FF" value="99500" />
+    <NanoMolarity specieID="CaFluo4FF" value="500" />
+
+    
   </ConcentrationSet>
 
   <SurfaceDensitySet>

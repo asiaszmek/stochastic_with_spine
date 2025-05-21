@@ -1,0 +1,104 @@
+<?xml version="1.0"?>
+<ReactionScheme>
+ <Specie name="Ca" id="Ca" kdiff="100" kdiffunit="mu2/s" />
+ 
+  <Specie name="PMJ" id="PMJ" kdiff="0." kdiffunit="mu2/s" />
+  <Specie name="PMJ_STIM_4" id="PMJ_STIM_4" kdiff="0." kdiffunit="mu2/s" />
+    
+  <Specie name="Orai3STIM_4" id="Orai3STIM_4" kdiff="0" kdiffunit="mu2/s" />
+  <Specie name="Orai2STIM_4" id="Orai2STIM_4" kdiff="0" kdiffunit="mu2/s" />
+  <Specie name="OraiSTIM_4" id="OraiSTIM_4" kdiff="0" kdiffunit="mu2/s" />
+  <Specie name="Orai" id="Orai" kdiff="0" kdiffunit="mu2/s" />
+
+  <Specie name="STIM_4" id="STIM_4" kdiff="0.01" kdiffunit="mu2/s" />
+  <Specie name="STIM_2" id="STIM_2" kdiff="0" kdiffunit="mu2/s" />
+  <Specie name="STIM_2CaER" id="STIM_2CaER" kdiff="0" kdiffunit="mu2/s" />
+ 
+  <Specie name="CaER" id="CaER" kdiff="10." kdiffunit="mu2/s"/>
+
+  <Reaction name = "SOCE1" id="SOCE1">
+    <Reactant specieID="CaOut" />
+    <Reactant specieID="Orai3STIM_4" />
+    <Product specieID="Orai3STIM_4" />
+    <Product specieID="Ca" />
+    
+    <forwardRate>5e-8</forwardRate>
+    <reverseRate>5e-8</reverseRate>
+  </Reaction>
+  <Reaction name = "SOCE2" id="SOCE2">
+    <Reactant specieID="CaOut" />
+    <Reactant specieID="Orai2STIM_4" />
+    <Product specieID="Orai2STIM_4" />
+    <Product specieID="Ca" />
+    <forwardRate>1.5e-9</forwardRate>
+    <reverseRate>1.5e-9</reverseRate>
+  </Reaction>
+
+ <Reaction name = "SOCE3" id="SOCE3">
+    <Reactant specieID="CaOut" />
+    <Reactant specieID="OraiSTIM_4" />
+    <Product specieID="OraiSTIM_4" />
+    <Product specieID="Ca" />
+    <forwardRate>1.5e-11</forwardRate>
+    <reverseRate>1.5e-11</reverseRate>
+  </Reaction>
+   
+
+  <Reaction name = "STIM_dim_1" id="STIM_dim_1">
+    <Reactant specieID="STIM_2" power="2" />
+    <Product specieID="STIM_4" />
+    <forwardRate>4.8e-7</forwardRate>
+    <reverseRate>11e-5</reverseRate>
+  </Reaction>
+  
+
+  <Reaction name = "STIMCaER_1" id="STIMCaER_1">
+    <Reactant specieID="STIM_2" />
+    <Reactant specieID="CaER" />
+    <Product specieID="STIM_2CaER"/>
+    <forwardRate>8e-7</forwardRate>
+    <reverseRate>2e-3</reverseRate>
+  </Reaction>
+
+  <Reaction name = "STIM_PMJ" id="STIM_PMJ">
+    <Reactant specieID="STIM_4" />
+    <Reactant specieID="PMJ" />
+    <Product specieID="PMJ_STIM_4"/>
+    <Product specieID="PMJ" />
+    <forwardRate>1.8e-4</forwardRate>
+    <reverseRate>3e-4</reverseRate>
+  </Reaction>
+
+  <Reaction name = "STIM_PMJ_Orai" id="STIM_PMJ_Orai">
+    <Reactant specieID="Orai" />
+    <Reactant specieID="PMJ_STIM_4" />
+    <Product specieID="OraiSTIM_4"/>
+    <forwardRate>1.5e-04</forwardRate>
+    <reverseRate>8e-3</reverseRate>
+  </Reaction>
+
+  <Reaction name = "STIM_Orai2" id="STIM_Orai2">
+    <Reactant specieID="OraiSTIM_4" power="2" />
+    <Product specieID="Orai2STIM_4"/>
+    <forwardRate>3.75e-5</forwardRate>
+    <reverseRate>2e-3</reverseRate>
+  </Reaction>
+
+  <Reaction name = "STIM_Orai4" id="STIM_Orai4">
+    <Reactant specieID="Orai2STIM_4" />
+    <Reactant specieID="OraiSTIM_4" />
+    <Product specieID="Orai3STIM_4"/>
+    <forwardRate>9.375e-06</forwardRate>
+    <reverseRate>5e-4</reverseRate>
+  </Reaction>
+
+  <Reaction name = "STIM_Orai8" id="STIM_Orai8">
+    <Reactant specieID="Orai3STIM_4" />
+    <Reactant specieID="OraiSTIM_4" />
+    <Product specieID="Orai2STIM_4" power="2"/>
+    <forwardRate>9.375e-06</forwardRate>
+
+  </Reaction>
+
+  
+</ReactionScheme>

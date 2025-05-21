@@ -1,0 +1,179 @@
+<?xml version="1.0"?>
+<ReactionScheme>
+  <Specie name="Ca" id="Ca" kdiff="100" kdiffunit="mu2/s" />
+  <Specie name="CaOut" id="CaOut" kdiff="10" kdiffunit="mu2/s" />
+  <Specie name="CaOutLeak" id="CaOutLeak" kdiff="0"
+	  kdiffunit="mu2/s" />
+  <Specie name="Leak" id="Leak" kdiff="0" kdiffunit="mu2/s" />
+
+  <Specie name="fixedbuffer" id="fixedbuffer" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="fixedbufferCa" id="fixedbufferCa" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="Calbin" id="Calbin" kdiff="9.3" kdiffunit="mu2/s" />
+  <Specie name="CalbinC" id="CalbinC" kdiff="9.3" kdiffunit="mu2/s" />
+  
+  <Specie name="pmca" id="pmca" kdiff="0" kdiffunit="mu2/s" />
+  <Specie name="ncx" id="ncx" kdiff="0" kdiffunit="mu2/s" />
+  <Specie name="pmcaCa" id="pmcaCa" kdiff="0" kdiffunit="mu2/s" />
+  <Specie name="ncxCa" id="ncxCa" kdiff="0" kdiffunit="mu2/s" />
+ 
+  <Specie name="Ng" id="Ng" kdiff="0" kdiffunit="mu2/s" />
+  <Specie name="NgCaM" id="NgCaM" kdiff="0" kdiffunit="mu2/s" />
+  <!-- -->
+  <Specie name="CaM" id="CaM" kdiff="4" kdiffunit="mu2/s" />
+  <!--Calmodulin-->
+  <Specie name="CaMCa2C" id="CaMCa2C" kdiff="4" kdiffunit="mu2/s" />
+  <Specie name="CaMCa2N" id="CaMCa2N" kdiff="4" kdiffunit="mu2/s" />
+  <!-- 2 Ca bound Calmodulin-->
+  <Specie name="CaMCa4" id="CaMCa4" kdiff="4" kdiffunit="mu2/s" />
+  <!-- 4 Ca bound Calmodulin-->
+  <!-- -->
+
+  <!--Hindered cytoplasmic diffusion of
+	  inositol trisphosphate restricts its cellular range of
+	  action     George D. Dickinson1,*, Kyle L. Ellefsen1,
+	  Silvina Ponce Dawson2, John E. Pearson3, and Ian Parker1,4
+	  Sci signalling -->
+  <!--*************************************************************************
+  Now, the reactions themselves   SAME means params are same in both files
+  **************************************************************************-->
+  <!--I. *********** Ca pump and buffer rxns  ************* -->
+  <!-- i: Ca pump high affinity -    Ca + pmca <-> pmcaCa  SAME-->
+  <Reaction name = "Ca_pump1a" id="Ca_pump1a">
+    <Reactant specieID="Ca"/>
+    <Reactant specieID="pmca"/>
+    <Product specieID="pmcaCa"/>
+
+    <forwardRate>0.5e-4</forwardRate>
+    <reverseRate>0.007</reverseRate>
+  </Reaction>
+
+  <!-- ii: Ca pump high affinity -    pmcaCa <-> pmca + CaOut   SAME-->
+  <Reaction name = "Ca_pump1b" id="Ca_pump1b">
+    <Reactant specieID="pmcaCa"/>
+    <Product specieID="pmca"/>
+    <Product specieID="CaOut"/>
+    
+    <forwardRate>0.0035</forwardRate>
+    <reverseRate>0</reverseRate>
+  </Reaction>
+
+  <!-- iii: Ca pump low affinity -    Ca + ncx <-> ncxCa  SAME-->
+  <Reaction name = "Ca_pump2a" id="Ca_pump2a">
+    <Reactant specieID="Ca"/>
+    <Reactant specieID="ncx"/>
+    <Product specieID="ncxCa"/>
+    
+    <forwardRate>1.68e-5</forwardRate>
+    <reverseRate>0.0112</reverseRate>
+  </Reaction>
+  
+  <!-- iv: Ca pump low affinity -    ncxCa <-> ncx + CaOut   SAME-->
+  <Reaction name = "Ca_pump2b" id="Ca_pump2b">
+    <Reactant specieID="ncxCa"/>
+    <Product specieID="ncx"/>
+    <Product specieID="CaOut"/>
+
+    <forwardRate>0.0056</forwardRate>
+    <reverseRate>0</reverseRate>
+  </Reaction>
+  <!-- v: Ca leak -    CaOut + Leak <-> CaOutLeak  GQ RXN FILE, Leak is sm only-->
+  <Reaction name = "Ca_leak1" id="Ca_leak1">
+    <Reactant specieID="CaOut"/>
+    <Reactant specieID="Leak"/>
+    <Product specieID="CaOutLeak"/>
+
+    <forwardRate>1.5e-6</forwardRate>
+    <reverseRate>1.1e-3</reverseRate>
+  </Reaction>
+
+  <!-- vi: Ca leak -    CaOutLeak <-> Ca (inside) + Leak  -->
+  <Reaction name = "Ca_leak2" id="Ca_leak2">
+    <Reactant specieID="CaOutLeak"/>
+    <Product specieID="Ca"/>
+    <Product specieID="Leak"/>
+    
+    <forwardRate>1.1e-3</forwardRate>
+    <reverseRate>0</reverseRate>
+  </Reaction>
+
+
+  
+  <!-- vii: Ca Buffer    Ca + Calbindin <-> calbinC  SAME-->
+  <Reaction name = "Ca_buffer" id="Ca_Buffer">
+    <Reactant specieID="Ca"/>
+    <Reactant specieID="Calbin"/>
+    <Product specieID="CalbinC"/>
+
+    <forwardRate>2.8e-5</forwardRate>
+    <reverseRate>0.0196</reverseRate>
+  </Reaction>
+  <!-- fixed immobile buffer-->
+  <Reaction name = "Ca_fixedbuffer" id="Ca_fixedBuffer">
+    <Reactant specieID="Ca"/>
+    <Reactant specieID="fixedbuffer"/>
+    <Product specieID="fixedbufferCa"/>
+    <forwardRate>0.004e-3</forwardRate>
+    <reverseRate>20.0e-2</reverseRate>
+    <Q10>0.2</Q10>
+  </Reaction>
+  
+  <!-- CaM, CaMCa4 and PP2B Binding -->
+  <!--1) CaM  + 2Ca
+      <-> CaMCa2 -->
+  <!--This is the C site-->
+  <Reaction name="CaMC_bind" id="CaMC_bind">
+    <Reactant specieID="CaM" />
+    <Reactant specieID="Ca" n="2" />
+    <Product specieID="CaMCa2C" />
+    <forwardRate>6e-6</forwardRate>
+    <reverseRate>9.1e-3</reverseRate>
+    <Q10>0.2</Q10>
+  </Reaction>
+  <!--2) CaMCa2  + 2Ca
+      <-> CaMCa4 -->
+  <!--This is the N-site-->
+  <Reaction name="CaMCa2C_bind" id="CaMCa2C_bind">
+    <Reactant specieID="CaMCa2C" />
+    <Reactant specieID="Ca" n="2" />
+    <Product specieID="CaMCa4" />
+    <forwardRate>0.1e-3</forwardRate>
+    <reverseRate>1000e-3</reverseRate>
+    <Q10>0.2</Q10>
+  </Reaction>
+  <!--1B) CaM  + 2Ca <-> CaMCa2N GQ RXN FILE, C or N can bind first-->
+  <Reaction name = "CaMN_bind" id="CaMN_bind">
+    <Reactant specieID="CaM"/>
+    <Reactant specieID="Ca" n="2"/>
+    <Product specieID="CaMCa2N"/>
+    
+    <forwardRate>0.1e-3</forwardRate>
+    <reverseRate>1000e-3</reverseRate>
+    
+  </Reaction>
+
+  <!--2B) CaMCa2N  + 2Ca <-> CaMCa4 GQ RXN FILE, C or N can bind first-->
+  <Reaction name = "CaMCa2N_bind" id="CaMCa2N_bind">
+    <Reactant specieID="CaMCa2N"/>
+    <Reactant specieID="Ca" n="2"/>
+    <Product specieID="CaMCa4"/>
+    
+    <forwardRate>6e-6</forwardRate>
+    <reverseRate>9.1e-3</reverseRate>
+    
+  </Reaction>
+
+  <!-- Kubota, Putkey, Waxham, 2007, Biophys J, 92:3848-3859, constants
+       k5 and k_5-->
+  <!--2a) CaM  + Ng
+      <-> NgCaM -->
+  <!--I step of the Neurogranin -->
+  <Reaction name="NgCaM_bind" id="NgCaM_bind">
+    <Reactant specieID="CaM" />
+    <Reactant specieID="Ng" />
+    <Product specieID="NgCaM" />
+    <forwardRate>28.e-6</forwardRate>
+    <reverseRate>36.e-3</reverseRate>
+    <Q10>0.2</Q10>
+  </Reaction>
+
+</ReactionScheme>

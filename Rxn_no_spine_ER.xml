@@ -136,7 +136,7 @@
     <Q10>0.2</Q10>
   </Reaction>
 
-<Specie name="CaER" id="CaER" kdiff="1." kdiffunit="mu2/s"/>
+<Specie name="CaER" id="CaER" kdiff="10." kdiffunit="mu2/s"/>
   <Specie name="RyR2CaM" id="RyR2CaM" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="RyR2CaMC1" id="RyR2CaMC1" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="RyR2CaMC2" id="RyR2CaMC2" kdiff="0" kdiffunit="mu2/s"/>
@@ -360,23 +360,12 @@
   </Reaction>
 
   
-  <Specie name="Fura2" id="Fura2" kdiff="83" kdiffunit="mu2/s"/>
-  <Specie name="Fura2Ca" id="Fura2Ca" kdiff="83" kdiffunit="mu2/s"/>
-  <Reaction name="Fura2_r" id="Fura2_r">
-    <Reactant specieID="Ca"/>
-    <Reactant specieID="Fura2"/>
-    <Product specieID="Fura2Ca"/>
-    
-    <forwardRate>1e-4</forwardRate>
-    <reverseRate>185e-4</reverseRate>
-  </Reaction>
-
-  <Specie name="CaCbuf" id="CaCbuf" kdiff="10" kdiffunit="mu2/s"/>
+<Specie name="CaCbuf" id="CaCbuf" kdiff="10" kdiffunit="mu2/s"/>
   <Specie name="Cbuf" id="Cbuf" kdiff="10" kdiffunit="mu2/s"/>
   <Specie name="CaBCa" id="CaBCa" kdiff="10" kdiffunit="mu2/s"/>
   <Specie name="CaB" id="CaB" kdiff="10" kdiffunit="mu2/s"/>
   
-  <Reaction name = "CaIn_buffer" id="CaIn_buffer">
+  <Reaction name="CaIn_buffer" id="CaIn_buffer">
     <Reactant specieID="Ca"/>
     <Reactant specieID="CaB"/>
     <Product specieID="CaBCa"/>
@@ -386,18 +375,16 @@
     <Q10>0.2</Q10>
   </Reaction>
   <Reaction name="CaCbufCa+Cbuf" id="CaCbufCa+Cbuf">
-    <Reactant specieID="CaCbuf" />
-    <Product specieID="Cbuf" />
-    <Product specieID="Ca" />
+    <Reactant specieID="CaCbuf"/>
+    <Product specieID="Cbuf"/>
+    <Product specieID="Ca"/>
     <forwardRate>20e-03</forwardRate>
     <reverseRate>0</reverseRate>
   </Reaction>
   <Reaction name="CaOut+CbufNULL" id="CaOut_CbufNULL">
-    <Reactant specieID="CaOut" />
-    <Reactant specieID="Cbuf" />
+    <Reactant specieID="CaOut"/>
+    <Reactant specieID="Cbuf"/>
     <forwardRate>1e-06</forwardRate>
     <reverseRate>0</reverseRate>
   </Reaction>
-
-  
 </ReactionScheme>

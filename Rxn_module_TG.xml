@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<ReactionScheme>
+  <Specie name="Cyt_SERCA" id="Cyt_SERCA" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="Cyt_SERCA_Ca" id="Cyt_SERCA_Ca" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="Cyt_SERCA_Ca2" id="Cyt_SERCA_Ca2" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="ER_SERCA_Ca2" id="ER_SERCA_Ca2" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="ER_SERCA_Ca" id="ER_SERCA_Ca" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="ER_SERCA" id="ER_SERCA" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="TG" id="TG" kdiff="100" kdiffunit="mu2/s"/>
+  <Specie name="TG_SERCA" id="TG_SERCA" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="TG_SERCA_Ca" id="TG_SERCA_Ca" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="TG_SERCA_Ca2" id="TG_SERCA_Ca2" kdiff="0" kdiffunit="mu2/s"/>
+  <Reaction name = "TG_SERCA_1a" id="TG_SERCA_1a">
+    <Reactant specieID="TG" />
+    <Reactant specieID="Cyt_SERCA"/>
+    <Product specieID="TG_SERCA"/>
+    <forwardRate>2.6e-05</forwardRate>
+    <reverseRate>0</reverseRate>    
+    <Q10>0.2</Q10>
+  </Reaction>
+  <Reaction name = "TG_SERCA_1b" id="TG_SERCA_1b">
+    <Reactant specieID="TG" />
+    <Reactant specieID="Cyt_SERCA_Ca"/>
+    <Product specieID="TG_SERCA_Ca"/>
+    
+    <forwardRate>2.6e-05</forwardRate>
+    <reverseRate>0</reverseRate>
+    <Q10>0.2</Q10>
+  </Reaction>
+  <Reaction name = "TG_SERCA_1c" id="TG_SERCA_1c">
+    <Reactant specieID="Cyt_SERCA_Ca2"/>
+    <Reactant specieID="TG"/>
+    <Product specieID="TG_SERCA_Ca2" />
+  
+    <forwardRate>2.6e-05</forwardRate>
+    <reverseRate>0</reverseRate>
+    <Q10>0.2</Q10>
+  </Reaction>
+
+  <Reaction name = "TG_SERCA_1d" id="TG_SERCA_1e">
+    <Reactant specieID="TG" />
+    <Reactant specieID="ER_SERCA_Ca"/>
+    <Product specieID="TG_SERCA_Ca"/>
+    
+    <forwardRate>2.6e-05</forwardRate>
+    <reverseRate>0</reverseRate>
+    <Q10>0.2</Q10>
+  </Reaction>
+ 
+
+  <Reaction name = "TG_SERCA_1g" id="TG_SERCA_1g">
+    <Reactant specieID="ER_SERCA_Ca2"/>
+    <Reactant specieID="TG"/>
+    <Product specieID="TG_SERCA_Ca2" />
+  
+    <forwardRate>2.6e-05</forwardRate>
+    <reverseRate>0</reverseRate>
+    <Q10>0.2</Q10>
+  </Reaction>
+
+
+  <Reaction name = "TG_SERCA_1f" id="TG_SERCA_1f">
+    <Reactant specieID="TG" />
+    <Reactant specieID="ER_SERCA"/>
+    <Product specieID="TG_SERCA"/>
+    <forwardRate>2.6e-05</forwardRate>
+    <reverseRate>0</reverseRate>    
+    <Q10>0.2</Q10>
+  </Reaction>
+
+
+</ReactionScheme>

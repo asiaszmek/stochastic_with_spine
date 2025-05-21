@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<ReactionScheme>
+  <Specie name="Fura2" id="Fura2" kdiff="83" kdiffunit="mu2/s" />
+  <Specie name="Fura2Ca" id="Fura2Ca" kdiff="83" kdiffunit="mu2/s" />
+  <Reaction name = "Fura2_r" id="Fura2_r">
+    <Reactant specieID="Ca"/>
+    <Reactant specieID="Fura2"/>
+    <Product specieID="Fura2Ca"/>
+
+    <forwardRate>1e-4</forwardRate>
+    <reverseRate>185e-4</reverseRate>
+  </Reaction>
+</ReactionScheme>

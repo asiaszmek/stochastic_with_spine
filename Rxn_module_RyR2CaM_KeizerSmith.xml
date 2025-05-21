@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<ReactionScheme>
+  <Specie name="Ca" id="Ca" kdiff="100" kdiffunit="mu2/s" />
+  <Specie name="CaER" id="CaER" kdiff="10." kdiffunit="mu2/s"/>
+  <Specie name="RyR2CaM"            id="RyR2CaM"           kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="RyR2CaMC1"            id="RyR2CaMC1"           kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="RyR2CaMC2"            id="RyR2CaMC2"           kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="RyR2CaMC3"            id="RyR2CaMC3"           kdiff="0" kdiffunit="mu2/s"/>  
+  <Specie name="RyR2CaMO1"            id="RyR2CaMO1"           kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="RyR2CaMO2"            id="RyR2CaMO2"           kdiff="0" kdiffunit="mu2/s"/>
+<!-- Stochastic model for correct transitions need K=ker/kef= 0.001uM^4
+     Keizer and Smith -->
+
+
+ <Reaction name = "RyR2CaMe" id="RyR2CaMe">
+    <Reactant specieID="RyR2CaM"/>
+    <Reactant specieID="Ca" power="4"/>
+    <Product specieID="RyR2CaMC1"/>
+    <forwardRate>10e-11</forwardRate>
+    <reverseRate>1.</reverseRate>
+ </Reaction>
+
+  <Reaction name = "RyR2CaMa" id="RyR2CaMa">
+    <Reactant specieID="RyR2CaMC1"/>
+    <Reactant specieID="Ca" power="4"/>
+    <Product specieID="RyR2CaMO1"/>
+    <forwardRate>5e-10</forwardRate>
+    <reverseRate>4800e-3</reverseRate>
+ </Reaction>
+   
+
+  <Reaction name = "RyR2CaMb" id="RyR2CaMb">
+    <Reactant specieID="RyR2CaMO1"/>
+    <Reactant specieID="Ca" power="4"/>
+    <Product specieID="RyR2CaMO2" />
+    <forwardRate>5e-12</forwardRate>
+    <reverseRate>13</reverseRate>
+  </Reaction>
+
+   <Reaction name = "RyR2CaMc" id="RyR2CaMc">
+    <Reactant specieID="RyR2CaMC2"/>
+    <Reactant specieID="Ca" power="4"/>
+    <Product specieID="RyR2CaMO2" />
+    <forwardRate>3.3333e-16</forwardRate>
+    <reverseRate>66.667e-2</reverseRate>
+  </Reaction>
+
+  <Reaction name = "RyR2CaMd" id="RyR2CaMd">
+    <Reactant specieID="RyR2CaMC1"/>
+    <Reactant specieID="Ca" power="4"/>
+    <Product specieID="RyR2CaMC2" />
+    <forwardRate>10000e-13</forwardRate>
+    <reverseRate>1.248e-2</reverseRate>
+  </Reaction>
+
+  <Reaction name = "RyR2CaMf" id="RyR2CaMf">
+    <Reactant specieID="RyR2CaMC2"/>
+    <Reactant specieID="Ca" power="4"/>
+    <Product specieID="RyR2CaMC3"/>
+    <forwardRate>1.5e-15</forwardRate>
+    <reverseRate>3.</reverseRate>
+ </Reaction>
+
+   <!--Sobie et al. 2002 (Saleet Jafri's) states 4/ms, Keizer and Levine 5/ms for small ER-->
+
+
+   <Reaction name = "RyR2CaMflux1" id="RyR2CaMflux1">
+     <Reactant specieID="RyR2CaMO1"/>
+     <Reactant specieID="CaER"/>
+     <Product specieID="RyR2CaMO1"/>
+     <Product specieID="Ca"/>
+    <forwardRate>5e-3</forwardRate>
+    <reverseRate>1.5e-3</reverseRate>
+    </Reaction>
+  <Reaction name = "RyR2CaMflux2" id="RyR2CaMflux2">
+     <Reactant specieID="RyR2CaMO2"/>
+     <Reactant specieID="CaER"/>
+     <Product specieID="RyR2CaMO2"/>
+     <Product specieID="Ca"/>
+    <forwardRate>5e-3</forwardRate>
+    <reverseRate>1.5e-3</reverseRate>
+  </Reaction>
+
+</ReactionScheme>

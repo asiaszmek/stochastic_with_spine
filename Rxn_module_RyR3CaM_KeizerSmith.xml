@@ -72,5 +72,22 @@ Keizer and Smith -->
     <Product specieID="RyR3CaMO2"/>
     <forwardRate>3.3333e-16</forwardRate>
     <reverseRate>66.667e-2</reverseRate>
+   </Reaction>
+   <!--Sobie et al. 2002 (Saleet Jafri's) states 4/ms, Keizer and Levine 5/ms for small ER-->
+    <Reaction name = "RyR3CaMflux1" id="RyR3CaMflux1">
+     <Reactant specieID="RyR3CaMO1"/>
+     <Reactant specieID="CaER"/>
+     <Product specieID="RyR3CaMO1"/>
+     <Product specieID="Ca"/>
+    <forwardRate>5e-3</forwardRate>
+    <reverseRate>1.5e-3</reverseRate>
+  </Reaction>
+  <Reaction name = "RyR3CaMflux2" id="RyR3CaMflux2">
+     <Reactant specieID="RyR3CaMO2"/>
+     <Reactant specieID="CaER"/>
+     <Product specieID="RyR3CaMO2"/>
+     <Product specieID="Ca"/>
+    <forwardRate>5e-3</forwardRate>
+    <reverseRate>1.5e-3</reverseRate>
   </Reaction>
 </ReactionScheme>

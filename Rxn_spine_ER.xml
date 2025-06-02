@@ -414,7 +414,8 @@
     <forwardRate>1e-12</forwardRate>
     <reverseRate>4.5</reverseRate>
  </Reaction>
-    <Reaction name="RyR3CaMflux1" id="RyR3CaMflux1">
+
+   <Reaction name="RyR3CaMflux1" id="RyR3CaMflux1">
      <Reactant specieID="RyR3CaMO1"/>
      <Reactant specieID="CaER"/>
      <Product specieID="RyR3CaMO1"/>

@@ -24,8 +24,9 @@
     <OutputSpecie name="CaOut"/>
     <OutputSpecie name="RyR2CaMO1"/>
     <OutputSpecie name="RyR2CaMO2"/>
-    <OutputSpecie name="RyR3CaMO1"/>
-    <OutputSpecie name="RyR3CaMO2"/>
+    <OutputSpecie name="RyR2O1"/>
+    <OutputSpecie name="RyR2O2"/>
+    <OutputSpecie name="CaMCa4"/>
   </OutputSet>
 
 </OutputScheme>

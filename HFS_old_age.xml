@@ -306,10 +306,10 @@
     <end>3503</end>
   </InjectionStim>
 
-   <InjectionStim injectionSite="sa1[0].pointA" specieID="CaB">
-    <onset>4150</onset>
-    <duration>1000</duration>
-    <rate>9.4</rate>
-    <end>6000</end>
-  </InjectionStim>
+  <!--  <InjectionStim injectionSite="sa1[0].pointA" specieID="CaB"> -->
+  <!--   <onset>4150</onset> -->
+  <!--   <duration>1000</duration> -->
+  <!--   <rate>9.4</rate> -->
+  <!--   <end>6000</end> -->
+  <!-- </InjectionStim> -->
  </StimulationSet>

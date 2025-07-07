@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Morphology>
+  <SpineType id="spineA">
+    <Section width="0.2" at="0.0" regionClass="neck"/>
+    <Section width="0.2" at="0.8" regionClass="neck"/>
+    <Section width="0.2" at="1.0" regionClass="head"/>
+    <Section width="0.6" at="1.1" regionClass="head"/>  
+    <Section width="0.6" at="1.2" regionClass="PSD"/>
+    <Section width="0.2" at="1.3" label="pointA"/>
+  </SpineType>
+
+  <!-- regionClass labels can apply to sections or segments and label regions for applying initial conditaions etc -->
+ 
+  <!--PointI as in point of injection-->
+  <!-- lengthDensity means you set the number per micron along the segment -->
+  
+  <SpineAllocation id="sa1" spineType="spineA" region="dend06"
+		   lengthDensity="1"/>
+ 
+  <Segment id="seg01" region="dend01">
+    <start x="0.0" y="1.0" z="0.0" r="1.2"/>
+    <end x="1.0" y="1.0" z="0.0" r="1.2"/>
+  </Segment>
+  <Segment id="seg02" region="dend02">
+    <start on="seg01" at="end" r="1.2"/>
+    <end x="2.0" y="1.0" z="0.0" r="1.2"/>
+  </Segment>
+  <Segment id="seg03" region="dend03">
+    <start on="seg02" at="end" r="1.2"/>
+    <end x="3.0" y="1.0" z="0.0" r="1.2"/>
+  </Segment>
+  <Segment id="seg04" region="dend04">
+    <start on="seg03" at="end" r="1.2"/>
+    <end x="4.0" y="1.0" z="0.0" r="1.2"/>
+  </Segment>
+  <Segment id="seg05" region="dend05">
+    <start on="seg04" at="end" r="1.2"/>
+    <end x="5.0" y="1.0" z="0.0" r="1.2"/>
+  </Segment>
+  <Segment id="seg06" region="dend06">
+    <start on="seg05" at="end" r="1.2"/>
+    <end x="6.0" y="1.0" z="0.0" r="1.2"/>
+  </Segment>
+  <Segment id="seg07" region="dend07">
+    <start on="seg06" at="end" r="1.2"/>
+    <end x="7.0" y="1.0" z="0.0" r="1.2"/>
+  </Segment>
+  <Segment id="seg08" region="dend08">
+    <start on="seg07" at="end" r="1.2"/>
+    <end x="8.0" y="1.0" z="0.0" r="1.2"/>
+  </Segment>
+  <Segment id="seg09" region="dend09">
+    <start on="seg08" at="end" r="1.2"/>
+    <end x="9.0" y="1.0" z="0.0" r="1.2"/>
+  </Segment>
+  <Segment id="seg10" region="dend10">
+    <start on="seg09" at="end" r="1.2"/>
+    <end x="10.0" y="1.0" z="0.0" r="1.2"/>
+  </Segment>
+  <Segment id="seg11" region="dend11">
+    <start on="seg10" at="end" r="1.2"/>
+    <end x="11.0" y="1.0" z="0.0" r="1.2"/>
+  </Segment>
+
+</Morphology>
+

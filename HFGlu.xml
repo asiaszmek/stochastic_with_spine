@@ -1,0 +1,51 @@
+<StimulationSet>
+
+ <!-- no Ligand, because Glu uncaging-->
+
+  <!--Ca -->
+
+
+
+
+<InjectionStim specieID="Ca" injectionSite="sa1[0].pointA">
+  <onset>               10000          </onset>
+  <duration>        500         </duration>
+  <rate>                10     </rate>
+  <period>        1000             </period>
+  <end>         12000           </end>
+</InjectionStim>
+
+<InjectionStim specieID="Ca" injectionSite="sa1[0].pointA">
+  <onset>               12000          </onset>
+  <duration>        500         </duration>
+  <rate>                3.75     </rate>
+  <period>        1000             </period>
+  <end>         14000           </end>
+</InjectionStim>
+
+<InjectionStim specieID="Ca" injectionSite="sa1[0].pointA">
+  <onset>               15000          </onset>
+  <duration>        500         </duration>
+  <rate>                1.5     </rate>
+  <period>        1000             </period>
+  <end>         30000           </end>
+</InjectionStim>
+
+<InjectionStim specieID="Ca" injectionSite="sa1[0].pointA">
+  <onset>               30000          </onset>
+  <duration>        500         </duration>
+  <rate>                0.5    </rate>
+  <period>        1000             </period>
+  <end>         70000           </end>
+</InjectionStim>
+
+<InjectionStim specieID="Ca" injectionSite="sa1[0].pointA">
+  <onset>               70000          </onset>
+  <duration>        500         </duration>
+  <rate>                0.2    </rate>
+  <period>        1000             </period>
+  <end>         100000           </end>
+</InjectionStim>
+
+
+</StimulationSet>

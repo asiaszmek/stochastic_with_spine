@@ -1,0 +1,116 @@
+<?xml version="1.0"?>
+<ReactionScheme>
+  <Specie name="Ca" id="Ca" kdiff="100" kdiffunit="mu2/s" />
+  <Specie name="CaOut" id="CaOut" kdiff="10" kdiffunit="mu2/s" />
+  <Specie name="Glu" id="Glu" kdiff="100" kdiffunit="mu2/s" />
+  <Specie name="GluOut" id="GluOut" kdiff="100" kdiffunit="mu2/s" />
+  <Specie name="GluBuf" id="GluBuf" kdiff="100" kdiffunit="mu2/s" />
+  <Specie name="NR2BC" id="NR2BC" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="NR2BC1" id="NR2BC1" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="NR2BC2" id="NR2BC2" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="NR2BD" id="NR2BD" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="NR2BO" id="NR2BO" kdiff="0" kdiffunit="mu2/s"/>
+<!--
+
+	Kinetic model of NMDA receptors
+	===============================
+
+	5-state gating model:
+	Clements & Westbrook 1991. Neuron 7: 605.
+	Lester & Jahr 1992. J Neurosci 12: 635.
+	Edmonds & Colquhoun 1992. Proc. R. Soc. Lond. B 250: 279.
+	Hessler, Shirke & Malinow. 1993. Nature 366: 569.
+	Clements et al. 1992. Science 258: 1498.
+  
+	C - C1 - C2 - O
+	         |
+      	         D
+
+	Voltage dependence of Mg2+ block:
+	Jahr & Stevens 1990. J Neurosci 10: 1830.
+	Jahr & Stevens 1990. J Neurosci 10: 3178.
+
+
+
+  Based on voltage-clamp recordings of NMDA receptor-mediated currents in rat
+  hippocampal slices (Hessler et al., Nature 366: 569-572, 1993), this model 
+  was fit directly to experimental recordings in order to obtain the optimal
+  values for the parameters (see Destexhe, Mainen and Sejnowski, 1996).
+
+
+  This mod file does not include mechanisms for the release and time course
+  of transmitter; it is to be used in conjunction with a sepearate mechanism
+  to describe the release of transmitter and that provides the concentration
+  of transmitter in the synaptic cleft (to be connected to pointer C here).
+
+  See details in:
+
+  Destexhe, A., Mainen, Z.F. and Sejnowski, T.J.  Kinetic models of 
+  synaptic transmission.  In: Methods in Neuronal Modeling (2nd edition; 
+  edited by Koch, C. and Segev, I.), MIT press, Cambridge, 1998, pp 1-25.
+
+  (electronic copy available at http://cns.iaf.cnrs-gif.fr)
+
+
+	      Written by Alain Destexhe and Zach Mainen, 1995
+
+-->
+  
+ <Reaction name = "NR2BC-C1" id="NR2BC-C1">
+    <Reactant specieID="NR2BC"/>
+    <Reactant specieID="Glu"/>
+    <Product specieID="NR2BC1"/>
+    <forwardRate>5e-6</forwardRate>
+    <reverseRate>12.9e-3</reverseRate>
+ </Reaction>
+
+  <Reaction name = "NR2BC1-C2" id="NR2BC1-C2">
+    <Reactant specieID="NR2BC1"/>
+    <Reactant specieID="Glu"/>
+    <Product specieID="NR2BC1"/>
+    <forwardRate>5e-6</forwardRate>
+    <reverseRate>12.9e-3</reverseRate>
+ </Reaction>
+   
+
+  <Reaction name = "NR2BC2-D" id="NR2BC2-D">
+    <Reactant specieID="NR2BC2"/>
+    <Product specieID="NR2BD" />
+    <forwardRate>8.4e-3</forwardRate>
+    <reverseRate>6.8e-3</reverseRate>
+  </Reaction>
+
+   <Reaction name = "NR2BC2-0" id="NR2BC2-0">
+    <Reactant specieID="NR2BC2"/>
+    <Product specieID="NR2BO" />
+    <forwardRate>46.5e-3</forwardRate>
+    <reverseRate>73.8e-3</reverseRate>
+  </Reaction>
+
+  <Reaction name = "NR2B0flux" id="NR2B0flux">
+    <Reactant specieID="NR2BO"/>
+    <Reactant specieID="CaOut"/>
+    <Product specieID="NR2BO" />
+    <Product specieID="Ca" />
+    <forwardRate>0.4e-3</forwardRate>
+    <reverseRate>0.4e-3</reverseRate>
+  </Reaction>
+
+
+  <Reaction name = "Glu--GluOut" id="Glu--GluOut">
+    <Reactant specieID="Glu"/>
+    <Product specieID="GluOut"/>
+  
+    <forwardRate>0.5e-3</forwardRate>
+    <reverseRate>0.02e-6</reverseRate>
+    <Q10>0.2</Q10>
+  </Reaction>
+
+  <Reaction name="GluOut+GluBuf--NULL" id="GluOut_buf--NULL">
+    <Reactant specieID="GluOut" />
+    <Reactant specieID="GluBuf" />
+    <forwardRate>1e-06</forwardRate>
+    <reverseRate>0</reverseRate>
+  </Reaction>
+    
+</ReactionScheme>

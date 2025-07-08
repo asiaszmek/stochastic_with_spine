@@ -36,6 +36,7 @@ def read_in_files(flist):
 
 flist_no_ER_spine_basal = [
     "Rxn_module_Ca.xml",
+    "Rxn_module_NR2B.xml",
     "Rxn_module_RyR2CaM_KeizerSmith.xml",
     "Rxn_module_SERCA2.xml",
     "Rxn_module_SOCE.xml",
@@ -43,6 +44,7 @@ flist_no_ER_spine_basal = [
 
 flist_no_ER_spine_basal_old_age = [
     "Rxn_module_Ca_old_age.xml",
+    "Rxn_module_NR2B.xml",
     "Rxn_module_RyR2CaM_KeizerSmith.xml",
     "Rxn_module_SERCA2.xml",
     "Rxn_module_RyR2_KeizerSmith.xml",

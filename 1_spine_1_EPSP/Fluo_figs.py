@@ -138,12 +138,13 @@ if __name__ == "__main__":
         for key in my_file.keys():
             if not key.startswith("trial"):
                 continue
+            print(key)
             spine = get_concentrations_region_list(my_file,["PSD",
                                                             "head", "neck"],
                                                    key, "__main__",
                                                    "CaFluo4FF")
         
-            dend = get_concentrations_region_list(my_file,["dend26"],
+            dend = get_concentrations_region_list(my_file,["dend06"],
                                                   key, "__main__",
                                                   "CaFluo4FF")
 
@@ -158,7 +159,7 @@ if __name__ == "__main__":
         out_spine, min_len = get_fluo_sig(data_spine, t_init, dt)
         out_dend, min_len = get_fluo_sig(data_dend, t_init, dt)
         fig, ax = plt.subplots(1, 1, figsize=(5, 5))
-        spine_smooth = moving_average(out_spine*100, 4)
+        spine_smooth = moving_average(out_spine*100, 1)
         time_smooth = np.linspace(time[0]/1000, time[min_len-1]/1000,
                                   len(spine_smooth))
         ax.plot(time_smooth, spine_smooth, "tab:green", label="Spine")

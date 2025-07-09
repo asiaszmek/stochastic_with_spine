@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <InitialConditions>
   <ConcentrationSet>
-  
+    <NanoMolarity specieID="GluOut" value="1000000"/>
+    <NanoMolarity specieID="Glu" value="40"/>
     <NanoMolarity specieID="Ca" value="75"/>
     <!-- total calbindin = 160 uM -->
     <NanoMolarity specieID="CaOut" value="2000000"/>
@@ -60,6 +61,7 @@
     <NanoMolarity specieID="Orai" value="400"/>
     <NanoMolarity specieID="STIM_2CaER" value="800" />
     <NanoMolarity specieID="LeakER" value="0" />
+    <NanoMolarity specieID="NR2BC" value="4000"/>
    </ConcentrationSet>
 
   <ConcentrationSet region="head">

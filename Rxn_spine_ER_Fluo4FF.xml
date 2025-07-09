@@ -136,6 +136,71 @@
     <Q10>0.2</Q10>
   </Reaction>
 
+<Specie name="Glu" id="Glu" kdiff="100" kdiffunit="mu2/s"/>
+  <Specie name="GluOut" id="GluOut" kdiff="100" kdiffunit="mu2/s"/>
+  <Specie name="GluBuf" id="GluBuf" kdiff="100" kdiffunit="mu2/s"/>
+  <Specie name="NR2BC" id="NR2BC" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="NR2BC1" id="NR2BC1" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="NR2BC2" id="NR2BC2" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="NR2BD" id="NR2BD" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="NR2BO" id="NR2BO" kdiff="0" kdiffunit="mu2/s"/>
+<Reaction name="NR2BC-C1" id="NR2BC-C1">
+    <Reactant specieID="NR2BC"/>
+    <Reactant specieID="Glu"/>
+    <Product specieID="NR2BC1"/>
+    <forwardRate>5e-6</forwardRate>
+    <reverseRate>12.9e-3</reverseRate>
+ </Reaction>
+
+  <Reaction name="NR2BC1-C2" id="NR2BC1-C2">
+    <Reactant specieID="NR2BC1"/>
+    <Reactant specieID="Glu"/>
+    <Product specieID="NR2BC1"/>
+    <forwardRate>5e-6</forwardRate>
+    <reverseRate>12.9e-3</reverseRate>
+ </Reaction>
+   
+
+  <Reaction name="NR2BC2-D" id="NR2BC2-D">
+    <Reactant specieID="NR2BC2"/>
+    <Product specieID="NR2BD"/>
+    <forwardRate>8.4e-3</forwardRate>
+    <reverseRate>6.8e-3</reverseRate>
+  </Reaction>
+
+   <Reaction name="NR2BC2-0" id="NR2BC2-0">
+    <Reactant specieID="NR2BC2"/>
+    <Product specieID="NR2BO"/>
+    <forwardRate>46.5e-3</forwardRate>
+    <reverseRate>73.8e-3</reverseRate>
+  </Reaction>
+
+  <Reaction name="NR2B0flux" id="NR2B0flux">
+    <Reactant specieID="NR2BO"/>
+    <Reactant specieID="CaOut"/>
+    <Product specieID="NR2BO"/>
+    <Product specieID="Ca"/>
+    <forwardRate>0.4e-3</forwardRate>
+    <reverseRate>0.4e-3</reverseRate>
+  </Reaction>
+
+
+  <Reaction name="Glu--GluOut" id="Glu--GluOut">
+    <Reactant specieID="Glu"/>
+    <Product specieID="GluOut"/>
+  
+    <forwardRate>0.5e-3</forwardRate>
+    <reverseRate>0.02e-6</reverseRate>
+    <Q10>0.2</Q10>
+  </Reaction>
+
+  <Reaction name="GluOut+GluBuf--NULL" id="GluOut_buf--NULL">
+    <Reactant specieID="GluOut"/>
+    <Reactant specieID="GluBuf"/>
+    <forwardRate>1e-06</forwardRate>
+    <reverseRate>0</reverseRate>
+  </Reaction>
+    
 <Specie name="CaER" id="CaER" kdiff="10." kdiffunit="mu2/s"/>
   <Specie name="RyR2CaM" id="RyR2CaM" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="RyR2CaMC1" id="RyR2CaMC1" kdiff="0" kdiffunit="mu2/s"/>
@@ -414,7 +479,8 @@
     <forwardRate>1e-12</forwardRate>
     <reverseRate>4.5</reverseRate>
  </Reaction>
-    <Reaction name="RyR3CaMflux1" id="RyR3CaMflux1">
+
+   <Reaction name="RyR3CaMflux1" id="RyR3CaMflux1">
      <Reactant specieID="RyR3CaMO1"/>
      <Reactant specieID="CaER"/>
      <Product specieID="RyR3CaMO1"/>
@@ -461,34 +527,7 @@
   </Reaction>
 
 
-  <Specie name="CaCbuf" id="CaCbuf" kdiff="10" kdiffunit="mu2/s"/>
-  <Specie name="Cbuf" id="Cbuf" kdiff="10" kdiffunit="mu2/s"/>
-  <Specie name="CaBCa" id="CaBCa" kdiff="10" kdiffunit="mu2/s"/>
-  <Specie name="CaB" id="CaB" kdiff="10" kdiffunit="mu2/s"/>
-  
-  <Reaction name="CaIn_buffer" id="CaIn_buffer">
-    <Reactant specieID="Ca"/>
-    <Reactant specieID="CaB"/>
-    <Product specieID="CaBCa"/>
-
-    <forwardRate>2.8e-5</forwardRate>
-    <reverseRate>0</reverseRate>
-    <Q10>0.2</Q10>
-  </Reaction>
-  <Reaction name="CaCbufCa+Cbuf" id="CaCbufCa+Cbuf">
-    <Reactant specieID="CaCbuf"/>
-    <Product specieID="Cbuf"/>
-    <Product specieID="Ca"/>
-    <forwardRate>20e-03</forwardRate>
-    <reverseRate>0</reverseRate>
-  </Reaction>
-  <Reaction name="CaOut+CbufNULL" id="CaOut_CbufNULL">
-    <Reactant specieID="CaOut"/>
-    <Reactant specieID="Cbuf"/>
-    <forwardRate>1e-06</forwardRate>
-    <reverseRate>0</reverseRate>
-  </Reaction>
-<Specie name="Fluo4FF" id="Fluo4FF" kdiff="100" kdiffunit="mu2/s"/>
+  <Specie name="Fluo4FF" id="Fluo4FF" kdiff="100" kdiffunit="mu2/s"/>
   <Specie name="CaFluo4FF" id="CaFluo4FF" kdiff="100" kdiffunit="mu2/s"/>
 <Reaction name="CaFluo4FF_buffer" id="CaFluo4FF_buffer">
     <Reactant specieID="Ca"/>

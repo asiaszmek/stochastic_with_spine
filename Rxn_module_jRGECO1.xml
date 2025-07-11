@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<ReactionScheme>
+  <Specie name="jRGECO1"            id="jRGECO1"            kdiff="4"   kdiffunit="mu2/s"/>
+  <Specie name="Ca2jRGECO1"      id="Ca2jRGECO1" kdiff="4" kdiffunit="mu2/s"/>
+  <!--jRGECO binding doi: 10.1074/jbc.RA118.004543-->
+  <Reaction name = "2Ca+jRGECO1--Ca2jRGECO1" id="2Ca+jRGECO1--Ca2jRGECO1">
+    <Reactant specieID="Ca"      power="2"     />
+    <Reactant  specieID="jRGECO1"               />
+    <Product  specieID="Ca2jRGECO1"               />
+
+    <forwardRate> 1.14e-7   </forwardRate>
+    <reverseRate> 3e-3   </reverseRate>
+  </Reaction>    
+
+  
+</ReactionScheme>

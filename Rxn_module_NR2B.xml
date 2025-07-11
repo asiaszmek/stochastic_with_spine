@@ -2,9 +2,9 @@
 <ReactionScheme>
   <Specie name="Ca" id="Ca" kdiff="100" kdiffunit="mu2/s" />
   <Specie name="CaOut" id="CaOut" kdiff="10" kdiffunit="mu2/s" />
-  <Specie name="Glu" id="Glu" kdiff="100" kdiffunit="mu2/s" />
-  <Specie name="GluOut" id="GluOut" kdiff="100" kdiffunit="mu2/s" />
-  <Specie name="GluBuf" id="GluBuf" kdiff="100" kdiffunit="mu2/s" />
+  <Specie name="Glu" id="Glu" kdiff="10" kdiffunit="mu2/s" />
+  <Specie name="GluOut" id="GluOut" kdiff="10" kdiffunit="mu2/s" />
+  <Specie name="GluBuf" id="GluBuf" kdiff="10" kdiffunit="mu2/s" />
   <Specie name="NR2BC" id="NR2BC" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="NR2BC1" id="NR2BC1" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="NR2BC2" id="NR2BC2" kdiff="0" kdiffunit="mu2/s"/>
@@ -67,7 +67,7 @@
   <Reaction name = "NR2BC1-C2" id="NR2BC1-C2">
     <Reactant specieID="NR2BC1"/>
     <Reactant specieID="Glu"/>
-    <Product specieID="NR2BC1"/>
+    <Product specieID="NR2BC2"/>
     <forwardRate>5e-6</forwardRate>
     <reverseRate>12.9e-3</reverseRate>
  </Reaction>
@@ -92,8 +92,8 @@
     <Reactant specieID="CaOut"/>
     <Product specieID="NR2BO" />
     <Product specieID="Ca" />
-    <forwardRate>0.4e-3</forwardRate>
-    <reverseRate>0.4e-3</reverseRate>
+    <forwardRate>2e-6</forwardRate>
+    <reverseRate>2e-6</reverseRate>
   </Reaction>
 
 
@@ -101,15 +101,15 @@
     <Reactant specieID="Glu"/>
     <Product specieID="GluOut"/>
   
-    <forwardRate>0.5e-3</forwardRate>
+    <forwardRate>0.5e-2</forwardRate>
     <reverseRate>0.02e-6</reverseRate>
     <Q10>0.2</Q10>
   </Reaction>
 
   <Reaction name="GluOut+GluBuf--NULL" id="GluOut_buf--NULL">
-    <Reactant specieID="GluOut" />
+    <Reactant specieID="Glu" />
     <Reactant specieID="GluBuf" />
-    <forwardRate>1e-06</forwardRate>
+    <forwardRate>1e-05</forwardRate>
     <reverseRate>0</reverseRate>
   </Reaction>
     

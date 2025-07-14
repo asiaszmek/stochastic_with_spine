@@ -92,8 +92,8 @@
     <Reactant specieID="CaOut"/>
     <Product specieID="NR2BO" />
     <Product specieID="Ca" />
-    <forwardRate>2e-6</forwardRate>
-    <reverseRate>2e-6</reverseRate>
+    <forwardRate>1e-6</forwardRate>
+    <reverseRate>1e-6</reverseRate>
   </Reaction>
 
 

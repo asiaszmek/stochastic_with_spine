@@ -9,8 +9,8 @@
 
 <InjectionStim specieID="Glu" injectionSite="sa1[0].pointA">
   <onset>               10000          </onset>
-  <duration>        2         </duration>
-  <rate>                100000     </rate>
+  <duration>        10         </duration>
+  <rate>         45            </rate>
   <period>        1000             </period>
   <end>         70000           </end>
 </InjectionStim>

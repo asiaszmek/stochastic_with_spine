@@ -92,7 +92,7 @@
     <Reactant specieID="CaOut"/>
     <Product specieID="NR2BO" />
     <Product specieID="Ca" />
-    <forwardRate>1e-6</forwardRate>
+    <forwardRate>5e-6</forwardRate>
     <reverseRate>1e-6</reverseRate>
   </Reaction>
 
@@ -109,7 +109,7 @@
   <Reaction name="GluOut+GluBuf--NULL" id="GluOut_buf--NULL">
     <Reactant specieID="Glu" />
     <Reactant specieID="GluBuf" />
-    <forwardRate>1e-05</forwardRate>
+    <forwardRate>1e-04</forwardRate>
     <reverseRate>0</reverseRate>
   </Reaction>
     

@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Morphology>
 
-  <SpineType id="spineL">
+   <SpineType id="spineL">
     <Section width="0.2" at="0.0" regionClass="neck"/>
     <Section width="0.2" at="0.8" regionClass="neck"/>
     <Section width="0.2" at="1.0" regionClass="head"/>
     <Section width="1" at="1.5" regionClass="head"/>  
-    <Section width="1" at="1.6" regionClass="PSD"/>
-    <Section width="0.4" at="2.0" label="pointA"/>
+    <Section width="0.7" at="1.6" regionClass="PSD"/>
+    <Section width="0.2" at="1.8" label="pointA"/>
   </SpineType>
 
+  
   <!-- regionClass labels can apply to sections or segments and label regions for applying initial conditaions etc -->
  
   <!--PointI as in point of injection-->

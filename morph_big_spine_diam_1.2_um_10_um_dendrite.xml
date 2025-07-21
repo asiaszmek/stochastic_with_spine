@@ -5,8 +5,8 @@
     <Section width="0.2" at="0.8" regionClass="neck"/>
     <Section width="0.2" at="1.0" regionClass="head"/>
     <Section width="1" at="1.5" regionClass="head"/>  
-    <Section width="1" at="1.6" regionClass="PSD"/>
-    <Section width="0.4" at="2.0" label="pointA"/>
+    <Section width="0.7" at="1.6" regionClass="PSD"/>
+    <Section width="0.2" at="1.8" label="pointA"/>
   </SpineType>
 
   

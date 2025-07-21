@@ -2,13 +2,13 @@
   <InjectionStim injectionSite="sa1[0].pointA" specieID="Glu">
     <onset>3000</onset>
     <duration>1</duration>
-    <rate>300</rate>
-    <end>3010</end>
+    <rate>400</rate>
+    <end>3001</end>
   </InjectionStim>
   <InjectionStim injectionSite="sa1[0].pointA" specieID="GluBuf">
     <onset>3003</onset>
     <duration>200</duration>
     <rate>2</rate>
-    <end>3012</end>
+    <end>3005</end>
   </InjectionStim>
 </StimulationSet>

@@ -140,42 +140,17 @@
   <Specie name="GluOut" id="GluOut" kdiff="10" kdiffunit="mu2/s"/>
   <Specie name="GluBuf" id="GluBuf" kdiff="10" kdiffunit="mu2/s"/>
   <Specie name="NR2BC" id="NR2BC" kdiff="0" kdiffunit="mu2/s"/>
-  <Specie name="NR2BC1" id="NR2BC1" kdiff="0" kdiffunit="mu2/s"/>
-  <Specie name="NR2BC2" id="NR2BC2" kdiff="0" kdiffunit="mu2/s"/>
-  <Specie name="NR2BD" id="NR2BD" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="NR2BO" id="NR2BO" kdiff="0" kdiffunit="mu2/s"/>
 <Reaction name="NR2BC-C1" id="NR2BC-C1">
     <Reactant specieID="NR2BC"/>
     <Reactant specieID="Glu"/>
-    <Product specieID="NR2BC1"/>
-    <forwardRate>5e-6</forwardRate>
-    <reverseRate>12.9e-3</reverseRate>
- </Reaction>
-
-  <Reaction name="NR2BC1-C2" id="NR2BC1-C2">
-    <Reactant specieID="NR2BC1"/>
-    <Reactant specieID="Glu"/>
-    <Product specieID="NR2BC2"/>
-    <forwardRate>5e-6</forwardRate>
-    <reverseRate>12.9e-3</reverseRate>
- </Reaction>
-   
-
-  <Reaction name="NR2BC2-D" id="NR2BC2-D">
-    <Reactant specieID="NR2BC2"/>
-    <Product specieID="NR2BD"/>
-    <forwardRate>8.4e-3</forwardRate>
-    <reverseRate>6.8e-3</reverseRate>
-  </Reaction>
-
-   <Reaction name="NR2BC2-0" id="NR2BC2-0">
-    <Reactant specieID="NR2BC2"/>
     <Product specieID="NR2BO"/>
-    <forwardRate>46.5e-2</forwardRate>
-    <reverseRate>73.8e-2</reverseRate>
-  </Reaction>
+"/&gt;
+    <forwardRate>0.072e-6</forwardRate>
+    <reverseRate>6.6e-3</reverseRate>
+ </Reaction>
 
-  <Reaction name="NR2B0flux" id="NR2B0flux">
+ <Reaction name="NR2B0flux" id="NR2B0flux">
     <Reactant specieID="NR2BO"/>
     <Reactant specieID="CaOut"/>
     <Product specieID="NR2BO"/>

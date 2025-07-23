@@ -2,7 +2,7 @@
 <SDRun xmlns:xi="http://www.w3.org/2001/XInclude" xmlns="http://stochdiff.textensor.org">
     <!-- this file defines a single run of the calculation, using morphology and
 -	 reaction data brought in from other files --> 
-    <xi:include href="../Rxn_no_spine_ER_Fluo4FF.xml" />
+    <xi:include href="../Rxn_spine_ER_Fluo4FF.xml" />
     <xi:include href="../morph_diam_1.2_um_10_um_dendrite.xml" />
     <xi:include href="../basal/IC_no_spine_ER_1.2_dend_Fluo4FF.xml" />
     <xi:include href="../1_EPSP.xml"/>

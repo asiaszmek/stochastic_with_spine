@@ -172,6 +172,7 @@ if __name__ == "__main__":
                                      specie)
         ax.tick_params(axis='x', labelsize=15)
         ax.tick_params(axis='y', labelsize=15)
+        ax.set_title(fname)
         fig.savefig(output, format="png",
                     dpi=100, bbox_inches="tight")
     plt.show()

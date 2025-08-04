@@ -67,6 +67,7 @@
      <NanoMolarity specieID="PMJ" value="6"/>
      <NanoMolarity specieID="Orai" value="200"/>
      <NanoMolarity specieID="LeakER" value="0" />
+     <NanoMolarity specieID="NR2BC" value="2000"/>
    </ConcentrationSet>
 
   <ConcentrationSet region="head">

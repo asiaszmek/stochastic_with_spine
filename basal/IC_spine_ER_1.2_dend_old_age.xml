@@ -66,7 +66,7 @@
      <NanoMolarity specieID="Cyt_SERCA_Ca2"       value="0"     />
      <NanoMolarity specieID="PMJ" value="6"/>
      <NanoMolarity specieID="Orai" value="200"/>
-    
+     <NanoMolarity specieID="NR2BC" value="2000"/>
      <NanoMolarity specieID="LeakER" value="0" />
    </ConcentrationSet>
 

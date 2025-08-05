@@ -31,7 +31,7 @@
     <NanoMolarity specieID="LeakER" value="175" />
     <NanoMolarity specieID="STIM_2" value="5" />
     <NanoMolarity specieID="STIM_4" value="0.5" />
-    <NanoMolarity specieID="STIM_2CaER" value="195" />
+    <NanoMolarity specieID="STIM_2CaER" value="196" />
 
   </ConcentrationSet>
 

@@ -115,7 +115,7 @@ def get_concentrations_region_list(my_file, my_list, trial, out, specie,
 def get_fluo_sig(signal, t_init, dt):
     min_len = min([len(dat) for dat in signal])
     out = np.array([data[:min_len] for data in signal]).mean(axis=0)
-    basal = np.mean(out[:int(t_init/dt)])
+    basal = np.mean(out[int(1000/t_init):int(t_init/dt)])
     out = (out-basal)/basal
     return out, min_len
 
@@ -153,16 +153,14 @@ if __name__ == "__main__":
      
         
 
-        time = get_times(my_file, key, "__main__")  - t_init      
+        time = get_times(my_file, key, "__main__")  - t_init
 
         dt = time[1] - time[0]
         out_spine, min_len = get_fluo_sig(data_spine, t_init, dt)
         out_dend, min_len = get_fluo_sig(data_dend, t_init, dt)
         fig, ax = plt.subplots(1, 1, figsize=(5, 5))
-        spine_smooth = moving_average(out_spine*100, 1)
-        time_smooth = np.linspace(time[0]/1000, time[min_len-1]/1000,
-                                  len(spine_smooth))
-        ax.plot(time_smooth, spine_smooth, "tab:green", label="Spine")
+      
+        ax.plot(time[:min_len]/1000, out_spine*100, "tab:green", label="Spine")
         ax.plot(time[:min_len]/1000, out_dend*100, "tab:blue",
                 label="Dendrite")
         ax.set_xlabel("time (s)", fontsize=15)

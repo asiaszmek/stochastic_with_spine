@@ -31,7 +31,7 @@
     <NanoMolarity specieID="LeakER" value="175" />
     <NanoMolarity specieID="STIM_2" value="5" />
     <NanoMolarity specieID="STIM_4" value="0.5" />
-    <NanoMolarity specieID="STIM_2CaER" value="195" />
+    <NanoMolarity specieID="STIM_2CaER" value="196" />
     <NanoMolarity specieID="Fluo4FF" value="99500" />
     <NanoMolarity specieID="CaFluo4FF" value="500" />
 
@@ -51,8 +51,11 @@
 
   </SurfaceDensitySet>  
   <ConcentrationSet region="PSD">
+     
+   
      <NanoMolarity specieID="RyR2CaM"      value="0"    />
-     <NanoMolarity specieID="RyR2"      value="0"    />     
+     <NanoMolarity specieID="RyR2"      value="0"    />
+     
      <NanoMolarity specieID="Cyt_SERCA"       value="0"     />
      <NanoMolarity specieID="Cyt_SERCA_Ca"       value="0"     />
      <NanoMolarity specieID="Cyt_SERCA_Ca2"       value="0"     />
@@ -90,8 +93,8 @@
     <NanoMolarity specieID="ncx" value="11000"/>
     <NanoMolarity specieID="ncxCa" value="1000"/>
     
-    <NanoMolarity specieID="RyR2CaM"      value="0"    />
-    <NanoMolarity specieID="RyR2"      value="0"    />
+    <NanoMolarity specieID="RyR2CaM" value="0" />
+    <NanoMolarity specieID="RyR2" value="0" />
     
     <NanoMolarity specieID="Cyt_SERCA"       value="0"     />
     <NanoMolarity specieID="Cyt_SERCA_Ca"       value="0"     />

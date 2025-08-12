@@ -142,11 +142,11 @@ if __name__ == "__main__":
             spine = get_concentrations_region_list(my_file,["PSD",
                                                             "head", "neck"],
                                                    key, "__main__",
-                                                   "CaFluo4FF")
+                                                   specie)
         
             dend = get_concentrations_region_list(my_file,["dend06"],
                                                   key, "__main__",
-                                                  "CaFluo4FF")
+                                                  specie)
 
             data_dend.append(dend)
             data_spine.append(spine)

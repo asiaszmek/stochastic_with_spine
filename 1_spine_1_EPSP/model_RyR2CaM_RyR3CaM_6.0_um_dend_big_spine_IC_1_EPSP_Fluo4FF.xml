@@ -4,7 +4,7 @@
 -	 reaction data brought in from other files --> 
     <xi:include href="../Rxn_spine_ER_Fluo4FF.xml" />
     <xi:include href="../morph_big_spine_diam_6.0_um_10_um_dendrite.xml" />
-    <xi:include href="../basal/IC_big_spine_ER_6.0_dend_Fluo4FF.xml" />
+    <xi:include href="../basal/IC_RyR3_in_head_6.0_dend_Fluo4FF.xml" />
     <xi:include href="../1_EPSP.xml"/>
     <xi:include href="../IO_Ca_SOCE_RyR2CaM_RyR3CaM.xml" />
 

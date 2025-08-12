@@ -26,7 +26,7 @@
     <NanoMolarity specieID="Cyt_SERCA"       value="480"     />
     <NanoMolarity specieID="Cyt_SERCA_Ca"       value="78"     />
     <NanoMolarity specieID="Cyt_SERCA_Ca2"       value="12"     />
-    <NanoMolarity specieID="LeakER" value="76" />
+    <NanoMolarity specieID="LeakER" value="74.5" />
  
     <NanoMolarity specieID="STIM_2CaER" value="78" />
     <NanoMolarity specieID="STIM_2" value="2" />
@@ -59,13 +59,14 @@
 	
    </ConcentrationSet>
 
-   <ConcentrationSet region="head">
+  <ConcentrationSet region="head">
     <NanoMolarity specieID="Leak" value="0"/>
     <NanoMolarity specieID="CaOutLeak" value="5000"/>
     <NanoMolarity specieID="pmca" value="700"/>
     <NanoMolarity specieID="pmcaCa" value="400"/>
     <NanoMolarity specieID="ncx" value="11000"/>
     <NanoMolarity specieID="ncxCa" value="1000"/>
+
     <NanoMolarity specieID="RyR2CaM"      value="0"    />
     <NanoMolarity specieID="Cyt_SERCA3"       value="7480"     />
     <NanoMolarity specieID="Cyt_SERCA3_Ca2"       value="20"     />
@@ -77,18 +78,19 @@
     <NanoMolarity specieID="PMJ" value="60"/>
     <NanoMolarity specieID="Orai" value="400"/>
     <NanoMolarity specieID="STIM_2CaER" value="800" />
+    <NanoMolarity specieID="RyR3CaMC2"      value="5"    />
   </ConcentrationSet>
  
   <ConcentrationSet region="neck">
     <NanoMolarity specieID="Leak" value="0"/>
     <NanoMolarity specieID="CaOutLeak" value="5000"/>
-    <NanoMolarity specieID="pmca" value="700"/>
-    <NanoMolarity specieID="pmcaCa" value="400"/>
+    <NanoMolarity specieID="pmca" value="350"/>
+    <NanoMolarity specieID="pmcaCa" value="200"/>
     <NanoMolarity specieID="ncx" value="11000"/>
     <NanoMolarity specieID="ncxCa" value="1000"/>
     
     <NanoMolarity specieID="RyR2CaM"      value="0"    />
-    <NanoMolarity specieID="RyR3CaMC2"      value="500"    />
+    <NanoMolarity specieID="RyR3CaMC2"      value="250"    />
     <NanoMolarity specieID="Cyt_SERCA"       value="0"     />
     <NanoMolarity specieID="Cyt_SERCA_Ca"       value="0"     />
     <NanoMolarity specieID="Cyt_SERCA_Ca2"       value="0"     />

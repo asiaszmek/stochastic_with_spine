@@ -8,7 +8,7 @@
     <interTrainInterval>  200           </interTrainInterval>
     <numTrains>           15              </numTrains>
   </InjectionStim>
-   <InjectionStim injectionSite="sa1[0].pointA" specieID="CaCBuf">
+   <InjectionStim injectionSite="sa1[0].pointA" specieID="Ca">
     <onset>6200</onset>
     <duration>1</duration>
     <rate>25</rate>

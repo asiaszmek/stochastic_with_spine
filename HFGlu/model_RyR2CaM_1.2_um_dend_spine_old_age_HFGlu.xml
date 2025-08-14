@@ -3,7 +3,7 @@
     <!-- this file defines a single run of the calculation, using morphology and
 -	 reaction data brought in from other files --> 
     <xi:include href="../Rxn_no_spine_ER_old_age.xml" />
-    <xi:include href="../morph_diam_1.2_um_50_um_dendrite.xml" />
+    <xi:include href="../morph_big_spine_diam_1.2_um_50_um_dendrite.xml" />
     <xi:include href="../basal/IC_no_spine_ER_1.2_dend_old_age.xml" />
     <xi:include href="../HFGlu_old_age.xml"/>
     <xi:include href="../IO_Ca_SOCE_RyR2CaM_old_age.xml" />

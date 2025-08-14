@@ -5,41 +5,39 @@
     <NanoMolarity specieID="GluOut" value="0"/>
     <NanoMolarity specieID="Glu" value="0"/>
     <NanoMolarity specieID="Ca" value="75"/>
-    <NanoMolarity specieID="CaOut" value="2000000"/>
-    <!-- total calbindin = 160 uM -->>
-    <NanoMolarity specieID="Calbin" value="271109"/>
-    <NanoMolarity specieID="CalbinC" value="28891"/>
-    <NanoMolarity specieID="fixedbuffer" value="3994044"/>
-    <NanoMolarity specieID="fixedbufferCa" value="5955"/>
+    <NanoMolarity specieID="CaOut" value="1.2e6"/>
+    <!-- total calbindin = 160 uM -->
+    <NanoMolarity specieID="Calbin" value="134888"/>
+    <NanoMolarity specieID="CalbinC" value="15102"/>
+    <NanoMolarity specieID="fixedbuffer" value="1996864"/>
+    <NanoMolarity specieID="fixedbufferCa" value="3126"/>
 
-    <NanoMolarity specieID="CaM" value="11700"/>
-    <NanoMolarity specieID="CaMCa2C" value="513"/>
-    <NanoMolarity specieID="CaMCa2N" value="75"/>
+    <NanoMolarity specieID="CaM" value="8100"/>
+    <NanoMolarity specieID="CaMCa2C" value="390"/>
+    <NanoMolarity specieID="CaMCa2N" value="58"/>
     <NanoMolarity specieID="CaMCa4" value="3"/>
-    <NanoMolarity specieID="NgCaM" value="13506"/>
-    <NanoMolarity specieID="Ng" value="1484"/>
-    
-    <NanoMolarity specieID="CaER"         value="0.8e5"     />
-    <NanoMolarity       specieID="CRTP" value="89056"/>
-    <NanoMolarity       specieID="CRT" value="10944"/>
-    <NanoMolarity specieID="RyR2"      value="8"    />
+    <NanoMolarity specieID="NgCaM" value="17260"/>
+    <NanoMolarity specieID="Ng" value="2740"/>
+    <NanoMolarity specieID="CaER"         value="0.81e5"     />
+    <NanoMolarity       specieID="CRTP" value="88975"/>
+    <NanoMolarity       specieID="CRT" value="11025"/>
     <NanoMolarity specieID="RyR2CaM"      value="8"    />
-    <!-- Bartol et al 2015 -->
-    <NanoMolarity specieID="Cyt_SERCA" value="1935" />
-    <NanoMolarity specieID="Cyt_SERCA_Ca" value="291" />
-    <NanoMolarity specieID="Cyt_SERCA_Ca2" value="41.5" />
+    <!-- Bartol et al 2015-->
+    <NanoMolarity specieID="Cyt_SERCA" value="2351" />
+    <NanoMolarity specieID="Cyt_SERCA_Ca" value="370" />
+    <NanoMolarity specieID="Cyt_SERCA_Ca2" value="56" />
+    
+    <NanoMolarity specieID="LeakER" value="374" />
  
-    <NanoMolarity specieID="STIM_2CaER" value="385" />
-    <NanoMolarity specieID="STIM_2" value="11.0" />
-    <NanoMolarity specieID="STIM_4" value="1.0" />
-    <NanoMolarity specieID="LeakER" value="273" />
-
+    <NanoMolarity specieID="STIM_2CaER" value="382" />
+    <NanoMolarity specieID="STIM_2" value="15" />
+    <NanoMolarity specieID="STIM_4" value="0.5" />
   </ConcentrationSet>
 
 
   <SurfaceDensitySet>
     <PicoSD specieID="Leak" value="5"/>
-    <PicoSD specieID="CaOutLeak" value="5000"/>
+    <PicoSD specieID="CaOutLeak" value="6000"/>
     <PicoSD specieID="ncx" value="2780"/>
     <PicoSD specieID="ncxCa" value="220"/>
     <PicoSD specieID="pmca" value="4090"/> 
@@ -50,18 +48,20 @@
     <PicoSD specieID="Orai2STIM_4" value=".3333"/>
 
   </SurfaceDensitySet>
-    <ConcentrationSet region="PSD">
+  <ConcentrationSet region="PSD">
+ 
      
-      <NanoMolarity specieID="RyR2CaM"      value="0"    />
-     <NanoMolarity specieID="RyR2"      value="0"    />
+  
+     <NanoMolarity specieID="RyR2CaM"      value="0"    />
      
      <NanoMolarity specieID="Cyt_SERCA"       value="0"     />
      <NanoMolarity specieID="Cyt_SERCA_Ca"       value="0"     />
      <NanoMolarity specieID="Cyt_SERCA_Ca2"       value="0"     />
-     <NanoMolarity specieID="PMJ" value="6"/>
-     <NanoMolarity specieID="Orai" value="200"/>
-     <NanoMolarity specieID="NR2BC" value="2000"/>
+     <NanoMolarity specieID="PMJ" value="60"/>
+     <NanoMolarity specieID="Orai" value="400"/>
+     <NanoMolarity specieID="STIM_2CaER" value="800"/>
      <NanoMolarity specieID="LeakER" value="0" />
+     <NanoMolarity specieID="NR2BC" value="4000"/>
    </ConcentrationSet>
 
   <ConcentrationSet region="head">
@@ -71,21 +71,18 @@
     <NanoMolarity specieID="pmcaCa" value="400"/>
     <NanoMolarity specieID="ncx" value="11000"/>
     <NanoMolarity specieID="ncxCa" value="1000"/>
+    <NanoMolarity specieID="RyR2CaM"      value="0"    />
 
-    <NanoMolarity specieID="Cyt_SERCA"       value="0"     />
-    <NanoMolarity specieID="Cyt_SERCA_Ca"       value="0"     />
-    <NanoMolarity specieID="Cyt_SERCA_Ca2"       value="0"     />
     <NanoMolarity specieID="Cyt_SERCA3"       value="7480"     />
     <NanoMolarity specieID="Cyt_SERCA3_Ca2"       value="20"     />
     <NanoMolarity specieID="Cyt_SERCA3_Ca"       value="500"     />
+    <NanoMolarity specieID="Cyt_SERCA"       value="0"     />
+    <NanoMolarity specieID="Cyt_SERCA_Ca"       value="0"     />
+    <NanoMolarity specieID="Cyt_SERCA_Ca2"       value="0"     />
     <NanoMolarity specieID="LeakER" value="25" />    
-    <NanoMolarity specieID="RyR2CaM"      value="0"    />
-    <NanoMolarity specieID="RyR2"      value="0"    />
-
-
-    <NanoMolarity specieID="PMJ" value="6"/>
-    <NanoMolarity specieID="Orai" value="200"/>
-   
+    <NanoMolarity specieID="PMJ" value="60"/>
+    <NanoMolarity specieID="Orai" value="400"/>
+    <NanoMolarity specieID="STIM_2CaER" value="800"/>
   </ConcentrationSet>
  
   <ConcentrationSet region="neck">
@@ -96,16 +93,12 @@
     <NanoMolarity specieID="ncx" value="11000"/>
     <NanoMolarity specieID="ncxCa" value="1000"/>
 
+    <NanoMolarity specieID="RyR2CaM"      value="0"    />
+    <NanoMolarity specieID="RyR3CaMC2"      value="500"    />
     <NanoMolarity specieID="Cyt_SERCA"       value="0"     />
     <NanoMolarity specieID="Cyt_SERCA_Ca"       value="0"     />
     <NanoMolarity specieID="Cyt_SERCA_Ca2"       value="0"     />
-    <NanoMolarity specieID="RyR2CaM"      value="0"    />
-    <NanoMolarity specieID="RyR2"      value="0"    />
-    <NanoMolarity specieID="RyR3CaMC2"      value="500"    />
-    <NanoMolarity specieID="RyR3C1"      value="500"    />
     <NanoMolarity specieID="LeakER" value="0" />
-
-
   </ConcentrationSet>
 
 </InitialConditions> 

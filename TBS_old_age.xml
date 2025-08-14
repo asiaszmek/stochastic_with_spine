@@ -11,7 +11,7 @@
    <InjectionStim injectionSite="sa1[0].pointA" specieID="CaCBuf">
     <onset>6200</onset>
     <duration>1</duration>
-    <rate>25</rate>
+    <rate>50</rate>
     <period>             10              </period>
     <end>6045</end>
     <interTrainInterval>  200           </interTrainInterval>

@@ -33,9 +33,16 @@
     <duration>1</duration>
     <period>             10              </period>
     <rate>400</rate>
-    <end>6080</end>
+    <end>6060</end>
     <interTrainInterval>  200           </interTrainInterval>
     <numTrains>           15              </numTrains>
+  </InjectionStim>
+
+  <InjectionStim injectionSite="sa1[0].pointA" specieID="GluBuf">
+    <onset>9045</onset>
+    <duration>15</duration>
+    <rate>1100</rate>
+    <end>9100</end>
   </InjectionStim>
 
 </StimulationSet>

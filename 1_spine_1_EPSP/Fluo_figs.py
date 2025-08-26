@@ -115,7 +115,7 @@ def get_concentrations_region_list(my_file, my_list, trial, out, specie,
 def get_fluo_sig(signal, t_init, dt):
     min_len = min([len(dat) for dat in signal])
     out = np.array([data[:min_len] for data in signal]).mean(axis=0)
-    basal = np.mean(out[int(1000/t_init):int(t_init/dt)])
+    basal = np.mean(out[int(1000/dt):int(t_init/dt)])
     out = (out-basal)/basal
     return out, min_len
 

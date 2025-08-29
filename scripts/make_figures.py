@@ -1,0 +1,105 @@
+import sys
+import argparse
+import numpy as np
+import matplotlib.pyplot as plt
+
+
+def Parser():
+    parser = argparse.ArgumentParser(description='Generation of figures')
+    parser.add_argument('input', nargs='+',
+                        help='input files')
+    parser.add_argument('--labels', default=None,
+                        help='File labels')
+    parser.add_argument('--units', default='[nM/l]',
+                        help='concentration units')
+    parser.add_argument('--output_name', default='',
+                        help='name of the output files')
+    parser.add_argument('--logscale', action="store_true",
+                        help='Use logscale for y-axis')
+    parser.add_argument('--from_zero', action="store_true",
+                        help='Use logscale for y-axis')
+
+    return parser
+
+
+if __name__ == '__main__':
+    fname = []
+    args = Parser().parse_args()
+    for name in args.input:
+        fname.append(name)
+    if not fname:
+        sys.exit('Do specify at least one totals filename')
+
+    header = []
+    longest = ''
+    species = set()
+    for name in fname:
+        try:
+            f = open(name)
+        except IOError:
+            sys.exit('Could not read ' + fname)
+        head = f.readline()
+        header.append(head.split())
+        for specie in head.split()[1:]:
+            species.add(specie)
+        f.close()
+
+    data = []
+    if args.output_name:
+        output = args.output_name
+    else:
+        output = ''
+        for item in fname[-1].split('_')[:-1]:
+            output += item
+            output += '_'
+    if args.labels:
+        args.labels = args.labels.split(',')
+        if len(args.labels) != len(fname):
+            args.labels = None
+
+    for i, name in enumerate(fname):
+        try:
+            data.append(np.loadtxt(name, skiprows=1))
+        except:
+            print('Empty file', name)
+            sys.exit()
+ 
+    for specie in species:
+        how_many = 0
+        which = []
+        which_header = []
+        for k, head in enumerate(header):
+            if specie in head:
+                how_many += 1
+                which.append(head.index(specie))
+                which_header.append(k)
+        f, axrr = plt.subplots(how_many, sharex=True)
+        if how_many == 1:
+            axrr = [axrr]
+
+        for i in range(how_many):
+            j = which_header[i]
+            axrr[i].plot(data[j][:, 0] / 1000, data[j][:, which[i]])
+            if args.from_zero:
+                axrr[i].set_ylim(0, 1.05 * data[j][:, which[i]].max())
+           
+            start, end = axrr[i].get_ylim()
+            # axrr[i].yaxis.set_ticks(np.arange(start, end, (end-start)/3.))
+            if args.labels:
+                axrr[i].set_ylabel(args.labels[i])
+            else:
+                where = fname[j].split('_')[-1]
+                axrr[i].set_ylabel(where)
+            if specie == "CaFluo4FF":
+                print(fname[j])
+                print(data[j][:,which[i]].max())
+            if args.logscale and specie == 'Ca':
+              axrr[i].set_yscale('log')
+              axrr[i].set_ylim(10,1.05*data[j][:,which[i]].max())
+              
+        axrr[how_many - 1].set_xlabel('time [s]')
+        axrr[0].set_title(specie + ' ' + args.units)
+
+        f.savefig(output  + specie + '.png', format='png')
+        plt.close(f)
+

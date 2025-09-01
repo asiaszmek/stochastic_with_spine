@@ -13,7 +13,7 @@ from scipy.optimize import curve_fit
 plt.rcParams['text.usetex'] = True
 hatch_possibilities = ["/", "-", "+", "o"]
 marker = ["d", "o", "v", "^"]
-limit = 2.
+limit = 2.5
 NA = Avogadro*1e-23
 spine = ['PSD', 'head', 'neck']
 t_init = 3000

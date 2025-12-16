@@ -5,7 +5,7 @@
     <xi:include href="../Rxn_spine_ER.xml" />
     <xi:include href="../morph_diam_6.0_um_50_um_dendrite.xml" />
     <xi:include href="../basal/IC_no_spine_ER_6.0_dend.xml" />
-    <xi:include href="../HFS.xml"/>
+    <xi:include href="../HFS_just_glu.xml"/>
     <xi:include href="../IO_Ca_SOCE_RyR2CaM.xml" />
 
     <!--2D means the morphology is interpreted like a flatworm, 3D for

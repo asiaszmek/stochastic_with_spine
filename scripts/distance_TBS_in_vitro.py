@@ -44,7 +44,7 @@ if __name__ == '__main__':
                                                       files_ER_big_in_vivo,
                                                       files_no_ER_old_age_in_vivo,
                                                       files_ER_old_age_in_vivo],
-                                                     t_init=6000, dend_diam=dend_diam,
+                                                     t_init=9000, dend_diam=dend_diam,
                                                      what_species="Ca",
                                                      output_name="all",
                                                      colors=colors, types=types,

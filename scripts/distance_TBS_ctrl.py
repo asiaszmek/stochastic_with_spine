@@ -25,7 +25,7 @@ markers = ["^", "o", "s"]
 
 if __name__ == '__main__':
     fig =  utils.make_distance_fig_compare_with_mean(files,
-                                                     t_init=6000, dend_diam=dend_diam,
+                                                     t_init=6000, stim_len=3000, dend_diam=dend_diam,
                                                      what_species="Ca",
                                                      output_name="all",
                                                      colors=colors, types=types,

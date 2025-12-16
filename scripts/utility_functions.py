@@ -357,49 +357,52 @@ def get_conc(my_file, specie_list, region_list, output):
     return conc_dict, time_dict
 
 
-def get_distance(conc_dict, dt, t_init=3000, length=102, spine_idx=49):
+def get_distance(conc_dict, dt, t_init=6000, stim_len=3000, length=102, spine_idx=49):
     decays = np.zeros((len(conc_dict), 1))
     shape = conc_dict["trial0"].shape[0]
     for i, concentration in enumerate(conc_dict.values()):
         ca_conc = np.zeros((shape,))
-        ca_conc_mean = concentration[:, int(1000/dt):int(t_init/dt)].mean(axis=1)
-        new_beg = int(t_init/dt)
+        ca_conc_mean = concentration[:, int(1000/dt):int(t_init/dt)].mean()*np.ones((shape,))
+        new_beg = int((t_init+stim_len)/dt)
         indices = []
-        for j in range(spine_idx, length):
+        for j in range(spine_idx, spine_idx*2+1):
             try:
                 new_idx = concentration[j, new_beg:].argmax()
             except ValueError:
                 continue
             ca_conc[j] = concentration[j, new_beg+new_idx]
-            
             if ca_conc[j] > limit*ca_conc_mean[j]:
-                if not len(indices):
+                if not len(indices) and j==spine_idx:
                     indices.append(j)
                 elif j+1 in indices or j-1 in indices:
                     indices.append(j)
-        new_beg = int(t_init/dt)         
+                elif j+2 in indices or j-2 in indices:
+                    indices.append(j)
+        new_beg = int((t_init+stim_len)/dt)         
         for j in range(spine_idx, -1, -1):
             try:
                 new_idx = concentration[j, new_beg:].argmax()
             except ValueError:
                 continue
             ca_conc[j] = concentration[j, new_beg+new_idx]
+          
             if ca_conc[j] > limit*ca_conc_mean[j]:
-                if not len(indices):
+                if not len(indices) and j==spine_idx:
                     indices.append(j)
                 elif j+1 in indices or j-1 in indices:
                     indices.append(j)
-       
+                elif j+2 in indices or j-2 in indices:
+                    indices.append(j)
         decays[i] = len(indices)/2
     return decays
 
 
 
 def max_vs_distance(conc, dt, t_init, spine_idx=49, length=51):
-    out_conc = np.zeros((len(conc.values()), length-spine_idx-1))
+    out_conc = np.zeros((len(conc.values()), spine_idx))
     start = int(t_init/dt)
     for i, (key, concentration) in enumerate(conc.items()):
-        for j in range(length-spine_idx-1):
+        for j in range(spine_idx):
             #print(spine_idx+j, spine_idx-j, out_conc.shape[1], len(concentration))
             out_conc[i, j] = max(max(concentration[spine_idx+j, start:]),
                                  max(concentration[spine_idx-j, start:]))
@@ -412,9 +415,8 @@ def get_max_basal(conc, dt, t_init, spine_idx, length):
     start = int(t_init/dt)
     basal = []
     for i, concentration in enumerate(conc.values()):
-        max_len = concentration.shape[0]-spine_idx+spine_idx-1
-        new_basal = np.zeros((length-spine_idx-1,))
-        for j in range(length-spine_idx-1):
+        new_basal = np.zeros((spine_idx,))
+        for j in range(spine_idx):
             new_basal[j] = max(max(concentration[spine_idx-j, basal_start:start]),
                                max(concentration[spine_idx+j, basal_start:start]))
         basal.append(new_basal)
@@ -422,6 +424,34 @@ def get_max_basal(conc, dt, t_init, spine_idx, length):
        
     return np.array(basal)
 
+def mean_vs_distance(conc, dt, t_init, period=500, spine_idx=49, length=51):
+    out_conc = np.zeros((len(conc.values()), spine_idx))
+    start = int(t_init/dt)
+    for i, (key, concentration) in enumerate(conc.items()):
+        for j in range(spine_idx):
+            #print(spine_idx+j, spine_idx-j, out_conc.shape[1], len(concentration))
+            out_conc[i, j] = (concentration[spine_idx+j,
+                                            start:start+period].mean()+
+                              concentration[spine_idx-j,
+                                            start:start+period].mean())/2
+    return out_conc    
+
+
+def get_mean_basal(conc, dt, t_init, spine_idx, length):
+    basal_start = int(1000/dt)
+    start = int(t_init/dt)
+    basal = []
+    for i, concentration in enumerate(conc.values()):
+
+        new_basal = np.zeros((spine_idx,))
+        for j in range(spine_idx):
+            
+            new_basal[j] = (np.mean(concentration[spine_idx-j, basal_start:start])+
+                               np.mean(concentration[spine_idx+j, basal_start:start]))/2
+        basal.append(new_basal)
+
+       
+    return np.array(basal)
 
 def make_distance_fig(files, t_init, dend_diam,
                       what_species, output_name, colors, types, markers):
@@ -469,6 +499,66 @@ def make_distance_fig(files, t_init, dend_diam,
         ax1[i].tick_params(axis='x', labelsize=15)
         ax1[i].tick_params(axis='y', labelsize=15)
     ax1[0].set_ylabel("$\mathrm{\max Ca_i\, (nM)}$", fontsize=15)
+    ax1[0].set_xlabel(r"Distance from stim spine $\mu \mathrm{m}$", fontsize=15)
+    mini = min([min(x.get_ylim()) for x in ax1])
+    maxi = max([max(x.get_ylim()) for x in ax1])
+    ax1[0].legend()
+    for i, diam in enumerate(dend_diam):
+        
+        ax1[i].set_title(r"dend diam %s $\mathrm{\mu  m}$" % diam,
+                         fontsize=15)
+        ax1[i].set_ylim([mini, maxi])
+        if i:
+            ax1[i].set_yticks([])
+    return fig1
+
+
+def make_mean_distance_fig(files, t_init, stim_dur, dend_diam,
+                      what_species, output_name, colors, types, markers):
+    fig1, ax1 = plt.subplots(1, len(dend_diam), figsize=(len(dend_diam)*5, 5))
+    for i, diam in enumerate(dend_diam):
+        for j, fname in enumerate(files):
+            new_fname = fname % (diam)
+            try:
+                my_file = h5py.File(new_fname)
+                print(new_fname)
+            except FileNotFoundError:
+                print("File not found", new_fname)
+                continue
+            conc_dict, times_dict = get_conc(my_file,
+                                             what_species,
+                                             region_list,
+                                             output_name)
+            try:
+                dt = times_dict["trial0"][1]-times_dict["trial0"][0]
+            except KeyError:
+                continue
+            
+            length = conc_dict["Ca"]["trial0"].shape[0]
+            spine_idx = (length-1)//2 -1
+            grid = np.array(get_grid_list(my_file))
+            dx = abs(grid[0][0]-grid[0][3])
+            conc = mean_vs_distance(conc_dict["Ca"],
+                                   dt=dt, t_init=t_init+stim_dur, spine_idx=spine_idx, length=length)
+            basal = get_mean_basal(conc_dict["Ca"], dt=dt, t_init=t_init, spine_idx=spine_idx,
+                              length=length)
+            mean_basal = basal.mean(axis=0)
+            distance = np.linspace(0, len(mean_basal)*dx, len(mean_basal))
+            std_basal = basal.std(axis=0)/(basal.shape[0]**0.5)
+
+            mean_conc = conc.mean(axis=0)
+            
+            std_conc = conc.std(axis=0)/(len(conc)**0.5)
+            ax1[i].errorbar(distance,
+                            mean_conc, yerr=std_conc, marker=markers[j], linestyle="",
+                            color=colors[diam], fillstyle="full", label=types[j])
+            ax1[i].errorbar(distance, mean_basal, yerr=std_basal, color="k",
+                            fillstyle="none", marker=markers[j],
+                            linestyle="")
+
+        ax1[i].tick_params(axis='x', labelsize=15)
+        ax1[i].tick_params(axis='y', labelsize=15)
+    ax1[0].set_ylabel("$\mathrm{dendritic\ mean\ Ca_i\, (nM)}$", fontsize=15)
     ax1[0].set_xlabel(r"Distance from stim $\mu \mathrm{m}$", fontsize=15)
     mini = min([min(x.get_ylim()) for x in ax1])
     maxi = max([max(x.get_ylim()) for x in ax1])
@@ -483,7 +573,8 @@ def make_distance_fig(files, t_init, dend_diam,
     return fig1
 
 
-def make_distance_fig_compare_with_mean(files, t_init, dend_diam,
+
+def make_distance_fig_compare_with_mean(files, t_init, stim_len, dend_diam,
                                         what_species, output_name, colors, types, markers):
     fig1, ax1 = plt.subplots(1, len(dend_diam), figsize=(len(dend_diam)*5, 5))
     for i, diam in enumerate(dend_diam):
@@ -507,24 +598,28 @@ def make_distance_fig_compare_with_mean(files, t_init, dend_diam,
             except KeyError:
                 continue
             length = conc_dict["Ca"]["trial0"].shape[0]
-            spine_idx = (length-1)//2
+            spine_idx = 49
             grid = np.array(get_grid_list(my_file))
             dx = abs(grid[0][0]-grid[0][3])
-            
-            distance = get_distance(conc_dict["Ca"], dt, t_init,
-                                    length=length, spine_idx=spine_idx)*dx
-            means.append(distance.mean())
-            stds.append(distance.std()/(len(distance)**.5))
-            paradigm.append(types[j])
-        print(paradigm)
-        ax1[i].errorbar(paradigm, means, yerr=stds, marker="s", linestyle="",
-                        color=colors[diam], fillstyle="full")
 
+            conc = max_vs_distance(conc_dict["Ca"],
+                                   dt=dt, t_init=t_init, spine_idx=spine_idx, length=length)
+            basal = get_mean_basal(conc_dict["Ca"], dt=dt, t_init=t_init, spine_idx=spine_idx,
+                              length=length)
+            new_conc = conc/basal
+            distance = np.linspace(0, basal.shape[1]*dx, basal.shape[1])
+            if "old" not in fname:
+                ax1[i].errorbar(distance, new_conc.mean(axis=0), yerr=new_conc.std(axis=0), marker=markers[j], linestyle="",
+                                color=colors[diam], fillstyle="full", label=types[j])
+            else:
+                ax1[i].errorbar(distance, new_conc.mean(axis=0), yerr=new_conc.std(axis=0), marker=markers[j], linestyle="",
+                                color=colors[diam], fillstyle="none", label=types[j])
         ax1[i].tick_params(axis='x', labelsize=15)
         ax1[i].tick_params(axis='y', labelsize=15)
-        ax1[i].set_xticklabels(types, rotation=90)
-    ax1[0].set_ylabel("Spatial extent $(\mathrm{\mu m})$",  fontsize=15)
-    ax1[0].set_xlabel("Paradigm", fontsize=15)
+
+    ax1[0].set_ylabel("$\mathrm{\max Ca_i}$/mean resting $\mathrm{Ca_i}$",  fontsize=15)
+    ax1[0].set_xlabel("Distance from spine $\mathrm{(\mu \, m)}$", fontsize=15)
+    ax1[-1].legend()
     mini = min([min(x.get_ylim()) for x in ax1])
     maxi = max([max(x.get_ylim()) for x in ax1])
     ax1[0].legend()
@@ -540,15 +635,17 @@ def make_distance_fig_compare_with_mean(files, t_init, dend_diam,
 
 
 def fit_exp(time, ca_conc, dt, duration=2000, t_init=3000, stim_len=3000, spatial=False):
+
     if not spatial:
         ca_conc_mean = ca_conc[:int(t_init/dt)].mean()
         ca_conc = ca_conc[int((t_init+stim_len)/dt):] - ca_conc_mean
         
         time = time[int((t_init+stim_len)/dt):] - t_init - stim_len
-        max_idx = int((t_init+stim_len/dt))+ca_conc[int((t_init+stim_len)/dt):].argmax()
+        
         try:
-            ca_conc_log = ca_conc[max_idx:duration+max_idx]
-            new_time = time[max_idx:duration+max_idx]-time[max_idx]
+            ca_conc_log = ca_conc[:duration]
+            new_time = time[:duration]
+            
         except IndexError:
             return 0
         try:
@@ -564,9 +661,9 @@ def fit_exp(time, ca_conc, dt, duration=2000, t_init=3000, stim_len=3000, spatia
     return popt[1]
 
 
-def make_decay_fig(files, t_init, dend_diam,
+def make_decay_fig(files, t_init, stim_len, dend_diam,
                    what_species, output_name, colors, types, markers):
-    stim_len = 3000
+
     fig1, ax1 = plt.subplots(1, len(dend_diam), figsize=(len(dend_diam)*5, 5))
     for i, diam in enumerate(dend_diam):
         means = []
@@ -588,23 +685,24 @@ def make_decay_fig(files, t_init, dend_diam,
                 dt = times_dict["trial0"][1]-times_dict["trial0"][0]
             except KeyError:
                 continue
-            t_decays1 = np.zeros((len(conc_dict["Ca"].keys())))
+            t_decays1 = []
             for k, trial in enumerate(conc_dict["Ca"].keys()):
                 
                 ca = conc_dict["Ca"][trial].sum(axis=0)
                 time = times_dict[trial]
                 
                 try:
-                    t1 = fit_exp(time, ca, dt, t_init=t_init, stim_len=stim_len)
+                    t1 = fit_exp(time, ca, dt, t_init=t_init, stim_len=3000)
                 except ValueError:
                     continue
-                if t1 > 0 and t1 < 1000:
-                    t_decays1[k] = t1
+                print(t1)
+                if t1 > 0 and t1<50000:
+                    t_decays1.append(t1)
                     
-            means.append(t_decays1.mean())
-            stds.append(t_decays1.std()/(len(t_decays1)**.5))
+            means.append(np.mean(t_decays1))
+            stds.append(np.std(t_decays1)/(len(t_decays1)**.5))
             paradigm.append(types[j])
-        print(means, stds, paradigm)
+       
         ax1[i].errorbar(paradigm, means, yerr=stds, marker="s", linestyle="",
                         color=colors[diam], fillstyle="full")
 
@@ -615,7 +713,7 @@ def make_decay_fig(files, t_init, dend_diam,
     ax1[0].set_xlabel("Paradigm", fontsize=15)
     mini = min([min(x.get_ylim()) for x in ax1])
     maxi = max([max(x.get_ylim()) for x in ax1])
-    ax1[0].legend()
+   
     for i, diam in enumerate(dend_diam):
         
         ax1[i].set_title(r"dend diam %s $\mathrm{\mu  m}$" % diam,

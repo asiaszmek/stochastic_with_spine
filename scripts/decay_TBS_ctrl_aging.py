@@ -10,13 +10,13 @@ colors = {"1.2": 'tab:blue',
           "6.0": 'tab:green'}
 
 files = [os.path.join("..", "TBS",
-                           "model_RyR2CaM_%s_um_dend_big_spine_TBS_in_vitro.h5"),
+                           "model_RyR2CaM_%s_um_dend_spine_TBS_in_vitro.h5"),
          os.path.join("..", "TBS",
-                      "model_RyR2CaM_RyR3CaM_%s_um_dend_big_spine_TBS_in_vitro.h5"),
+                      "model_RyR2CaM_RyR3CaM_%s_um_dend_spine_TBS_in_vitro.h5"),
          os.path.join("..", "TBS",
-                      "model_RyR2CaM_%s_um_dend_big_spine_TBS_in_vivo.h5"),
+                      "model_RyR2CaM_%s_um_dend_spine_TBS_in_vivo.h5"),
          os.path.join("..", "TBS",
-                      "model_RyR2CaM_RyR3CaM_%s_um_dend_big_spine_TBS_in_vivo.h5"),
+                      "model_RyR2CaM_RyR3CaM_%s_um_dend_spine_TBS_in_vivo.h5"),
          os.path.join("..", "TBS",
                       "model_RyR2CaM_%s_um_dend_spine_old_age_TBS_in_vivo.h5"),
          os.path.join("..", "TBS",
@@ -30,7 +30,7 @@ markers = ["^", "o", "s"]
 
 if __name__ == '__main__':
     fig =  utils.make_decay_fig(files,
-                                t_init=6000, dend_diam=dend_diam,
+                                t_init=6000, stim_len=3000, dend_diam=dend_diam,
                                 what_species="Ca",
                                 output_name="all",
                                 colors=colors, types=types,

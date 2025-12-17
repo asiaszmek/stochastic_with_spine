@@ -61,6 +61,7 @@
      <NanoMolarity specieID="STIM_2CaER" value="800"/>
      <NanoMolarity specieID="LeakER" value="0" />
      <NanoMolarity specieID="NR2BC" value="4000"/>
+     <NanoMolarity specieID="RyR2CaM"      value="0"    />	
    </ConcentrationSet>
 
   <ConcentrationSet region="head">

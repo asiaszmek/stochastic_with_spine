@@ -16,7 +16,7 @@ def Parser():
     parser = argparse.ArgumentParser(description='Generation of figures')
     parser.add_argument('input', nargs='+',
                         help='input files')
-    parser.add_argument('--t_init', default=3000, type=float,
+    parser.add_argument('--t_init', default=5000, type=float,
                         help='Stimulation initiation in ms')
     parser.add_argument('--specie', default='CaFluo4FF',
                         help='Dye-bound specie')

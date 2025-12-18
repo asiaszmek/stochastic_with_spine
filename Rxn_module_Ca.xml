@@ -11,10 +11,21 @@
   <Specie name="Calbin" id="Calbin" kdiff="9.3" kdiffunit="mu2/s" />
   <Specie name="CalbinC" id="CalbinC" kdiff="9.3" kdiffunit="mu2/s" />
   
-  <Specie name="pmca" id="pmca" kdiff="0" kdiffunit="mu2/s" />
+ 
   <Specie name="ncx" id="ncx" kdiff="0" kdiffunit="mu2/s" />
-  <Specie name="pmcaCa" id="pmcaCa" kdiff="0" kdiffunit="mu2/s" />
   <Specie name="ncxCa" id="ncxCa" kdiff="0" kdiffunit="mu2/s" />
+  <!-- model and constants from Paszty et al 2015 DOI:  10.1126/scisignal.2005672-->
+  <Specie name="pmca2b" id="pmca2b" kdiff="0" kdiffunit="mu2/s" />
+  <Specie name="pmca2bCa" id="pmca2bCa" kdiff="0" kdiffunit="mu2/s" />
+  <Specie name="pmca1a" id="pmca1a" kdiff="0" kdiffunit="mu2/s" />
+  <Specie name="pmca1aCa" id="pmca1aCa" kdiff="0" kdiffunit="mu2/s" />
+  <Specie name="CaMCa4pmca2b" id="CaMCa4pmca2b" kdiff="0" kdiffunit="mu2/s" />
+  <Specie name="CaMCa4pmca2bCa" id="CaMCa4pmca2bCa" kdiff="0" kdiffunit="mu2/s" />
+  <Specie name="CaMCa4pmca1a" id="CaMCa4pmca1a" kdiff="0" kdiffunit="mu2/s" />
+  <Specie name="CaMCa4pmca1aCa" id="CaMCa4pmca1aCa" kdiff="0" kdiffunit="mu2/s" />
+  <Specie name="CaMpmca2b" id="CaMpmca2b" kdiff="0" kdiffunit="mu2/s" />
+  <Specie name="CaMpmca1a" id="CaMpmca1a" kdiff="0" kdiffunit="mu2/s" />
+
  
   <Specie name="Ng" id="Ng" kdiff="0" kdiffunit="mu2/s" />
   <Specie name="NgCaM" id="NgCaM" kdiff="0" kdiffunit="mu2/s" />
@@ -38,25 +49,137 @@
   **************************************************************************-->
   <!--I. *********** Ca pump and buffer rxns  ************* -->
   <!-- i: Ca pump high affinity -    Ca + pmca <-> pmcaCa  SAME-->
-  <Reaction name = "Ca_pump1a" id="Ca_pump1a">
-    <Reactant specieID="Ca"/>
-    <Reactant specieID="pmca"/>
-    <Product specieID="pmcaCa"/>
 
-    <forwardRate>0.5e-4</forwardRate>
-    <reverseRate>0.007</reverseRate>
+  <!--pmca1a is based on pmca4a from Paszty et al 2015 Science Signaling-->
+  <Reaction name = "Ca_pump1a_1" id="Ca_pump1a_1">
+    <Reactant specieID="Ca"/>
+    <Reactant specieID="pmca1a"/>
+    <Product specieID="pmca1aCa"/>
+
+    <forwardRate>10e-6</forwardRate>
+    <reverseRate>50e-3</reverseRate>
   </Reaction>
 
-  <!-- ii: Ca pump high affinity -    pmcaCa <-> pmca + CaOut   SAME-->
-  <Reaction name = "Ca_pump1b" id="Ca_pump1b">
-    <Reactant specieID="pmcaCa"/>
-    <Product specieID="pmca"/>
+ 
+  <Reaction name = "Ca_pump1a_2" id="Ca_pump1a_2">
+    <Reactant specieID="pmca1aCa"/>
+    <Product specieID="pmca1a"/>
     <Product specieID="CaOut"/>
     
-    <forwardRate>0.0035</forwardRate>
+    <forwardRate>12e-3</forwardRate>
     <reverseRate>0</reverseRate>
   </Reaction>
 
+
+  <Reaction name = "Ca_pump2b_1" id="Ca_pump2b_1">
+    <Reactant specieID="Ca"/>
+    <Reactant specieID="pmca2b"/>
+    <Product specieID="pmca2bCa"/>
+
+    <forwardRate>80e-6</forwardRate>
+    <reverseRate>50e-3</reverseRate>
+  </Reaction>
+
+  <Reaction name = "Ca_pump2b_2" id="Ca_pump2b_2">
+    <Reactant specieID="pmca2bCa"/>
+    <Product specieID="pmca2b"/>
+    <Product specieID="CaOut"/>
+    
+    <forwardRate>12e-3</forwardRate>
+    <reverseRate>0</reverseRate>
+  </Reaction>
+
+  <Reaction name = "Ca_CaMCa4pump1a_1" id="Ca_CaMCa4pump1a_1">
+    <Reactant specieID="Ca"/>
+    <Reactant specieID="CaMCa4pmca1a"/>
+    <Product specieID="CaMCa4pmca1aCa"/>
+
+    <forwardRate>50e-6</forwardRate>
+    <reverseRate>10e-3</reverseRate>
+  </Reaction>
+
+ 
+  <Reaction name = "Ca_CaMCa4pump1a_2" id="Ca_CaMCa4pump1a_2">
+    <Reactant specieID="CaMCa4pmca1aCa"/>
+    <Product specieID="CaMCa4pmca1a"/>
+    <Product specieID="CaOut"/>
+    
+    <forwardRate>30e-3</forwardRate>
+    <reverseRate>0</reverseRate>
+  </Reaction>
+
+
+  <Reaction name = "Ca_CaMCa4pump2b_1" id="Ca_CaMCa4pump2b_1">
+    <Reactant specieID="Ca"/>
+    <Reactant specieID="CaMCa4pmca2b"/>
+    <Product specieID="CaMCa4pmca2bCa"/>
+
+    <forwardRate>50e-6</forwardRate>
+    <reverseRate>10e-3</reverseRate>
+  </Reaction>
+
+  <Reaction name = "Ca_CaMCa4pump2b_2" id="Ca_CaMCa4pump2b_2">
+    <Reactant specieID="CaMCa4pmca2bCa"/>
+    <Product specieID="CaMCa4pmca2b"/>
+    <Product specieID="CaOut"/>
+    
+    <forwardRate>30e-3</forwardRate>
+    <reverseRate>0</reverseRate>
+  </Reaction>
+ 
+
+  <Reaction name = "CaMCa4pump1a_bind" id="CaMCa4pump1a_bind">
+    <Reactant specieID="CaMCa4"/>
+    <Reactant specieID="pmca1a"/>
+    <Product specieID="CaMCa4pmca1a"/>
+
+    <forwardRate>0.8e-6</forwardRate>
+    <reverseRate>0.02e-3</reverseRate>
+  </Reaction>
+
+    <Reaction name = "CaMCa4pump2b_bind" id="CaMCa4pump2b_bind">
+    <Reactant specieID="CaMCa4"/>
+    <Reactant specieID="pmca2b"/>
+    <Product specieID="CaMCa4pmca2b"/>
+
+    <forwardRate>0.8e-6</forwardRate>
+    <reverseRate>0.0002e-3</reverseRate>
+  </Reaction>
+
+
+  <Reaction name = "CaMCa4pump1a_Ca_unbind" id="CaMCa4pump1a_Ca_unbind">
+    <Reactant specieID="CaMCa4pmca1a"/>
+    <Product specieID="CaMpmca1a"/>
+    <Product specieID="Ca" power="4"/>
+    <forwardRate>0.47e-3</forwardRate>
+    <reverseRate>14.697e-24</reverseRate>
+  </Reaction>
+
+  <Reaction name = "CaMCa4pump2b_Ca_unbind" id="CaMCa4pump2b_Ca_unbind">
+    <Reactant specieID="CaMCa4pmca2b"/>
+    <Product specieID="CaMpmca2b"/>
+    <Product specieID="Ca" power="4"/>
+    <forwardRate>0.1e-3</forwardRate>
+    <reverseRate>1e-24</reverseRate>
+  </Reaction>
+ 
+
+  <Reaction name = "CaMpump1a_Ca_unbind" id="CaMpump1a_Ca_unbind">
+    <Reactant specieID="CaMpmca1a"/>
+    <Product specieID="pmca1a"/>
+    <Product specieID="CaM"/>
+    <forwardRate>0.06e-3</forwardRate>
+
+  </Reaction>
+
+  <Reaction name = "CaMpump2b_Ca_unbind" id="CaMpump2b_Ca_unbind">
+    <Reactant specieID="CaMpmca2b"/>
+    <Product specieID="pmca2b"/>
+    <Product specieID="CaM"/>
+    <forwardRate>0.034e-3</forwardRate>
+  </Reaction>
+  
+  
   <!-- iii: Ca pump low affinity -    Ca + ncx <-> ncxCa  SAME-->
   <Reaction name = "Ca_pump2a" id="Ca_pump2a">
     <Reactant specieID="Ca"/>
@@ -140,7 +263,7 @@
     <reverseRate>1000e-3</reverseRate>
     <Q10>0.2</Q10>
   </Reaction>
-  <!--1B) CaM  + 2Ca <-> CaMCa2N GQ RXN FILE, C or N can bind first-->
+  <!--1A) CaM  + 2Ca <-> CaMCa2N GQ RXN FILE, C or N can bind first-->
   <Reaction name = "CaMN_bind" id="CaMN_bind">
     <Reactant specieID="CaM"/>
     <Reactant specieID="Ca" n="2"/>

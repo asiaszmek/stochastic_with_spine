@@ -6,8 +6,8 @@
     <NanoMolarity specieID="Ca" value="75"/>
     <!-- total calbindin = 160 uM -->
     <NanoMolarity specieID="CaOut" value="1.4e6"/>
-    <NanoMolarity specieID="Calbin" value="135000"/>
-    <NanoMolarity specieID="CalbinC" value="15000"/>
+    <NanoMolarity specieID="Calbin" value="135875"/>
+    <NanoMolarity specieID="CalbinC" value="14125"/>
     <NanoMolarity specieID="fixedbuffer" value="1997000"/>
     <NanoMolarity specieID="fixedbufferCa"  value="3000"/>
 
@@ -32,11 +32,11 @@
 
   <SurfaceDensitySet>
     <PicoSD specieID="Leak" value="5"/>
-    <PicoSD specieID="CaOutLeak" value="6000"/>
+    <PicoSD specieID="CaOutLeak" value="1800"/>
     <PicoSD specieID="ncx" value="2780"/>
     <PicoSD specieID="ncxCa" value="220"/>
-    <PicoSD specieID="pmca" value="4066"/> 
-    <PicoSD specieID="pmcaCa" value="1560"/>
+    <PicoSD specieID="pmca1a" value="4066"/> 
+    <PicoSD specieID="pmca1aCa" value="1560"/>
     <PicoSD specieID="PMJ" value="6"/>
     <PicoSD specieID="Orai" value="200"/>
     
@@ -51,13 +51,14 @@
     <NanoMolarity specieID="RyR2CaM"      value="0"    />
     <NanoMolarity specieID="STIM_2CaER" value="0" />
     <NanoMolarity specieID="NR2BC" value="4000"/>
+    <NanoMolarity specieID="pmca2b"      value="550"    />
    </ConcentrationSet>
 
   <ConcentrationSet region="head">
     <NanoMolarity specieID="Leak" value="0"/>
-    <NanoMolarity specieID="CaOutLeak" value="5000"/>
-    <NanoMolarity specieID="pmca" value="550"/>
-    <NanoMolarity specieID="pmcaCa" value="0"/>
+    <NanoMolarity specieID="CaOutLeak" value="2000"/>
+    <NanoMolarity specieID="pmca1a" value="550"/>
+    <NanoMolarity specieID="pmca1aCa" value="0"/>
     <NanoMolarity specieID="ncx" value="11000"/>
     <NanoMolarity specieID="ncxCa" value="1000"/>
  
@@ -73,9 +74,9 @@
  
   <ConcentrationSet region="neck">
     <NanoMolarity specieID="Leak" value="0"/>
-    <NanoMolarity specieID="CaOutLeak" value="5000"/>
-    <NanoMolarity specieID="pmca" value="550"/>
-    <NanoMolarity specieID="pmcaCa" value="0"/>
+    <NanoMolarity specieID="CaOutLeak" value="2000"/>
+    <NanoMolarity specieID="pmca1a" value="550"/>
+    <NanoMolarity specieID="pmca1aCa" value="0"/>
     <NanoMolarity specieID="ncx" value="11000"/>
     <NanoMolarity specieID="ncxCa" value="1000"/>
     

@@ -41,8 +41,12 @@
     <PicoSD specieID="CaOutLeak" value="2500"/>
     <PicoSD specieID="ncx" value="2780"/>
     <PicoSD specieID="ncxCa" value="220"/>
-    <PicoSD specieID="pmca1a" value="5620"/> 
-    <PicoSD specieID="pmca1aCa" value="0"/>
+    <PicoSD specieID="pmca1a" value="4325"/> 
+    <PicoSD specieID="pmca1aCa" value="52"/>
+    <PicoSD specieID="CaMCa4pmca1a" value="33"/> 
+    <PicoSD specieID="CaMCa4pmca1aCa" value="3"/>
+    <PicoSD specieID="CaMpmca1a" value="224"/> 
+  
     <PicoSD specieID="PMJ" value="6"/>
     <PicoSD specieID="Orai" value="199.75"/>
     <PicoSD specieID="OraiSTIM_4" value="0.25"/>

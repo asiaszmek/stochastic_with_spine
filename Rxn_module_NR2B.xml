@@ -6,9 +6,9 @@
   <Specie name="GluOut" id="GluOut" kdiff="10" kdiffunit="mu2/s" />
   <Specie name="GluBuf" id="GluBuf" kdiff="10" kdiffunit="mu2/s" />
   <Specie name="NR2BC" id="NR2BC" kdiff="0" kdiffunit="mu2/s"/>
-  <!-- <Specie name="NR2BC1" id="NR2BC1" kdiff="0" kdiffunit="mu2/s"/> -->
-  <!-- <Specie name="NR2BC2" id="NR2BC2" kdiff="0" kdiffunit="mu2/s"/> -->
-  <!-- <Specie name="NR2BD" id="NR2BD" kdiff="0" kdiffunit="mu2/s"/> -->
+  <Specie name="NR2BC1" id="NR2BC1" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="NR2BC2" id="NR2BC2" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="NR2BD" id="NR2BD" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="NR2BO" id="NR2BO" kdiff="0" kdiffunit="mu2/s"/>
 <!--
 
@@ -56,45 +56,45 @@
 Try Clements & Westbrook 1991
 -->
   
- <Reaction name = "NR2BC-C1" id="NR2BC-C1">
+<!--  <Reaction name = "NR2BC-C1" id="NR2BC-C1"> -->
+<!--     <Reactant specieID="NR2BC"/> -->
+<!--     <Reactant specieID="Glu"/> -->
+<!--     <Product specieID="NR2BO"/> -->
+<!-- "/> -->
+<!--     <forwardRate>0.072e-5</forwardRate> -->
+<!--     <reverseRate>6.6e-2</reverseRate> -->
+<!--  </Reaction> -->
+
+  <Reaction name = "NR2BC-C1" id="NR2BC-C1">
     <Reactant specieID="NR2BC"/>
     <Reactant specieID="Glu"/>
-    <Product specieID="NR2BO"/>
-"/>
-    <forwardRate>0.072e-5</forwardRate>
-    <reverseRate>6.6e-2</reverseRate>
+    <Product specieID="NR2BC1"/>
+    <forwardRate>5e-6</forwardRate>
+    <reverseRate>5e-3</reverseRate>
  </Reaction>
 
- <!--  <Reaction name = "NR2BC-C1" id="NR2BC-C1"> -->
- <!--    <Reactant specieID="NR2BC"/> -->
- <!--    <Reactant specieID="Glu"/> -->
- <!--    <Product specieID="NR2BC1"/> -->
- <!--    <forwardRate>5e-6</forwardRate> -->
- <!--    <reverseRate>5e-3</reverseRate> -->
- <!-- </Reaction> -->
-
- <!--  <Reaction name = "NR2BC1-C2" id="NR2BC1-C2"> -->
- <!--    <Reactant specieID="NR2BC1"/> -->
- <!--    <Reactant specieID="Glu"/> -->
- <!--    <Product specieID="NR2BC2"/> -->
- <!--    <forwardRate>5e-6</forwardRate> -->
- <!--    <reverseRate>5e-3</reverseRate> -->
- <!-- </Reaction> -->
+  <Reaction name = "NR2BC1-C2" id="NR2BC1-C2">
+    <Reactant specieID="NR2BC1"/>
+    <Reactant specieID="Glu"/>
+    <Product specieID="NR2BC2"/>
+    <forwardRate>5e-6</forwardRate>
+    <reverseRate>5e-3</reverseRate>
+ </Reaction>
    
 
- <!--  <Reaction name = "NR2BC2-D" id="NR2BC2-D"> -->
- <!--    <Reactant specieID="NR2BC2"/> -->
- <!--    <Product specieID="NR2BD" /> -->
- <!--    <forwardRate>4e-3</forwardRate> -->
- <!--    <reverseRate>0.3e-3</reverseRate> -->
- <!--  </Reaction> -->
+  <Reaction name = "NR2BC2-D" id="NR2BC2-D">
+    <Reactant specieID="NR2BC2"/>
+    <Product specieID="NR2BD" />
+    <forwardRate>4e-3</forwardRate>
+    <reverseRate>0.3e-3</reverseRate>
+  </Reaction>
 
- <!--   <Reaction name = "NR2BC2-0" id="NR2BC2-0"> -->
- <!--    <Reactant specieID="NR2BC2"/> -->
- <!--    <Product specieID="NR2BO" /> -->
- <!--    <forwardRate>10e-3</forwardRate> -->
- <!--    <reverseRate>322e-3</reverseRate> -->
- <!--  </Reaction> -->
+   <Reaction name = "NR2BC2-0" id="NR2BC2-0">
+    <Reactant specieID="NR2BC2"/>
+    <Product specieID="NR2BO" />
+    <forwardRate>10e-3</forwardRate>
+    <reverseRate>322e-3</reverseRate>
+  </Reaction>
 
   <Reaction name = "NR2B0flux" id="NR2B0flux">
     <Reactant specieID="NR2BO"/>
@@ -102,6 +102,7 @@ Try Clements & Westbrook 1991
     <Product specieID="NR2BO" />
     <Product specieID="Ca" />
     <forwardRate>2.5e-6</forwardRate>
+    <reverseRate>2.5e-6</reverseRate>
   </Reaction>
 
 

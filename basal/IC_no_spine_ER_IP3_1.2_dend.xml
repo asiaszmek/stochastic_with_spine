@@ -2,8 +2,8 @@
 
 <InitialConditions>
   <ConcentrationSet>
-    <NanoMolarity specieID="GluOut" value="500000"/>
-    <NanoMolarity specieID="Glu" value="0"/>
+    <NanoMolarity specieID="GluOut" value="5000000"/>
+    <NanoMolarity specieID="Glu" value="25"/>
     <NanoMolarity specieID="Ca" value="75"/>
     <NanoMolarity specieID="CaOut" value="2000000"/>
     <!-- total calbindin = 160 uM -->
@@ -12,12 +12,12 @@
     <NanoMolarity specieID="fixedbuffer" value="1996760"/>
     <NanoMolarity specieID="fixedbufferCa" value="3230"/>
 
-    <NanoMolarity specieID="CaM" value="8100"/>
-    <NanoMolarity specieID="CaMCa2C" value="400"/>
-    <NanoMolarity specieID="CaMCa2N" value="55"/>
-    <NanoMolarity specieID="CaMCa4" value="3"/>
-    <NanoMolarity specieID="NgCaM" value="17250"/>
-    <NanoMolarity specieID="Ng" value="2750"/>
+    <NanoMolarity specieID="CaM" value="8291"/>
+    <NanoMolarity specieID="CaMCa2C" value="348"/>
+    <NanoMolarity specieID="CaMCa2N" value="51"/>
+    <NanoMolarity specieID="CaMCa4" value="2"/>
+    <NanoMolarity specieID="NgCaM" value="17316"/>
+    <NanoMolarity specieID="Ng" value="2686"/>
     <NanoMolarity specieID="CaER"         value="0.8e5"     />
     <NanoMolarity       specieID="CRTP" value="88750"/>
     <NanoMolarity       specieID="CRT" value="11250"/>
@@ -49,11 +49,11 @@
     <PicoSD specieID="CaOutLeak" value="1750"/>
     <PicoSD specieID="ncx" value="2780"/>
     <PicoSD specieID="ncxCa" value="220"/>
-    <PicoSD specieID="pmca1a" value="5242"/> 
-    <PicoSD specieID="pmca1aCa" value="52"/>
-    <PicoSD specieID="CaMCa4pmca1a" value="63"/> 
-    <PicoSD specieID="CaMCa4pmca1aCa" value="4"/>
-    <PicoSD specieID="CaMpmca1a" value="271"/> 
+    <PicoSD specieID="pmca1a" value="5361"/> 
+    <PicoSD specieID="pmca1aCa" value="65"/>
+    <PicoSD specieID="CaMCa4pmca1a" value="22"/> 
+    <PicoSD specieID="CaMCa4pmca1aCa" value="2"/>
+    <PicoSD specieID="CaMpmca1a" value="183"/> 
 
     <PicoSD specieID="PMJ" value="6"/>
     <PicoSD specieID="Orai" value="200"/>

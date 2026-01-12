@@ -10,6 +10,10 @@
   <Specie name="NR2BC2" id="NR2BC2" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="NR2BD" id="NR2BD" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="NR2BO" id="NR2BO" kdiff="0" kdiffunit="mu2/s"/>
+  
+  <Specie name="V" id="V" kdiff="200" kdiffunit="mu2/s" />
+
+  <Specie name="VBuf" id="VBuf" kdiff="200" kdiffunit="mu2/s" />
 <!--
 
 	Kinetic model of NMDA receptors
@@ -99,8 +103,10 @@ Try Clements & Westbrook 1991
   <Reaction name = "NR2B0flux" id="NR2B0flux">
     <Reactant specieID="NR2BO"/>
     <Reactant specieID="CaOut"/>
+    <Reactant specieID="V"/>
     <Product specieID="NR2BO" />
     <Product specieID="Ca" />
+    <Product specieID="V" />
     <forwardRate>2.5e-6</forwardRate>
     <reverseRate>2.5e-6</reverseRate>
   </Reaction>
@@ -121,5 +127,12 @@ Try Clements & Westbrook 1991
     <forwardRate>5e-02</forwardRate>
     <reverseRate>0</reverseRate>
   </Reaction>
-    
+
+  <Reaction name="VOut+VBuf--NULL" id="VOut_buf--NULL">
+      <Reactant specieID="V" />
+    <Reactant specieID="VBuf" />
+    <forwardRate>5e-02</forwardRate>
+    <reverseRate>0</reverseRate>
+  </Reaction>
+
 </ReactionScheme>

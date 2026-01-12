@@ -144,6 +144,10 @@
   <Specie name="NR2BC2" id="NR2BC2" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="NR2BD" id="NR2BD" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="NR2BO" id="NR2BO" kdiff="0" kdiffunit="mu2/s"/>
+  
+  <Specie name="V" id="V" kdiff="200" kdiffunit="mu2/s"/>
+
+  <Specie name="VBuf" id="VBuf" kdiff="200" kdiffunit="mu2/s"/>
 <Reaction name="NR2BC-C1" id="NR2BC-C1">
     <Reactant specieID="NR2BC"/>
     <Reactant specieID="Glu"/>
@@ -178,8 +182,10 @@
   <Reaction name="NR2B0flux" id="NR2B0flux">
     <Reactant specieID="NR2BO"/>
     <Reactant specieID="CaOut"/>
+    <Reactant specieID="V"/>
     <Product specieID="NR2BO"/>
     <Product specieID="Ca"/>
+    <Product specieID="V"/>
     <forwardRate>2.5e-6</forwardRate>
     <reverseRate>2.5e-6</reverseRate>
   </Reaction>
@@ -200,7 +206,14 @@
     <forwardRate>5e-02</forwardRate>
     <reverseRate>0</reverseRate>
   </Reaction>
-    
+
+  <Reaction name="VOut+VBuf--NULL" id="VOut_buf--NULL">
+      <Reactant specieID="V"/>
+    <Reactant specieID="VBuf"/>
+    <forwardRate>5e-02</forwardRate>
+    <reverseRate>0</reverseRate>
+  </Reaction>
+
 <Specie name="CaER" id="CaER" kdiff="10." kdiffunit="mu2/s"/>
   <Specie name="RyR2CaM" id="RyR2CaM" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="RyR2CaMC1" id="RyR2CaMC1" kdiff="0" kdiffunit="mu2/s"/>

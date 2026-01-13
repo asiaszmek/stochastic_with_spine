@@ -69,6 +69,14 @@ def get_grid_list(My_file):
     return np.array(My_file['model']['grid'])
 
 
+def get_indx_no(My_file, spine_name, region_name):
+    grid = get_grid_list(My_file)
+    no = 0
+    for g in grid:
+        if g[-1].decode('utf-8') == spine_name and g[-4].decode('utf-8') == region_name:
+            no += 1
+    return no
+
 def get_times(My_file, trial='trial0', output="__main__"):
     return np.array(My_file[trial]['output'][output]['times'])
 
@@ -239,6 +247,7 @@ def get_concentrations(my_file, trial, out):
     for i, reg in enumerate(regions):
         # get numbers
         numbers[:, i, :] = data[:, region_indices[reg], :].sum(axis=1)
+        
         if reg in surface_dict:
             for j, specie in enumerate(species):
                 if specie in submembrane_species:
@@ -262,27 +271,26 @@ def save_single_file(times, concentrations, species, fname):
     what_to_save = np.zeros((concentrations.shape[0], len(species) + 1))
     what_to_save[:, 0] = times[:concentrations.shape[0]]
     what_to_save[:, 1:] = concentrations
-    print(fname)
     np.savetxt(fname, what_to_save, header=header, comments='')
 
 
 def save_concentrations(my_file, fname_base, output, trial='trial0'):
+    specialized_output = get_output_regions(my_file)
     regions = get_regions(my_file)
     times = get_times(my_file, trial=trial, output=output)
     species = get_all_species(my_file, output=output)
-    concentrations = get_concentrations(my_file, trial, output)
     if output == '__main__':
         add = ''
     else:
         add = output + '_'
-    for i, region in enumerate(regions):
-        fname = '%s_%s%s_%s.txt' % (fname_base, add, trial, region)
-        save_single_file(times, concentrations[:, i, :], species, fname)
-    if len(regions) > 1:
+    spines_dict = get_spines(regions)
+
+    if len(regions)> 1 and output not in specialized_output:
+        concentrations = get_concentrations(my_file, trial, output)
         totals = get_concentrations_region_list(my_file, regions, trial, output)
         save_single_file(times, totals, species,
                          '%s_%s%s_%s.txt' % (fname_base, add, trial, 'total'))
-        spines_dict = get_spines(regions)
+
         for spine_name in spines_dict.keys():
             spine_reg = spines_dict[spine_name]
             spine = get_concentrations_region_list(my_file, spine_reg,
@@ -290,6 +298,33 @@ def save_concentrations(my_file, fname_base, output, trial='trial0'):
             save_single_file(times, spine, species,
                              '%s_%s%s_%s.txt' % (fname_base, add,
                                                  trial, spine_name))
+        for i, region in enumerate(regions):
+            fname = '%s_%s%s_%s.txt' % (fname_base, add, trial, region)
+            
+            save_single_file(times, concentrations[:, i, :], species, fname)
+
+    else:
+        region = specialized_output[output]
+        data = get_populations(my_file, trial=trial, output=output)
+        start = 0
+        if region in ["PSD", "head", "neck"]:
+            for i, spine in enumerate(spines_dict.keys()):
+                my_region = "%s_%s" % (region, spine)
+                fname = '%s_%s_%s_%s.txt' % (fname_base, output, trial,
+                                             my_region)
+                idxs = get_indx_no(my_file, spine, region)
+
+                volume = region_volumes(my_file)[my_region]
+                concentrations = np.zeros((data.shape[0], len(species)))
+                
+                for j, specie in enumerate(species):
+                    concentrations[:, j] = nano_molarity(data[:,
+                                                              start:start+idxs,
+                                                              j].sum(axis=1),
+                                                         volume)
+                save_single_file(times, concentrations, species, fname)
+                print(fname)
+                start += idxs
 
 
 def get_dend_indices(grid, region=["dend"]):

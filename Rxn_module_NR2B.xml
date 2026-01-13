@@ -11,9 +11,9 @@
   <Specie name="NR2BD" id="NR2BD" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="NR2BO" id="NR2BO" kdiff="0" kdiffunit="mu2/s"/>
   
-  <Specie name="V" id="V" kdiff="200" kdiffunit="mu2/s" />
+  <Specie name="V" id="V" kdiff="0" kdiffunit="mu2/s" />
 
-  <Specie name="VBuf" id="VBuf" kdiff="200" kdiffunit="mu2/s" />
+  <Specie name="VBuf" id="VBuf" kdiff="0" kdiffunit="mu2/s" />
 <!--
 
 	Kinetic model of NMDA receptors

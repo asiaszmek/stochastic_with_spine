@@ -3,25 +3,25 @@
   <InjectionStim injectionSite="sa1[0].pointA" specieID="Glu">
     <onset>1000</onset>
     <duration>2</duration>
-    <rate>1000</rate>
+    <rate>5000</rate>
     <end>1001</end>
   </InjectionStim>
   <InjectionStim injectionSite="sa1[0].pointA" specieID="GluBuf">
     <onset>1005</onset>
     <duration>2</duration>
-    <rate>1000</rate>
+    <rate>5000</rate>
     <end>1025</end>
   </InjectionStim>
   <InjectionStim injectionSite="sa1[0].pointA" specieID="V">
     <onset>1000</onset>
     <duration>1</duration>
-    <rate>100</rate>
+    <rate>10</rate>
     <end>1001</end>
   </InjectionStim>
   <InjectionStim injectionSite="sa1[0].pointA" specieID="VBuf">
-    <onset>1015</onset>
+    <onset>1010</onset>
     <duration>1</duration>
-    <rate>300</rate>
+    <rate>20</rate>
     <end>1025</end>
   </InjectionStim>
 

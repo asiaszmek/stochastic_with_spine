@@ -311,13 +311,12 @@
     <reverseRate>2.5e-6</reverseRate>
   </Reaction>
 
-
-  <Reaction name="Glu--GluOut" id="Glu--GluOut">
+<Reaction name="Glu--GluOut" id="Glu--GluOut">
     <Reactant specieID="Glu"/>
     <Product specieID="GluOut"/>
   
-    <forwardRate>0.5e-2</forwardRate>
-    <reverseRate>0.02e-6</reverseRate>
+    <forwardRate>1e-3</forwardRate>
+    <reverseRate>4e-9</reverseRate>
     <Q10>0.2</Q10>
   </Reaction>
 
@@ -325,7 +324,7 @@
     <Reactant specieID="V"/>
     <Product specieID="VOut"/>
   
-    <forwardRate>0.5e-2</forwardRate>
+    <forwardRate>0.5e-1</forwardRate>
     <reverseRate>0.02e-6</reverseRate>
     <Q10>0.2</Q10>
   </Reaction>

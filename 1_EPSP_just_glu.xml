@@ -2,8 +2,8 @@
   <!-- DOI: 50.1126/science.1359647 glutamate peaked at 1 mM -->
   <InjectionStim injectionSite="sa1[0].pointA" specieID="Glu">
     <onset>5000</onset>
-    <duration>1</duration>
-    <rate>20000</rate>
+    <duration>2</duration>
+    <rate>10000</rate>
     <end>5020</end>
   </InjectionStim>
   <InjectionStim injectionSite="sa1[0].pointA" specieID="GluBuf">

@@ -120,6 +120,14 @@
     <NanoMolarity specieID="IP3RIP3"      value="0"     />
     <NanoMolarity specieID="IP3RC"      value="0"     />
 
+    <NanoMolarity specieID="MgluR"              value="700"     /> 
+    <NanoMolarity specieID="MgluRGq"              value="100"     /> 
+    <NanoMolarity specieID="Gqabg"              value="7900"  />
+    <NanoMolarity specieID="Plc"                value="1160"   />
+    <NanoMolarity specieID="PlcCa"              value="0"    />
+    <NanoMolarity specieID="Pip2"               value="19090"  />
+    <NanoMolarity specieID="PlcCaPip2"          value="20"   />
+    <NanoMolarity specieID="PIkinase"    value="560"    />
   </ConcentrationSet>
  
   <ConcentrationSet region="neck">

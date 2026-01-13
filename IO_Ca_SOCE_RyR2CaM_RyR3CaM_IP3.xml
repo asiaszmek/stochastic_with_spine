@@ -38,6 +38,8 @@
     <OutputSpecie name="RyR3CaMO1"/>
     <OutputSpecie name="RyR3CaMO2"/>
     <OutputSpecie name="CaMCa4"/>
+    <OutputSpecie name="GluMgluR"/>
+    <OutputSpecie name="GluMgluRGq"/>
   </OutputSet>
 
   <OutputSet filename = "neck" region="neck"  dt="1.0">

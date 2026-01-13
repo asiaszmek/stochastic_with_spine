@@ -18,13 +18,14 @@
     "morph" (regions) and "model" (dt).
 -->
 
-  <OutputSet filename = "PSD" region="PSD"  dt="1.0">
+  <OutputSet filename = "PSD" region="PSD"  dt="0.25">
     <OutputSpecie name="Ca"/>
     <OutputSpecie name="CaER"/>
     <OutputSpecie name="CaOut"/>
     <OutputSpecie name="CaMCa4"/>
     <OutputSpecie name="V"/>
     <OutputSpecie name="NR2BO"/>
+    <OutputSpecie name="Glu"/>
   </OutputSet>
 
   <OutputSet filename = "head" region="head"  dt="1.0">

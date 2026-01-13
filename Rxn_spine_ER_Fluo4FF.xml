@@ -307,8 +307,8 @@
     <Product specieID="NR2BO"/>
     <Product specieID="Ca"/>
     <Product specieID="V"/>
-    <forwardRate>2.5e-6</forwardRate>
-    <reverseRate>2.5e-6</reverseRate>
+    <forwardRate>2.5e-7</forwardRate>
+    <reverseRate>2.5e-7</reverseRate>
   </Reaction>
 
 <Reaction name="Glu--GluOut" id="Glu--GluOut">

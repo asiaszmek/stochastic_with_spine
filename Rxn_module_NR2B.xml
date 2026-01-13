@@ -12,7 +12,7 @@
   <Specie name="NR2BO" id="NR2BO" kdiff="0" kdiffunit="mu2/s"/>
   
   <Specie name="V" id="V" kdiff="0" kdiffunit="mu2/s" />
-
+  <Specie name="VOut" id="VOut" kdiff="0" kdiffunit="mu2/s" />
   <Specie name="VBuf" id="VBuf" kdiff="0" kdiffunit="mu2/s" />
 <!--
 
@@ -115,6 +115,15 @@ Try Clements & Westbrook 1991
   <Reaction name = "Glu--GluOut" id="Glu--GluOut">
     <Reactant specieID="Glu"/>
     <Product specieID="GluOut"/>
+  
+    <forwardRate>0.5e-2</forwardRate>
+    <reverseRate>0.02e-6</reverseRate>
+    <Q10>0.2</Q10>
+  </Reaction>
+
+   <Reaction name = "V--VOut" id="V--VOut">
+    <Reactant specieID="V"/>
+    <Product specieID="VOut"/>
   
     <forwardRate>0.5e-2</forwardRate>
     <reverseRate>0.02e-6</reverseRate>

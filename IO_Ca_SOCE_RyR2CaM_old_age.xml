@@ -18,7 +18,27 @@
     "morph" (regions) and "model" (dt).
 -->
 
-  <OutputSet filename = "all"  dt="1.0">
+  <OutputSet filename = "PSD" region="PSD"  dt="1.0">
+    <OutputSpecie name="Ca"/>
+    <OutputSpecie name="CaER"/>
+    <OutputSpecie name="CaOut"/>
+    <OutputSpecie name="CaMCa4"/>
+    <OutputSpecie name="V"/>
+    <OutputSpecie name="NR2BO"/>
+  </OutputSet>
+
+  <OutputSet filename = "head" region="head"  dt="1.0">
+    <OutputSpecie name="Ca"/>
+    <OutputSpecie name="CaER"/>
+    <OutputSpecie name="CaOut"/>
+    <OutputSpecie name="RyR2CaMO1"/>
+    <OutputSpecie name="RyR2CaMO2"/>
+    <OutputSpecie name="RyR2O1"/>
+    <OutputSpecie name="RyR2O2"/>
+    <OutputSpecie name="CaMCa4"/>
+  </OutputSet>
+
+  <OutputSet filename = "neck" region="neck"  dt="1.0">
     <OutputSpecie name="Ca"/>
     <OutputSpecie name="CaER"/>
     <OutputSpecie name="CaOut"/>

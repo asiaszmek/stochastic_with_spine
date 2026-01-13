@@ -266,9 +266,9 @@
   <Specie name="NR2BD" id="NR2BD" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="NR2BO" id="NR2BO" kdiff="0" kdiffunit="mu2/s"/>
   
-  <Specie name="V" id="V" kdiff="200" kdiffunit="mu2/s"/>
+  <Specie name="V" id="V" kdiff="0" kdiffunit="mu2/s"/>
 
-  <Specie name="VBuf" id="VBuf" kdiff="200" kdiffunit="mu2/s"/>
+  <Specie name="VBuf" id="VBuf" kdiff="0" kdiffunit="mu2/s"/>
 <Reaction name="NR2BC-C1" id="NR2BC-C1">
     <Reactant specieID="NR2BC"/>
     <Reactant specieID="Glu"/>

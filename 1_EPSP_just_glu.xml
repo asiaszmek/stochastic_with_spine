@@ -14,13 +14,13 @@
   <InjectionStim injectionSite="sa1[0].pointA" specieID="V">
     <onset>5000</onset>
     <duration>1</duration>
-    <rate>500</rate>
+    <rate>200</rate>
     <end>5001</end>
   </InjectionStim>
   <InjectionStim injectionSite="sa1[0].pointA" specieID="VBuf">
-    <onset>5003</onset>
+    <onset>5002</onset>
     <duration>1</duration>
-    <rate>500</rate>
+    <rate>300</rate>
     <end>5025</end>
   </InjectionStim>
 

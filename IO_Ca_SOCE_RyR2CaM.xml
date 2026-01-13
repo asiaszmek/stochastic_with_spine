@@ -21,6 +21,10 @@
     <OutputSpecie name="Ca"/>
     <OutputSpecie name="CaER"/>
     <OutputSpecie name="CaOut"/>
+    <OutputSpecie name="NR2BC"/>
+    <OutputSpecie name="NR2BC1"/>
+    <OutputSpecie name="NR2BC2"/>
+    <OutputSpecie name="NR2BD"/>
     <OutputSpecie name="NR2BO"/>
     <OutputSpecie name="V"/>
     <OutputSpecie name="Glu"/>

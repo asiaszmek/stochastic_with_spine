@@ -23,6 +23,10 @@
     <OutputSpecie name="CaER"/>
     <OutputSpecie name="CaMCa4"/>
     <OutputSpecie name="V"/>
+    <OutputSpecie name="NR2BC"/>
+    <OutputSpecie name="NR2BC1"/>
+    <OutputSpecie name="NR2BC2"/>
+    <OutputSpecie name="NR2BD"/>
     <OutputSpecie name="NR2BO"/>
     <OutputSpecie name="Glu"/>
   </OutputSet>

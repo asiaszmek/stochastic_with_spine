@@ -39,7 +39,7 @@
     <NanoMolarity specieID="IP3degrad"      value="32"     />
     <NanoMolarity specieID="IP3K" value="839" />
     <NanoMolarity specieID="IP3K_Ca2" value="61" />
-    <NanoMolarity specieID="IP5P" value="1000" />
+    <NanoMolarity specieID="IP5P" value="2001" />
  
   </ConcentrationSet>
 
@@ -95,8 +95,8 @@
     <NanoMolarity specieID="CaOutLeak" value="2500"/>
     <NanoMolarity specieID="pmca1a" value="2170"/>
     <NanoMolarity specieID="pmca1aCa" value="30"/>
-    <NanoMolarity specieID="ncx" value="11000"/>
-    <NanoMolarity specieID="ncxCa" value="1000"/>
+    <NanoMolarity specieID="ncx" value="22000"/>
+    <NanoMolarity specieID="ncxCa" value="2001"/>
 
     <NanoMolarity specieID="RyR2CaM"      value="0"    />
     <NanoMolarity specieID="Cyt_SERCA"       value="0"     />
@@ -124,8 +124,8 @@
     <NanoMolarity specieID="CaOutLeak" value="2500"/>
     <NanoMolarity specieID="pmca1a" value="2170"/>
     <NanoMolarity specieID="pmca1aCa" value="30"/>
-    <NanoMolarity specieID="ncx" value="11000"/>
-    <NanoMolarity specieID="ncxCa" value="1000"/>
+    <NanoMolarity specieID="ncx" value="22000"/>
+    <NanoMolarity specieID="ncxCa" value="2001"/>
     <NanoMolarity specieID="RyR2CaM"      value="0"    />
     
     <NanoMolarity specieID="Cyt_SERCA"       value="0"     />

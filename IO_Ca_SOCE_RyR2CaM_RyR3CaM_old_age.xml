@@ -23,11 +23,11 @@
     <OutputSpecie name="CaER"/>
     <OutputSpecie name="CaMCa4"/>
     <OutputSpecie name="V"/>
-    <OutputSpecie name="NR2BC"/>
-    <OutputSpecie name="NR2BC1"/>
-    <OutputSpecie name="NR2BC2"/>
-    <OutputSpecie name="NR2BD"/>
-    <OutputSpecie name="NR2BO"/>
+    <OutputSpecie name="NMDARC"/>
+    <OutputSpecie name="NMDARC1"/>
+    <OutputSpecie name="NMDARC2"/>
+    <OutputSpecie name="NMDARD"/>
+    <OutputSpecie name="NMDARO"/>
     <OutputSpecie name="Glu"/>
   </OutputSet>
   <OutputSet filename = "head"  region="head" dt="1.0">

@@ -90,7 +90,7 @@
      <NanoMolarity specieID="Orai" value="400"/>
      <NanoMolarity specieID="STIM_2CaER" value="800"/>
      <NanoMolarity specieID="LeakER" value="0" />
-     <NanoMolarity specieID="NR2BC" value="4000"/>
+     <NanoMolarity specieID="NMDARC" value="4000"/>
      <NanoMolarity specieID="IP3R"      value="0"     />
      <NanoMolarity specieID="IP3RIP3"      value="0"     />
      <NanoMolarity specieID="IP3RC"      value="0"     />

@@ -52,7 +52,7 @@
 
   </SurfaceDensitySet>
   <ConcentrationSet region="PSD">
-     <NanoMolarity specieID="pmca2b"      value="4000"    />
+     <NanoMolarity specieID="pmca2b"      value="12000"    />
         <NanoMolarity specieID="CaOutLeak" value="2500"/>
   
      <NanoMolarity specieID="RyR2CaM"      value="0"    />

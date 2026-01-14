@@ -100,7 +100,7 @@ Try Clements & Westbrook 1991
    <Reaction name = "NMDARC2-0" id="NMDARC2-0">
     <Reactant specieID="NMDARC2"/>
     <Product specieID="NMDARO" />
-    <forwardRate>83.8-3</forwardRate>
+    <forwardRate>83.8e-3</forwardRate>
     <reverseRate>83.8e-3</reverseRate>
   </Reaction>
 

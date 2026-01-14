@@ -139,21 +139,21 @@
 <Specie name="Glu" id="Glu" kdiff="10" kdiffunit="mu2/s"/>
   <Specie name="GluOut" id="GluOut" kdiff="10" kdiffunit="mu2/s"/>
   <Specie name="GluBuf" id="GluBuf" kdiff="10" kdiffunit="mu2/s"/>
-  <Specie name="NR2BC" id="NR2BC" kdiff="0" kdiffunit="mu2/s"/>
-  <Specie name="NR2BO" id="NR2BO" kdiff="0" kdiffunit="mu2/s"/>
-<Reaction name="NR2BC-C1" id="NR2BC-C1">
-    <Reactant specieID="NR2BC"/>
+  <Specie name="NMDARC" id="NMDARC" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="NMDARO" id="NMDARO" kdiff="0" kdiffunit="mu2/s"/>
+<Reaction name="NMDARC-C1" id="NMDARC-C1">
+    <Reactant specieID="NMDARC"/>
     <Reactant specieID="Glu"/>
-    <Product specieID="NR2BO"/>
+    <Product specieID="NMDARO"/>
 "/&gt;
     <forwardRate>0.072e-6</forwardRate>
     <reverseRate>6.6e-3</reverseRate>
  </Reaction>
 
- <Reaction name="NR2B0flux" id="NR2B0flux">
-    <Reactant specieID="NR2BO"/>
+ <Reaction name="NMDAR0flux" id="NMDAR0flux">
+    <Reactant specieID="NMDARO"/>
     <Reactant specieID="CaOut"/>
-    <Product specieID="NR2BO"/>
+    <Product specieID="NMDARO"/>
     <Product specieID="Ca"/>
     <forwardRate>5e-6</forwardRate>
     <reverseRate>1e-6</reverseRate>

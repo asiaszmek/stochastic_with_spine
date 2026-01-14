@@ -84,7 +84,7 @@
      <NanoMolarity specieID="STIM_2" value="0" />
      <NanoMolarity specieID="STIM_2CaER" value="0" />
      <NanoMolarity specieID="NMDARC" value="600"/>
-     <NanoMolarity specieID="pmca2b"      value="2000"    />
+     <NanoMolarity specieID="pmca2b"      value="4000"    />
      <NanoMolarity specieID="IP3R"      value="0"     />
      <NanoMolarity specieID="IP3RIP3"      value="0"     />
      <NanoMolarity specieID="IP3RC"      value="0"     />

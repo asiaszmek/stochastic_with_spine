@@ -111,8 +111,8 @@ Try Clements & Westbrook 1991
     <Product specieID="NMDARO" />
     <Product specieID="Ca" />
     <Product specieID="V" />
-    <forwardRate>2.5e-8</forwardRate>
-    <reverseRate>2.5e-8</reverseRate>
+    <forwardRate>2.5e-9</forwardRate>
+    <reverseRate>2.5e-9</reverseRate>
   </Reaction>
 
 <!--https://doi.org/10.1523/JNEUROSCI.5125-04.2005 for astrocytes from adult animals ~ 1 ms-1, juvenile 1/5ms 0.2 ms-1 -->

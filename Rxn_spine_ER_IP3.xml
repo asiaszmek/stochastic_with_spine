@@ -307,8 +307,8 @@
     <Product specieID="NMDARO"/>
     <Product specieID="Ca"/>
     <Product specieID="V"/>
-    <forwardRate>2.5e-7</forwardRate>
-    <reverseRate>2.5e-7</reverseRate>
+    <forwardRate>2.5e-8</forwardRate>
+    <reverseRate>2.5e-8</reverseRate>
   </Reaction>
 
 <Reaction name="Glu--GluOut" id="Glu--GluOut">

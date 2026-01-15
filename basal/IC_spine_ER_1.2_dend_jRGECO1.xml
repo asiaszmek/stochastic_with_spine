@@ -33,8 +33,8 @@
     <NanoMolarity specieID="STIM_2" value="15" />
     <NanoMolarity specieID="STIM_4" value="0.5" />
     
-    <NanoMolarity specieID="jRGECO1" value="9e2" />
-    <NanoMolarity specieID="Ca2jRGECO1" value="1e2" />
+    <NanoMolarity specieID="Dye" value="9e2" />
+    <NanoMolarity specieID="Ca2Dye" value="1e2" />
 
     <NanoMolarity specieID="RyR3CaMC2"      value="0"    />
   </ConcentrationSet>

@@ -18,7 +18,7 @@ def Parser():
                         help='input files')
     parser.add_argument('--t_init', default=5000, type=float,
                         help='Stimulation initiation in ms')
-    parser.add_argument('--specie', default='CaFluo4FF',
+    parser.add_argument('--specie', default='CaDye',
                         help='Dye-bound specie')
    
 

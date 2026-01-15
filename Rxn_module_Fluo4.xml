@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
-<ReactionScheme>
-  <Specie name="Fluro4" id="Fluo4" kdiff="83" kdiffunit="mu2/s" />
-  <Specie name="Fluro4Ca" id="Fluo4Ca" kdiff="83" kdiffunit="mu2/s" />
-  <Reaction name = "Fluo4_r" id="Fluo4_r">
+<ReactionScheme>1
+  <Specie name="Fluro4" id="Dye" kdiff="83" kdiffunit="mu2/s" />
+  <Specie name="Fluro4Ca" id="DyeCa" kdiff="83" kdiffunit="mu2/s" />
+  <Reaction name = "Dye_r" id="Dye_r">
     <Reactant specieID="Ca"/>
-    <Reactant specieID="Fluo4"/>
-    <Product specieID="Fluo4Ca"/>
+    <Reactant specieID="Dye"/>
+    <Product specieID="DyeCa"/>
 
     <forwardRate>60e-6</forwardRate>
     <reverseRate>17e-3</reverseRate>

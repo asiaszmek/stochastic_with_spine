@@ -74,7 +74,7 @@ def pico_sd(N, S):
     return 10 * N / S / NA
 
 
-def get_populations(my_file, trial='trial0', output='__main__'):
+def get_populations(my_file, trial='trial0', output='dye'):
     return np.array(my_file[trial]['output'][output]['population'])
 
 
@@ -104,7 +104,7 @@ def get_concentrations_region_list(my_file, my_list, trial, out, specie,
                                    spines=["_sa1[0]"]):
 
     grid_list = get_grid_list(my_file)
-    species = get_all_species(my_file)
+    species = get_all_species(my_file, output=out)
     idx = species.index(specie)
     idxs = sum_indices(my_file, my_list, spines)
     data = get_populations(my_file, trial=trial, output=out)
@@ -141,11 +141,11 @@ if __name__ == "__main__":
             print(key)
             spine = get_concentrations_region_list(my_file,["PSD",
                                                             "head", "neck"],
-                                                   key, "__main__",
+                                                   key, "dye",
                                                    specie)
         
             dend = get_concentrations_region_list(my_file,["dend06"],
-                                                  key, "__main__",
+                                                  key, "dye",
                                                   specie)
 
             data_dend.append(dend)
@@ -153,7 +153,7 @@ if __name__ == "__main__":
      
         
 
-        time = get_times(my_file, key, "__main__")  - t_init
+        time = get_times(my_file, key, "dye")  - t_init
 
         dt = time[1] - time[0]
         out_spine, min_len = get_fluo_sig(data_spine, t_init, dt)

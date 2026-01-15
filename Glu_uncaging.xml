@@ -1,0 +1,26 @@
+<StimulationSet>
+
+ <!-- no Ligand, because Glu uncaging-->
+
+  <!--Ca -->
+
+
+
+
+<InjectionStim specieID="Glu" injectionSite="sa1[0].pointA">
+  <onset>               5000          </onset>
+  <duration>        8         </duration>
+  <rate>         55            </rate>
+
+  <end>         5100           </end>
+</InjectionStim>
+
+<InjectionStim specieID="GluBuf" injectionSite="sa1[0].pointA">
+  <onset>               5010          </onset>
+  <duration>        1         </duration>
+  <rate>         440          </rate>
+
+  <end>         5100           </end>
+</InjectionStim>
+
+</StimulationSet>

@@ -35,8 +35,8 @@
     <NanoMolarity specieID="STIM_4" value="1.0" />
     <NanoMolarity specieID="LeakER" value="272" />
 
-    <NanoMolarity specieID="Dye" value="1e6" />
-    <NanoMolarity specieID="CaDye" value="680" />
+    <NanoMolarity specieID="Dye" value="998140" />
+    <NanoMolarity specieID="CaDye" value="1860" />
   </ConcentrationSet>
 
 

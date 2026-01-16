@@ -42,8 +42,8 @@
     <NanoMolarity specieID="IP5P" value="2001" />
 
 
-    <NanoMolarity specieID="Dye" value="1e6" />
-    <NanoMolarity specieID="CaDye" value="680" />
+    <NanoMolarity specieID="Dye" value="998140" />
+    <NanoMolarity specieID="CaDye" value="1860" />
     
   </ConcentrationSet>
 

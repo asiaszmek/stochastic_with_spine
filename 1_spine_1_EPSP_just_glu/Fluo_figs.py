@@ -20,6 +20,8 @@ def Parser():
                         help='Stimulation initiation in ms')
     parser.add_argument('--specie', default='CaDye',
                         help='Dye-bound specie')
+    parser.add_argument('--output', default='dye',
+                        help='Which output stream to use')
    
 
     return parser
@@ -113,19 +115,21 @@ def get_concentrations_region_list(my_file, my_list, trial, out, specie,
 
 
 def get_fluo_sig(signal, t_init, dt, interval=500, pre_basal=30, futile=2000):
+   
     min_len = min([len(dat) for dat in signal])
     out = np.array([data[:min_len] for data in signal]).mean(axis=0)
     basal = np.mean(out[int(futile/dt):int(t_init/dt)])
     out = (out-basal)/basal
-    repetitions  = len(out[t_init:-1])//interval
-    
-    res = np.reshape(out[t_init:t_init+repetitions*interval],
-                     (repetitions, interval)).mean(axis=0)
+    print(out.shape, dt)
+    repetitions  = len(out[int(t_init/dt):-1])//int(interval/dt)
+    print(repetitions, interval//dt)
+    res = np.reshape(out[int(t_init/dt):int((t_init+repetitions*interval)/dt)],
+                     (repetitions, int(interval/dt))).mean(axis=0)
     
     new_res = np.zeros((len(res)+int(pre_basal/dt)))
    
-    new_res[:int(pre_basal/dt)] = out[int((t_init)/dt)-int(pre_basal/dt):
-                                      int((t_init)/dt)]
+    new_res[:int(pre_basal/dt)] = out[int(t_init/dt)-int(pre_basal/dt):
+                                      int(t_init/dt)]
     new_res[int(pre_basal/dt):] = res
     return new_res
 
@@ -140,6 +144,7 @@ if __name__ == "__main__":
     specie = args.specie
     interval = 500
     pre_basal = 30
+    output = args.output
     for fname in fnames:
     
         data_spine = []
@@ -152,11 +157,11 @@ if __name__ == "__main__":
             print(key)
             spine = get_concentrations_region_list(my_file,["PSD",
                                                             "head", "neck"],
-                                                   key, "dye",
+                                                   key, output,
                                                    specie)
         
             dend = get_concentrations_region_list(my_file,["dend06"],
-                                                  key, "dye",
+                                                  key, output,
                                                   specie)
 
             data_dend.append(dend)
@@ -164,7 +169,7 @@ if __name__ == "__main__":
      
         
 
-        time = get_times(my_file, key, "dye")  - t_init
+        time = get_times(my_file, key, output)
 
         dt = time[1] - time[0]
         out_spine = get_fluo_sig(data_spine, t_init, dt, interval=interval,

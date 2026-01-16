@@ -4,275 +4,29 @@
     <onset>5000</onset>
     <duration>1</duration>
     <rate>40000</rate>
-    <end>5020</end>
+    <period>500</period>
+    <end>10020</end>
   </InjectionStim>
   <InjectionStim injectionSite="sa1[0].pointA" specieID="GluBuf">
     <onset>5010</onset>
     <duration>1</duration>
     <rate>40000</rate>
-    <end>5025</end>
+    <period>500</period>
+    <end>10025</end>
   </InjectionStim>
   <InjectionStim injectionSite="sa1[0].pointA" specieID="V">
     <onset>5000</onset>
-    <duration>10</duration>
+    <duration>15</duration>
     <rate>1</rate>
-    <end>5010</end>
+    <period>500</period>
+    <end>10010</end>
   </InjectionStim>
   <InjectionStim injectionSite="sa1[0].pointA" specieID="VBuf">
     <onset>5020</onset>
     <duration>1</duration>
-    <rate>10</rate>
-    <end>5025</end>
-  </InjectionStim>
-
-  <InjectionStim injectionSite="sa1[0].pointA" specieID="Glu">
-    <onset>5500</onset>
-    <duration>1</duration>
-    <rate>40000</rate>
-    <end>5520</end>
-  </InjectionStim>
-  <InjectionStim injectionSite="sa1[0].pointA" specieID="GluBuf">
-    <onset>5510</onset>
-    <duration>1</duration>
-    <rate>40000</rate>
-    <end>5525</end>
-  </InjectionStim>
-  <InjectionStim injectionSite="sa1[0].pointA" specieID="V">
-    <onset>5500</onset>
-    <duration>10</duration>
-    <rate>1</rate>
-    <end>5510</end>
-  </InjectionStim>
-  <InjectionStim injectionSite="sa1[0].pointA" specieID="VBuf">
-    <onset>5520</onset>
-    <duration>1</duration>
-    <rate>10</rate>
-    <end>5525</end>
-  </InjectionStim>
-
-    <InjectionStim injectionSite="sa1[0].pointA" specieID="Glu">
-    <onset>6000</onset>
-    <duration>1</duration>
-    <rate>40000</rate>
-    <end>6020</end>
-  </InjectionStim>
-  <InjectionStim injectionSite="sa1[0].pointA" specieID="GluBuf">
-    <onset>6010</onset>
-    <duration>1</duration>
-    <rate>40000</rate>
-    <end>6025</end>
-  </InjectionStim>
-  <InjectionStim injectionSite="sa1[0].pointA" specieID="V">
-    <onset>6000</onset>
-    <duration>10</duration>
-    <rate>1</rate>
-    <end>6010</end>
-  </InjectionStim>
-  <InjectionStim injectionSite="sa1[0].pointA" specieID="VBuf">
-    <onset>6020</onset>
-    <duration>1</duration>
-    <rate>10</rate>
-    <end>6025</end>
-  </InjectionStim>
-
-    <InjectionStim injectionSite="sa1[0].pointA" specieID="Glu">
-    <onset>6500</onset>
-    <duration>1</duration>
-    <rate>40000</rate>
-    <end>6520</end>
-  </InjectionStim>
-  <InjectionStim injectionSite="sa1[0].pointA" specieID="GluBuf">
-    <onset>6510</onset>
-    <duration>1</duration>
-    <rate>40000</rate>
-    <end>6525</end>
-  </InjectionStim>
-  <InjectionStim injectionSite="sa1[0].pointA" specieID="V">
-    <onset>6500</onset>
-    <duration>10</duration>
-    <rate>1</rate>
-    <end>6510</end>
-  </InjectionStim>
-  <InjectionStim injectionSite="sa1[0].pointA" specieID="VBuf">
-    <onset>6520</onset>
-    <duration>1</duration>
-    <rate>10</rate>
-    <end>6525</end>
-  </InjectionStim>
-
-    <InjectionStim injectionSite="sa1[0].pointA" specieID="Glu">
-    <onset>7000</onset>
-    <duration>1</duration>
-    <rate>40000</rate>
-    <end>7020</end>
-  </InjectionStim>
-  <InjectionStim injectionSite="sa1[0].pointA" specieID="GluBuf">
-    <onset>7010</onset>
-    <duration>1</duration>
-    <rate>40000</rate>
-    <end>7025</end>
-  </InjectionStim>
-  <InjectionStim injectionSite="sa1[0].pointA" specieID="V">
-    <onset>7000</onset>
-    <duration>10</duration>
-    <rate>1</rate>
-    <end>7010</end>
-  </InjectionStim>
-  <InjectionStim injectionSite="sa1[0].pointA" specieID="VBuf">
-    <onset>7020</onset>
-    <duration>1</duration>
-    <rate>10</rate>
-    <end>7025</end>
-  </InjectionStim>
-
-  <InjectionStim injectionSite="sa1[0].pointA" specieID="Glu">
-    <onset>7500</onset>
-    <duration>1</duration>
-    <rate>40000</rate>
-    <end>7520</end>
-  </InjectionStim>
-  <InjectionStim injectionSite="sa1[0].pointA" specieID="GluBuf">
-    <onset>7510</onset>
-    <duration>1</duration>
-    <rate>40000</rate>
-    <end>7525</end>
-  </InjectionStim>
-  <InjectionStim injectionSite="sa1[0].pointA" specieID="V">
-    <onset>7500</onset>
-    <duration>10</duration>
-    <rate>1</rate>
-    <end>7510</end>
-  </InjectionStim>
-  <InjectionStim injectionSite="sa1[0].pointA" specieID="VBuf">
-    <onset>7520</onset>
-    <duration>1</duration>
-    <rate>10</rate>
-    <end>7525</end>
-  </InjectionStim>
-
-    <InjectionStim injectionSite="sa1[0].pointA" specieID="Glu">
-    <onset>8000</onset>
-    <duration>1</duration>
-    <rate>40000</rate>
-    <end>8020</end>
-  </InjectionStim>
-  <InjectionStim injectionSite="sa1[0].pointA" specieID="GluBuf">
-    <onset>8010</onset>
-    <duration>1</duration>
-    <rate>40000</rate>
-    <end>8025</end>
-  </InjectionStim>
-  <InjectionStim injectionSite="sa1[0].pointA" specieID="V">
-    <onset>8000</onset>
-    <duration>10</duration>
-    <rate>1</rate>
-    <end>8010</end>
-  </InjectionStim>
-  <InjectionStim injectionSite="sa1[0].pointA" specieID="VBuf">
-    <onset>8020</onset>
-    <duration>1</duration>
-    <rate>10</rate>
-    <end>8025</end>
-  </InjectionStim>
-
-    <InjectionStim injectionSite="sa1[0].pointA" specieID="Glu">
-    <onset>8500</onset>
-    <duration>1</duration>
-    <rate>40000</rate>
-    <end>8520</end>
-  </InjectionStim>
-  <InjectionStim injectionSite="sa1[0].pointA" specieID="GluBuf">
-    <onset>8510</onset>
-    <duration>1</duration>
-    <rate>40000</rate>
-    <end>8525</end>
-  </InjectionStim>
-  <InjectionStim injectionSite="sa1[0].pointA" specieID="V">
-    <onset>8500</onset>
-    <duration>10</duration>
-    <rate>1</rate>
-    <end>8510</end>
-  </InjectionStim>
-  <InjectionStim injectionSite="sa1[0].pointA" specieID="VBuf">
-    <onset>8520</onset>
-    <duration>1</duration>
-    <rate>10</rate>
-    <end>8525</end>
-  </InjectionStim>
-  <InjectionStim injectionSite="sa1[0].pointA" specieID="Glu">
-    <onset>9000</onset>
-    <duration>1</duration>
-    <rate>40000</rate>
-    <end>9020</end>
-  </InjectionStim>
-  <InjectionStim injectionSite="sa1[0].pointA" specieID="GluBuf">
-    <onset>9010</onset>
-    <duration>1</duration>
-    <rate>40000</rate>
-    <end>9025</end>
-  </InjectionStim>
-  <InjectionStim injectionSite="sa1[0].pointA" specieID="V">
-    <onset>9000</onset>
-    <duration>10</duration>
-    <rate>1</rate>
-    <end>9010</end>
-  </InjectionStim>
-  <InjectionStim injectionSite="sa1[0].pointA" specieID="VBuf">
-    <onset>9020</onset>
-    <duration>1</duration>
-    <rate>10</rate>
-    <end>9025</end>
-  </InjectionStim>
-
-    <InjectionStim injectionSite="sa1[0].pointA" specieID="Glu">
-    <onset>9500</onset>
-    <duration>1</duration>
-    <rate>40000</rate>
-    <end>9520</end>
-  </InjectionStim>
-  <InjectionStim injectionSite="sa1[0].pointA" specieID="GluBuf">
-    <onset>9510</onset>
-    <duration>1</duration>
-    <rate>40000</rate>
-    <end>9525</end>
-  </InjectionStim>
-  <InjectionStim injectionSite="sa1[0].pointA" specieID="V">
-    <onset>9500</onset>
-    <duration>10</duration>
-    <rate>1</rate>
-    <end>9510</end>
-  </InjectionStim>
-  <InjectionStim injectionSite="sa1[0].pointA" specieID="VBuf">
-    <onset>9520</onset>
-    <duration>1</duration>
-    <rate>10</rate>
-    <end>9525</end>
-  </InjectionStim>
-
-  <InjectionStim injectionSite="sa1[0].pointA" specieID="Glu">
-    <onset>10000</onset>
-    <duration>1</duration>
-    <rate>40000</rate>
-    <end>10020</end>
-  </InjectionStim>
-  <InjectionStim injectionSite="sa1[0].pointA" specieID="GluBuf">
-    <onset>10010</onset>
-    <duration>1</duration>
-    <rate>40000</rate>
-    <end>10025</end>
-  </InjectionStim>
-  <InjectionStim injectionSite="sa1[0].pointA" specieID="V">
-    <onset>10000</onset>
-    <duration>10</duration>
-    <rate>1</rate>
-    <end>10010</end>
-  </InjectionStim>
-  <InjectionStim injectionSite="sa1[0].pointA" specieID="VBuf">
-    <onset>10020</onset>
-    <duration>1</duration>
-    <rate>10</rate>
+    <rate>15</rate>
+    <period>500</period>
     <end>10025</end>
   </InjectionStim>
 
-  
 </StimulationSet>

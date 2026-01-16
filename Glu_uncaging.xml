@@ -1,26 +1,113 @@
 <StimulationSet>
+  <!-- Mimicks relieving the Mg block-->
+ <InjectionStim injectionSite="sa1[0].pointA" specieID="V">
+    <onset>1</onset>
+    <duration>1</duration>
+    <rate>15</rate>
+    <end>10</end>
+  </InjectionStim>
 
- <!-- no Ligand, because Glu uncaging-->
-
+  <InjectionStim injectionSite="sa1[0].pointA" specieID="Glu">
+    <onset>5000</onset>
+    <duration>1</duration>
+    <rate>40000</rate>
+    <period>1000</period>
+    <end>16020</end>
+  </InjectionStim>
+  <InjectionStim injectionSite="sa1[0].pointA" specieID="GluBuf">
+    <onset>5010</onset>
+    <duration>1</duration>
+    <rate>40000</rate>
+    <period>1000</period>
+    <end>16025</end>
+  </InjectionStim>
   <!--Ca -->
+  <InjectionStim injectionSite="sa1[0].pointA" specieID="CaCbuf">
+    <onset>5000</onset>
+    <duration>15</duration>
+    <rate>1</rate>
+    <period>1000</period>
+    <end>16010</end>
+  </InjectionStim>
 
+  <InjectionStim injectionSite="dend01:submembrane" specieID="CaCbuf">
+    <onset>5000</onset>
+    <duration>15</duration>
+    <rate>1</rate>
+    <period>1000</period>
+    <end>16010</end>
+  </InjectionStim>
 
+  <InjectionStim injectionSite="dend02:submembrane" specieID="CaCbuf">
+    <onset>5000</onset>
+    <duration>15</duration>
+    <rate>1</rate>
+    <period>1000</period>
+    <end>16010</end>
+  </InjectionStim>
 
-
-<InjectionStim specieID="Glu" injectionSite="sa1[0].pointA">
-  <onset>               5000          </onset>
-  <duration>        8         </duration>
-  <rate>         55            </rate>
-
-  <end>         5100           </end>
-</InjectionStim>
-
-<InjectionStim specieID="GluBuf" injectionSite="sa1[0].pointA">
-  <onset>               5010          </onset>
-  <duration>        1         </duration>
-  <rate>         440          </rate>
-
-  <end>         5100           </end>
-</InjectionStim>
+  <InjectionStim injectionSite="dend03:submembrane" specieID="CaCbuf">
+    <onset>5000</onset>
+    <duration>15</duration>
+    <rate>1</rate>
+    <period>1000</period>
+    <end>16010</end>
+  </InjectionStim>
+  <InjectionStim injectionSite="dend04:submembrane" specieID="CaCbuf">
+    <onset>5000</onset>
+    <duration>15</duration>
+    <rate>1</rate>
+    <period>1000</period>
+    <end>16010</end>
+  </InjectionStim>
+  <InjectionStim injectionSite="dend05:submembrane" specieID="CaCbuf">
+    <onset>5000</onset>
+    <duration>15</duration>
+    <rate>1</rate>
+    <period>1000</period>
+    <end>16010</end>
+  </InjectionStim>
+  <InjectionStim injectionSite="dend06:submembrane" specieID="CaCbuf">
+    <onset>5000</onset>
+    <duration>15</duration>
+    <rate>1</rate>
+    <period>1000</period>
+    <end>16010</end>
+  </InjectionStim>
+  <InjectionStim injectionSite="dend07:submembrane" specieID="CaCbuf">
+    <onset>5000</onset>
+    <duration>15</duration>
+    <rate>1</rate>
+    <period>1000</period>
+    <end>16010</end>
+  </InjectionStim>
+  <InjectionStim injectionSite="dend08:submembrane" specieID="CaCbuf">
+    <onset>5000</onset>
+    <duration>15</duration>
+    <rate>1</rate>
+    <period>1000</period>
+    <end>16010</end>
+  </InjectionStim>
+  <InjectionStim injectionSite="dend09:submembrane" specieID="CaCbuf">
+    <onset>5000</onset>
+    <duration>15</duration>
+    <rate>1</rate>
+    <period>1000</period>
+    <end>16010</end>
+  </InjectionStim>
+  <InjectionStim injectionSite="dend10:submembrane" specieID="CaCbuf">
+    <onset>5000</onset>
+    <duration>15</duration>
+    <rate>1</rate>
+    <period>1000</period>
+    <end>16010</end>
+  </InjectionStim>
+  <InjectionStim injectionSite="dend11:submembrane" specieID="CaCbuf">
+    <onset>5000</onset>
+    <duration>15</duration>
+    <rate>1</rate>
+    <period>1000</period>
+    <end>16010</end>
+  </InjectionStim>
 
 </StimulationSet>

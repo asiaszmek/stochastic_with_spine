@@ -1,12 +1,12 @@
-<ReactionScheme><Specie name="Ca" id="Ca" kdiff="100" kdiffunit="mu2/s"/>
+<ReactionScheme><Specie name="Ca" id="Ca" kdiff="223" kdiffunit="mu2/s"/>
   <Specie name="CaOut" id="CaOut" kdiff="10" kdiffunit="mu2/s"/>
   <Specie name="CaOutLeak" id="CaOutLeak" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Leak" id="Leak" kdiff="0" kdiffunit="mu2/s"/>
 
   <Specie name="fixedbuffer" id="fixedbuffer" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="fixedbufferCa" id="fixedbufferCa" kdiff="0" kdiffunit="mu2/s"/>
-  <Specie name="Calbin" id="Calbin" kdiff="9.3" kdiffunit="mu2/s"/>
-  <Specie name="CalbinC" id="CalbinC" kdiff="9.3" kdiffunit="mu2/s"/>
+  <Specie name="Calbin" id="Calbin" kdiff="20" kdiffunit="mu2/s"/>
+  <Specie name="CalbinC" id="CalbinC" kdiff="20" kdiffunit="mu2/s"/>
   
  
   <Specie name="ncx" id="ncx" kdiff="0" kdiffunit="mu2/s"/>

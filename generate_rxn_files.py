@@ -89,51 +89,64 @@ flist_ER_spine_stim_old_age = flist_ER_spine_basal_old_age + ["Rxn_module_CaCbuf
 flist_no_ER_spine_stim_old_age = flist_no_ER_spine_basal_old_age + ["Rxn_module_CaCbuf.xml"]
 
 
-flist_ER_spine_stim_Fluo4FF = flist_ER_spine_basal + [
+flist_ER_spine_stim_Fluo4FF = flist_ER_spine_stim + [
     "Rxn_module_Fluo4FF.xml",
     ]
 
-flist_ER_spine_stim_Fluo4FF_IP3 = flist_ER_spine_basal + [
+flist_ER_spine_stim_Fluo4FF_IP3 = flist_ER_spine_stim + [
     "Rxn_module_Fluo4FF.xml", "Rxn_module_mGLuR.xml", "Rxn_module_IP3R.xml"]
 
-flist_no_ER_spine_stim_Fluo4FF = flist_no_ER_spine_basal + [
+flist_no_ER_spine_stim_Fluo4FF = flist_no_ER_spine_stim + [
      "Rxn_module_Fluo4FF.xml"]
 
-flist_no_ER_spine_stim_Fluo4FF_IP3 = flist_no_ER_spine_basal + [
+flist_no_ER_spine_stim_Fluo4FF_IP3 = flist_no_ER_spine_stim + [
     "Rxn_module_Fluo4FF.xml", "Rxn_module_mGLuR.xml", "Rxn_module_IP3R.xml"]
 
-flist_ER_spine_stim_OGB5N = flist_ER_spine_basal + [
+flist_ER_spine_stim_OGB5N = flist_ER_spine_stim + [
     "Rxn_module_OGB5N.xml",
     ]
 
-flist_ER_spine_stim_OGB5N_IP3 = flist_ER_spine_basal + [
+flist_ER_spine_stim_OGB5N_IP3 = flist_ER_spine_stim + [
     "Rxn_module_OGB5N.xml", "Rxn_module_mGLuR.xml", "Rxn_module_IP3R.xml"]
 
-flist_no_ER_spine_stim_OGB5N = flist_no_ER_spine_basal + [
+flist_no_ER_spine_stim_OGB5N = flist_no_ER_spine_stim + [
      "Rxn_module_OGB5N.xml"]
 
-flist_no_ER_spine_stim_OGB5N_IP3 = flist_no_ER_spine_basal + [
+flist_no_ER_spine_stim_OGB5N_IP3 = flist_no_ER_spine_stim + [
     "Rxn_module_OGB5N.xml", "Rxn_module_mGLuR.xml", "Rxn_module_IP3R.xml"]
 
 
-flist_ER_spine_stim_jRGECO1 = flist_ER_spine_basal + [
+flist_ER_spine_stim_jRGECO1 = flist_ER_spine_stim + [
     "Rxn_module_jRGECO1.xml",
     ]
 
-flist_no_ER_spine_stim_jRGECO1 = flist_no_ER_spine_basal + [
+flist_no_ER_spine_stim_jRGECO1 = flist_no_ER_spine_stim + [
      "Rxn_module_jRGECO1.xml"]
 
 
-flist_ER_spine_stim_Fluo4FF_old_age = flist_ER_spine_basal_old_age + ["Rxn_module_CaCbuf.xml",
+flist_ER_spine_stim_Fluo4FF_old_age = flist_ER_spine_stim_old_age + ["Rxn_module_CaCbuf.xml",
     "Rxn_module_Fluo4FF.xml",
     ]
-flist_no_ER_spine_stim_Fluo4FF_old_age = flist_no_ER_spine_basal_old_age + [
+flist_no_ER_spine_stim_Fluo4FF_old_age = flist_no_ER_spine_stim_old_age + [
     "Rxn_module_CaCbuf.xml", "Rxn_module_Fluo4FF.xml"]
 
 flist_small_neck_RyR3 = [
     "Rxn_module_RyR3_CaM_no_release.xml",
     "Rxn_module_Ca.xml",
     ]
+
+flist_ER_spine_stim_Fluo5F = flist_ER_spine_stim + [
+    "Rxn_module_Fluo5F.xml",
+    ]
+
+flist_ER_spine_stim_Fluo5F_IP3 = flist_ER_spine_stim + [
+    "Rxn_module_Fluo5F.xml", "Rxn_module_mGLuR.xml", "Rxn_module_IP3R.xml"]
+
+flist_no_ER_spine_stim_Fluo5F = flist_no_ER_spine_stim + [
+     "Rxn_module_Fluo5F.xml"]
+
+flist_no_ER_spine_stim_Fluo5F_IP3 = flist_no_ER_spine_stim + [
+    "Rxn_module_Fluo5F.xml", "Rxn_module_mGLuR.xml", "Rxn_module_IP3R.xml"]
 
 
 if __name__ == "__main__":
@@ -167,6 +180,7 @@ if __name__ == "__main__":
     with  open("Rxn_spine_ER_IP3.xml", "w") as f:
         f.write(etree.tostring(my_rxn_f, pretty_print=True).decode("utf-8"))
     my_rxn_f = read_in_files(flist_no_ER_spine_stim_Fluo4FF)
+
     with  open("Rxn_no_spine_ER_Fluo4FF.xml", "w") as f:
         f.write(etree.tostring(my_rxn_f, pretty_print=True).decode("utf-8"))
     my_rxn_f1 = read_in_files(flist_ER_spine_stim_Fluo4FF)
@@ -191,11 +205,42 @@ if __name__ == "__main__":
         f.write(etree.tostring(my_rxn_f, pretty_print=True).decode("utf-8"))
     my_rxn_f1 = read_in_files(flist_ER_spine_stim_OGB5N_IP3)
     with  open("Rxn_spine_ER_IP3_OGB5N.xml", "w") as f1:
-        f1.write(etree.tostring(my_rxn_f1, pretty_print=True).decode("utf-8"))    
+        f1.write(etree.tostring(my_rxn_f1, pretty_print=True).decode("utf-8"))
+
+    with  open("Rxn_no_spine_ER_OGB5N.xml", "w") as f:
+        f.write(etree.tostring(my_rxn_f, pretty_print=True).decode("utf-8"))
+    my_rxn_f1 = read_in_files(flist_ER_spine_stim_OGB5N)
+    with  open("Rxn_spine_ER_OGB5N.xml", "w") as f1:
+        f1.write(etree.tostring(my_rxn_f1, pretty_print=True).decode("utf-8"))
+
+    my_rxn_f = read_in_files(flist_no_ER_spine_stim_OGB5N_IP3)
+    with  open("Rxn_no_spine_ER_IP3_OGB5N.xml", "w") as f:
+        f.write(etree.tostring(my_rxn_f, pretty_print=True).decode("utf-8"))
+    my_rxn_f1 = read_in_files(flist_ER_spine_stim_OGB5N_IP3)
+    with  open("Rxn_spine_ER_IP3_OGB5N.xml", "w") as f1:
+        f1.write(etree.tostring(my_rxn_f1, pretty_print=True).decode("utf-8"))  
+
+    with  open("Rxn_no_spine_ER_Fluo5F.xml", "w") as f:
+        f.write(etree.tostring(my_rxn_f, pretty_print=True).decode("utf-8"))
+    my_rxn_f1 = read_in_files(flist_ER_spine_stim_Fluo5F)
+    with  open("Rxn_spine_ER_Fluo5F.xml", "w") as f1:
+        f1.write(etree.tostring(my_rxn_f1, pretty_print=True).decode("utf-8"))
+
+    my_rxn_f = read_in_files(flist_no_ER_spine_stim_Fluo5F_IP3)
+    with  open("Rxn_no_spine_ER_IP3_Fluo5F.xml", "w") as f:
+        f.write(etree.tostring(my_rxn_f, pretty_print=True).decode("utf-8"))
+    my_rxn_f1 = read_in_files(flist_ER_spine_stim_Fluo5F_IP3)
+    with  open("Rxn_spine_ER_IP3_Fluo5F.xml", "w") as f1:
+        f1.write(etree.tostring(my_rxn_f1, pretty_print=True).decode("utf-8"))  
 
     my_rxn_f = read_in_files(flist_no_ER_spine_stim_jRGECO1)
+    with  open("Rxn_no_spine_ER_jRGECO1.xml", "w") as f:
+        f.write(etree.tostring(my_rxn_f, pretty_print=True).decode("utf-8"))
+
+    my_rxn_f = read_in_files(flist_ER_spine_stim_jRGECO1)
     with  open("Rxn_spine_ER_jRGECO1.xml", "w") as f:
         f.write(etree.tostring(my_rxn_f, pretty_print=True).decode("utf-8"))
+
     # my_rxn_f1 = read_in_files(flist_small_neck_RyR3)
     # with  open("Rxn_small_neck.xml", "w") as f1:
     #     f1.write(etree.tostring(my_rxn_f1, pretty_print=True).decode("utf-8"))

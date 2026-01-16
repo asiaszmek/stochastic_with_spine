@@ -1,13 +1,14 @@
 <?xml version="1.0"?>
+<!--https://doi.org/10.1523/ENEURO.0343-19.2019 -->
 <ReactionScheme>1
-  <Specie name="Fluro4" id="Dye" kdiff="83" kdiffunit="mu2/s" />
-  <Specie name="Fluro4Ca" id="DyeCa" kdiff="83" kdiffunit="mu2/s" />
+  <Specie name="Fluro4" id="Dye" kdiff="75" kdiffunit="mu2/s" />
+  <Specie name="Fluro4Ca" id="DyeCa" kdiff="75" kdiffunit="mu2/s" />
   <Reaction name = "Dye_r" id="Dye_r">
     <Reactant specieID="Ca"/>
     <Reactant specieID="Dye"/>
     <Product specieID="DyeCa"/>
 
-    <forwardRate>60e-6</forwardRate>
-    <reverseRate>17e-3</reverseRate>
+    <forwardRate>5e-4</forwardRate>
+    <reverseRate>221e-3</reverseRate>
   </Reaction>
 </ReactionScheme>

@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!-- -->
+<ReactionScheme>
+  <!-- diffusion Kong CHT, Laver DR, Cannell MB (2013) Extraction of sub-
+microscopic Ca fluxes from blurred and noisy fluorescent indicator
+images with a detailed model fitting approach. PLoS Comput Biol
+9:e1002931. -->
+   <Specie name="Dye" id="Dye" kdiff="75" kdiffunit="mu2/s"/>
+  <Specie name="CaDye" id="CaDye" kdiff="75" kdiffunit="mu2/s"/>
+<!-- https://doi.org/10.1523/ENEURO.0343-19.2019 -->
+  <Reaction name = "CaDye_buffer" id="CaDye_buffer">
+    <Reactant specieID="Ca"/>
+    <Reactant specieID="Dye"/>
+    <Product specieID="CaDye"/>
+
+    <forwardRate>5e-4</forwardRate>
+    <reverseRate>0.75</reverseRate>
+    <Q10>0.2</Q10>
+  </Reaction>
+</ReactionScheme>

@@ -112,13 +112,22 @@ def get_concentrations_region_list(my_file, my_list, trial, out, specie,
     return numbers
 
 
-def get_fluo_sig(signal, t_init, dt):
+def get_fluo_sig(signal, t_init, dt, interval=500, pre_basal=30, futile=2000):
     min_len = min([len(dat) for dat in signal])
     out = np.array([data[:min_len] for data in signal]).mean(axis=0)
-    basal = np.mean(out[int(1000/dt):int(t_init/dt)])
+    basal = np.mean(out[int(futile/dt):int(t_init/dt)])
     out = (out-basal)/basal
-    return out, min_len
-
+    repetitions  = len(out[t_init:-1])//interval
+    
+    res = np.reshape(out[t_init:t_init+repetitions*interval],
+                     (repetitions, interval)).mean(axis=0)
+    
+    new_res = np.zeros((len(res)+int(pre_basal/dt)))
+   
+    new_res[:int(pre_basal/dt)] = out[int((t_init)/dt)-int(pre_basal/dt):
+                                      int((t_init)/dt)]
+    new_res[int(pre_basal/dt):] = res
+    return new_res
 
 if __name__ == "__main__":
     fnames = []
@@ -129,6 +138,8 @@ if __name__ == "__main__":
         sys.exit('Do specify at least one totals filename')
     t_init = args.t_init
     specie = args.specie
+    interval = 500
+    pre_basal = 30
     for fname in fnames:
     
         data_spine = []
@@ -156,12 +167,15 @@ if __name__ == "__main__":
         time = get_times(my_file, key, "dye")  - t_init
 
         dt = time[1] - time[0]
-        out_spine, min_len = get_fluo_sig(data_spine, t_init, dt)
-        out_dend, min_len = get_fluo_sig(data_dend, t_init, dt)
+        out_spine = get_fluo_sig(data_spine, t_init, dt, interval=interval,
+                                 pre_basal=pre_basal)
+        out_dend = get_fluo_sig(data_dend, t_init, dt, interval=interval,
+                                 pre_basal=pre_basal)
+        time = np.linspace(-pre_basal, interval, len(out_spine))
         fig, ax = plt.subplots(1, 1, figsize=(5, 5))
       
-        ax.plot(time[:min_len]/1000, out_spine*100, "tab:green", label="Spine")
-        ax.plot(time[:min_len]/1000, out_dend*100, "tab:blue",
+        ax.plot(time, out_spine*100, "tab:green", label="Spine")
+        ax.plot(time, out_dend*100, "tab:blue",
                 label="Dendrite")
         ax.set_xlabel("time (s)", fontsize=15)
         ax.set_ylabel("Relative fluorescence change", fontsize=15)

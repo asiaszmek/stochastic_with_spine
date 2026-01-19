@@ -276,7 +276,6 @@ def save_single_file(times, concentrations, species, fname):
 
 def save_concentrations(my_file, fname_base, output, trial='trial0'):
     specialized_output = get_output_regions(my_file)
-    print(specialized_output)
     regions = get_regions(my_file)
     times = get_times(my_file, trial=trial, output=output)
     species = get_all_species(my_file, output=output)
@@ -285,7 +284,6 @@ def save_concentrations(my_file, fname_base, output, trial='trial0'):
     else:
         add = output + '_'
     spines_dict = get_spines(regions)
-    print(output)
 
     if output not in specialized_output or specialized_output[output] is None:
         concentrations = get_concentrations(my_file, trial, output)

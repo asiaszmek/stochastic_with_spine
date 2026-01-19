@@ -45,6 +45,11 @@ if __name__ == '__main__':
                                               trial=trial)
                 except KeyError:
                     pass
+                try:
+                    utils.save_concentrations(my_file, fname[:-3], 'dye',
+                                              trial=trial)
+                except KeyError:
+                    pass
 
                 
                 try:

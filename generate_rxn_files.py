@@ -179,8 +179,8 @@ if __name__ == "__main__":
     my_rxn_f = read_in_files(flist_ER_spine_stim_IP3)
     with  open("Rxn_spine_ER_IP3.xml", "w") as f:
         f.write(etree.tostring(my_rxn_f, pretty_print=True).decode("utf-8"))
-    my_rxn_f = read_in_files(flist_no_ER_spine_stim_Fluo4FF)
 
+    my_rxn_f = read_in_files(flist_no_ER_spine_stim_Fluo4FF)
     with  open("Rxn_no_spine_ER_Fluo4FF.xml", "w") as f:
         f.write(etree.tostring(my_rxn_f, pretty_print=True).decode("utf-8"))
     my_rxn_f1 = read_in_files(flist_ER_spine_stim_Fluo4FF)
@@ -192,8 +192,10 @@ if __name__ == "__main__":
         f.write(etree.tostring(my_rxn_f, pretty_print=True).decode("utf-8"))
     my_rxn_f1 = read_in_files(flist_ER_spine_stim_Fluo4FF_IP3)
     with  open("Rxn_spine_ER_IP3_Fluo4FF.xml", "w") as f1:
-        f1.write(etree.tostring(my_rxn_f1, pretty_print=True).decode("utf-8"))    
+        f1.write(etree.tostring(my_rxn_f1,
+                                pretty_print=True).decode("utf-8"))
 
+    my_rxn_f1 = read_in_files(flist_no_ER_spine_stim_OGB5N)
     with  open("Rxn_no_spine_ER_OGB5N.xml", "w") as f:
         f.write(etree.tostring(my_rxn_f, pretty_print=True).decode("utf-8"))
     my_rxn_f1 = read_in_files(flist_ER_spine_stim_OGB5N)
@@ -207,19 +209,7 @@ if __name__ == "__main__":
     with  open("Rxn_spine_ER_IP3_OGB5N.xml", "w") as f1:
         f1.write(etree.tostring(my_rxn_f1, pretty_print=True).decode("utf-8"))
 
-    with  open("Rxn_no_spine_ER_OGB5N.xml", "w") as f:
-        f.write(etree.tostring(my_rxn_f, pretty_print=True).decode("utf-8"))
-    my_rxn_f1 = read_in_files(flist_ER_spine_stim_OGB5N)
-    with  open("Rxn_spine_ER_OGB5N.xml", "w") as f1:
-        f1.write(etree.tostring(my_rxn_f1, pretty_print=True).decode("utf-8"))
-
-    my_rxn_f = read_in_files(flist_no_ER_spine_stim_OGB5N_IP3)
-    with  open("Rxn_no_spine_ER_IP3_OGB5N.xml", "w") as f:
-        f.write(etree.tostring(my_rxn_f, pretty_print=True).decode("utf-8"))
-    my_rxn_f1 = read_in_files(flist_ER_spine_stim_OGB5N_IP3)
-    with  open("Rxn_spine_ER_IP3_OGB5N.xml", "w") as f1:
-        f1.write(etree.tostring(my_rxn_f1, pretty_print=True).decode("utf-8"))  
-
+    my_rxn_f = read_in_files(flist_no_ER_spine_stim_Fluo5F)
     with  open("Rxn_no_spine_ER_Fluo5F.xml", "w") as f:
         f.write(etree.tostring(my_rxn_f, pretty_print=True).decode("utf-8"))
     my_rxn_f1 = read_in_files(flist_ER_spine_stim_Fluo5F)

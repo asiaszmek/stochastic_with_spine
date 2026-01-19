@@ -601,8 +601,8 @@
     <Reactant specieID="Dye"/>
     <Product specieID="CaDye"/>
 
-    <forwardRate>0.000875</forwardRate>
-    <reverseRate>33.2</reverseRate>
+    <forwardRate>3e-4</forwardRate>
+    <reverseRate>4.98</reverseRate>
     <Q10>0.2</Q10>
   </Reaction>
 <Specie name="MgluR" id="MgluR" kdiff="0" kdiffunit="mu2/s"/>

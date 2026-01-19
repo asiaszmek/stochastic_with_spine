@@ -3,7 +3,7 @@
 <InitialConditions>
   <ConcentrationSet>
     <NanoMolarity specieID="GluOut" value="5000000"/>
-    <NanoMolarity specieID="Glu" value="0"/>
+    <NanoMolarity specieID="Glu" value="25"/>
     <NanoMolarity specieID="Ca" value="55"/>
     <NanoMolarity specieID="CaOut" value="2000000"/>
     <NanoMolarity specieID="fixedbuffer" value=" 1997646"/>
@@ -27,10 +27,7 @@
     <NanoMolarity specieID="Cyt_SERCA" value="2450" />
     <NanoMolarity specieID="Cyt_SERCA_Ca" value="300" />
     <NanoMolarity specieID="Cyt_SERCA_Ca2" value="30" />
- 
-    <!-- <NanoMolarity specieID="LeakER" value="187.5" /> -->
-    <!-- <NanoMolarity specieID="LeakER" value="281.5" /> -->
-    
+
     <NanoMolarity specieID="LeakER" value="234" />
  
     <NanoMolarity specieID="STIM_2CaER" value="375" />

@@ -157,12 +157,15 @@ if __name__ == "__main__":
     my_rxn_f = read_in_files(flist_no_ER_spine_basal)
     with  open("Rxn_no_spine_ER_bas.xml", "w") as f:
         f.write(etree.tostring(my_rxn_f, pretty_print=True).decode("utf-8"))
+
     my_rxn_f = read_in_files(flist_no_ER_spine_basal_IP3)
     with  open("Rxn_no_spine_ER_IP3_bas.xml", "w") as f:
         f.write(etree.tostring(my_rxn_f, pretty_print=True).decode("utf-8"))
+
     my_rxn_f = read_in_files(flist_ER_spine_basal)
     with  open("Rxn_spine_ER_bas.xml", "w") as f:
         f.write(etree.tostring(my_rxn_f, pretty_print=True).decode("utf-8"))
+
     my_rxn_f = read_in_files(flist_ER_spine_basal_IP3)
     with  open("Rxn_spine_ER_IP3_bas.xml", "w") as f:
         f.write(etree.tostring(my_rxn_f, pretty_print=True).decode("utf-8"))
@@ -170,12 +173,15 @@ if __name__ == "__main__":
     my_rxn_f = read_in_files(flist_no_ER_spine_stim)
     with  open("Rxn_no_spine_ER.xml", "w") as f:
         f.write(etree.tostring(my_rxn_f, pretty_print=True).decode("utf-8"))
+
     my_rxn_f = read_in_files(flist_ER_spine_stim)
     with  open("Rxn_spine_ER.xml", "w") as f:
         f.write(etree.tostring(my_rxn_f, pretty_print=True).decode("utf-8"))
+
     my_rxn_f = read_in_files(flist_no_ER_spine_stim_IP3)
     with  open("Rxn_no_spine_ER_IP3.xml", "w") as f:
         f.write(etree.tostring(my_rxn_f, pretty_print=True).decode("utf-8"))
+
     my_rxn_f = read_in_files(flist_ER_spine_stim_IP3)
     with  open("Rxn_spine_ER_IP3.xml", "w") as f:
         f.write(etree.tostring(my_rxn_f, pretty_print=True).decode("utf-8"))
@@ -183,6 +189,7 @@ if __name__ == "__main__":
     my_rxn_f = read_in_files(flist_no_ER_spine_stim_Fluo4FF)
     with  open("Rxn_no_spine_ER_Fluo4FF.xml", "w") as f:
         f.write(etree.tostring(my_rxn_f, pretty_print=True).decode("utf-8"))
+
     my_rxn_f1 = read_in_files(flist_ER_spine_stim_Fluo4FF)
     with  open("Rxn_spine_ER_Fluo4FF.xml", "w") as f1:
         f1.write(etree.tostring(my_rxn_f1, pretty_print=True).decode("utf-8"))
@@ -190,6 +197,7 @@ if __name__ == "__main__":
     my_rxn_f = read_in_files(flist_no_ER_spine_stim_Fluo4FF_IP3)
     with  open("Rxn_no_spine_ER_IP3_Fluo4FF.xml", "w") as f:
         f.write(etree.tostring(my_rxn_f, pretty_print=True).decode("utf-8"))
+
     my_rxn_f1 = read_in_files(flist_ER_spine_stim_Fluo4FF_IP3)
     with  open("Rxn_spine_ER_IP3_Fluo4FF.xml", "w") as f1:
         f1.write(etree.tostring(my_rxn_f1,
@@ -197,7 +205,8 @@ if __name__ == "__main__":
 
     my_rxn_f1 = read_in_files(flist_no_ER_spine_stim_OGB5N)
     with  open("Rxn_no_spine_ER_OGB5N.xml", "w") as f:
-        f.write(etree.tostring(my_rxn_f, pretty_print=True).decode("utf-8"))
+        f.write(etree.tostring(my_rxn_f1, pretty_print=True).decode("utf-8"))
+
     my_rxn_f1 = read_in_files(flist_ER_spine_stim_OGB5N)
     with  open("Rxn_spine_ER_OGB5N.xml", "w") as f1:
         f1.write(etree.tostring(my_rxn_f1, pretty_print=True).decode("utf-8"))
@@ -205,6 +214,7 @@ if __name__ == "__main__":
     my_rxn_f = read_in_files(flist_no_ER_spine_stim_OGB5N_IP3)
     with  open("Rxn_no_spine_ER_IP3_OGB5N.xml", "w") as f:
         f.write(etree.tostring(my_rxn_f, pretty_print=True).decode("utf-8"))
+
     my_rxn_f1 = read_in_files(flist_ER_spine_stim_OGB5N_IP3)
     with  open("Rxn_spine_ER_IP3_OGB5N.xml", "w") as f1:
         f1.write(etree.tostring(my_rxn_f1, pretty_print=True).decode("utf-8"))
@@ -212,6 +222,7 @@ if __name__ == "__main__":
     my_rxn_f = read_in_files(flist_no_ER_spine_stim_Fluo5F)
     with  open("Rxn_no_spine_ER_Fluo5F.xml", "w") as f:
         f.write(etree.tostring(my_rxn_f, pretty_print=True).decode("utf-8"))
+
     my_rxn_f1 = read_in_files(flist_ER_spine_stim_Fluo5F)
     with  open("Rxn_spine_ER_Fluo5F.xml", "w") as f1:
         f1.write(etree.tostring(my_rxn_f1, pretty_print=True).decode("utf-8"))
@@ -219,6 +230,7 @@ if __name__ == "__main__":
     my_rxn_f = read_in_files(flist_no_ER_spine_stim_Fluo5F_IP3)
     with  open("Rxn_no_spine_ER_IP3_Fluo5F.xml", "w") as f:
         f.write(etree.tostring(my_rxn_f, pretty_print=True).decode("utf-8"))
+
     my_rxn_f1 = read_in_files(flist_ER_spine_stim_Fluo5F_IP3)
     with  open("Rxn_spine_ER_IP3_Fluo5F.xml", "w") as f1:
         f1.write(etree.tostring(my_rxn_f1, pretty_print=True).decode("utf-8"))  
@@ -230,27 +242,27 @@ if __name__ == "__main__":
     my_rxn_f = read_in_files(flist_ER_spine_stim_jRGECO1)
     with  open("Rxn_spine_ER_jRGECO1.xml", "w") as f:
         f.write(etree.tostring(my_rxn_f, pretty_print=True).decode("utf-8"))
-
-    # my_rxn_f1 = read_in_files(flist_small_neck_RyR3)
-    # with  open("Rxn_small_neck.xml", "w") as f1:
-    #     f1.write(etree.tostring(my_rxn_f1, pretty_print=True).decode("utf-8"))
-        
-
+   
     my_rxn_f = read_in_files(flist_no_ER_spine_basal_old_age)
     with  open("Rxn_no_spine_ER_bas_old_age.xml", "w") as f:
         f.write(etree.tostring(my_rxn_f, pretty_print=True).decode("utf-8"))
+
     my_rxn_f = read_in_files(flist_ER_spine_basal_old_age)
     with  open("Rxn_spine_ER_bas_old_age.xml", "w") as f:
         f.write(etree.tostring(my_rxn_f, pretty_print=True).decode("utf-8"))
+
     my_rxn_f = read_in_files(flist_no_ER_spine_stim_old_age)
     with  open("Rxn_no_spine_ER_old_age.xml", "w") as f:
         f.write(etree.tostring(my_rxn_f, pretty_print=True).decode("utf-8"))
+
     my_rxn_f = read_in_files(flist_ER_spine_stim_old_age)
     with  open("Rxn_spine_ER_old_age.xml", "w") as f:
         f.write(etree.tostring(my_rxn_f, pretty_print=True).decode("utf-8"))
+
     my_rxn_f = read_in_files(flist_no_ER_spine_stim_Fluo4FF_old_age)
     with  open("Rxn_no_spine_ER_Fluo4FF_old_age.xml", "w") as f:
         f.write(etree.tostring(my_rxn_f, pretty_print=True).decode("utf-8"))
+
     my_rxn_f = read_in_files(flist_ER_spine_stim_Fluo4FF_old_age)
     with  open("Rxn_spine_ER_Fluo4FF_old_age.xml", "w") as f:
         f.write(etree.tostring(my_rxn_f, pretty_print=True).decode("utf-8"))

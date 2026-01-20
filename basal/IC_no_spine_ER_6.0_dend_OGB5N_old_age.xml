@@ -61,7 +61,7 @@
     <NanoMolarity specieID="RyR2CaM"      value="0"    />
     <NanoMolarity specieID="RyR2"      value="0"    />
     <NanoMolarity specieID="STIM_2CaER" value="0" />
-    <NanoMolarity specieID="NMDARC" value="2500"/>
+    <NanoMolarity specieID="NMDARC" value="300"/>
     <NanoMolarity specieID="pmca2b"      value="24000"    />
    </ConcentrationSet>
 

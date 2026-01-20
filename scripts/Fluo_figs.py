@@ -85,6 +85,7 @@ def get_times(My_file, trial, output):
 
 
 def get_all_species(My_file, output="__main__"):
+
     return [s.decode('utf-8') for s in My_file['model']['output'][output]['species']]
 
 
@@ -104,7 +105,6 @@ def sum_indices(my_file, region_list, spines=["_sa1[0]"]):
 
 def get_concentrations_region_list(my_file, my_list, trial, out, specie,
                                    spines=["_sa1[0]"]):
-
     grid_list = get_grid_list(my_file)
     species = get_all_species(my_file, output=out)
     idx = species.index(specie)
@@ -120,9 +120,7 @@ def get_fluo_sig(signal, t_init, dt, interval=500, pre_basal=30, futile=2000):
     out = np.array([data[:min_len] for data in signal]).mean(axis=0)
     basal = np.mean(out[int(futile/dt):int(t_init/dt)])
     out = (out-basal)/basal
-    print(out.shape, dt)
     repetitions  = len(out[int(t_init/dt):-1])//int(interval/dt)
-    print(repetitions, interval//dt)
     res = np.reshape(out[int(t_init/dt):int((t_init+repetitions*interval)/dt)],
                      (repetitions, int(interval/dt))).mean(axis=0)
     
@@ -146,7 +144,6 @@ if __name__ == "__main__":
     pre_basal = 30
     output = args.output
     for fname in fnames:
-    
         data_spine = []
         data_dend = []
         my_file = h5py.File(fname, "r")
@@ -154,12 +151,11 @@ if __name__ == "__main__":
         for key in my_file.keys():
             if not key.startswith("trial"):
                 continue
-            print(key)
             spine = get_concentrations_region_list(my_file,["PSD",
                                                             "head", "neck"],
                                                    key, output,
                                                    specie)
-        
+            
             dend = get_concentrations_region_list(my_file,["dend06"],
                                                   key, output,
                                                   specie)
@@ -182,6 +178,7 @@ if __name__ == "__main__":
         ax.plot(time, out_spine*100, "tab:green", label="Spine")
         ax.plot(time, out_dend*100, "tab:blue",
                 label="Dendrite")
+        ax.plot(time, np.zeros_like(time), "tab:red")
         ax.set_xlabel("time (s)", fontsize=15)
         ax.set_ylabel("Relative fluorescence change", fontsize=15)
         ax.legend()
@@ -192,4 +189,5 @@ if __name__ == "__main__":
         ax.set_title(fname)
         fig.savefig(output, format="png",
                     dpi=100, bbox_inches="tight")
+
     plt.show()

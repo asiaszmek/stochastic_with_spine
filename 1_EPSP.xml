@@ -1,27 +1,49 @@
 <StimulationSet>
+  <!-- DOI: 50.1126/science.1359647 glutamate peaked at 1 mM -->
   <InjectionStim injectionSite="sa1[0].pointA" specieID="Glu">
     <onset>5000</onset>
     <duration>1</duration>
-    <rate>250</rate>
-    <end>5001</end>
+    <rate>40000</rate>
+    <period>500</period>
+    <end>10020</end>
   </InjectionStim>
   <InjectionStim injectionSite="sa1[0].pointA" specieID="GluBuf">
-    <onset>5005</onset>
-    <duration>5</duration>
-    <rate>50</rate>
-    <end>5025</end>
+    <onset>5010</onset>
+    <duration>1</duration>
+    <rate>40000</rate>
+    <period>500</period>
+    <end>10025</end>
   </InjectionStim>
+  <InjectionStim injectionSite="sa1[0].pointA" specieID="V">
+    <onset>5000</onset>
+    <duration>15</duration>
+    <rate>1</rate>
+    <period>500</period>
+    <end>10010</end>
+  </InjectionStim>
+  <InjectionStim injectionSite="sa1[0].pointA" specieID="VBuf">
+    <onset>5020</onset>
+    <duration>1</duration>
+    <rate>15</rate>
+    <period>500</period>
+    <end>10025</end>
+  </InjectionStim>
+
+<!-- L-type channels -->
   <InjectionStim injectionSite="sa1[0].pointA" specieID="CaCbuf">
+    <onset>5000</onset>
+    <duration>15</duration>
+    <rate>1</rate>
+    <period>500</period>
+    <end>10020</end>
+  </InjectionStim>
+
+  <InjectionStim injectionSite="dend06:submembrane" specieID="CaCbuf">
     <onset>5000</onset>
     <duration>2</duration>
     <rate>100</rate>
-    <end>5003</end>
+    <period>500</period>
+    <end>10020</end>
   </InjectionStim>
-   <InjectionStim specieID="Ca" injectionSite="dend06:submembrane">
-    <onset>5000</onset>
-    <duration>3</duration>
-    <rate>12000</rate>
-    <end>8000</end>    
-  </InjectionStim>
- 
+
 </StimulationSet>

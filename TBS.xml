@@ -2,47 +2,60 @@
   <InjectionStim injectionSite="sa1[0].pointA" specieID="Glu">
     <onset>6000</onset>
     <duration>1</duration>
-    <rate>500</rate>
+    <rate>40000</rate>
     <period>             10              </period>
     <end>6045</end>
     <interTrainInterval>  200           </interTrainInterval>
     <numTrains>           15              </numTrains>
   </InjectionStim>
-   <InjectionStim injectionSite="sa1[0].pointA" specieID="CaCbuf">
+   <InjectionStim injectionSite="sa1[0].pointA" specieID="GluBuf">
     <onset>6010</onset>
     <duration>1</duration>
-    <rate>50</rate>
     <period>             10              </period>
-    <end>6045</end>
-    <interTrainInterval>  200           </interTrainInterval>
-    <numTrains>           15              </numTrains>
-  </InjectionStim>
-  
-  <InjectionStim injectionSite="sa1[0].pointA" specieID="GluBuf">
-    <onset>6005</onset>
-    <duration>1</duration>
-    <period>             10              </period>
-    <rate>100</rate>
+    <rate>40000</rate>
     <end>6050</end>
     <interTrainInterval>  200           </interTrainInterval>
     <numTrains>           15              </numTrains>
-  </InjectionStim>
+   </InjectionStim>
 
-  <InjectionStim injectionSite="sa1[0].pointA" specieID="GluBuf">
-    <onset>6045</onset>
-    <duration>1</duration>
+
+   <InjectionStim injectionSite="sa1[0].pointA" specieID="V">
+    <onset>6000</onset>
+    <duration>15</duration>
+    <rate>1</rate>
     <period>             10              </period>
-    <rate>400</rate>
-    <end>6060</end>
+    <end>6045</end>
     <interTrainInterval>  200           </interTrainInterval>
     <numTrains>           15              </numTrains>
   </InjectionStim>
+   <InjectionStim injectionSite="sa1[0].pointA" specieID="VBuf">
+    <onset>6020</onset>
+    <duration>1</duration>
+    <period>             10              </period>
+    <rate>15</rate>
+    <end>6050</end>
+    <interTrainInterval>  200           </interTrainInterval>
+    <numTrains>           15              </numTrains>
+   </InjectionStim>
 
-  <InjectionStim injectionSite="sa1[0].pointA" specieID="GluBuf">
-    <onset>9045</onset>
-    <duration>15</duration>
-    <rate>1100</rate>
-    <end>9100</end>
+   <!-- L-type channels -->
+  <InjectionStim injectionSite="sa1[0].pointA" specieID="CaCbuf">
+    <onset>6000</onset>
+    <duration>4</duration>
+    <rate>1</rate>
+    <period>10</period>
+    <interTrainInterval>  200           </interTrainInterval>
+    <numTrains>           15              </numTrains>
+    <end>10020</end>
   </InjectionStim>
 
+  <InjectionStim injectionSite="dend06:submembrane" specieID="CaCbuf">
+    <onset>5000</onset>
+    <duration>2</duration>
+    <rate>100</rate>
+    <period>10</period>
+    <interTrainInterval>  200           </interTrainInterval>
+    <numTrains>           15              </numTrains>
+    <end>10020</end>
+  </InjectionStim>
 </StimulationSet>

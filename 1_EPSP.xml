@@ -29,36 +29,12 @@
     <end>10025</end>
   </InjectionStim>
 
-<!-- L-type channels -->
-  <InjectionStim injectionSite="sa1[0].pointA" specieID="CaCbuf">
-    <onset>5000</onset>
-    <duration>1</duration>
-    <rate>10</rate>
-    <period>500</period>
-    <end>10020</end>
-  </InjectionStim>
-
   <InjectionStim injectionSite="dend06:submembrane" specieID="CaCbuf">
     <onset>5000</onset>
     <duration>2</duration>
-    <rate>50</rate>
+    <rate>100</rate>
     <period>500</period>
     <end>10020</end>
   </InjectionStim>
   
-  <!-- <InjectionStim injectionSite="sa1[0].pointA" specieID="CaB"> -->
-  <!--   <onset>5020</onset> -->
-  <!--   <duration>12</duration> -->
-  <!--   <rate>1</rate> -->
-  <!--   <period>500</period> -->
-  <!--   <end>10020</end> -->
-  <!-- </InjectionStim> -->
-
-  <!-- <InjectionStim injectionSite="dend06:submembrane" specieID="CaB"> -->
-  <!--   <onset>5020</onset> -->
-  <!--   <duration>2</duration> -->
-  <!--   <rate>80</rate> -->
-  <!--   <period>500</period> -->
-  <!--   <end>10020</end> -->
-  <!-- </InjectionStim> -->
 </StimulationSet>

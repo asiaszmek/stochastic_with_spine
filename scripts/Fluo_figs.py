@@ -114,11 +114,11 @@ def get_concentrations_region_list(my_file, my_list, trial, out, specie,
     return numbers
 
 
-def get_fluo_sig(signal, t_init, dt, interval=500, pre_basal=30, futile=2000):
+def get_fluo_sig(signal, t_init, dt, interval=500, pre_basal=30, futile=0):
    
     min_len = min([len(dat) for dat in signal])
     out = np.array([data[:min_len] for data in signal]).mean(axis=0)
-    basal = np.mean(out[int(futile/dt):int(t_init/dt)])
+    basal = out[int(futile/dt):int(t_init/dt)].mean(axis=0)
     out = (out-basal)/basal
     repetitions  = len(out[int(t_init/dt):-1])//int(interval/dt)
     res = np.reshape(out[int(t_init/dt):int((t_init+repetitions*interval)/dt)],

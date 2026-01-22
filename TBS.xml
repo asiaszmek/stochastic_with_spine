@@ -39,7 +39,7 @@
    </InjectionStim>
 
   
-  <InjectionStim injectionSite="dend06:submembrane" specieID="CaCbuf">
+  <InjectionStim injectionSite="dend26:submembrane" specieID="CaCbuf">
     <onset>5000</onset>
     <duration>2</duration>
     <rate>100</rate>

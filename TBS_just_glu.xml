@@ -1,44 +1,45 @@
 <StimulationSet>
   <InjectionStim injectionSite="sa1[0].pointA" specieID="Glu">
-    <onset>6000</onset>
+    <onset>3000</onset>
     <duration>1</duration>
     <rate>40000</rate>
     <period>             10              </period>
-    <end>6045</end>
+    <end>3045</end>
     <interTrainInterval>  200           </interTrainInterval>
     <numTrains>           15              </numTrains>
   </InjectionStim>
    <InjectionStim injectionSite="sa1[0].pointA" specieID="GluBuf">
-    <onset>6010</onset>
+    <onset>3010</onset>
     <duration>1</duration>
     <period>             10              </period>
     <rate>40000</rate>
-    <end>6050</end>
+    <end>3050</end>
     <interTrainInterval>  200           </interTrainInterval>
     <numTrains>           15              </numTrains>
    </InjectionStim>
 
-
-   <InjectionStim injectionSite="sa1[0].pointA" specieID="V">
-    <onset>6000</onset>
-    <duration>15</duration>
-    <rate>1</rate>
+   <InjectionStim injectionSite="sa1[0].pointA" specieID="CaCBuf">
+    <onset>3000</onset>
+    <duration>1</duration>
+    <rate>2</rate>
     <period>             10              </period>
-    <end>6045</end>
+    <end>3045</end>
     <interTrainInterval>  200           </interTrainInterval>
     <numTrains>           15              </numTrains>
   </InjectionStim>
-   <InjectionStim injectionSite="sa1[0].pointA" specieID="VBuf">
-    <onset>6020</onset>
-    <duration>1</duration>
-    <period>             10              </period>
-    <rate>15</rate>
-    <end>6050</end>
-    <interTrainInterval>  200           </interTrainInterval>
-    <numTrains>           15              </numTrains>
+   <InjectionStim injectionSite="sa1[0].pointA" specieID="V">
+    <onset>3000</onset>
+    <duration>30</duration>
+    <rate>1</rate>
+    <end>3045</end>
    </InjectionStim>
-   
 
+  <InjectionStim injectionSite="sa1[0].pointA" specieID="VBuf">
+    <onset>4600</onset>
+    <duration>30</duration>
+    <rate>1</rate>
+    <end>4750</end>
+   </InjectionStim>
 
 
    

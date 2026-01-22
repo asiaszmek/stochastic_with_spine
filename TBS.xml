@@ -17,10 +17,10 @@
     <interTrainInterval>  200           </interTrainInterval>
     <numTrains>           15              </numTrains>
    </InjectionStim>
-   <InjectionStim injectionSite="sa1[0].pointA" specieID="CaCBuf">
+   <InjectionStim injectionSite="sa1[0].pointA" specieID="CaCbuf">
     <onset>3000</onset>
-    <duration>1</duration>
-    <rate>2</rate>
+    <duration>10</duration>
+    <rate>5</rate>
     <period>             10              </period>
     <end>3045</end>
     <interTrainInterval>  200           </interTrainInterval>
@@ -52,4 +52,41 @@
     <numTrains>           15              </numTrains>
     <end>10020</end>
   </InjectionStim>
+  <InjectionStim injectionSite="dend25:submembrane" specieID="CaCbuf">
+    <onset>3000</onset>
+    <duration>4</duration>
+    <rate>50</rate>
+    <period>10</period>
+    <interTrainInterval>  200           </interTrainInterval>
+    <numTrains>           15              </numTrains>
+    <end>10020</end>
+  </InjectionStim>
+  <InjectionStim injectionSite="dend27:submembrane" specieID="CaCbuf">
+    <onset>3000</onset>
+    <duration>4</duration>
+    <rate>50</rate>
+    <period>10</period>
+    <interTrainInterval>  200           </interTrainInterval>
+    <numTrains>           15              </numTrains>
+    <end>10020</end>
+  </InjectionStim>
+  <InjectionStim injectionSite="dend24:submembrane" specieID="CaCbuf">
+    <onset>3000</onset>
+    <duration>4</duration>
+    <rate>50</rate>
+    <period>10</period>
+    <interTrainInterval>  200           </interTrainInterval>
+    <numTrains>           15              </numTrains>
+    <end>10020</end>
+  </InjectionStim>
+  <InjectionStim injectionSite="dend28:submembrane" specieID="CaCbuf">
+    <onset>3000</onset>
+    <duration>4</duration>
+    <rate>50</rate>
+    <period>10</period>
+    <interTrainInterval>  200           </interTrainInterval>
+    <numTrains>           15              </numTrains>
+    <end>10020</end>
+  </InjectionStim>
+
 </StimulationSet>

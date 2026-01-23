@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<ReactionScheme>
+   <Specie name="Dye" id="Dye" kdiff="100" kdiffunit="mu2/s"/>
+  <Specie name="CaDye" id="CaDye" kdiff="100" kdiffunit="mu2/s"/>
+<!-- rates from   https://doi.org/10.1073/pnas.1508419112 -->
+  <Reaction name = "CaDye_buffer" id="CaDye_buffer">
+    <Reactant specieID="Ca"/>
+    <Reactant specieID="Dye"/>
+    <Product specieID="CaDye"/>
+
+    <forwardRate>3e-4</forwardRate>
+    <reverseRate>4.98</reverseRate>
+    <Q10>0.2</Q10>
+  </Reaction>
+</ReactionScheme>

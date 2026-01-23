@@ -339,14 +339,14 @@
   <Reaction name="V+VBuf--NULL" id="V_buf--NULL">
       <Reactant specieID="V"/>
     <Reactant specieID="VBuf"/>
-    <forwardRate>5e-04</forwardRate>
+    <forwardRate>5e-05</forwardRate>
     <reverseRate>0</reverseRate>
   </Reaction>
 
   <Reaction name="VOut+VBuf--NULL" id="VOut_buf--NULL">
     <Reactant specieID="VOut"/>
     <Reactant specieID="VBuf"/>
-    <forwardRate>5e-04</forwardRate>
+    <forwardRate>5e-05</forwardRate>
     <reverseRate>0</reverseRate>
   </Reaction>
 

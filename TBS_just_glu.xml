@@ -8,7 +8,8 @@
     <interTrainInterval>  200           </interTrainInterval>
     <numTrains>           15              </numTrains>
   </InjectionStim>
-   <InjectionStim injectionSite="sa1[0].pointA" specieID="GluBuf">
+  
+  <InjectionStim injectionSite="sa1[0].pointA" specieID="GluBuf">
     <onset>3010</onset>
     <duration>1</duration>
     <period>             10              </period>
@@ -16,24 +17,25 @@
     <end>3050</end>
     <interTrainInterval>  200           </interTrainInterval>
     <numTrains>           15              </numTrains>
-   </InjectionStim>
+  </InjectionStim>
 
   
-   <InjectionStim injectionSite="sa1[0].pointA" specieID="V">
+  <InjectionStim injectionSite="sa1[0].pointA" specieID="V">
     <onset>3000</onset>
     <duration>30</duration>
     <rate>1</rate>
     <end>3045</end>
+    <period>             200              </period>
     <interTrainInterval>  200           </interTrainInterval>
     <numTrains>           15              </numTrains>
-   </InjectionStim>
+  </InjectionStim>
 
   <InjectionStim injectionSite="sa1[0].pointA" specieID="VBuf">
     <onset>4600</onset>
     <duration>30</duration>
     <rate>1</rate>
     <end>4750</end>
-   </InjectionStim>
+  </InjectionStim>
 
 
    

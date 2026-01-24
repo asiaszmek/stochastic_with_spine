@@ -1,5 +1,5 @@
 <StimulationSet>
-  <InjectionStim injectionSite="sa1[0].pointA" specieID="Glu">
+61;8004;1c  <InjectionStim injectionSite="sa1[0].pointA" specieID="Glu">
     <onset>3000</onset>
     <duration>1</duration>
     <rate>40000</rate>
@@ -32,7 +32,7 @@
 
   <InjectionStim injectionSite="sa1[0].pointA" specieID="VBuf">
     <onset>4600</onset>
-    <duration>10</duration>
+    <duration>20</duration>
     <rate>15</rate>
     <end>4750</end>
   </InjectionStim>

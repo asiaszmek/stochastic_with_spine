@@ -336,21 +336,7 @@
     <reverseRate>0</reverseRate>
   </Reaction>
 
-  <Reaction name="V+VBuf--NULL" id="V_buf--NULL">
-      <Reactant specieID="V"/>
-    <Reactant specieID="VBuf"/>
-    <forwardRate>5e-05</forwardRate>
-    <reverseRate>0</reverseRate>
-  </Reaction>
-
-  <Reaction name="VOut+VBuf--NULL" id="VOut_buf--NULL">
-    <Reactant specieID="VOut"/>
-    <Reactant specieID="VBuf"/>
-    <forwardRate>5e-05</forwardRate>
-    <reverseRate>0</reverseRate>
-  </Reaction>
-
-<Specie name="CaER" id="CaER" kdiff="10." kdiffunit="mu2/s"/>
+  <Specie name="CaER" id="CaER" kdiff="10." kdiffunit="mu2/s"/>
   <Specie name="RyR2CaM" id="RyR2CaM" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="RyR2CaMC1" id="RyR2CaMC1" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="RyR2CaMC2" id="RyR2CaMC2" kdiff="0" kdiffunit="mu2/s"/>

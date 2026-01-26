@@ -125,15 +125,15 @@ Try Clements & Westbrook 1991
     <Q10>0.2</Q10>
   </Reaction>
 
-   <Reaction name = "V--VOut" id="V--VOut">
-    <Reactant specieID="V"/>
-    <Product specieID="VOut"/>
+  <!--  <Reaction name = "V-\-VOut" id="V-\-VOut"> -->
+  <!--   <Reactant specieID="V"/> -->
+  <!--   <Product specieID="VOut"/> -->
   
-    <forwardRate>0.5e-1</forwardRate>
-    <reverseRate>0.02e-6</reverseRate>
-    <Q10>0.2</Q10>
-  </Reaction>
-
+  <!--   <forwardRate>0.5e-1</forwardRate> -->
+  <!--   <reverseRate>0.02e-6</reverseRate> -->
+  <!--   <Q10>0.2</Q10> -->
+  <!-- </Reaction> -->
+ 
   <Reaction name="GluOut+GluBuf--NULL" id="GluOut_buf--NULL">
     <Reactant specieID="Glu" />
     <Reactant specieID="GluBuf" />
@@ -141,12 +141,12 @@ Try Clements & Westbrook 1991
     <reverseRate>0</reverseRate>
   </Reaction>
 
-  <!-- <Reaction name="V+VBuf-\-NULL" id="V_buf-\-NULL"> -->
-  <!--     <Reactant specieID="V" /> -->
-  <!--   <Reactant specieID="VBuf" /> -->
-  <!--   <forwardRate>5e-05</forwardRate> -->
-  <!--   <reverseRate>0</reverseRate> -->
-  <!-- </Reaction> -->
+   <Reaction name="V+VBuf-\-NULL" id="V_buf-\-NULL"> 
+     <Reactant specieID="V" /> 
+     <Reactant specieID="VBuf" /> 
+     <forwardRate>5e-05</forwardRate> 
+   <reverseRate>0</reverseRate> 
+  </Reaction> 
 
   <!-- <Reaction name="VOut+VBuf-\-NULL" id="VOut_buf-\-NULL"> -->
   <!--   <Reactant specieID="VOut" /> -->

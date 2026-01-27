@@ -6,6 +6,8 @@
   <Specie name="Glu" id="Glu" kdiff="320" kdiffunit="mu2/s" />
   <Specie name="GluOut" id="GluOut" kdiff="320" kdiffunit="mu2/s" />
   <Specie name="GluBuf" id="GluBuf" kdiff="320" kdiffunit="mu2/s" />
+  <Specie name="GluGlubuf" id="GluGlubuf" kdiff="320" kdiffunit="mu2/s" />
+  <Specie name="Glubuf" id="Glubuf" kdiff="320" kdiffunit="mu2/s" />
   <Specie name="NMDARC" id="NMDARC" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="NMDARC1" id="NMDARC1" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="NMDARC2" id="NMDARC2" kdiff="0" kdiffunit="mu2/s"/>
@@ -13,7 +15,7 @@
   <Specie name="NMDARO" id="NMDARO" kdiff="0" kdiffunit="mu2/s"/>
   
   <Specie name="V" id="V" kdiff="0" kdiffunit="mu2/s" />
-  <Specie name="VOut" id="VOut" kdiff="0" kdiffunit="mu2/s" />
+  <!-- <Specie name="VOut" id="VOut" kdiff="0" kdiffunit="mu2/s" /> -->
   <Specie name="VBuf" id="VBuf" kdiff="0" kdiffunit="mu2/s" />
 <!--
 
@@ -141,6 +143,21 @@ Try Clements & Westbrook 1991
     <reverseRate>0</reverseRate>
   </Reaction>
 
+  <Reaction name="GluGlubufGlu+Glubuf" id="GluGlubufGlu+Glubuf">
+    <Reactant specieID="GluGlubuf" />
+    <Product specieID="Glubuf" />
+    <Product specieID="Glu" />
+    <forwardRate>20e-03</forwardRate>
+    <reverseRate>0</reverseRate>
+  </Reaction>
+  <Reaction name="GluOut+GlubufNULL" id="GluOut_GlubufNULL">
+    <Reactant specieID="GluOut" />
+    <Reactant specieID="Glubuf" />
+    <forwardRate>1e-06</forwardRate>
+    <reverseRate>0</reverseRate>
+  </Reaction>
+
+  
    <Reaction name="V+VBuf-\-NULL" id="V_buf-\-NULL"> 
      <Reactant specieID="V" /> 
      <Reactant specieID="VBuf" /> 

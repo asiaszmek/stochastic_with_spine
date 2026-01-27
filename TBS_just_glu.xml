@@ -1,5 +1,5 @@
 <StimulationSet>
-61;8004;1c  <InjectionStim injectionSite="sa1[0].pointA" specieID="Glu">
+61;8004;1c  <InjectionStim injectionSite="sa1[0].pointA" specieID="GluGluBuf">
     <onset>3000</onset>
     <duration>1</duration>
     <rate>40000</rate>
@@ -9,15 +9,15 @@
     <numTrains>           15              </numTrains>
   </InjectionStim>
   
-  <InjectionStim injectionSite="sa1[0].pointA" specieID="GluBuf">
-    <onset>3010</onset>
-    <duration>1</duration>
-    <period>             10              </period>
-    <rate>40000</rate>
-    <end>3050</end>
-    <interTrainInterval>  200           </interTrainInterval>
-    <numTrains>           15              </numTrains>
-  </InjectionStim>
+  <!-- <InjectionStim injectionSite="sa1[0].pointA" specieID="GluBuf"> -->
+  <!--   <onset>3010</onset> -->
+  <!--   <duration>1</duration> -->
+  <!--   <period>             10              </period> -->
+  <!--   <rate>40000</rate> -->
+  <!--   <end>3050</end> -->
+  <!--   <interTrainInterval>  200           </interTrainInterval> -->
+  <!--   <numTrains>           15              </numTrains> -->
+  <!-- </InjectionStim> -->
 
   
    

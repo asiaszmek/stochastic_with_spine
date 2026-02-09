@@ -40,7 +40,7 @@
     <NanoMolarity specieID="IP3degrad"      value="32"     />
     <NanoMolarity specieID="IP3K" value="839" />
     <NanoMolarity specieID="IP3K_Ca2" value="61" />
-    <NanoMolarity specieID="IP5P" value="2001" />
+    <NanoMolarity specieID="IP5P" value="0" />
     <NanoMolarity specieID="Dye" value="99500" />
     <NanoMolarity specieID="CaDye" value="500" />
   </ConcentrationSet>

@@ -244,44 +244,47 @@
   <!--1) CaM  + 2Ca
       <-> CaMCa2 -->
   <!--This is the C site-->
-  <Reaction name="CaMC_bind" id="CaMC_bind">
+  <!-- Adapt Pepke's course model with rates fitted by Linkevicius et al 2026) -->
+   <!--This is the C site-->
+  <Reaction name="CaMN_bind" id="CaMN_bind">
     <Reactant specieID="CaM" />
-    <Reactant specieID="Ca" n="2" />
-    <Product specieID="CaMCa2C" />
-    <forwardRate>6e-6</forwardRate>
-    <reverseRate>9.1e-3</reverseRate>
+    <Reactant specieID="Ca" power="2" />
+    <Product specieID="CaMCa2N" />
+    <forwardRate>2.62e-8</forwardRate>
+    <reverseRate>3.61</reverseRate>
     <Q10>0.2</Q10>
   </Reaction>
   <!--2) CaMCa2  + 2Ca
       <-> CaMCa4 -->
   <!--This is the N-site-->
-  <Reaction name="CaMCa2C_bind" id="CaMCa2C_bind">
-    <Reactant specieID="CaMCa2C" />
-    <Reactant specieID="Ca" n="2" />
+  <Reaction name="CaMCa2N_bind" id="CaMCa2N_bind">
+    <Reactant specieID="CaMCa2N" />
+    <Reactant specieID="Ca" power="2" />
     <Product specieID="CaMCa4" />
-    <forwardRate>0.1e-3</forwardRate>
-    <reverseRate>1000e-3</reverseRate>
+    <forwardRate>1.62e-7</forwardRate>
+    <reverseRate>0.438</reverseRate>
     <Q10>0.2</Q10>
   </Reaction>
+  
   <!--1A) CaM  + 2Ca <-> CaMCa2N GQ RXN FILE, C or N can bind first-->
-  <Reaction name = "CaMN_bind" id="CaMN_bind">
+  <Reaction name = "CaMC_bind" id="CaMC_bind">
     <Reactant specieID="CaM"/>
-    <Reactant specieID="Ca" n="2"/>
-    <Product specieID="CaMCa2N"/>
+    <Reactant specieID="Ca" power="2"/>
+    <Product specieID="CaMCa2C"/>
     
-    <forwardRate>0.1e-3</forwardRate>
-    <reverseRate>1000e-3</reverseRate>
+    <forwardRate>1.62e-7</forwardRate>
+    <reverseRate>0.438</reverseRate>
     
   </Reaction>
 
   <!--2B) CaMCa2N  + 2Ca <-> CaMCa4 GQ RXN FILE, C or N can bind first-->
-  <Reaction name = "CaMCa2N_bind" id="CaMCa2N_bind">
-    <Reactant specieID="CaMCa2N"/>
-    <Reactant specieID="Ca" n="2"/>
+  <Reaction name = "CaMCa2C_bind" id="CaMCa2C_bind">
+    <Reactant specieID="CaMCa2C"/>
+    <Reactant specieID="Ca" power="2"/>
     <Product specieID="CaMCa4"/>
     
-    <forwardRate>6e-6</forwardRate>
-    <reverseRate>9.1e-3</reverseRate>
+    <forwardRate>2.62e-8</forwardRate>
+    <reverseRate>3.61</reverseRate>
     
   </Reaction>
 

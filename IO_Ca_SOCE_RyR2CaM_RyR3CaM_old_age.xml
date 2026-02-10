@@ -28,6 +28,12 @@
     <OutputSpecie name="NMDARC2"/>
     <OutputSpecie name="NMDARD"/>
     <OutputSpecie name="NMDARO"/>
+    <OutputSpecie name="NMDARCB"/>
+    <OutputSpecie name="NMDARC1B"/>
+    <OutputSpecie name="NMDARC2B"/>
+    <OutputSpecie name="NMDARDB"/>
+    <OutputSpecie name="NMDAROB"/>
+ 
     <OutputSpecie name="Glu"/>
   </OutputSet>
   <OutputSet filename = "head"  region="head" dt="1.0">

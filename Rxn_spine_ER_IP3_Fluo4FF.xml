@@ -360,8 +360,8 @@
     <Reactant specieID="CaOut"/>
     <Product specieID="NMDARO"/>
     <Product specieID="Ca"/>
-    <forwardRate>4e-3     </forwardRate>
-    <reverseRate>4e-3</reverseRate>
+    <forwardRate>4e-6     </forwardRate>
+    <reverseRate>4e-6</reverseRate>
   </Reaction>
 
   

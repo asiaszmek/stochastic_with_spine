@@ -8,7 +8,7 @@
     <!-- total calbindin = 160 uM -->
     <NanoMolarity specieID="Calbin" value="135875"/>
     <NanoMolarity specieID="CalbinC" value="14125"/>
-    <NanoMolarity specieID="fixedbuffer" value="19918600"/>
+    <NanoMolarity specieID="fixedbuffer" value="19918601"/>
     <NanoMolarity specieID="fixedbufferCa" value="3200"/>
 
     <NanoMolarity specieID="CaM" value="8100"/>
@@ -59,7 +59,7 @@
      <NanoMolarity specieID="LeakER" value="0" />
      <NanoMolarity specieID="STIM_2" value="0" />
      <NanoMolarity specieID="STIM_2CaER" value="0" />
-     <NanoMolarity specieID="NMDARC" value="600"/>
+     <NanoMolarity specieID="NMDARC" value="1801"/>
      <NanoMolarity specieID="pmca2b"      value="24000"    />
    </ConcentrationSet>
 

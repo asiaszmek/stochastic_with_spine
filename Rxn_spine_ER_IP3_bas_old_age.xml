@@ -274,6 +274,7 @@
   <Specie name="NMDAROB" id="NMDAROB" kdiff="0" kdiffunit="mu2/s"/>
   
   <Specie name="V" id="V" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="VOut" id="VOut" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="VBuf" id="VBuf" kdiff="0" kdiffunit="mu2/s"/>
 <Reaction name="NMDARC-C1" id="NMDARC-C1">
     <Reactant specieID="NMDARC"/>

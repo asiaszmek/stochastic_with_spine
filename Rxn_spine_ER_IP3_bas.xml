@@ -268,6 +268,11 @@
   <Specie name="NMDARC2" id="NMDARC2" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="NMDARD" id="NMDARD" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="NMDARO" id="NMDARO" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="NMDARCB" id="NMDARCB" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="NMDARC1B" id="NMDARC1B" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="NMDARC2B" id="NMDARC2B" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="NMDARDB" id="NMDARDB" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="NMDAROB" id="NMDAROB" kdiff="0" kdiffunit="mu2/s"/>
   
   <Specie name="V" id="V" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="VBuf" id="VBuf" kdiff="0" kdiffunit="mu2/s"/>
@@ -275,16 +280,16 @@
     <Reactant specieID="NMDARC"/>
     <Reactant specieID="Glu"/>
     <Product specieID="NMDARC1"/>
-    <forwardRate>5e-6</forwardRate>
-    <reverseRate>12.9e-3</reverseRate>
+    <forwardRate>2e-5</forwardRate>
+    <reverseRate>11e-3</reverseRate>
  </Reaction>
 
   <Reaction name="NMDARC1-C2" id="NMDARC1-C2">
     <Reactant specieID="NMDARC1"/>
     <Reactant specieID="Glu"/>
     <Product specieID="NMDARC2"/>
-    <forwardRate>5e-6</forwardRate>
-    <reverseRate>12.9e-3</reverseRate>
+    <forwardRate>16.8e-3</forwardRate>
+    <reverseRate>3.6e-3</reverseRate>
  </Reaction>
    
 
@@ -298,21 +303,67 @@
    <Reaction name="NMDARC2-0" id="NMDARC2-0">
     <Reactant specieID="NMDARC2"/>
     <Product specieID="NMDARO"/>
-    <forwardRate>46.5e-3</forwardRate>
-    <reverseRate>76.8e-3</reverseRate>
+    <forwardRate>93e-3</forwardRate>
+    <reverseRate>183.2e-3</reverseRate>
   </Reaction>
 
-  <Reaction name="NMDAR0flux" id="NMDAR0flux">
-    <Reactant specieID="NMDARO"/>
-    <Reactant specieID="CaOut"/>
+
+  <Reaction name="NMDARCB-C1B" id="NMDARCB-C1B">
+    <Reactant specieID="NMDARCB"/>
+    <Reactant specieID="Glu"/>
+    <Product specieID="NMDARC1B"/>
+    <forwardRate>2e-5</forwardRate>
+    <reverseRate>11e-3</reverseRate>
+ </Reaction>
+
+  <Reaction name="NMDARC1B-C2B" id="NMDARC1-C2B">
+    <Reactant specieID="NMDARC1B"/>
+    <Reactant specieID="Glu"/>
+    <Product specieID="NMDARC2B"/>
+    <forwardRate>1e-6</forwardRate>
+    <reverseRate>22e-3</reverseRate>
+ </Reaction>
+   
+
+  <Reaction name="NMDARC2B-DB" id="NMDARC2B-DB">
+    <Reactant specieID="NMDARC2B"/>
+    <Product specieID="NMDARDB"/>
+    <forwardRate>16.8e-3</forwardRate>
+    <reverseRate>3.6e-3</reverseRate>
+  </Reaction>
+
+   <Reaction name="NMDARC2B-0B" id="NMDARC2B-0B">
+    <Reactant specieID="NMDARC2B"/>
+    <Product specieID="NMDAROB"/>
+    <forwardRate>97e-3</forwardRate>
+    <reverseRate>574e-3</reverseRate>
+  </Reaction>
+
+  <Reaction name="NMDAROB-NMDARO" id="NMDAROB-NMDARO">
+    <Reactant specieID="NMDAROB"/>
     <Reactant specieID="V"/>
     <Product specieID="NMDARO"/>
-    <Product specieID="Ca"/>
     <Product specieID="V"/>
-    <forwardRate>2.5e-9</forwardRate>
-    <reverseRate>2.5e-9</reverseRate>
+    <forwardRate>30</forwardRate>
+    <reverseRate>1</reverseRate>
   </Reaction>
 
+  <Reaction name="NMDARO-NMDAROB" id="NMDARO-NMDAROB">
+    <Reactant specieID="NMDARO"/>
+    <Product specieID="NMDAROB"/>
+    <forwardRate>65</forwardRate>
+  </Reaction>
+
+  <Reaction name="NMDAROflux" id="NMDARO-flux">
+    <Reactant specieID="NMDARO"/>
+    <Reactant specieID="CaOut"/>
+    <Product specieID="NMDARO"/>
+    <Product specieID="Ca"/>
+    <forwardRate>4e-3     </forwardRate>
+    <reverseRate>4e-3</reverseRate>
+  </Reaction>
+
+  
 <Reaction name="Glu--GluOut" id="Glu--GluOut">
     <Reactant specieID="Glu"/>
     <Product specieID="GluOut"/>
@@ -322,6 +373,15 @@
     <Q10>0.2</Q10>
   </Reaction>
 
+   <Reaction name="V--VOut" id="V--VOut">
+    <Reactant specieID="V"/>
+    <Product specieID="VOut"/>
+  
+    <forwardRate>0.5e-1</forwardRate>
+    <reverseRate>0.02e-6</reverseRate>
+    <Q10>0.2</Q10>
+  </Reaction>
+ 
   <Reaction name="GluOut+GluBuf--NULL" id="GluOut_buf--NULL">
     <Reactant specieID="Glu"/>
     <Reactant specieID="GluBuf"/>
@@ -336,6 +396,7 @@
     <forwardRate>20e-03</forwardRate>
     <reverseRate>0</reverseRate>
   </Reaction>
+  
   <Reaction name="GluOut+GlubufNULL" id="GluOut_GlubufNULL">
     <Reactant specieID="GluOut"/>
     <Reactant specieID="Glubuf"/>

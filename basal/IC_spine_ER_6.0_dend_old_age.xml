@@ -61,7 +61,7 @@
     <NanoMolarity specieID="Cyt_SERCA_Ca2"       value="0"     />
     <NanoMolarity specieID="STIM_2CaER" value="200" />
     <NanoMolarity specieID="LeakER" value="0" />
-     <NanoMolarity specieID="NMDARC" value="300"/>
+     <NanoMolarity specieID="NMDARCB" value="300"/>
     <NanoMolarity specieID="pmca2b"      value="24000"    />
    </ConcentrationSet>
 

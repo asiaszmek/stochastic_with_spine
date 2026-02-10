@@ -13,82 +13,33 @@
   <Specie name="NMDARC2" id="NMDARC2" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="NMDARD" id="NMDARD" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="NMDARO" id="NMDARO" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="NMDARCB" id="NMDARCB" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="NMDARC1B" id="NMDARC1B" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="NMDARC2B" id="NMDARC2B" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="NMDARDB" id="NMDARDB" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="NMDAROB" id="NMDAROB" kdiff="0" kdiffunit="mu2/s"/>
   
   <Specie name="V" id="V" kdiff="0" kdiffunit="mu2/s" />
   <!-- <Specie name="VOut" id="VOut" kdiff="0" kdiffunit="mu2/s" /> -->
   <Specie name="VBuf" id="VBuf" kdiff="0" kdiffunit="mu2/s" />
 <!--
-
-	Kinetic model of NMDA receptors
-	===============================
-
-	5-state gating model:
-	Clements & Westbrook 1991. Neuron 7: 605.
-	Lester & Jahr 1992. J Neurosci 12: 635.
-	Edmonds & Colquhoun 1992. Proc. R. Soc. Lond. B 250: 279.
-	Hessler, Shirke & Malinow. 1993. Nature 366: 569.
-	Clements et al. 1992. Science 258: 1498.
-  
-	C - C1 - C2 - O
-	         |
-      	         D
-
-	Voltage dependence of Mg2+ block:
-	Jahr & Stevens 1990. J Neurosci 10: 1830.
-	Jahr & Stevens 1990. J Neurosci 10: 3178.
-
-
-
-  Based on voltage-clamp recordings of NMDA receptor-mediated currents in rat
-  hippocampal slices (Hessler et al., Nature 366: 569-572, 1993), this model 
-  was fit directly to experimental recordings in order to obtain the optimal
-  values for the parameters (see Destexhe, Mainen and Sejnowski, 1996).
-
-
-  This mod file does not include mechanisms for the release and time course
-  of transmitter; it is to be used in conjunction with a sepearate mechanism
-  to describe the release of transmitter and that provides the concentration
-  of transmitter in the synaptic cleft (to be connected to pointer C here).
-
-  See details in:
-
-  Destexhe, A., Mainen, Z.F. and Sejnowski, T.J.  Kinetic models of 
-  synaptic transmission.  In: Methods in Neuronal Modeling (2nd edition; 
-  edited by Koch, C. and Segev, I.), MIT press, Cambridge, 1998, pp 1-25.
-
-  (electronic copy available at http://cns.iaf.cnrs-gif.fr)
-
-
-	      Written by Alain Destexhe and Zach Mainen, 1995
-Try Clements & Westbrook 1991
--->
-  
-<!--  <Reaction name = "NMDARC-C1" id="NMDARC-C1"> -->
-<!--     <Reactant specieID="NMDARC"/> -->
-<!--     <Reactant specieID="Glu"/> -->
-<!--     <Product specieID="NMDARO"/> -->
-<!-- "/> -->
-<!--     <forwardRate>0.072e-5</forwardRate> -->
-<!--     <reverseRate>6.6e-2</reverseRate> -->
-<!--  </Reaction> -->
-<!-- this is from  Destexhe, A., Mainen, Z.F. and Sejnowski, T.J.  Kinetic models of 
-  synaptic transmission.  In: Methods in Neuronal Modeling (2nd edition; 
-  edited by Koch, C. and Segev, I.), MIT press, Cambridge, 1998, pp 1-25. -->
+Use Bartol el al. 2015 model
+ -->
 
 <Reaction name = "NMDARC-C1" id="NMDARC-C1">
     <Reactant specieID="NMDARC"/>
     <Reactant specieID="Glu"/>
     <Product specieID="NMDARC1"/>
-    <forwardRate>5e-6</forwardRate>
-    <reverseRate>12.9e-3</reverseRate>
+    <forwardRate>2e-5</forwardRate>
+    <reverseRate>11e-3</reverseRate>
  </Reaction>
 
   <Reaction name = "NMDARC1-C2" id="NMDARC1-C2">
     <Reactant specieID="NMDARC1"/>
     <Reactant specieID="Glu"/>
     <Product specieID="NMDARC2"/>
-    <forwardRate>5e-6</forwardRate>
-    <reverseRate>12.9e-3</reverseRate>
+    <forwardRate>16.8e-3</forwardRate>
+    <reverseRate>3.6e-3</reverseRate>
  </Reaction>
    
 
@@ -102,21 +53,68 @@ Try Clements & Westbrook 1991
    <Reaction name = "NMDARC2-0" id="NMDARC2-0">
     <Reactant specieID="NMDARC2"/>
     <Product specieID="NMDARO" />
-    <forwardRate>46.5e-3</forwardRate>
-    <reverseRate>76.8e-3</reverseRate>
+    <forwardRate>93e-3</forwardRate>
+    <reverseRate>183.2e-3</reverseRate>
   </Reaction>
 
-  <Reaction name = "NMDAR0flux" id="NMDAR0flux">
-    <Reactant specieID="NMDARO"/>
-    <Reactant specieID="CaOut"/>
+
+  <Reaction name = "NMDARCB-C1B" id="NMDARCB-C1B">
+    <Reactant specieID="NMDARCB"/>
+    <Reactant specieID="Glu"/>
+    <Product specieID="NMDARC1B"/>
+    <forwardRate>2e-5</forwardRate>
+    <reverseRate>11e-3</reverseRate>
+ </Reaction>
+
+  <Reaction name = "NMDARC1B-C2B" id="NMDARC1-C2B">
+    <Reactant specieID="NMDARC1B"/>
+    <Reactant specieID="Glu"/>
+    <Product specieID="NMDARC2B"/>
+    <forwardRate>1e-6</forwardRate>
+    <reverseRate>22e-3</reverseRate>
+ </Reaction>
+   
+
+  <Reaction name = "NMDARC2B-DB" id="NMDARC2B-DB">
+    <Reactant specieID="NMDARC2B"/>
+    <Product specieID="NMDARDB" />
+    <forwardRate>16.8e-3</forwardRate>
+    <reverseRate>3.6e-3</reverseRate>
+  </Reaction>
+
+   <Reaction name = "NMDARC2B-0B" id="NMDARC2B-0B">
+    <Reactant specieID="NMDARC2B"/>
+    <Product specieID="NMDAROB" />
+    <forwardRate>97e-3</forwardRate>
+    <reverseRate>574e-3</reverseRate>
+  </Reaction>
+
+  <!-- maybe this will act better as a mg block-->
+  <Reaction name = "NMDAROB-NMDARO" id="NMDAROB-NMDARO">
+    <Reactant specieID="NMDAROB"/>
     <Reactant specieID="V"/>
     <Product specieID="NMDARO" />
-    <Product specieID="Ca" />
-    <Product specieID="V" />
-    <forwardRate>2.5e-9</forwardRate>
-    <reverseRate>2.5e-9</reverseRate>
+    <Product specieID="V"/>
+    <forwardRate>30</forwardRate>
+    <reverseRate>1</reverseRate>
   </Reaction>
 
+  <Reaction name = "NMDARO-NMDAROB" id="NMDARO-NMDAROB">
+    <Reactant specieID="NMDARO"/>
+    <Product specieID="NMDAROB" />
+    <forwardRate>65</forwardRate>
+  </Reaction>
+
+  <Reaction name = "NMDAROflux" id="NMDARO-flux">
+    <Reactant specieID="NMDARO"/>
+    <Reactant specieID="CaOut"/>
+    <Product specieID="NMDARO" />
+    <Product specieID="Ca" />
+    <forwardRate>4e-3     </forwardRate>
+    <reverseRate>4e-3</reverseRate>
+  </Reaction>
+
+  
 <!--https://doi.org/10.1523/JNEUROSCI.5125-04.2005 for astrocytes from adult animals ~ 1 ms-1, juvenile 1/5ms 0.2 ms-1 -->
   <Reaction name = "Glu--GluOut" id="Glu--GluOut">
     <Reactant specieID="Glu"/>

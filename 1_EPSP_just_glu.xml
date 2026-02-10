@@ -1,32 +1,32 @@
 <StimulationSet>
   <!-- DOI: 50.1126/science.1359647 glutamate peaked at 1 mM -->
   <InjectionStim injectionSite="sa1[0].pointA" specieID="GluGlubuf">
-    <onset>5000</onset>
+    <onset>3000</onset>
     <duration>1</duration>
     <rate>40000</rate>
     <period>500</period>
-    <end>10020</end>
+    <end>8020</end>
   </InjectionStim>
-  <!-- <InjectionStim injectionSite="sa1[0].pointA" specieID="GluBuf"> -->
-  <!--   <onset>5010</onset> -->
-  <!--   <duration>1</duration> -->
-  <!--   <rate>40000</rate> -->
-  <!--   <period>500</period> -->
-  <!--   <end>10025</end> -->
-  <!-- </InjectionStim> -->
+  <InjectionStim injectionSite="sa1[0].pointA" specieID="GluBuf">
+    <onset>3010</onset>
+    <duration>1</duration>
+    <rate>40000</rate>
+    <period>500</period>
+    <end>8025</end>
+  </InjectionStim>
   <InjectionStim injectionSite="sa1[0].pointA" specieID="V">
-    <onset>5000</onset>
+    <onset>3000</onset>
     <duration>15</duration>
     <rate>1</rate>
     <period>500</period>
-    <end>10010</end>
+    <end>8010</end>
   </InjectionStim>
   <InjectionStim injectionSite="sa1[0].pointA" specieID="VBuf">
-    <onset>5020</onset>
+    <onset>3020</onset>
     <duration>1</duration>
     <rate>15</rate>
     <period>500</period>
-    <end>10025</end>
+    <end>8025</end>
   </InjectionStim>
 
 </StimulationSet>

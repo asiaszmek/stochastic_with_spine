@@ -127,14 +127,14 @@ Try Clements & Westbrook 1991
     <Q10>0.2</Q10>
   </Reaction>
 
-  <!--  <Reaction name = "V-\-VOut" id="V-\-VOut"> -->
-  <!--   <Reactant specieID="V"/> -->
-  <!--   <Product specieID="VOut"/> -->
+   <Reaction name = "V--VOut" id="V--VOut">
+    <Reactant specieID="V"/>
+    <Product specieID="VOut"/>
   
-  <!--   <forwardRate>0.5e-1</forwardRate> -->
-  <!--   <reverseRate>0.02e-6</reverseRate> -->
-  <!--   <Q10>0.2</Q10> -->
-  <!-- </Reaction> -->
+    <forwardRate>0.5e-1</forwardRate>
+    <reverseRate>0.02e-6</reverseRate>
+    <Q10>0.2</Q10>
+  </Reaction>
  
   <Reaction name="GluOut+GluBuf--NULL" id="GluOut_buf--NULL">
     <Reactant specieID="Glu" />
@@ -150,6 +150,7 @@ Try Clements & Westbrook 1991
     <forwardRate>20e-03</forwardRate>
     <reverseRate>0</reverseRate>
   </Reaction>
+  
   <Reaction name="GluOut+GlubufNULL" id="GluOut_GlubufNULL">
     <Reactant specieID="GluOut" />
     <Reactant specieID="Glubuf" />

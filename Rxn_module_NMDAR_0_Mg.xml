@@ -1,0 +1,101 @@
+
+<ReactionScheme>
+  <Specie name="Ca" id="Ca" kdiff="100" kdiffunit="mu2/s" />
+  <Specie name="CaOut" id="CaOut" kdiff="10" kdiffunit="mu2/s" />
+  <!-- 10.1016/j.tins.2011.03.002 for Glu diffusion-->
+  <Specie name="Glu" id="Glu" kdiff="320" kdiffunit="mu2/s" />
+  <Specie name="GluOut" id="GluOut" kdiff="320" kdiffunit="mu2/s" />
+  <Specie name="GluBuf" id="GluBuf" kdiff="320" kdiffunit="mu2/s" />
+  <Specie name="GluGlubuf" id="GluGlubuf" kdiff="320" kdiffunit="mu2/s" />
+  <Specie name="Glubuf" id="Glubuf" kdiff="320" kdiffunit="mu2/s" />
+  <Specie name="NMDARC" id="NMDARC" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="NMDARC1" id="NMDARC1" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="NMDARC2" id="NMDARC2" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="NMDARD" id="NMDARD" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="NMDARO" id="NMDARO" kdiff="0" kdiffunit="mu2/s"/>
+  
+  
+  
+<!--
+Use Bartol el al. 2015 model
+ -->
+
+<Reaction name = "NMDARC-C1" id="NMDARC-C1">
+    <Reactant specieID="NMDARC"/>
+    <Reactant specieID="Glu"/>
+    <Product specieID="NMDARC1"/>
+    <forwardRate>2e-5</forwardRate>
+    <reverseRate>11e-3</reverseRate>
+ </Reaction>
+
+  <Reaction name = "NMDARC1-C2" id="NMDARC1-C2">
+    <Reactant specieID="NMDARC1"/>
+    <Reactant specieID="Glu"/>
+    <Product specieID="NMDARC2"/>
+    <forwardRate>16.8e-3</forwardRate>
+    <reverseRate>3.6e-3</reverseRate>
+ </Reaction>
+   
+
+  <Reaction name = "NMDARC2-D" id="NMDARC2-D">
+    <Reactant specieID="NMDARC2"/>
+    <Product specieID="NMDARD" />
+    <forwardRate>8.4e-3</forwardRate>
+    <reverseRate>6.8e-3</reverseRate>
+  </Reaction>
+
+   <Reaction name = "NMDARC2-0" id="NMDARC2-0">
+    <Reactant specieID="NMDARC2"/>
+    <Product specieID="NMDARO" />
+    <forwardRate>93e-3</forwardRate>
+    <reverseRate>183.2e-3</reverseRate>
+  </Reaction>
+
+  
+
+  <Reaction name = "NMDAROflux" id="NMDARO-flux">
+    <Reactant specieID="NMDARO"/>
+    <Reactant specieID="CaOut"/>
+    <Product specieID="NMDARO" />
+    <Product specieID="Ca" />
+    <forwardRate>1e-6</forwardRate>
+    <reverseRate>1e-6</reverseRate>
+  </Reaction>
+
+  
+<!--https://doi.org/10.1523/JNEUROSCI.5125-04.2005 for astrocytes from adult animals ~ 1 ms-1, juvenile 1/5ms 0.2 ms-1 -->
+  <Reaction name = "Glu--GluOut" id="Glu--GluOut">
+    <Reactant specieID="Glu"/>
+    <Product specieID="GluOut"/>
+  
+    <forwardRate>1e-3</forwardRate>
+    <reverseRate>4e-9</reverseRate>
+    <Q10>0.2</Q10>
+  </Reaction>
+
+   
+  <Reaction name="GluOut+GluBuf--NULL" id="GluOut_buf--NULL">
+    <Reactant specieID="Glu" />
+    <Reactant specieID="GluBuf" />
+    <forwardRate>5e-02</forwardRate>
+    <reverseRate>0</reverseRate>
+  </Reaction>
+
+  <Reaction name="GluGlubufGlu+Glubuf" id="GluGlubufGlu+Glubuf">
+    <Reactant specieID="GluGlubuf" />
+    <Product specieID="Glubuf" />
+    <Product specieID="Glu" />
+    <forwardRate>20e-03</forwardRate>
+    <reverseRate>0</reverseRate>
+  </Reaction>
+  
+  <Reaction name="GluOut+GlubufNULL" id="GluOut_GlubufNULL">
+    <Reactant specieID="GluOut" />
+    <Reactant specieID="Glubuf" />
+    <forwardRate>1e-06</forwardRate>
+    <reverseRate>0</reverseRate>
+  </Reaction>
+
+  
+ 
+</ReactionScheme>

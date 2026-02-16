@@ -21,19 +21,15 @@
     <OutputSpecie name="Ca"/>
     <OutputSpecie name="CaER"/>
     <OutputSpecie name="CaOut"/>
-    <OutputSpecie name="NMDARC"/>
-    <OutputSpecie name="NMDARC1"/>
-    <OutputSpecie name="NMDARC2"/>
-    <OutputSpecie name="NMDARD"/>
     <OutputSpecie name="NMDARO"/>
     <OutputSpecie name="V"/>
     <OutputSpecie name="Glu"/>
-    <OutputSpecie name="NMDARCB"/>
-    <OutputSpecie name="NMDARC1B"/>
-    <OutputSpecie name="NMDARC2B"/>
-    <OutputSpecie name="NMDARDB"/>
-    <OutputSpecie name="NMDAROB"/>
- 
+    <OutputSpecie name="CaMCa4"/>
+    <OutputSpecie name="pmca2b"/>
+    <OutputSpecie name="pmca2bCa"/>
+    <OutputSpecie name="CaMCa4pmca2b"/>
+    <OutputSpecie name="CaMCa4pmca2bCa"/>
+    <OutputSpecie name="CaMpmca2b"/>
   </OutputSet>
 
   
@@ -44,6 +40,12 @@
     <OutputSpecie name="GluMgluR"/>
     <OutputSpecie name="GluMgluRGq"/>
     <OutputSpecie name="CaMCa4"/>
+    <OutputSpecie name="pmca1a"/>
+    <OutputSpecie name="pmca1aCa"/>
+    <OutputSpecie name="CaMCa4pmca1a"/>
+    <OutputSpecie name="CaMCa4pmca1aCa"/>
+    <OutputSpecie name="CaMpmca1a"/>
+    
   </OutputSet>
 
 

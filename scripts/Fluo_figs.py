@@ -114,7 +114,7 @@ def get_concentrations_region_list(my_file, my_list, trial, out, specie,
     return numbers
 
 
-def get_fluo_sig(signal, t_init, dt, interval=500, pre_basal=30, futile=0):
+def get_fluo_sig(signal, t_init, dt, interval=500, pre_basal=30, futile=1000):
    
     min_len = min([len(dat) for dat in signal])
     out = np.array([data[:min_len] for data in signal]).mean(axis=0)
@@ -141,7 +141,7 @@ if __name__ == "__main__":
     t_init = args.t_init
     specie = args.specie
     interval = 500
-    pre_basal = 30
+    pre_basal = 300
     output = args.output
     for fname in fnames:
         data_spine = []

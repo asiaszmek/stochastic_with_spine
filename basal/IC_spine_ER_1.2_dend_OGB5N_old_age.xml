@@ -13,10 +13,10 @@
     <NanoMolarity specieID="fixedbuffer" value="3994044"/>
     <NanoMolarity specieID="fixedbufferCa" value="5955"/>
 
-    <NanoMolarity specieID="CaM" value="2922"/>
+    <NanoMolarity specieID="CaM" value="1875"/>
     <NanoMolarity specieID="CaMCa2C" value="4"/>
     <NanoMolarity specieID="Ng" value="11672"/>
-    <NanoMolarity specieID="NgCaM" value="37078"/>
+    <NanoMolarity specieID="NgCaM" value="38542.25124677327"/>
     
     <NanoMolarity specieID="CaER"         value="0.8e5"     />
     <NanoMolarity       specieID="CRTP" value="89056"/>
@@ -33,8 +33,8 @@
     <NanoMolarity specieID="STIM_4" value="1.0" />
     <NanoMolarity specieID="LeakER" value="272" />
 
-    <NanoMolarity specieID="Dye" value="149320" />
-    <NanoMolarity specieID="CaDye" value="680" />
+    <NanoMolarity specieID="Dye" value="149740" />
+    <NanoMolarity specieID="CaDye" value="260" />
   </ConcentrationSet>
 
 

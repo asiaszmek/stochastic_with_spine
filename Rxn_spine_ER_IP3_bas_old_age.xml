@@ -785,9 +785,8 @@
    <Reaction name="GluMgluRGq--GqaGTP+GluMgluRGbg" id="GluMgluRGq--GqaGTP+GluMgluRGbg">
         <Reactant specieID="GluMgluRGq"/>
         <Product specieID="GqaGTP"/>
-        <Product specieID="GluMgluR"/> 
-        <Product specieID="Gbg"/>
- 
+        <Product specieID="GluMgluR"/>
+
         <forwardRate>  1.5e-03 </forwardRate>
         <reverseRate>   0  </reverseRate>
     </Reaction>

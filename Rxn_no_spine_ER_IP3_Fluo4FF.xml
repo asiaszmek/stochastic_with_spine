@@ -762,6 +762,62 @@
   <Specie name="IP5P_IP3" id="IP5P_IP3" kdiff="10." kdiffunit="mu2/s"/>
   <Specie name="IP3K_Ca2_IP3" id="IP3K_Ca2_IP3" kdiff="10." kdiffunit="mu2/s"/>
 
+<Reaction name="Glu+MgluR--GluMgluRdesens" id="Glu+MgluR--GluMgluRdesens">
+        <Reactant specieID="GluMgluR"/>
+        <Product specieID="GluMgluRdesens"/>
+
+        <forwardRate> 0.0625e-03 </forwardRate>
+        <reverseRate> 0.001e-03      </reverseRate>
+        <Q10>         0.2          </Q10>
+    </Reaction>
+
+   <Reaction name="Glu+MgluR--GluMgluR" id="Glu+MgluR--GluMgluR">
+        <Reactant specieID="Glu"/>
+        <Reactant specieID="MgluR"/>
+        <Product specieID="GluMgluR"/>
+
+        <forwardRate> 0.001e-03 </forwardRate>
+        <reverseRate> 0.5e-03      </reverseRate>
+    </Reaction>
+
+    <Reaction name="Gqabg+GluMgluR--GluMgluRGq" id="Gqabg+GluMgluR--GluMgluRGq">
+        <Reactant specieID="Gqabg"/>
+        <Reactant specieID="GluMgluR"/>
+        <Product specieID="GluMgluRGq"/>
+
+        <forwardRate>  0.0009e-03  </forwardRate>
+        <reverseRate>   1.36e-03  </reverseRate>
+    </Reaction>
+
+  <Reaction name="Gqabg+MgluR- -MgluRGq" id="Gqabg+MgluR- -MgluRGq">
+        <Reactant specieID="Gqabg"/>
+        <Reactant specieID="MgluR"/>
+        <Product specieID="MgluRGq"/>
+
+        <forwardRate> 0.225e-06 </forwardRate>
+        <reverseRate> 0.68e-03 </reverseRate>
+   </Reaction>
+
+   <Reaction name="Glu+MgluRGq- -GluMgluRGq" id="Glu+MgluRGq- -GluMgluRGq">
+        <Reactant specieID="Glu"/>
+        <Reactant specieID="MgluRGq"/>
+        <Product specieID="GluMgluRGq"/>
+
+        <forwardRate> 0.004e-03 </forwardRate>
+        <reverseRate> 1e-03 </reverseRate>
+   </Reaction>
+
+   <Reaction name="GluMgluRGq--GqaGTP+GluMgluRGbg" id="GluMgluRGq--GqaGTP+GluMgluRGbg">
+        <Reactant specieID="GluMgluRGq"/>
+        <Product specieID="GqaGTP"/>
+        <Product specieID="GluMgluR"/> 
+        <Product specieID="Gbg"/>
+ 
+        <forwardRate>  1.5e-03 </forwardRate>
+        <reverseRate>   0  </reverseRate>
+    </Reaction>
+
+ 
 
   <Reaction name="Plc+Ca--PlcCa" id="Plc+Ca--PlcCa">
     <Reactant specieID="Ca"/>
@@ -799,7 +855,7 @@
     <Product specieID="PlcCaGqaGTP"/>
     
     <forwardRate> 0.0035e-03   </forwardRate>
-    <reverseRate>0.7e-03        </reverseRate>
+    <reverseRate> 0.7e-03        </reverseRate>
     <Q10>         0.2           </Q10>
   </Reaction>
 
@@ -954,69 +1010,6 @@
 
 
 
-
-<Reaction name="Glu+MgluR--GluMgluRdesens" id="Glu+MgluR--GluMgluRdesens">
-        <Reactant specieID="GluMgluR"/>
-        <Product specieID="GluMgluRdesens"/>
-
-        <forwardRate> 0.0625e-03 </forwardRate>
-        <reverseRate> 0.001e-03      </reverseRate>
-        <Q10>         0.2          </Q10>
-    </Reaction>
-
-   <Reaction name="Glu+MgluR--GluMgluR" id="Glu+MgluR--GluMgluR">
-        <Reactant specieID="Glu"/>
-        <Reactant specieID="MgluR"/>
-        <Product specieID="GluMgluR"/>
-
-        <forwardRate> 0.5e-06 </forwardRate>
-        <reverseRate> 6.6e-03      </reverseRate>
-	<!-- uncomment below and comment above for Glu (vs Dhpg) -->
-        <!--forwardRate> 0.002e-03 </forwardRate>
-        <reverseRate> 1e-03      </reverseRate-->
-        <Q10>         0.2          </Q10>
-    </Reaction>
-
-    <Reaction name="Gqabg+GluMgluR--GluMgluRGq" id="Gqabg+GluMgluR--GluMgluRGq">
-        <Reactant specieID="Gqabg"/>
-        <Reactant specieID="GluMgluR"/>
-        <Product specieID="GluMgluRGq"/>
-
-        <forwardRate>  0.0015e-03  </forwardRate>
-        <reverseRate>   0.68e-03  </reverseRate>
-        <Q10>         0.2           </Q10>
-    </Reaction>
-
-  <Reaction name="Gqabg+MgluR- -MgluRGq" id="Gqabg+MgluR- -MgluRGq">
-        <Reactant specieID="Gqabg"/>
-        <Reactant specieID="MgluR"/>
-        <Product specieID="MgluRGq"/>
-
-        <forwardRate> 0.75e-06 </forwardRate>
-        <reverseRate> 6.8e-03 </reverseRate>
-        <Q10> 0.2 </Q10>
-   </Reaction>
-
-   <Reaction name="Glu+MgluRGq- -GluMgluRGq" id="Glu+MgluRGq- -GluMgluRGq">
-        <Reactant specieID="Glu"/>
-        <Reactant specieID="MgluRGq"/>
-        <Product specieID="GluMgluRGq"/>
-
-        <forwardRate> 0.001e-03 </forwardRate>
-        <reverseRate> 1e-03 </reverseRate>
-        <Q10> 0.2 </Q10>
-   </Reaction>
-
-   <Reaction name="GluMgluRGq--GqaGTP+GluMgluRGqbg" id="GluMgluRGq--GqaGTP+GluMgluRGqbg">
-        <Reactant specieID="GluMgluRGq"/>
-        <Product specieID="GqaGTP"/>
-        <Product specieID="GluMgluR"/> 
- 
-        <forwardRate>  0.5e-03 </forwardRate>
-        <reverseRate>   0  </reverseRate>
-        <Q10>         0.2           </Q10>
-    </Reaction>
-  
 
     
 

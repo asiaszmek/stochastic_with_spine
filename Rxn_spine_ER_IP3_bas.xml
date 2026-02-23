@@ -840,7 +840,7 @@
         <Reactant specieID="MgluR"/>
         <Product specieID="GluMgluR"/>
 
-        <forwardRate> 0.001e-03 </forwardRate>
+        <forwardRate> 2e-7 </forwardRate>
         <reverseRate> 0.5e-03      </reverseRate>
     </Reaction>
 
@@ -858,7 +858,7 @@
         <Reactant specieID="MgluR"/>
         <Product specieID="MgluRGq"/>
 
-        <forwardRate> 0.225e-06 </forwardRate>
+        <forwardRate> 4.5e-8 </forwardRate>
         <reverseRate> 0.68e-03 </reverseRate>
    </Reaction>
 

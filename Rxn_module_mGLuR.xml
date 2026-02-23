@@ -61,13 +61,15 @@
     </Reaction>
 
    <!--1a. Glu or Glu agonist Dhpg: Glu + MgluR <==> GluMgluR
-    1st set of rates is for Dhpg, 2nd set of rates for Glu  -->
+    1st set of rates is for Dhpg, 2nd set of rates for Glu 
+Kd of mGlur5 for glu is ~ 2.2 uM 10.1007/s11064-016-2026-6
+ -->
      <Reaction name = "Glu+MgluR--GluMgluR" id="Glu+MgluR--GluMgluR">
         <Reactant specieID="Glu"              />
         <Reactant specieID="MgluR"              />
         <Product  specieID="GluMgluR"         />
 
-        <forwardRate> 0.001e-03 </forwardRate>
+        <forwardRate> 2e-7 </forwardRate>
         <reverseRate> 0.5e-03      </reverseRate>
     </Reaction>
 
@@ -87,7 +89,7 @@
         <Reactant specieID="MgluR" />
         <Product specieID="MgluRGq" />
 
-        <forwardRate> 0.225e-06 </forwardRate>
+        <forwardRate> 4.5e-8 </forwardRate>
         <reverseRate> 0.68e-03 </reverseRate>
    </Reaction>
 

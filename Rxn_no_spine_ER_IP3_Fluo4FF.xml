@@ -753,7 +753,7 @@
   <Specie name="PIkinase" id="PIkinase" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="IP3degPIk" id="IP3degPIk" kdiff="0" kdiffunit="mu2/s"/>
   
-  <Specie name="IP3degrad" id="IP3degrad" kdiff="10.6" kdiffunit="mu2/s"/>
+  <Specie name="IP3degrad" id="IP3degrad" kdiff="0" kdiffunit="mu2/s"/>
 
   <Specie name="IP3" id="IP3" kdiff="220." kdiffunit="mu2/s"/>
   <Specie name="IP3K" id="IP3K" kdiff="0." kdiffunit="mu2/s"/>

@@ -31,11 +31,11 @@
   <Specie name="IP3degrad"     id="IP3degrad"           kdiff="10.6"    kdiffunit = "mu2/s"/>
 
   <Specie name="IP3"            id="IP3"           kdiff="220." kdiffunit="mu2/s"/>
-  <Specie name="IP3K"            id="IP3K"           kdiff="10." kdiffunit="mu2/s"/>
-  <Specie name="IP5P"            id="IP5P"           kdiff="10." kdiffunit="mu2/s"/>
-  <Specie name="IP3K_Ca2"            id="IP3K_Ca2"           kdiff="10." kdiffunit="mu2/s"/>
-  <Specie name="IP5P_IP3"            id="IP5P_IP3"           kdiff="10." kdiffunit="mu2/s"/>
-  <Specie name="IP3K_Ca2_IP3"            id="IP3K_Ca2_IP3"           kdiff="10." kdiffunit="mu2/s"/>
+  <Specie name="IP3K"            id="IP3K"           kdiff="0." kdiffunit="mu2/s"/>
+  <Specie name="IP5P"            id="IP5P"           kdiff="0." kdiffunit="mu2/s"/>
+  <Specie name="IP3K_Ca2"            id="IP3K_Ca2"           kdiff="0." kdiffunit="mu2/s"/>
+  <Specie name="IP5P_IP3"            id="IP5P_IP3"           kdiff="0." kdiffunit="mu2/s"/>
+  <Specie name="IP3K_Ca2_IP3"            id="IP3K_Ca2_IP3"           kdiff="0." kdiffunit="mu2/s"/>
 
 <!-- GluR reactions with Glutamate and Gq-proteins -->
 <!--III. *********** Gq coupled receptor, from GQ RXN FILE *************-->

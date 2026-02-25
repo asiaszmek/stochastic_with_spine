@@ -750,16 +750,18 @@
   <Specie name="PlcCaGqaGTPPip2" id="PlcCaGqaGTPPip2" kdiff="0" kdiffunit="mu2/s"/>
  
   
-  <Specie name="PIkinase" id="PIkinase" kdiff="0" kdiffunit="mu2/s"/>
-  <Specie name="IP3degPIk" id="IP3degPIk" kdiff="0" kdiffunit="mu2/s"/>
-  
-  <Specie name="IP3degrad" id="IP3degrad" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="PipKinase" id="PipKinase" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="IP3degPipK" id="IP3degPipK" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="IP4" id="IP4" kdiff="20" kdiffunit="mu2/s"/>
+  <Specie name="IP2" id="IP2" kdiff="20" kdiffunit="mu2/s"/>
+<Specie name="IP3" id="IP3" kdiff="20." kdiffunit="mu2/s"/>
 
-  <Specie name="IP3" id="IP3" kdiff="220." kdiffunit="mu2/s"/>
   <Specie name="IP3K" id="IP3K" kdiff="0." kdiffunit="mu2/s"/>
+  <Specie name="IP3K_IP3" id="IP3K_IP3" kdiff="0." kdiffunit="mu2/s"/>
   <Specie name="IP5P" id="IP5P" kdiff="0." kdiffunit="mu2/s"/>
   <Specie name="IP3K_Ca2" id="IP3K_Ca2" kdiff="0." kdiffunit="mu2/s"/>
   <Specie name="IP5P_IP3" id="IP5P_IP3" kdiff="0." kdiffunit="mu2/s"/>
+  <Specie name="IP5P_IP4" id="IP5P_IP4" kdiff="0." kdiffunit="mu2/s"/>
   <Specie name="IP3K_Ca2_IP3" id="IP3K_Ca2_IP3" kdiff="0." kdiffunit="mu2/s"/>
 
 <Reaction name="Glu+MgluR--GluMgluRdesens" id="Glu+MgluR--GluMgluRdesens">
@@ -900,6 +902,7 @@
   </Reaction>
 
   
+  
   <Reaction name="IP3--IP5P" id="IP3--IP5P">
     <Reactant specieID="IP3"/>
     <Reactant specieID="IP5P"/>
@@ -913,18 +916,36 @@
   <Reaction name="IP3--IP5P-degrad" id="IP3--IP5P-degrad">
     <Reactant specieID="IP5P_IP3"/>
     <Product specieID="IP5P"/>
-    <Product specieID="IP3degrad"/>
+    <Product specieID="IP2"/>
     <forwardRate> 18e-03      </forwardRate>
+    <Q10>         0.2           </Q10>
+  </Reaction>
+
+ <Reaction name="IP4--IP5P" id="IP4--IP5P">
+    <Reactant specieID="IP4"/>
+    <Reactant specieID="IP5P"/>
+    <Product specieID="IP5P_IP4"/>
+    
+    <forwardRate> 0.95e-04      </forwardRate>
+    <reverseRate> 72e-03      </reverseRate>
+    <Q10>         0.2           </Q10>
+  </Reaction>
+
+  <Reaction name="IP4--IP5P-degrad" id="IP4--IP5P-degrad">
+    <Reactant specieID="IP5P_IP4"/>
+    <Product specieID="IP5P"/>
+    <Product specieID="IP3"/>
+    <forwardRate> 6e-03      </forwardRate>
     <Q10>         0.2           </Q10>
   </Reaction>
 
   <Reaction name="IP3K--2Ca" id="IP3K--2Ca">
     <Reactant specieID="IP3K"/>
-    <Reactant specieID="Ca" power="2"/>
+    <Reactant specieID="CaMCa4"/>
     <Product specieID="IP3K_Ca2"/>
     
-    <forwardRate> 1111e-09      </forwardRate>
-    <reverseRate> 100e-03      </reverseRate>
+    <forwardRate> 0.002      </forwardRate>
+    <reverseRate> 10e-03      </reverseRate>
     <Q10>         0.2           </Q10>
   </Reaction>
 
@@ -940,26 +961,47 @@
 
 <Reaction name="IP3K2CaIP3" id="IP3K2CaIP3">
   <Reactant specieID="IP3K_Ca2_IP3"/>
-  <Product specieID="IP3degrad"/>
+  <Product specieID="IP4"/>
   <Product specieID="IP3K_Ca2"/>
 
     <forwardRate> 20e-03      </forwardRate>
     <Q10>         0.2           </Q10>
 </Reaction>
 
-<Reaction name="IP3degrad + PIkinase -- IP3degPIkinase" id="PIkinase1">
-    <Reactant specieID="IP3degrad"/>   
-    <Reactant specieID="PIkinase"/>
-    <Product specieID="IP3degPIk"/>
+
+<Reaction name="IP3K--IP3" id="IP3K--IP3">
+    <Reactant specieID="IP3K"/>
+    <Reactant specieID="IP3"/>
+    <Product specieID="IP3K_IP3"/>
+
+    <forwardRate> 33e-06      </forwardRate>
+    <reverseRate> 80e-03      </reverseRate>
+    <Q10>         0.2           </Q10>
+  </Reaction>
+
+<Reaction name="IP3KIP3" id="IP3KIP3">
+  <Reactant specieID="IP3K_IP3"/>
+  <Product specieID="IP4"/>
+  <Product specieID="IP3K"/>
+
+    <forwardRate> 20e-03      </forwardRate>
+    <Q10>         0.2           </Q10>
+</Reaction>
+
+
+<Reaction name="IP3degrad + PipKinase -- IP3degPipKinase" id="PipKinase1">
+    <Reactant specieID="IP2"/>   
+    <Reactant specieID="PipKinase"/>
+    <Product specieID="IP3degPipK"/>
 
     <forwardRate> 2.0e-6    </forwardRate>
     <reverseRate> 1e-03    </reverseRate>
     <Q10>         0.2           </Q10>
-</Reaction>
+-</Reaction>
 
-<Reaction name="IP3degPIkinase -- PIP2 + PIkinase" id="PIkinase2">
-    <Reactant specieID="IP3degPIk"/>
-    <Product specieID="PIkinase"/>
+<Reaction name="IP3degPipKinase -- PIP2 + PipKinase" id="PipKinase2">
+     <Reactant specieID="IP3degPipK"/>
+     
     <Product specieID="Pip2"/>
 
     <forwardRate> 1e-3  </forwardRate>

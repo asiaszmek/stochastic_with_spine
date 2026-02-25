@@ -70,7 +70,7 @@
     <PicoSD  specieID="Pip2" value="9964"  />
     <PicoSD  specieID="PlcCaPip2" value="20"  />
 
-    <PicoSD  specieID="PIkinase"   value="297"  />
+    <PicoSD  specieID="PipKinase"   value="297"  />
     <PicoSD  specieID="IP3degPIk"   value="9"  />
   </SurfaceDensitySet>
   <ConcentrationSet region="PSD">
@@ -121,7 +121,7 @@
     <NanoMolarity specieID="PlcCa"              value="0"    />
     <NanoMolarity specieID="Pip2"               value="19090"  />
     <NanoMolarity specieID="PlcCaPip2"          value="20"   />
-    <NanoMolarity specieID="PIkinase"    value="560"    />
+    <NanoMolarity specieID="PipKinase"    value="560"    />
   </ConcentrationSet>
  
   <ConcentrationSet region="neck">

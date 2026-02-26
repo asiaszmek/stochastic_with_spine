@@ -28,8 +28,8 @@
   
   <Specie name="PipKinase"      id="PipKinase"      kdiff="0"    kdiffunit = "mu2/s"/>
   <Specie name="IP3degPipK"      id="IP3degPipK"      kdiff="0"    kdiffunit = "mu2/s"/>
-  <Specie name="IP4"     id="IP4"           kdiff="20"    kdiffunit = "mu2/s"/>
-  <Specie name="IP2"     id="IP2"           kdiff="20"    kdiffunit = "mu2/s"/>
+  <Specie name="IP4"     id="IP4"           kdiff="0"    kdiffunit = "mu2/s"/>
+  <Specie name="IP2"     id="IP2"           kdiff="0"    kdiffunit = "mu2/s"/>
 <!--
 IP3 diffusion
 DOI: 10.1126/scisignal.aag1625 indicates 3-10 um2/s
@@ -53,7 +53,7 @@ DOI: 10.1038/s41598-023-29876-3 indicates  100 um2/s
 	<Product specieID="GluOut"/>
 
   	<forwardRate>0.5e-3</forwardRate>
-  	<reverseRate>0.02e-6</reverseRate>
+  	<reverseRate>0.002e-6</reverseRate>
   	<Q10>0.2</Q10>
   </Reaction>
 
@@ -332,10 +332,10 @@ Kd of mGlur5 for glu is ~ 2.2 uM 10.1007/s11064-016-2026-6
 <!-- Initial rate from PI5kinase from Falkenburger, increased to compensate for lower reactant quantity -->
    <Reaction name = "IP3degPipKinase -- PIP2 + PipKinase" id="PipKinase2">
      <Reactant specieID="IP3degPipK"            />
-     
+     <Product  specieID="PipKinase"            />
     <Product  specieID="Pip2"            />
 
-    <forwardRate> 1e-3  </forwardRate>
+    <forwardRate> 3e-3  </forwardRate>
     <reverseRate> 0e-03    </reverseRate>
     <Q10>         0.2           </Q10>
 </Reaction>    

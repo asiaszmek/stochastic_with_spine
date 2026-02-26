@@ -752,8 +752,8 @@
   
   <Specie name="PipKinase" id="PipKinase" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="IP3degPipK" id="IP3degPipK" kdiff="0" kdiffunit="mu2/s"/>
-  <Specie name="IP4" id="IP4" kdiff="20" kdiffunit="mu2/s"/>
-  <Specie name="IP2" id="IP2" kdiff="20" kdiffunit="mu2/s"/>
+  <Specie name="IP4" id="IP4" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="IP2" id="IP2" kdiff="0" kdiffunit="mu2/s"/>
 <Specie name="IP3" id="IP3" kdiff="20." kdiffunit="mu2/s"/>
 
   <Specie name="IP3K" id="IP3K" kdiff="0." kdiffunit="mu2/s"/>
@@ -1001,10 +1001,10 @@
 
 <Reaction name="IP3degPipKinase -- PIP2 + PipKinase" id="PipKinase2">
      <Reactant specieID="IP3degPipK"/>
-     
+     <Product specieID="PipKinase"/>
     <Product specieID="Pip2"/>
 
-    <forwardRate> 1e-3  </forwardRate>
+    <forwardRate> 3e-3  </forwardRate>
     <reverseRate> 0e-03    </reverseRate>
     <Q10>         0.2           </Q10>
 </Reaction>    

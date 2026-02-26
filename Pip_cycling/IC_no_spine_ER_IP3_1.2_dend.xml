@@ -26,15 +26,14 @@
     <NanoMolarity specieID="Cyt_SERCA_Ca" value="412" />
     <NanoMolarity specieID="Cyt_SERCA_Ca2" value="42" />
 
-    <NanoMolarity specieID="LeakER" value="50" />
+    <NanoMolarity specieID="LeakER" value="370" />
  
     <NanoMolarity specieID="IP3R"      value="184"     />
     <NanoMolarity specieID="IP3RIP3"      value="5"     />
     <NanoMolarity specieID="IP3RC"      value="9"     />
     <NanoMolarity specieID="IP3"      value="20"     />
-    <NanoMolarity specieID="IP3K" value="180" />
-    <NanoMolarity specieID="IP3K_Ca2" value="20" />
-    <NanoMolarity specieID="IP5P" value="250" />
+    <NanoMolarity specieID="IP3K" value="200" />
+    <NanoMolarity specieID="IP5P" value="2000" />
  
   </ConcentrationSet>
 
@@ -61,7 +60,7 @@
     <PicoSD  specieID="Pip2" value="10025"  />
     <PicoSD  specieID="PlcCaPip2" value="20"  />
 
-    <PicoSD  specieID="PipKinase"   value="320"  />
+    <PicoSD  specieID="PipKinase"   value="10000"  />
 
   </SurfaceDensitySet>
   <ConcentrationSet region="PSD">
@@ -72,13 +71,19 @@
     <NanoMolarity specieID="Cyt_SERCA_Ca"       value="0"     />
     <NanoMolarity specieID="Cyt_SERCA_Ca2"       value="0"     />
     <NanoMolarity specieID="LeakER" value="0" />
-    <NanoMolarity specieID="IP3K" value="0" />
-    <NanoMolarity specieID="IP3K_Ca2" value="0" />
-    <NanoMolarity specieID="IP5P" value="0" />
     <NanoMolarity specieID="IP3R"      value="0"     />
     <NanoMolarity specieID="IP3RO"      value="0"     />
     <NanoMolarity specieID="IP3RIP3"      value="0"     />
     <NanoMolarity specieID="IP3RC"      value="0"     />
+    <NanoMolarity specieID="Plc"                value="660"   />
+    <NanoMolarity specieID="PlcCa"              value="0"    />
+    <NanoMolarity specieID="Pip2"               value="0.9995e6"  />
+    <NanoMolarity specieID="PlcCaPip2"          value="500"   />
+    <NanoMolarity specieID="PipKinase"    value="20000"    />
+
+    <NanoMolarity specieID="IP3K" value="1800" />
+    <NanoMolarity specieID="IP5P" value="4000" />
+
   </ConcentrationSet>
 
   <ConcentrationSet region="head">
@@ -102,11 +107,10 @@
     <NanoMolarity specieID="PlcCa"              value="0"    />
     <NanoMolarity specieID="Pip2"               value="0.9995e6"  />
     <NanoMolarity specieID="PlcCaPip2"          value="500"   />
-    <NanoMolarity specieID="PipKinase"    value="560"    />
+    <NanoMolarity specieID="PipKinase"    value="20000"    />
 
-    <NanoMolarity specieID="IP3K" value="1678" />
-    <NanoMolarity specieID="IP3K_Ca2" value="122" />
-    <NanoMolarity specieID="IP5P" value="2000" />
+    <NanoMolarity specieID="IP3K" value="1800" />
+    <NanoMolarity specieID="IP5P" value="4000" />
     <NanoMolarity specieID="IP3R"      value="0"     />
     <NanoMolarity specieID="IP3RO"      value="0"     />
     <NanoMolarity specieID="IP3RIP3"      value="0"     />
@@ -131,14 +135,13 @@
     <NanoMolarity specieID="IP3RO"      value="0"     />
     <NanoMolarity specieID="IP3RIP3"      value="0"     />
     <NanoMolarity specieID="IP3RC"      value="0"     />
-    <NanoMolarity specieID="IP3K" value="839" />
-    <NanoMolarity specieID="IP3K_Ca2" value="61" />
-    <NanoMolarity specieID="IP5P" value="1000" />
+    <NanoMolarity specieID="IP3K" value="1800" />
+    <NanoMolarity specieID="IP5P" value="4000" />
     <NanoMolarity specieID="Plc"                value="1160"   />
     <NanoMolarity specieID="PlcCa"              value="0"    />
     <NanoMolarity specieID="Pip2"               value="1e6"  />
     <NanoMolarity specieID="PlcCaPip2"          value="20"   />
-    <NanoMolarity specieID="PipKinase"    value="560"    />
+    <NanoMolarity specieID="PipKinase"    value="20000"    />
   </ConcentrationSet>
 
 </InitialConditions> 

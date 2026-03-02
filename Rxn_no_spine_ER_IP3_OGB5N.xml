@@ -316,10 +316,7 @@
 
   
 <Specie name="Glu" id="Glu" kdiff="320" kdiffunit="mu2/s"/>
-  <Specie name="GluOut" id="GluOut" kdiff="320" kdiffunit="mu2/s"/>
-  <Specie name="GluBuf" id="GluBuf" kdiff="320" kdiffunit="mu2/s"/>
-  <Specie name="GluGlubuf" id="GluGlubuf" kdiff="320" kdiffunit="mu2/s"/>
-  <Specie name="Glubuf" id="Glubuf" kdiff="320" kdiffunit="mu2/s"/>
+ 
   <Specie name="NMDARC" id="NMDARC" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="NMDARC1" id="NMDARC1" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="NMDARC2" id="NMDARC2" kdiff="0" kdiffunit="mu2/s"/>
@@ -422,14 +419,6 @@
   </Reaction>
 
   
-<Reaction name="Glu--GluOut" id="Glu--GluOut">
-    <Reactant specieID="Glu"/>
-    <Product specieID="GluOut"/>
-  
-    <forwardRate>1e-3</forwardRate>
-    <reverseRate>4e-9</reverseRate>
-    <Q10>0.2</Q10>
-  </Reaction>
 
    <Reaction name="V--VOut" id="V--VOut">
     <Reactant specieID="V"/>
@@ -439,6 +428,27 @@
     <reverseRate>0.02e-6</reverseRate>
     <Q10>0.2</Q10>
   </Reaction>
+   <Reaction name="V+VBuf-\-NULL" id="V_buf-\-NULL"> 
+     <Reactant specieID="V"/> 
+     <Reactant specieID="VBuf"/> 
+     <forwardRate>5e-05</forwardRate> 
+   <reverseRate>0</reverseRate> 
+  </Reaction> 
+
+  <Specie name="GluOut" id="GluOut" kdiff="320" kdiffunit="mu2/s"/>
+  <Specie name="GluBuf" id="GluBuf" kdiff="320" kdiffunit="mu2/s"/>
+  <Specie name="GluGlubuf" id="GluGlubuf" kdiff="320" kdiffunit="mu2/s"/>
+  <Specie name="Glubuf" id="Glubuf" kdiff="320" kdiffunit="mu2/s"/>
+<Reaction name="Glu--GluOut" id="Glu--GluOut">
+    <Reactant specieID="Glu"/>
+    <Product specieID="GluOut"/>
+  
+    <forwardRate>1e-3</forwardRate>
+    <reverseRate>4e-9</reverseRate>
+    <Q10>0.2</Q10>
+  </Reaction>
+
+  
  
   <Reaction name="GluOut+GluBuf--NULL" id="GluOut_buf--NULL">
     <Reactant specieID="Glu"/>
@@ -463,14 +473,7 @@
   </Reaction>
 
   
-   <Reaction name="V+VBuf-\-NULL" id="V_buf-\-NULL"> 
-     <Reactant specieID="V"/> 
-     <Reactant specieID="VBuf"/> 
-     <forwardRate>5e-05</forwardRate> 
-   <reverseRate>0</reverseRate> 
-  </Reaction> 
-
-  <Specie name="CaER" id="CaER" kdiff="10." kdiffunit="mu2/s"/>
+<Specie name="CaER" id="CaER" kdiff="10." kdiffunit="mu2/s"/>
   <Specie name="RyR2CaM" id="RyR2CaM" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="RyR2CaMC1" id="RyR2CaMC1" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="RyR2CaMC2" id="RyR2CaMC2" kdiff="0" kdiffunit="mu2/s"/>

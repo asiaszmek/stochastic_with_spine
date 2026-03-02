@@ -7,7 +7,7 @@
  
   <!-- Add mGluRs from Blackwell's model -->
   <Specie name="Glu"            id="Glu"           kdiff="100"   kdiffunit="mu2/s"/>
-  <Specie name="GluOut"         id="GluOut"        kdiff="100"   kdiffunit="mu2/s"/>
+  
   <Specie name="MgluR"          id="MgluR"         kdiff="0"     kdiffunit="mu2/s"/>
   <Specie name="GluMgluR"       id="GluMgluR"      kdiff="0"     kdiffunit="mu2/s"/>
   <Specie name="GluMgluRdesens" id="GluMgluRdesens" kdiff="0"     kdiffunit="mu2/s"/>
@@ -49,16 +49,7 @@ DOI: 10.1038/s41598-023-29876-3 indicates  100 um2/s
 
 <!-- GluR reactions with Glutamate and Gq-proteins -->
 <!--III. *********** Gq coupled receptor, from GQ RXN FILE *************-->
-   <!--0a. GluOut    Glu <-> GluOut>  -->
-  <Reaction name = "Glu--GluOut" id="Glu--GluOut">
-  	<Reactant specieID="Glu"/>
-	<Product specieID="GluOut"/>
-
-  	<forwardRate>0.5e-3</forwardRate>
-  	<reverseRate>0.002e-6</reverseRate>
-  	<Q10>0.2</Q10>
-  </Reaction>
-
+ 
   
    <!--0b. GluMgluR <==> Desensitized, needed for prolonged DHPG application -->
       <Reaction name = "Glu+MgluR--GluMgluRdesens" id="Glu+MgluR--GluMgluRdesens">

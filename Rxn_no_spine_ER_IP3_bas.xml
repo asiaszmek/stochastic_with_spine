@@ -707,24 +707,26 @@
   <Specie name="PlcCa" id="PlcCa" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="PlcCaGqaGTP" id="PlcCaGqaGTP" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="PlcGqaGTP" id="PlcGqaGTP" kdiff="0" kdiffunit="mu2/s"/>
-  <Specie name="Pip2" id="Pip2" kdiff="0" kdiffunit="mu2/s"/>
-  <Specie name="PlcCaPip2" id="PlcCaPip2" kdiff="0" kdiffunit="mu2/s"/>
-  <Specie name="PlcCaGqaGTPPip2" id="PlcCaGqaGTPPip2" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="Pip2" id="Pip2" kdiff="10" kdiffunit="mu2/s"/>
+  <Specie name="Pip2_PM" id="Pip2_PM" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="PM" id="PM" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="PlcCaPip2_PM" id="PlcCaPip2_PM" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="PlcCaGqaGTPPip2_PM" id="PlcCaGqaGTPPip2_PM" kdiff="0" kdiffunit="mu2/s"/>
  
   
-  <Specie name="PipKinase" id="PipKinase" kdiff="0" kdiffunit="mu2/s"/>
-  <Specie name="IP3degPipK" id="IP3degPipK" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="PipKinase" id="PipKinase" kdiff="10" kdiffunit="mu2/s"/>
+  <Specie name="IP3degPipK" id="IP3degPipK" kdiff="10" kdiffunit="mu2/s"/>
   <Specie name="IP4" id="IP4" kdiff="10" kdiffunit="mu2/s"/>
   <Specie name="IP2" id="IP2" kdiff="10" kdiffunit="mu2/s"/>
 <Specie name="IP3" id="IP3" kdiff="20." kdiffunit="mu2/s"/>
 
-  <Specie name="IP3K" id="IP3K" kdiff="0." kdiffunit="mu2/s"/>
-  <Specie name="IP3K_IP3" id="IP3K_IP3" kdiff="0." kdiffunit="mu2/s"/>
-  <Specie name="IP5P" id="IP5P" kdiff="0." kdiffunit="mu2/s"/>
-  <Specie name="IP3K_Ca2" id="IP3K_Ca2" kdiff="0." kdiffunit="mu2/s"/>
-  <Specie name="IP5P_IP3" id="IP5P_IP3" kdiff="0." kdiffunit="mu2/s"/>
-  <Specie name="IP5P_IP4" id="IP5P_IP4" kdiff="0." kdiffunit="mu2/s"/>
-  <Specie name="IP3K_Ca2_IP3" id="IP3K_Ca2_IP3" kdiff="0." kdiffunit="mu2/s"/>
+  <Specie name="IP3K" id="IP3K" kdiff="2." kdiffunit="mu2/s"/>
+  <Specie name="IP3K_IP3" id="IP3K_IP3" kdiff="2." kdiffunit="mu2/s"/>
+  <Specie name="IP5P" id="IP5P" kdiff="2." kdiffunit="mu2/s"/>
+  <Specie name="IP3K_Ca2" id="IP3K_Ca2" kdiff="2." kdiffunit="mu2/s"/>
+  <Specie name="IP5P_IP3" id="IP5P_IP3" kdiff="2." kdiffunit="mu2/s"/>
+  <Specie name="IP5P_IP4" id="IP5P_IP4" kdiff="2." kdiffunit="mu2/s"/>
+  <Specie name="IP3K_Ca2_IP3" id="IP3K_Ca2_IP3" kdiff="2." kdiffunit="mu2/s"/>
 
 <Reaction name="Glu+MgluR--GluMgluRdesens" id="Glu+MgluR--GluMgluRdesens">
         <Reactant specieID="GluMgluR"/>
@@ -823,10 +825,10 @@
   </Reaction>
 
  
-  <Reaction name="PlcCa+Pip2--PlcCaPip2" id="PlcCa+Pip2--PlcCaPip2">
+  <Reaction name="PlcCa+Pip2_PM--PlcCaPip2_PM" id="PlcCa+Pip2_PM--PlcCaPip2_PM">
     <Reactant specieID="PlcCa"/>
-    <Reactant specieID="Pip2"/>
-    <Product specieID="PlcCaPip2"/>
+    <Reactant specieID="Pip2_PM"/>
+    <Product specieID="PlcCaPip2_PM"/>
     
     <forwardRate> 0.05e-06   </forwardRate>
     <reverseRate> 1.8e-3   </reverseRate>
@@ -834,31 +836,33 @@
   </Reaction>
   
 
-  <Reaction name="PlcCaPip2--PlcCaDag+IP3" id="PlcCaPip2--PlcCaDag+IP3">
-    <Reactant specieID="PlcCaPip2"/>
+  <Reaction name="PlcCaPip2_PM--PlcCaDag+IP3" id="PlcCaPip2_PM--PlcCaDag+IP3">
+    <Reactant specieID="PlcCaPip2_PM"/>
     <Product specieID="PlcCa"/>
     <Product specieID="IP3"/>
+    <Product specieID="PM"/>
     
     <forwardRate> 0.45e-03     </forwardRate>
     <reverseRate> 0e-03    </reverseRate>
     <Q10>         0.2           </Q10>
   </Reaction>
   
-  <Reaction name="PlcCaGqaGTP+Pip2--PlcCaGqaGTPPip2" id="PlcCaGqaGTP+Pip2--PlcCaGqaGTPPip2">
+  <Reaction name="PlcCaGqaGTP+Pip2_PM--PlcCaGqaGTPPip2_PM" id="PlcCaGqaGTP+Pip2_PM--PlcCaGqaGTPPip2_PM">
     <Reactant specieID="PlcCaGqaGTP"/>
-    <Reactant specieID="Pip2"/>
-    <Product specieID="PlcCaGqaGTPPip2"/>
+    <Reactant specieID="Pip2_PM"/>
+    <Product specieID="PlcCaGqaGTPPip2_PM"/>
     
     <forwardRate>  1.665e-06   </forwardRate>
     <reverseRate>  60e-03   </reverseRate>
     <Q10>         0.2           </Q10>
   </Reaction>
   
-  <Reaction name="PlcCaGqaGTPPip2--PlcCaGqaGTPDag+IP3" id="PlcCaGqaGTPPip2--PlcCaGqaGTPDag+IP3">
-    <Reactant specieID="PlcCaGqaGTPPip2"/>
+  <Reaction name="PlcCaGqaGTPPip2_PM--PlcCaGqaGTPDag+IP3" id="PlcCaGqaGTPPip2_PM--PlcCaGqaGTPDag+IP3">
+    <Reactant specieID="PlcCaGqaGTPPip2_PM"/>
     <Product specieID="PlcCaGqaGTP"/>
     <Product specieID="IP3"/>
-
+    <Product specieID="PM"/>
+    
     <forwardRate> 30e-03     </forwardRate>
     <reverseRate> 0e-03    </reverseRate>
   </Reaction>
@@ -969,7 +973,19 @@
     <forwardRate> 3e-3  </forwardRate>
     <reverseRate> 0e-03    </reverseRate>
     <Q10>         0.2           </Q10>
-</Reaction>    
+   </Reaction>
+
+
+<Reaction name="Pip2-to-PM-binging" id="Pip2-to-PM-binging">
+    <Reactant specieID="Pip2"/>   
+    <Reactant specieID="PM"/>
+    <Product specieID="Pip2_PM"/>
+
+    <forwardRate> 2.0e-5    </forwardRate>
+    <reverseRate> 1e-04    </reverseRate>
+    <Q10>         0.2           </Q10>
+-</Reaction>
+   
 
 <Reaction name="PlcGqaGTP--Plc+GqaGDP" id="PlcGqaGTP--Plc+GqaGDP">
     <Reactant specieID="PlcGqaGTP"/>

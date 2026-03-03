@@ -81,7 +81,7 @@
     <NanoMolarity specieID="Plc"                value="1200"   />
     <NanoMolarity specieID="PlcCa"              value="0"    />
     <NanoMolarity  specieID="Pip2" value="8000"  />
-        <NanoMolarity  specieID="Pip2_buf" value="16000"  />
+    <NanoMolarity  specieID="Pip2_buf" value="16000"  />
     <NanoMolarity  specieID="PI" value="90000.0"  />
     <NanoMolarity  specieID="PI4P" value="476000.0"  />
     <NanoMolarity  specieID="PlcCaPip2" value="20"  />

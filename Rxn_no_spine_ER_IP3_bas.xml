@@ -1041,10 +1041,10 @@
 </Reaction>
 
 <Reaction name="Pip2buf" id="Pip2buf">
-    <Reactant specieID="PI4P"/>   
-    <Product specieID="Pip2"/>
+    <Reactant specieID="Pip2"/>   
+    <Product specieID="Pip2_buf"/>
 
-    <forwardRate> 1    </forwardRate>
+    <forwardRate> 2    </forwardRate>
     <reverseRate>  1   </reverseRate>
     <Q10>         0.2           </Q10>
 </Reaction>

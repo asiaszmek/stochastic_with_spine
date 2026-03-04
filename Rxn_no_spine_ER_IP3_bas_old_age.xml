@@ -736,7 +736,7 @@
   <Specie name="PI4P" id="PI4P" kdiff="0" kdiffunit="mu2/s"/>
 
   <Specie name="PlcCaPip2" id="PlcCaPip2" kdiff="0" kdiffunit="mu2/s"/>
-  <Specie name="PlcCaPI4" id="PlcCaPI4" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="PlcCaPI4P" id="PlcCaPI4P" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="PlcCaGqaGTPPip2" id="PlcCaGqaGTPPip2" kdiff="0" kdiffunit="mu2/s"/>
  
  
@@ -876,8 +876,8 @@
 
 <Reaction name="PlcCa+PI4--PlcCaPI4" id="PlcCa+PI4--PlcCaPI4">
     <Reactant specieID="PlcCa"/>
-    <Reactant specieID="PI4"/>
-    <Product specieID="PlcCaPI4"/>
+    <Reactant specieID="PI4P"/>
+    <Product specieID="PlcCaPI4P"/>
     
     <forwardRate> 9e-8   </forwardRate>
     <reverseRate> 1.8e-3   </reverseRate>
@@ -885,7 +885,7 @@
   </Reaction>
   
 <Reaction name="PlcCaPI4--PlcCaDag+IP3" id="PlcCaPI4--PlcCaDag+IP3">
-    <Reactant specieID="PlcCaPI4"/>
+    <Reactant specieID="PlcCaPI4P"/>
     <Product specieID="PlcCa"/>
     <Product specieID="IP2"/>
     <Product specieID="Dag"/>

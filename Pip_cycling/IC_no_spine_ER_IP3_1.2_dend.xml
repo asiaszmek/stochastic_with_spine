@@ -32,9 +32,8 @@
     <NanoMolarity specieID="IP3RIP3"      value="5"     />
     <NanoMolarity specieID="IP3RC"      value="9"     />
     <NanoMolarity specieID="IP3"      value="20"     />
-    <NanoMolarity specieID="IP3K" value="200" />
-    <NanoMolarity specieID="IP5P" value="2000" />
- 
+    <NanoMolarity specieID="IP3K" value="900" />
+    <NanoMolarity specieID="IP5P" value="1000" />
   </ConcentrationSet>
 
 

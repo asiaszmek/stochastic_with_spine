@@ -34,11 +34,13 @@
   <Specie name="PI4P"            id="PI4P"            kdiff="0"    kdiffunit = "mu2/s"/>
 
   <Specie name="PlcCaPip2"       id="PlcCaPip2"       kdiff="0"    kdiffunit = "mu2/s"/>
+  <Specie name="PlcCaPI4"       id="PlcCaPI4"       kdiff="0"    kdiffunit = "mu2/s"/>
   <Specie name="PlcCaGqaGTPPip2" id="PlcCaGqaGTPPip2"  kdiff="0"    kdiffunit = "mu2/s"/>
  
  
   <Specie name="IP4"     id="IP4"           kdiff="10"    kdiffunit = "mu2/s"/>
   <Specie name="IP2"     id="IP2"           kdiff="10"    kdiffunit = "mu2/s"/>
+  <Specie name="I"     id="I"           kdiff="10"    kdiffunit = "mu2/s"/>
 <!--
 IP3 diffusion
 DOI: 10.1126/scisignal.aag1625 indicates 3-10 um2/s
@@ -203,6 +205,33 @@ Kd of mGlur5 for glu is ~ 2.2 uM 10.1007/s11064-016-2026-6
     <reverseRate> 0e-03    </reverseRate>
     <Q10>         0.2           </Q10>
   </Reaction>
+
+
+<!-- 10.1085/jgp.202113001 Plc cleaves PI4 as well-->
+  <Reaction name = "PlcCa+PI4--PlcCaPI4" id="PlcCa+PI4--PlcCaPI4">
+    <Reactant specieID="PlcCa"               />
+    <Reactant specieID="PI4"             />
+    <Product  specieID="PlcCaPI4"            />
+    
+    <forwardRate> 9e-8   </forwardRate>
+    <reverseRate> 1.8e-3   </reverseRate>
+    <Q10>         0.2           </Q10>
+  </Reaction>
+  
+<!-- 10.1085/jgp.202113001 suggest Kd of 20 uM in the hippocampus model-->
+  <!-- PlcCaPI4      <-> PlcCaDag + IP3 -->  
+  <Reaction name = "PlcCaPI4--PlcCaDag+IP3" id="PlcCaPI4--PlcCaDag+IP3">
+    <Reactant specieID="PlcCaPI4"            />
+    <Product  specieID="PlcCa"               />
+    <Product  specieID="IP2"            />
+    <Product  specieID="Dag"            />
+    
+    <forwardRate> 0.45e-03     </forwardRate>
+    <reverseRate> 0e-03    </reverseRate>
+    <Q10>         0.2           </Q10>
+  </Reaction>
+
+
   
   <!-- PlcCaGqaGTP + Pip2    <-> PlcCaGqaGTPPip2    -->
   <!-- Decrease Kf by 10x to compensate for 10x inc in Pip2-->
@@ -263,12 +292,14 @@ Kd of mGlur5 for glu is ~ 2.2 uM 10.1007/s11064-016-2026-6
     </Reaction>
 
     <!--  Dag   + DagK <-> DagKdag -> PA   step 2 -->
+    <!-- kcat values ~ 1 uM/min/mg-->
+    
     <Reaction name = "DagKdag1" id="DagKdag1">
          <Reactant specieID="DagKdag"            />
         <Product  specieID="PA"        />
         <Product  specieID="DagK"        />
 
-        <forwardRate> 0.2e-03      </forwardRate>
+        <forwardRate> 1e-03      </forwardRate>
         <reverseRate> 0.0e-03      </reverseRate>
     </Reaction>
     
@@ -386,13 +417,25 @@ of lipin to PA-->
 </Reaction>
 
 
-<!--Falkenburger et al 2010-->
-<Reaction name = "PA-to-PI" id="PA-to-PI">
-    <Reactant specieID="PA"            />   
-    <Product  specieID="PI"            />
+
+<Reaction name = "I2-to-I" id="I2-to-I">
+    <Reactant specieID="I2"            />   
+    <Product  specieID="I"            />
 
     <forwardRate> 2.0e-5    </forwardRate>
     <reverseRate> 0    </reverseRate>
+    <Q10>         0.2           </Q10>
+</Reaction>
+
+
+<!--Falkenburger et al 2010-->
+<Reaction name = "PA-to-PI" id="PA-to-PI">
+  <Reactant specieID="PA"            />
+  <Reactant specieID="I"            />   
+  <Product  specieID="PI"            />
+
+    <forwardRate> 1.0e-9    </forwardRate>
+    <reverseRate> 1e-3    </reverseRate>
     <Q10>         0.2           </Q10>
 </Reaction>
 

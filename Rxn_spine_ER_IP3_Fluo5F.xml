@@ -853,7 +853,7 @@
   <Specie name="Pip2" id="Pip2" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Pip2_buf" id="Pip2_buf" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Dag" id="Dag" kdiff="0" kdiffunit="mu2/s"/>
-  <Specie name="DagK" id="DagK" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="DagK" id="DagK" kdiff="3" kdiffunit="mu2/s"/>
   <Specie name="DagKdag" id="DagKdag" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="PA" id="PA" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="PALipin" id="PALipin" kdiff="0" kdiffunit="mu2/s"/>
@@ -863,11 +863,13 @@
   <Specie name="PI4P" id="PI4P" kdiff="0" kdiffunit="mu2/s"/>
 
   <Specie name="PlcCaPip2" id="PlcCaPip2" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="PlcCaPI4" id="PlcCaPI4" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="PlcCaGqaGTPPip2" id="PlcCaGqaGTPPip2" kdiff="0" kdiffunit="mu2/s"/>
  
  
   <Specie name="IP4" id="IP4" kdiff="10" kdiffunit="mu2/s"/>
   <Specie name="IP2" id="IP2" kdiff="10" kdiffunit="mu2/s"/>
+  <Specie name="I" id="I" kdiff="10" kdiffunit="mu2/s"/>
 <Specie name="IP3" id="IP3" kdiff="20." kdiffunit="mu2/s"/>
 
   <Specie name="IP3K" id="IP3K" kdiff="2." kdiffunit="mu2/s"/>
@@ -997,6 +999,30 @@
     <reverseRate> 0e-03    </reverseRate>
     <Q10>         0.2           </Q10>
   </Reaction>
+
+
+<Reaction name="PlcCa+PI4--PlcCaPI4" id="PlcCa+PI4--PlcCaPI4">
+    <Reactant specieID="PlcCa"/>
+    <Reactant specieID="PI4"/>
+    <Product specieID="PlcCaPI4"/>
+    
+    <forwardRate> 9e-8   </forwardRate>
+    <reverseRate> 1.8e-3   </reverseRate>
+    <Q10>         0.2           </Q10>
+  </Reaction>
+  
+<Reaction name="PlcCaPI4--PlcCaDag+IP3" id="PlcCaPI4--PlcCaDag+IP3">
+    <Reactant specieID="PlcCaPI4"/>
+    <Product specieID="PlcCa"/>
+    <Product specieID="IP2"/>
+    <Product specieID="Dag"/>
+    
+    <forwardRate> 0.45e-03     </forwardRate>
+    <reverseRate> 0e-03    </reverseRate>
+    <Q10>         0.2           </Q10>
+  </Reaction>
+
+
   
   <Reaction name="PlcCaGqaGTP+Pip2--PlcCaGqaGTPPip2" id="PlcCaGqaGTP+Pip2--PlcCaGqaGTPPip2">
     <Reactant specieID="PlcCaGqaGTP"/>
@@ -1153,12 +1179,24 @@
 </Reaction>
 
 
-<Reaction name="PA-to-PI" id="PA-to-PI">
-    <Reactant specieID="PA"/>   
-    <Product specieID="PI"/>
+
+<Reaction name="I2-to-I" id="I2-to-I">
+    <Reactant specieID="I2"/>   
+    <Product specieID="I"/>
 
     <forwardRate> 2.0e-5    </forwardRate>
     <reverseRate> 0    </reverseRate>
+    <Q10>         0.2           </Q10>
+</Reaction>
+
+
+<Reaction name="PA-to-PI" id="PA-to-PI">
+  <Reactant specieID="PA"/>
+  <Reactant specieID="I"/>   
+  <Product specieID="PI"/>
+
+    <forwardRate> 1.0e-9    </forwardRate>
+    <reverseRate> 1e-3    </reverseRate>
     <Q10>         0.2           </Q10>
 </Reaction>
 

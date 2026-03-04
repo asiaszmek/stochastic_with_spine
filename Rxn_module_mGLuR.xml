@@ -24,7 +24,7 @@
   <Specie name="Pip2"            id="Pip2"            kdiff="0"    kdiffunit = "mu2/s"/>
   <Specie name="Pip2_buf"        id="Pip2_buf"            kdiff="0"    kdiffunit = "mu2/s"/>
   <Specie name="Dag"            id="Dag"            kdiff="0"    kdiffunit = "mu2/s"/>
-  <Specie name="DagK"            id="DagK"            kdiff="0"    kdiffunit = "mu2/s"/>
+  <Specie name="DagK"            id="DagK"            kdiff="3"    kdiffunit = "mu2/s"/>
   <Specie name="DagKdag"            id="DagKdag"            kdiff="0"    kdiffunit = "mu2/s"/>
   <Specie name="PA"            id="PA"            kdiff="0"    kdiffunit = "mu2/s"/>
   <Specie name="PALipin"            id="PALipin"            kdiff="0"    kdiffunit = "mu2/s"/>

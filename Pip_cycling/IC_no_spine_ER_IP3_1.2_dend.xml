@@ -34,6 +34,8 @@
     <NanoMolarity specieID="IP3"      value="20"     />
     <NanoMolarity specieID="IP3K" value="900" />
     <NanoMolarity specieID="IP5P" value="1000" />
+    <!--Gallimore's values-->
+    <NanoMolarity specieID="DagK"               value="500"  />
   </ConcentrationSet>
 
 
@@ -61,7 +63,7 @@
     <PicoSD  specieID="PI" value="238000.0"  />
     <PicoSD  specieID="PI4P" value="44200.0"  />
     <PicoSD  specieID="PlcCaPip2" value="20"  />
-    <PicoSD specieID="DagK"               value="140"  />
+  
     <PicoSD specieID="Lipin"               value="400"  />
 
   </SurfaceDensitySet>
@@ -84,7 +86,6 @@
     <NanoMolarity  specieID="PI" value="90000.0"  />
     <NanoMolarity  specieID="PI4P" value="476000.0"  />
     <NanoMolarity  specieID="PlcCaPip2" value="20"  />
-    <NanoMolarity specieID="DagK"               value="140"  />
     <NanoMolarity specieID="Lipin"               value="400"  />
    
 
@@ -114,7 +115,6 @@
     <NanoMolarity  specieID="PI" value="476000.0"  />
     <NanoMolarity  specieID="PI4P" value="90000"  />
     <NanoMolarity  specieID="PlcCaPip2" value="20"  />
-    <NanoMolarity specieID="DagK"               value="140"  />
     <NanoMolarity specieID="Lipin"               value="400"  />
     
     <NanoMolarity specieID="IP3R"      value="0"     />

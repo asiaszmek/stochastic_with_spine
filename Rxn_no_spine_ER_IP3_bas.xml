@@ -1041,7 +1041,7 @@
 
 
 <Reaction name="I2-to-I" id="I2-to-I">
-    <Reactant specieID="I2"/>   
+    <Reactant specieID="IP2"/>   
     <Product specieID="I"/>
 
     <forwardRate> 2.0e-5    </forwardRate>

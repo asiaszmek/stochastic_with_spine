@@ -369,27 +369,6 @@ Change to Gallimore's values
 </Reaction>
 
 
-<!--Km~500 uM nad kcat~ 4.5s-1 https://doi.org/10.1194/jlr.RA120000937 
-of lipin to PA-->
-<Reaction name = "PA-to-Dag1" id="PA-to-Dag1">
-  <Reactant specieID="PA"            />
-  <Reactant specieID="Lipin"            /> 
-  <Product  specieID="PALipin"            />
-
-    <forwardRate> 1.3e-08    </forwardRate>
-    <reverseRate> 2e-3    </reverseRate>
-    <Q10>         0.2           </Q10>
-</Reaction>
-
-<Reaction name = "PA-to-Dag2" id="PA-to-Dag2">
-  <Reactant specieID="PALipin"            />
-  <Product specieID="Lipin"            /> 
-  <Product  specieID="Dag"            />
-
-    <forwardRate> 4.5e-3    </forwardRate>
-    <reverseRate> 0    </reverseRate>
-    <Q10>         0.2           </Q10>
-</Reaction>
 
 
 

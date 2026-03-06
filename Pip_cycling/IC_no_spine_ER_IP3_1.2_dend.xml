@@ -63,14 +63,13 @@
     <PicoSD specieID="GqaGTP" value="24"/>
     <PicoSD specieID="GqaGDP" value="20"/>
     
-    <PicoSD  specieID="Plc"  value="790"    />
+    <PicoSD  specieID="Plc"  value="804"    />
     <PicoSD  specieID="PlcCa"  value="36"    />
     <PicoSD  specieID="Pip2" value="3843"  />
     <PicoSD  specieID="Pip2_buf" value="7352"  />
     <PicoSD  specieID="PI" value="212913"/>
     <PicoSD  specieID="PI4P" value="39168"  />
     <PicoSD  specieID="PlcCaPip2" value="8"  />
-    <PicoSD  specieID="PlcCaPI4P" value="194"  />
     <PicoSD  specieID="Dag" value="14064"  />  
     <PicoSD  specieID="DagK" value="251"  />
     <PicoSD  specieID="DagKdag" value="263"  />
@@ -89,8 +88,8 @@
     <NanoMolarity specieID="IP3RO"      value="0"     />
     <NanoMolarity specieID="IP3RIP3"      value="0"     />
     <NanoMolarity specieID="IP3RC"      value="0"     />
-    <NanoMolarity specieID="Plc"                value="975"   />
-    <NanoMolarity specieID="PlcCaPI4P"                value="225"   />
+    <NanoMolarity specieID="Plc"                value="1200"   />
+
     <NanoMolarity specieID="PlcCa"              value="0"    />
     <NanoMolarity  specieID="Pip2" value="8000"  />
     <NanoMolarity  specieID="Pip2_buf" value="15000"  />
@@ -123,14 +122,13 @@
     <NanoMolarity specieID="MgluRGq"              value="543"     />
     <NanoMolarity specieID="GluMgluRGq"              value="37"     /> 
     <NanoMolarity specieID="Gqabg"              value="7421"  />
-    <NanoMolarity specieID="Plc"                value="1069"   />
+    <NanoMolarity specieID="Plc"                value="1180"   />
     <NanoMolarity specieID="PlcCa"              value="0"    />
     <NanoMolarity  specieID="Pip2" value="8000"  />
     <NanoMolarity  specieID="Pip2_buf" value="16000"  />
     <NanoMolarity  specieID="PI4P" value="80649"  />
     <NanoMolarity  specieID="PI" value="425704"  />
     <NanoMolarity  specieID="PlcCaPip2" value="37"  />
-    <NanoMolarity  specieID="PlcCaPI4P" value="111"  />
     <NanoMolarity specieID="Lipin"               value="800"  />
     
     <NanoMolarity specieID="IP3R"      value="0"     />

@@ -729,9 +729,6 @@
   <Specie name="DagK" id="DagK" kdiff="3" kdiffunit="mu2/s"/>
   <Specie name="DagKdag" id="DagKdag" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="PA" id="PA" kdiff="0" kdiffunit="mu2/s"/>
-  <Specie name="PALipin" id="PALipin" kdiff="0" kdiffunit="mu2/s"/>
-  <Specie name="Lipin" id="Lipin" kdiff="0.2" kdiffunit="mu2/s"/>
-
   <Specie name="PI" id="PI" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="PI4P" id="PI4P" kdiff="0" kdiffunit="mu2/s"/>
 
@@ -1010,25 +1007,6 @@
 </Reaction>
 
 
-<Reaction name="PA-to-Dag1" id="PA-to-Dag1">
-  <Reactant specieID="PA"/>
-  <Reactant specieID="Lipin"/> 
-  <Product specieID="PALipin"/>
-
-    <forwardRate> 1.3e-08    </forwardRate>
-    <reverseRate> 2e-3    </reverseRate>
-    <Q10>         0.2           </Q10>
-</Reaction>
-
-<Reaction name="PA-to-Dag2" id="PA-to-Dag2">
-  <Reactant specieID="PALipin"/>
-  <Product specieID="Lipin"/> 
-  <Product specieID="Dag"/>
-
-    <forwardRate> 4.5e-3    </forwardRate>
-    <reverseRate> 0    </reverseRate>
-    <Q10>         0.2           </Q10>
-</Reaction>
 
 
 

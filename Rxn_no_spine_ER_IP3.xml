@@ -871,8 +871,8 @@
     <Reactant specieID="Pip2"/>
     <Product specieID="PlcCaPip2"/>
     
-    <forwardRate> 9e-8   </forwardRate>
-    <reverseRate> 1.8e-3   </reverseRate>
+    <forwardRate> 3e-8   </forwardRate>
+    <reverseRate> 1.2e-3   </reverseRate>
     <Q10>         0.2           </Q10>
   </Reaction>
   
@@ -882,7 +882,7 @@
     <Product specieID="IP3"/>
     <Product specieID="Dag"/>
     
-    <forwardRate> 0.45e-03     </forwardRate>
+    <forwardRate> 0.3e-03     </forwardRate>
     <reverseRate> 0e-03    </reverseRate>
     <Q10>         0.2           </Q10>
   </Reaction>
@@ -893,8 +893,8 @@
     <Reactant specieID="PI4P"/>
     <Product specieID="PlcCaPI4P"/>
     
-    <forwardRate> 9e-8   </forwardRate>
-    <reverseRate> 1.8e-3   </reverseRate>
+    <forwardRate> 3e-9   </forwardRate>
+    <reverseRate> 1.2e-3   </reverseRate>
     <Q10>         0.2           </Q10>
   </Reaction>
   
@@ -904,7 +904,7 @@
     <Product specieID="IP2"/>
     <Product specieID="Dag"/>
     
-    <forwardRate> 0.45e-03     </forwardRate>
+    <forwardRate> 0.3e-03     </forwardRate>
     <reverseRate> 0e-03    </reverseRate>
     <Q10>         0.2           </Q10>
   </Reaction>
@@ -916,7 +916,7 @@
     <Reactant specieID="Pip2"/>
     <Product specieID="PlcCaGqaGTPPip2"/>
     
-    <forwardRate>  3e-06   </forwardRate>
+    <forwardRate>  1.665e-06   </forwardRate>
     <reverseRate>  60e-03   </reverseRate>
     <Q10>         0.2           </Q10>
   </Reaction>

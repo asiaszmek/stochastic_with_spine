@@ -818,9 +818,6 @@
   <Specie name="DagK" id="DagK" kdiff="3" kdiffunit="mu2/s"/>
   <Specie name="DagKdag" id="DagKdag" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="PA" id="PA" kdiff="0" kdiffunit="mu2/s"/>
-  <Specie name="PALipin" id="PALipin" kdiff="0" kdiffunit="mu2/s"/>
-  <Specie name="Lipin" id="Lipin" kdiff="0.2" kdiffunit="mu2/s"/>
-
   <Specie name="PI" id="PI" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="PI4P" id="PI4P" kdiff="0" kdiffunit="mu2/s"/>
 

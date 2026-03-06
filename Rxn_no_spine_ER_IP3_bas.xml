@@ -928,8 +928,8 @@
          <Reactant specieID="DagK"/>
         <Product specieID="DagKdag"/>
 
-        <forwardRate> 0.00007e-03      </forwardRate>
-        <reverseRate> 0.8e-3         </reverseRate>
+        <forwardRate>  10e-6    </forwardRate>
+        <reverseRate> 0.5e-3         </reverseRate>
     </Reaction>
 
     <Reaction name="IP3--IP5P" id="IP3--IP5P">

@@ -274,7 +274,7 @@ Change to Gallimore's values
         <Product  specieID="PA"        />
         <Product  specieID="DagK"        />
 
-        <forwardRate> 1e-03      </forwardRate>
+        <forwardRate> 2e-03      </forwardRate>
         <reverseRate> 0.0e-03      </reverseRate>
     </Reaction>
     

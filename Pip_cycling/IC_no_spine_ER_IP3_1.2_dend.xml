@@ -44,7 +44,7 @@
     <PicoSD specieID="ncxCa" value="250"/>
     <PicoSD specieID="pmca1a" value="5500"/>
     <PicoSD specieID="pmca1aCa" value="100"/>
-    
+    <!-- doi.org/10.3390/ijms22115867 -->
     <PicoSD  specieID="MgluR" value="50"  />
     <PicoSD  specieID="GluMgluR" value="0"  />
     <PicoSD specieID="GluMgluRdesens" value="0"/>

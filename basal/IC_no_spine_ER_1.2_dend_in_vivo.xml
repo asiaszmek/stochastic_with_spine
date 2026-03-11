@@ -56,7 +56,7 @@
     <NanoMolarity specieID="STIM_2" value="0" />
     <NanoMolarity specieID="STIM_2CaER" value="0" />
     <NanoMolarity specieID="NMDARCB" value="1801"/>
-    <NanoMolarity specieID="pmca2b"      value="22674"    />
+    <NanoMolarity specieID="pmca2b"      value="2674"    />
     <NanoMolarity specieID="pmca2bCa"      value="1326"    />
 
    </ConcentrationSet>
@@ -64,7 +64,7 @@
   <ConcentrationSet region="head">
     <NanoMolarity specieID="Leak" value="0"/>
     <NanoMolarity specieID="CaOutLeak" value="2500"/>
-    <NanoMolarity specieID="pmca1a" value="26040"/>
+    <NanoMolarity specieID="pmca1a" value="4940"/>
     <NanoMolarity specieID="pmca1aCa" value="60"/>
     <NanoMolarity specieID="ncx" value="1000"/>
     <NanoMolarity specieID="ncxCa" value="0"/>

@@ -43,7 +43,7 @@
   </SurfaceDensitySet>
 
   <ConcentrationSet region="PSD">
-    <NanoMolarity specieID="pmca2b"      value="24000"    />
+    <NanoMolarity specieID="pmca2b"      value="4000"    />
     <NanoMolarity specieID="CaOutLeak" value="2500"/>
     <NanoMolarity specieID="RyR2CaM"      value="0"    />
     <NanoMolarity specieID="Cyt_SERCA"       value="0"     />
@@ -60,7 +60,7 @@
    <ConcentrationSet region="head">
     <NanoMolarity specieID="Leak" value="0"/>
     <NanoMolarity specieID="CaOutLeak" value="2500"/>
-    <NanoMolarity specieID="pmca1a" value="26040"/>
+    <NanoMolarity specieID="pmca1a" value="4940"/>
     <NanoMolarity specieID="pmca1aCa" value="60"/>
     <NanoMolarity specieID="ncx" value="1000"/>
     <NanoMolarity specieID="ncxCa" value="0"/>

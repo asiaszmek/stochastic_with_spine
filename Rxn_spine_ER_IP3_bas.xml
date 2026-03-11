@@ -800,7 +800,7 @@
 
 
   <Specie name="MgluR" id="MgluR" kdiff="0" kdiffunit="mu2/s"/>
-  <Specie name="GluMgluR" id="GluMgluR" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="GluMgluR" id="GluMgluR" kdiff="0" kdiffunit="mu2/"/>
   <Specie name="GluMgluRdesens" id="GluMgluRdesens" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="MgluRGq" id="MgluRGq" kdiff="0" kdiffunit="mu2/s"/> 
   <Specie name="Gqabg" id="Gqabg" kdiff="0" kdiffunit="mu2/s"/>
@@ -1006,8 +1006,8 @@
          <Reactant specieID="DagK"/>
         <Product specieID="DagKdag"/>
 
-        <forwardRate>  10e-6    </forwardRate>
-        <reverseRate> 0.5e-3         </reverseRate>
+        <forwardRate>  2.8e-5    </forwardRate>
+        <reverseRate> 5e-3         </reverseRate>
     </Reaction>
 
     <Reaction name="IP3--IP5P" id="IP3--IP5P">

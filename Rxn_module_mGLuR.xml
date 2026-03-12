@@ -255,27 +255,28 @@ Kd of mGlur5 for glu is ~ 2.2 uM 10.1007/s11064-016-2026-6
 
 	<!-- ************* degradation of  DAG by DAG kinase -->
      <!--  Dag   + DagK <-> DagKdag -> PA  step 1  (Km = 2 mol% Shulga et al. FEBS letters 
-Change to Gallimore's values
+Change to Gallimore's values: almost no Dag left (I guess he needed that high Km not to have too high basal active PKC
+Change to original Avrama's values
 -->
     <Reaction name = "DagKdag1" id="DagKdag1">
          <Reactant specieID="Dag"            />
          <Reactant specieID="DagK"            />
-        <Product  specieID="DagKdag"        />
+         <Product  specieID="DagKdag"        />
 
-        <forwardRate>  1e-5    </forwardRate>
-        <reverseRate> 0.5e-3         </reverseRate>
+        <forwardRate> 0.00007e-03    </forwardRate>
+        <reverseRate> 0.8e-3         </reverseRate>
     </Reaction>
 
     <!--  Dag   + DagK <-> DagKdag -> PA   step 2 -->
     <!-- kcat values ~ 1 uM/min/mg-->
     
     <Reaction name = "DagKdag2" id="DagKdag2">
-         <Reactant specieID="DagKdag"            />
-        <Product  specieID="PA"        />
-        <Product  specieID="DagK"        />
+      <Reactant specieID="DagKdag"            />
+      <Product  specieID="PA"        />
+      <Product  specieID="DagK"        />
 
-        <forwardRate> 2e-03      </forwardRate>
-        <reverseRate> 0.0e-03      </reverseRate>
+      <forwardRate> 0.2e-03      </forwardRate>
+      <reverseRate> 0.0e-03      </reverseRate>
     </Reaction>
     
   <!--  IP3    <-> IP2          Degraded IP3-->

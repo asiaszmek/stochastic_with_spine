@@ -940,19 +940,19 @@
 	<Reaction name="DagKdag1" id="DagKdag1">
          <Reactant specieID="Dag"/>
          <Reactant specieID="DagK"/>
-        <Product specieID="DagKdag"/>
+         <Product specieID="DagKdag"/>
 
-        <forwardRate>  1e-5    </forwardRate>
-        <reverseRate> 0.5e-3         </reverseRate>
+        <forwardRate> 0.00007e-03    </forwardRate>
+        <reverseRate> 0.8e-3         </reverseRate>
     </Reaction>
 
     <Reaction name="DagKdag2" id="DagKdag2">
-         <Reactant specieID="DagKdag"/>
-        <Product specieID="PA"/>
-        <Product specieID="DagK"/>
+      <Reactant specieID="DagKdag"/>
+      <Product specieID="PA"/>
+      <Product specieID="DagK"/>
 
-        <forwardRate> 2e-03      </forwardRate>
-        <reverseRate> 0.0e-03      </reverseRate>
+      <forwardRate> 0.2e-03      </forwardRate>
+      <reverseRate> 0.0e-03      </reverseRate>
     </Reaction>
     
   <Reaction name="IP3--IP5P" id="IP3--IP5P">

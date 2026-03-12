@@ -835,7 +835,7 @@
     <Reactant specieID="Plc"/>
     <Product specieID="PlcCa"/>
 
-    <forwardRate> 0.0005e-03   </forwardRate>
+    <forwardRate> 0.0004e-03   </forwardRate>
     <reverseRate> 1e-03        </reverseRate>
     <Q10>         0.2           </Q10>
   </Reaction>
@@ -846,7 +846,7 @@
     <Reactant specieID="PlcCa"/>
     <Product specieID="PlcCaGqaGTP"/>
     
-    <forwardRate> 0.0035e-03   </forwardRate>
+    <forwardRate> 0.004375e-03   </forwardRate>
     <reverseRate> 0.7e-03        </reverseRate>
     <Q10>         0.2           </Q10>
   </Reaction>
@@ -942,11 +942,20 @@
          <Reactant specieID="DagK"/>
         <Product specieID="DagKdag"/>
 
-        <forwardRate>  2.8e-5    </forwardRate>
-        <reverseRate> 5e-3         </reverseRate>
+        <forwardRate>  1e-5    </forwardRate>
+        <reverseRate> 0.5e-3         </reverseRate>
     </Reaction>
 
-    <Reaction name="IP3--IP5P" id="IP3--IP5P">
+    <Reaction name="DagKdag2" id="DagKdag2">
+         <Reactant specieID="DagKdag"/>
+        <Product specieID="PA"/>
+        <Product specieID="DagK"/>
+
+        <forwardRate> 2e-03      </forwardRate>
+        <reverseRate> 0.0e-03      </reverseRate>
+    </Reaction>
+    
+  <Reaction name="IP3--IP5P" id="IP3--IP5P">
     <Reactant specieID="IP3"/>
     <Reactant specieID="IP5P"/>
     <Product specieID="IP5P_IP3"/>

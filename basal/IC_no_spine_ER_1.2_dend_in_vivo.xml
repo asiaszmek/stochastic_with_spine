@@ -6,11 +6,11 @@
     <NanoMolarity specieID="CaOut" value="1.4e6"/>
     <NanoMolarity specieID="Glu" value="25"/>
     <NanoMolarity specieID="Ca" value="73"/>
-    <NanoMolarity specieID="fixedbuffer" value="1997050"/>
-    <NanoMolarity specieID="fixedbufferCa" value="2950"/>
+    <NanoMolarity specieID="fixedbuffer" value="1996852"/>
+    <NanoMolarity specieID="fixedbufferCa" value="3148"/>
     <!-- total calbindin = 150 uM -->
-    <NanoMolarity specieID="Calbin" value="135670"/>
-    <NanoMolarity specieID="CalbinC" value="14330"/>
+    <NanoMolarity specieID="Calbin" value="134891"/>
+    <NanoMolarity specieID="CalbinC" value="15114.686988409981"/>
 
     <NanoMolarity specieID="CaM" value="1877"/>
     <NanoMolarity specieID="CaM_1_0" value="72"/>

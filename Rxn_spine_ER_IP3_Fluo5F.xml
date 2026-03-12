@@ -937,7 +937,7 @@
     <Reactant specieID="Plc"/>
     <Product specieID="PlcCa"/>
 
-    <forwardRate> 0.0004e-03   </forwardRate>
+    <forwardRate> 0.0005e-03   </forwardRate>
     <reverseRate> 1e-03        </reverseRate>
     <Q10>         0.2           </Q10>
   </Reaction>
@@ -948,7 +948,7 @@
     <Reactant specieID="PlcCa"/>
     <Product specieID="PlcCaGqaGTP"/>
     
-    <forwardRate> 0.004375e-03   </forwardRate>
+    <forwardRate> 0.0035e-03   </forwardRate>
     <reverseRate> 0.7e-03        </reverseRate>
     <Q10>         0.2           </Q10>
   </Reaction>

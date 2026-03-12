@@ -68,8 +68,8 @@
     <PicoSD  specieID="PI" value="230881"/>
     <PicoSD  specieID="PI4P" value="42981"  />
 
-    <PicoSD  specieID="Dag" value="45"  />
-    <PicoSD  specieID="DagKdag" value="180"  />
+    <PicoSD  specieID="Dag" value="0"  />
+    <PicoSD  specieID="DagKdag" value="0"  />
     <PicoSD  specieID="PA" value="8224"  />
     
   </SurfaceDensitySet>

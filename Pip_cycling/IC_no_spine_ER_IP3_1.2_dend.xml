@@ -40,7 +40,7 @@
   </ConcentrationSet>
 
 
-  <SurfaceDensitySet>
+ vc  <SurfaceDensitySet>
     <PicoSD specieID="Leak" value="5"/>
     <PicoSD specieID="CaOutLeak" value="1880"/>
     <PicoSD specieID="ncx" value="2750"/>
@@ -68,7 +68,7 @@
     <PicoSD  specieID="PI" value="230779"/>
     <PicoSD  specieID="PI4P" value="42988"  />
 
-    <PicoSD  specieID="Dag" value="86"  />
+    <PicoSD  specieID="Dag" value="120"  />
     <PicoSD  specieID="DagKdag" value="2"  />
     <PicoSD  specieID="PA" value="8174"  />
     
@@ -125,7 +125,7 @@
     <NanoMolarity specieID="IP3R"      value="0"     />
     <NanoMolarity specieID="GqaGTP"      value="46"     />
     <NanoMolarity specieID="GqaGDP"      value="48"     />
-    <NanoMolarity  specieID="Dag" value="80"  />
+    <NanoMolarity  specieID="Dag" value="300"  />
     <NanoMolarity  specieID="DagKdag" value="2"  />
     <NanoMolarity  specieID="PA" value="8090"  /> 
   </ConcentrationSet>

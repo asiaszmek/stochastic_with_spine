@@ -399,7 +399,7 @@
     <Reactant specieID="V"/>
     <Product specieID="NMDARO"/>
     <Product specieID="V"/>
-    <forwardRate>30</forwardRate>
+    <forwardRate>20</forwardRate>
     <reverseRate>1</reverseRate>
   </Reaction>
 

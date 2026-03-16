@@ -27,7 +27,7 @@
     <NanoMolarity specieID="Cyt_SERCA_Ca" value="412" />
     <NanoMolarity specieID="Cyt_SERCA_Ca2" value="42" />
 
-    <NanoMolarity specieID="LeakER" value="500" />
+    <NanoMolarity specieID="LeakER" value="450" />
    
     <NanoMolarity specieID="IP3R"      value="200"     />
     <NanoMolarity specieID="IP3K" value="300" />
@@ -39,8 +39,7 @@
     <NanoMolarity specieID="IP2" value="35" />
   </ConcentrationSet>
 
-
- vc  <SurfaceDensitySet>
+ <SurfaceDensitySet>
     <PicoSD specieID="Leak" value="5"/>
     <PicoSD specieID="CaOutLeak" value="1880"/>
     <PicoSD specieID="ncx" value="2750"/>
@@ -118,10 +117,10 @@
     <NanoMolarity specieID="Gqabg"              value="7240"  />
     <NanoMolarity specieID="Plc"                value="1162"   />
     <NanoMolarity specieID="PlcCa"              value="50"    />
-    <NanoMolarity  specieID="Pip2" value="4000"  />
-    <NanoMolarity  specieID="Pip2_buf" value="8000"  />
-    <NanoMolarity  specieID="PI" value="238000"  />
-    <NanoMolarity  specieID="PI4P" value="44200"  />
+    <NanoMolarity  specieID="Pip2" value="12000"  />
+    <NanoMolarity  specieID="Pip2_buf" value="24000"  />
+    <NanoMolarity  specieID="PI" value="714000"  />
+    <NanoMolarity  specieID="PI4P" value="132600"  />
     <NanoMolarity specieID="IP3R"      value="0"     />
     <NanoMolarity specieID="GqaGTP"      value="46"     />
     <NanoMolarity specieID="GqaGDP"      value="48"     />

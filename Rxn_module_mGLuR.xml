@@ -184,7 +184,7 @@ Kd of mGlur5 for glu is ~ 2.2 uM 10.1007/s11064-016-2026-6
     <Reactant specieID="Pip2"             />
     <Product  specieID="PlcCaPip2"            />
     
-    <forwardRate> 3e-8   </forwardRate>
+    <forwardRate> 6e-8   </forwardRate>
     <reverseRate> 1.2e-3   </reverseRate>
     <Q10>         0.2           </Q10>
   </Reaction>
@@ -205,7 +205,7 @@ Kd of mGlur5 for glu is ~ 2.2 uM 10.1007/s11064-016-2026-6
 
 
 
-  
+  <!-- 10.1085/jgp.202113001 suggest Kd of 20 uM in the hippocampus model-->
   <!-- PlcCaGqaGTP + Pip2    <-> PlcCaGqaGTPPip2    -->
   <!-- Decrease Kf by 10x to compensate for 10x inc in Pip2-->
   <!-- Decrease rates by 2x to maintain 10x enhancement by GqaGTP Nov 30
@@ -215,7 +215,7 @@ Kd of mGlur5 for glu is ~ 2.2 uM 10.1007/s11064-016-2026-6
     <Reactant specieID="Pip2"             />
     <Product  specieID="PlcCaGqaGTPPip2"            />
     
-    <forwardRate>  1.665e-06   </forwardRate>
+    <forwardRate>  3e-06   </forwardRate>
     <reverseRate>  60e-03   </reverseRate>
     <Q10>         0.2           </Q10>
   </Reaction>

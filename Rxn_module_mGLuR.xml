@@ -18,6 +18,7 @@
   <Specie name="GqaGDP"         id="GqaGDP"        kdiff="0"     kdiffunit="mu2/s"/>  
 
   <Specie name="Plc"             id="Plc"             kdiff="0"    kdiffunit = "mu2/s"/>
+  <Specie name="PlcPip2"             id="PlcPip2"             kdiff="0"    kdiffunit = "mu2/s"/>
   <Specie name="PlcCa"           id="PlcCa"           kdiff="0"    kdiffunit = "mu2/s"/>
   <Specie name="PlcCaGqaGTP"     id="PlcCaGqaGTP"     kdiff="0"    kdiffunit = "mu2/s"/>
   <Specie name="PlcGqaGTP"       id="PlcGqaGTP"       kdiff="0"    kdiffunit = "mu2/s"/>
@@ -188,8 +189,48 @@ Kd of mGlur5 for glu is ~ 2.2 uM 10.1007/s11064-016-2026-6
     <reverseRate> 1.2e-3   </reverseRate>
     <Q10>         0.2           </Q10>
   </Reaction>
+
+
+<!-- CA, Plc, Gq reactions are thermodynamically balanced JJS -->
+  <Reaction name = "PlcPip2+Ca--PlcCaPip2" id="PlcPip2+Ca--PlcCaPip2">
+    <Reactant specieID="Ca"           />
+    <Reactant specieID="PlcPip2"              />
+    <Product  specieID="PlcCaPip2"               />
+
+    <forwardRate> 0.000025e-03   </forwardRate>
+    <reverseRate> 1e-03        </reverseRate>
+    <Q10>         0.2           </Q10>
+  </Reaction>
+
   
+<!-- https://doi.org/10.1074/jbc.271.41.25071
+Kd of PLCbeta to Pip2 is 1uM-->
+
+  <Reaction name = "Plc+Pip2--PlcPip2" id="Plc+Pip2--PlcPip2">
+    <Reactant specieID="Plc"               />
+    <Reactant specieID="Pip2"             />
+    <Product  specieID="PlcPip2"            />
+    
+    <forwardRate> 2e-6   </forwardRate>
+    <reverseRate> 2e-3   </reverseRate>
+    <Q10>         0.2           </Q10>
+  </Reaction>
+
+
+   
+
 <!-- 10.1085/jgp.202113001 suggest Kd of 20 uM in the hippocampus model-->
+  <Reaction name = "PlcCaPip2+GqaGTP--PlcCaPip2GqaGTP" id="PlcCaPip2+GqaGTP--PlcPip2GqaGTP">
+    <Reactant specieID="GqaGTP"           />
+    <Reactant specieID="PlcCaPip2"              />
+    <Product  specieID="PlcCaGqaGTPPip2"               />
+
+    <forwardRate> 0.0007e-03   </forwardRate>
+    <reverseRate> 0.7e-03        </reverseRate>
+    <Q10>         0.2           </Q10>
+  </Reaction>
+  
+
   <!-- PlcCaPip2      <-> PlcCaDag + IP3 -->  
   <Reaction name = "PlcCaPip2--PlcCaDag+IP3" id="PlcCaPip2--PlcCaDag+IP3">
     <Reactant specieID="PlcCaPip2"            />

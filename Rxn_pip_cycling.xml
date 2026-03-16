@@ -327,7 +327,6 @@
   <Specie name="GqaGDP" id="GqaGDP" kdiff="0" kdiffunit="mu2/s"/>  
 
   <Specie name="Plc" id="Plc" kdiff="0" kdiffunit="mu2/s"/>
-  <Specie name="PlcPip2" id="PlcPip2" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="PlcCa" id="PlcCa" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="PlcCaGqaGTP" id="PlcCaGqaGTP" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="PlcGqaGTP" id="PlcGqaGTP" kdiff="0" kdiffunit="mu2/s"/>
@@ -429,17 +428,16 @@
     <Reactant specieID="PlcCa"/>
     <Product specieID="PlcCaGqaGTP"/>
     
-    <forwardRate> 0.0035e-03   </forwardRate>
+    <forwardRate> 3.5e-05   </forwardRate>
     <reverseRate> 0.7e-03        </reverseRate>
     <Q10>         0.2           </Q10>
   </Reaction>
-  
   <Reaction name="Plc+GqaGTP--PlcGqaGTP" id="Plc+GqaGTP--PlcGqaGTP">
     <Reactant specieID="GqaGTP"/>
     <Reactant specieID="Plc"/>
     <Product specieID="PlcGqaGTP"/>
 
-    <forwardRate> 0.0007e-03   </forwardRate>
+    <forwardRate> 7e-05   </forwardRate>
     <reverseRate> 0.7e-03        </reverseRate>
     <Q10>         0.2           </Q10>
   </Reaction>
@@ -469,35 +467,12 @@
 
   
   
-<Reaction name="Plc+Pip2--PlcPip2" id="Plc+Pip2--PlcPip2">
-    <Reactant specieID="Plc"/>
-    <Reactant specieID="Pip2"/>
-    <Product specieID="PlcPip2"/>
-    
-    <forwardRate> 1e-6   </forwardRate>
-    <reverseRate> 2e-3   </reverseRate>
-    <Q10>         0.2           </Q10>
-  </Reaction>
-
-<Reaction name="PlcPip2+Ca--PlcCaPip2" id="PlcPip2+Ca--PlcCaPip2">
-    <Reactant specieID="Ca"/>
-    <Reactant specieID="PlcPip2"/>
-    <Product specieID="PlcCaPip2"/>
-
-    <forwardRate> 5.9999999999999995e-08   </forwardRate>
-    <reverseRate> 1.2e-3        </reverseRate>
-    <Q10>         0.2           </Q10>
-  </Reaction>
-
-
-   
-
 <Reaction name="PlcCaPip2+GqaGTP--PlcCaPip2GqaGTP" id="PlcCaPip2+GqaGTP--PlcPip2GqaGTP">
     <Reactant specieID="GqaGTP"/>
     <Reactant specieID="PlcCaPip2"/>
     <Product specieID="PlcCaGqaGTPPip2"/>
 
-    <forwardRate> 0.0007e-03   </forwardRate>
+    <forwardRate>7e-05   </forwardRate>
     <reverseRate> 0.7e-03        </reverseRate>
     <Q10>         0.2           </Q10>
   </Reaction>

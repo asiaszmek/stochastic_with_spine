@@ -88,9 +88,9 @@
     <NanoMolarity  specieID="PI" value="238000"  />
     <NanoMolarity  specieID="PI4P" value="44200"  />
 
-    <NanoMolarity  specieID="Dag" value="80"  />
-    <NanoMolarity  specieID="DagKdag" value="2"  />
-    <NanoMolarity  specieID="PA" value="8070"  /> 
+    <NanoMolarity  specieID="Dag" value="160"  />
+    <NanoMolarity  specieID="DagKdag" value="6"  />
+    <NanoMolarity  specieID="PA" value="24210"  /> 
 
   </ConcentrationSet>
   
@@ -124,9 +124,9 @@
     <NanoMolarity specieID="IP3R"      value="0"     />
     <NanoMolarity specieID="GqaGTP"      value="46"     />
     <NanoMolarity specieID="GqaGDP"      value="48"     />
-    <NanoMolarity  specieID="Dag" value="300"  />
-    <NanoMolarity  specieID="DagKdag" value="2"  />
-    <NanoMolarity  specieID="PA" value="8090"  /> 
+    <NanoMolarity  specieID="Dag" value="900"  />
+    <NanoMolarity  specieID="DagKdag" value="6"  />
+    <NanoMolarity  specieID="PA" value="24270"  /> 
   </ConcentrationSet>
  
   <ConcentrationSet region="neck">

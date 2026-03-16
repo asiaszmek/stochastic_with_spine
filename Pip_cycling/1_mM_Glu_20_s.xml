@@ -3,28 +3,28 @@
   <InjectionStim injectionSite="sa1[0].pointA" specieID="GluGlubuf">
     <onset>10000</onset>
     <duration>1</duration>
-    <rate>40000</rate>
+    <rate>4000</rate>
     <period>5</period>
     <end>30000</end>
   </InjectionStim>
   <InjectionStim injectionSite="sa1[0].pointA" specieID="GluBuf">
     <onset>30000</onset>
     <duration>1000</duration>
-    <rate>160000</rate>
+    <rate>1000</rate>
     <end>31000</end>
   </InjectionStim>
 
   <InjectionStim injectionSite="dend01:submembrane" specieID="GluGlubuf">
     <onset>100000</onset>
     <duration>1</duration>
-    <rate>40000</rate>
+    <rate>4000</rate>
     <period>5</period>
     <end>30000</end>
   </InjectionStim>
   <InjectionStim injectionSite="dend01:submembrane" specieID="GluBuf">
     <onset>30000</onset>
     <duration>1000</duration>
-    <rate>160000</rate>
+    <rate>1000</rate>
     <end>31000</end>
   </InjectionStim>
 

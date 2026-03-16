@@ -57,9 +57,9 @@
     <PicoSD specieID="GqaGTP" value="0"/>
     <PicoSD specieID="GqaGDP" value="0"/>
     
-    <PicoSD  specieID="Plc"  value="400"    />
-    <PicoSD  specieID="PlcCa"  value="6"    />
-    <PicoSD  specieID="PlcCaPip2"  value="1"    />
+    <PicoSD  specieID="PlcPiP2"  value="400"    />
+    <PicoSD  specieID="PlcCa"  value="0"    />
+    <PicoSD  specieID="PlcCaPip2"  value="0"    />
     <PicoSD  specieID="PlcCaGqaGTP"  value="0"    />
     <PicoSD  specieID="PlcGqaGTP"  value="0"    />
 

@@ -885,24 +885,25 @@
   </Reaction>
 
 
-<Reaction name="PlcPip2+Ca--PlcCaPip2" id="PlcPip2+Ca--PlcCaPip2">
-    <Reactant specieID="Ca"/>
-    <Reactant specieID="PlcPip2"/>
-    <Product specieID="PlcCaPip2"/>
-
-    <forwardRate> 0.000025e-03   </forwardRate>
-    <reverseRate> 1e-03        </reverseRate>
-    <Q10>         0.2           </Q10>
-  </Reaction>
-
+  
   
 <Reaction name="Plc+Pip2--PlcPip2" id="Plc+Pip2--PlcPip2">
     <Reactant specieID="Plc"/>
     <Reactant specieID="Pip2"/>
     <Product specieID="PlcPip2"/>
     
-    <forwardRate> 2e-6   </forwardRate>
+    <forwardRate> 1e-6   </forwardRate>
     <reverseRate> 2e-3   </reverseRate>
+    <Q10>         0.2           </Q10>
+  </Reaction>
+
+<Reaction name="PlcPip2+Ca--PlcCaPip2" id="PlcPip2+Ca--PlcCaPip2">
+    <Reactant specieID="Ca"/>
+    <Reactant specieID="PlcPip2"/>
+    <Product specieID="PlcCaPip2"/>
+
+    <forwardRate> 5.9999999999999995e-08   </forwardRate>
+    <reverseRate> 1.2e-3        </reverseRate>
     <Q10>         0.2           </Q10>
   </Reaction>
 

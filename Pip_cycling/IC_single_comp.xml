@@ -29,7 +29,7 @@
 
     <NanoMolarity specieID="LeakER" value="295" />
    
-    <NanoMolarity specieID="IP3R"      value="80"     />
+    <NanoMolarity specieID="IP3R"      value="180"     />
     <NanoMolarity specieID="IP3K" value="300" />
     <NanoMolarity specieID="IP5P" value="333" />
     <!--Gallimore's values-->

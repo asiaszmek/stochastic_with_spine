@@ -5,14 +5,14 @@
   <InjectionStim injectionSite="dend01:submembrane" specieID="GluGlubuf">
     <onset>10000</onset>
     <duration>1</duration>
-    <rate>4000</rate>
+    <rate>2000</rate>
     <period>5</period>
     <end>70000</end>
   </InjectionStim>
   <InjectionStim injectionSite="dend01:submembrane" specieID="GluBuf">
     <onset>70000</onset>
     <duration>1000</duration>
-    <rate>1000</rate>
+    <rate>500</rate>
     <end>71000</end>
   </InjectionStim>
 

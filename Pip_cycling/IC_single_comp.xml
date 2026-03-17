@@ -29,13 +29,13 @@
 
     <NanoMolarity specieID="LeakER" value="420" />
    
-    <NanoMolarity specieID="IP3R"      value="200"     />
+    <NanoMolarity specieID="IP3R"      value="80"     />
     <NanoMolarity specieID="IP3K" value="300" />
     <NanoMolarity specieID="IP5P" value="333" />
     <!--Gallimore's values-->
     <NanoMolarity specieID="DagK"               value="297"  />
-    <NanoMolarity specieID="I"      value="14103"     />
-    <NanoMolarity specieID="IP3" value="1.32" />
+    <NanoMolarity specieID="I"      value="14141"     />
+    <NanoMolarity specieID="IP3" value="4" />
     <NanoMolarity specieID="IP2" value="35" />
   </ConcentrationSet>
 
@@ -43,24 +43,26 @@
   <SurfaceDensitySet>
     <PicoSD specieID="Leak" value="5"/>
     <PicoSD specieID="CaOutLeak" value="1925"/>
-    <PicoSD specieID="ncx" value="2750"/>
-    <PicoSD specieID="ncxCa" value="250"/>
-    <PicoSD specieID="pmca1a" value="5528"/>
-    <PicoSD specieID="pmca1aCa" value="72"/>
+    <PicoSD specieID="ncx" value="1784"/>
+    <PicoSD specieID="ncxCa" value="136"/>
+    <PicoSD specieID="pmca1a" value="4366"/>
+    <PicoSD specieID="pmca1aCa" value="53"/>
+    <PicoSD specieID="pmca2b" value="883"/>
+    <PicoSD specieID="pmca2bCa" value="83"/>
     <!-- doi.org/10.3390/ijms22115867 -->
-    <PicoSD  specieID="MgluR" value="5"  />
+    <PicoSD  specieID="MgluR" value="0"  />
     <PicoSD  specieID="GluMgluR" value="0"  />
-    <PicoSD specieID="MgluRGq" value="90"/>
-    <PicoSD specieID="Gqabg" value="5126"/>
-    <PicoSD specieID="GluMgluRGq" value="5"/>
+    <PicoSD specieID="MgluRGq" value="260"/>
+    <PicoSD specieID="Gqabg" value="3450"/>
+    <PicoSD specieID="GluMgluRGq" value="0"/>
     <PicoSD specieID="GqaGTP" value="0"/>
     <PicoSD specieID="GqaGDP" value="0"/>
     
-    <PicoSD  specieID="Plc"  value="400"    />
-    <PicoSD  specieID="PlcCa"  value="0"    />
+    <PicoSD  specieID="Plc"  value="733"    />
+    <PicoSD  specieID="PlcCa"  value="24"    />
     <PicoSD  specieID="PlcCaPip2"  value="0"    />
-    <PicoSD  specieID="PlcCaGqaGTP"  value="0"    />
-    <PicoSD  specieID="PlcGqaGTP"  value="0"    />
+    <PicoSD  specieID="PlcCaGqaGTP"  value="1.2"    />
+    <PicoSD  specieID="PlcGqaGTP"  value="1"    />
 
     <PicoSD  specieID="Pip2" value="3978"  />
     <PicoSD  specieID="Pip2_buf" value="7965"  />
@@ -70,7 +72,7 @@
     <PicoSD  specieID="Dag" value="86"  />
     <PicoSD  specieID="DagKdag" value="2"  />
     <PicoSD  specieID="PA" value="8174"  />
-    <PicoSD  specieID="NMDARCB" value="40"  />
+    <PicoSD  specieID="NMDARCB" value="444"  />
 
   </SurfaceDensitySet>
   

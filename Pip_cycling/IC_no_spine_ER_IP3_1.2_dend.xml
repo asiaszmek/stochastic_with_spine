@@ -27,7 +27,7 @@
     <NanoMolarity specieID="Cyt_SERCA_Ca" value="412" />
     <NanoMolarity specieID="Cyt_SERCA_Ca2" value="42" />
 
-    <NanoMolarity specieID="LeakER" value="450" />
+    <NanoMolarity specieID="LeakER" value="300" />
    
     <NanoMolarity specieID="IP3R"      value="200"     />
     <NanoMolarity specieID="IP3K" value="300" />
@@ -47,12 +47,11 @@
     <PicoSD specieID="pmca1a" value="5528"/>
     <PicoSD specieID="pmca1aCa" value="72"/>
     <!-- doi.org/10.3390/ijms22115867 -->
-    <PicoSD  specieID="MgluR" value="4.6"  />
+    <PicoSD  specieID="MgluR" value="5"  />
     <PicoSD  specieID="GluMgluR" value="0"  />
-    <PicoSD specieID="GluMgluRdesens" value="2"/>
-    <PicoSD specieID="MgluRGq" value="39"/>
+    <PicoSD specieID="MgluRGq" value="100"/>
     <PicoSD specieID="Gqabg" value="5126"/>
-    <PicoSD specieID="GluMgluRGq" value="4"/>
+    <PicoSD specieID="GluMgluRGq" value=""/>
     <PicoSD specieID="GqaGTP" value="0"/>
     <PicoSD specieID="GqaGDP" value="0"/>
     

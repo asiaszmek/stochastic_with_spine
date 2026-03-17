@@ -737,7 +737,6 @@
   </Reaction>
 <Specie name="MgluR" id="MgluR" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="GluMgluR" id="GluMgluR" kdiff="0" kdiffunit="mu2/s"/>
-  <Specie name="GluMgluRdesens" id="GluMgluRdesens" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="MgluRGq" id="MgluRGq" kdiff="0" kdiffunit="mu2/s"/> 
   <Specie name="Gqabg" id="Gqabg" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="GluMgluRGq" id="GluMgluRGq" kdiff="0" kdiffunit="mu2/s"/>
@@ -774,16 +773,7 @@
   <Specie name="IP5P_IP4" id="IP5P_IP4" kdiff="2." kdiffunit="mu2/s"/>
   <Specie name="IP3K_Ca2_IP3" id="IP3K_Ca2_IP3" kdiff="2." kdiffunit="mu2/s"/>
 
-<Reaction name="Glu+MgluR--GluMgluRdesens" id="Glu+MgluR--GluMgluRdesens">
-        <Reactant specieID="GluMgluR"/>
-        <Product specieID="GluMgluRdesens"/>
-
-        <forwardRate> 0.0625e-03 </forwardRate>
-        <reverseRate> 0.001e-03      </reverseRate>
-        <Q10>         0.2          </Q10>
-    </Reaction>
-
-   <Reaction name="Glu+MgluR--GluMgluR" id="Glu+MgluR--GluMgluR">
+<Reaction name="Glu+MgluR--GluMgluR" id="Glu+MgluR--GluMgluR">
         <Reactant specieID="Glu"/>
         <Reactant specieID="MgluR"/>
         <Product specieID="GluMgluR"/>

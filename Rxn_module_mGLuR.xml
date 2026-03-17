@@ -10,7 +10,7 @@
   
   <Specie name="MgluR"          id="MgluR"         kdiff="0"     kdiffunit="mu2/s"/>
   <Specie name="GluMgluR"       id="GluMgluR"      kdiff="0"     kdiffunit="mu2/s"/>
-  <Specie name="GluMgluRdesens" id="GluMgluRdesens" kdiff="0"     kdiffunit="mu2/s"/>
+  <!-- <Specie name="GluMgluRdesens" id="GluMgluRdesens" kdiff="0"     kdiffunit="mu2/s"/> -->
   <Specie name="MgluRGq"        id="MgluRGq"       kdiff="0"     kdiffunit="mu2/s"/> 
   <Specie name="Gqabg"          id="Gqabg"         kdiff="0"     kdiffunit="mu2/s"/>
   <Specie name="GluMgluRGq"     id="GluMgluRGq"    kdiff="0"     kdiffunit="mu2/s"/>
@@ -58,15 +58,15 @@ DOI: 10.1038/s41598-023-29876-3 indicates  100 um2/s
 <!--III. *********** Gq coupled receptor, from GQ RXN FILE *************-->
  
   
-   <!--0b. GluMgluR <==> Desensitized, needed for prolonged DHPG application -->
-      <Reaction name = "Glu+MgluR--GluMgluRdesens" id="Glu+MgluR--GluMgluRdesens">
-        <Reactant specieID="GluMgluR"              />
-        <Product  specieID="GluMgluRdesens"         />
+   <!-- <!-\-0b. GluMgluR <==> Desensitized, needed for prolonged DHPG application -\-> -->
+   <!--    <Reaction name = "Glu+MgluR-\-GluMgluRdesens" id="Glu+MgluR-\-GluMgluRdesens"> -->
+   <!--      <Reactant specieID="GluMgluR"              /> -->
+   <!--      <Product  specieID="GluMgluRdesens"         /> -->
 
-        <forwardRate> 0.0625e-03 </forwardRate>
-        <reverseRate> 0.001e-03      </reverseRate>
-        <Q10>         0.2          </Q10>
-    </Reaction>
+   <!--      <forwardRate> 0.0625e-03 </forwardRate> -->
+   <!--      <reverseRate> 0.001e-03      </reverseRate> -->
+   <!--      <Q10>         0.2          </Q10> -->
+   <!--  </Reaction> -->
 
    <!--1a. Glu or Glu agonist Dhpg: Glu + MgluR <==> GluMgluR
     1st set of rates is for Dhpg, 2nd set of rates for Glu 

@@ -47,13 +47,13 @@
     <PicoSD specieID="ncxCa" value="136"/>
     <PicoSD specieID="pmca1a" value="4366"/>
     <PicoSD specieID="pmca1aCa" value="53"/>
-    <PicoSD specieID="pmca2b" value="883"/>
-    <PicoSD specieID="pmca2bCa" value="83"/>
+    <PicoSD specieID="pmca2b" value="40"/>
+    <PicoSD specieID="pmca2bCa" value="0"/>
     <!-- doi.org/10.3390/ijms22115867 -->
     <PicoSD  specieID="MgluR" value="0"  />
     <PicoSD  specieID="GluMgluR" value="0"  />
     <PicoSD specieID="MgluRGq" value="260"/>
-    <PicoSD specieID="Gqabg" value="3450"/>
+    <PicoSD specieID="Gqabg" value="8000"/>
     <PicoSD specieID="GluMgluRGq" value="0"/>
     <PicoSD specieID="GqaGTP" value="0"/>
     <PicoSD specieID="GqaGDP" value="0"/>
@@ -72,7 +72,7 @@
     <PicoSD  specieID="Dag" value="86"  />
     <PicoSD  specieID="DagKdag" value="2"  />
     <PicoSD  specieID="PA" value="8174"  />
-    <PicoSD  specieID="NMDARCB" value="444"  />
+    <PicoSD  specieID="NMDARCB" value="60"  />
 
   </SurfaceDensitySet>
   

@@ -41,6 +41,7 @@ flist_pip_cycling = [
     "Rxn_module_GluBuf.xml",
     "Rxn_module_SERCA2.xml",
     "Rxn_module_GluBuf.xml",
+    "Rxn_module_NMDAR.xml",
     ]
 
 flist_no_ER_spine_basal = [

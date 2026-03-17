@@ -69,7 +69,7 @@
     <PicoSD  specieID="Dag" value="120"  />
     <PicoSD  specieID="DagKdag" value="2"  />
     <PicoSD  specieID="PA" value="8174"  />
-    
+    <PicoSD  specieID="NMDARCB" value="20"  />
   </SurfaceDensitySet>
   
   <ConcentrationSet region="PSD">
@@ -90,7 +90,7 @@
     <NanoMolarity  specieID="Dag" value="160"  />
     <NanoMolarity  specieID="DagKdag" value="6"  />
     <NanoMolarity  specieID="PA" value="24210"  /> 
-
+    <NanoMolarity specieID="NMDARCB" value="1801"/>
   </ConcentrationSet>
   
 

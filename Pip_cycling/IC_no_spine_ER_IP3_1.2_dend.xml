@@ -51,7 +51,7 @@
     <PicoSD  specieID="GluMgluR" value="0"  />
     <PicoSD specieID="MgluRGq" value="100"/>
     <PicoSD specieID="Gqabg" value="5126"/>
-    <PicoSD specieID="GluMgluRGq" value=""/>
+    <PicoSD specieID="GluMgluRGq" value="0"/>
     <PicoSD specieID="GqaGTP" value="0"/>
     <PicoSD specieID="GqaGDP" value="0"/>
     
@@ -109,8 +109,8 @@
     <NanoMolarity specieID="LeakER" value="0" />
     
     <NanoMolarity specieID="MgluR"              value="142"     />
-    <NanoMolarity specieID="GluMgluR"              value="2"     />
-    <NanoMolarity specieID="GluMgluRdesens"              value="23"     />
+    <NanoMolarity specieID="GluMgluR"              value="25"     />
+
     <NanoMolarity specieID="MgluRGq"              value="681"     />
     <NanoMolarity specieID="GluMgluRGq"              value="59"     /> 
     <NanoMolarity specieID="Gqabg"              value="7240"  />

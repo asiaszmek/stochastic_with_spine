@@ -34,15 +34,12 @@
     <NanoMolarity specieID="IP5P" value="500" />
     <!--Gallimore's values-->
     <NanoMolarity specieID="DagK"               value="300"  />
-    <NanoMolarity specieID="Lipin"               value="100"  />
+
     <NanoMolarity specieID="IP3" value="18" />
     <NanoMolarity specieID="IP2" value="508" />
     <NanoMolarity specieID="STIM_2CaER" value="375" />
     <NanoMolarity specieID="STIM_2" value="22.5" />
     <!--different groups like different concentrations, Rangamani's using 1.25 uM, Blackwell's using 1.5 to 11 uM, let's use a lot, but not a lot lot -->
-    <NanoMolarity specieID="PP1" value="4e3" />
-    <NanoMolarity specieID="PP2B" value="4e3" />
-    <NanoMolarity specieID="PKCc" value="4e3" />
   </ConcentrationSet>
 
 
@@ -77,7 +74,7 @@
 
     <PicoSD  specieID="Dag" value="700"  />
     <PicoSD  specieID="DagKdag" value="0"  />
-    <PicoSD  specieID="PA" value="16348"  />
+    <PicoSD  specieID="PA" value="0"  />
     <PicoSD  specieID="NMDARCB" value="58"  />
     <PicoSD  specieID="NMDARC1B" value="4"  />
 

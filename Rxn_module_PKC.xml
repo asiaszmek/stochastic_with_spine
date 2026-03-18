@@ -407,7 +407,7 @@ https://doi.org/10.1042/BJ20061483
 
      <Reaction name = "Dag - PA cycling3b" id="Dag PA cycling3b" >
        <Reactant specieID="PAPP1Lipin"           />
-       <Prodyyct specieID="Lipin"           />
+       <Product specieID="Lipin"           />
        <Product  specieID="Dag"               />
        <Product  specieID="PP1"               />
         <forwardRate> 0.7e-3  </forwardRate>
@@ -428,7 +428,7 @@ https://doi.org/10.1042/BJ20061483
 
      <Reaction name = "Dag - PA cycling3b" id="Dag PA cycling4b" >
        <Reactant specieID="PANgLipin"           />
-       <Prodyyct specieID="Lipin"           />
+       <Product specieID="Lipin"           />
        <Product  specieID="Dag"               />
        <Product  specieID="Ng"               />
         <forwardRate> 0.7e-3  </forwardRate>

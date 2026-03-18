@@ -42,7 +42,7 @@
   <Specie name="Lipin" id="Lipin" kdiff="3" kdiffunit="mu2/s" />
   <Specie name="PALipin" id="PALipin" kdiff="0" kdiffunit="mu2/s" />
   <Specie name="PAPP1Lipin" id="PAPP1Lipin" kdiff="0" kdiffunit="mu2/s" />
-  <Specie name="PANgLipin" id="PANgLipin" kdiff="0" kdiffunit="mu2/s" />  
+  <Specie name="NgPALipin" id="NgPALipin" kdiff="0" kdiffunit="mu2/s" />  
  
  
   <!--*************************************************************************
@@ -407,7 +407,7 @@ https://doi.org/10.1042/BJ20061483
 
      <Reaction name = "Dag - PA cycling3b" id="Dag PA cycling3b" >
        <Reactant specieID="PAPP1Lipin"           />
-       <Prodyyct specieID="Lipin"           />
+       <Product specieID="Lipin"           />
        <Product  specieID="Dag"               />
        <Product  specieID="PP1"               />
         <forwardRate> 0.7e-3  </forwardRate>
@@ -417,9 +417,9 @@ https://doi.org/10.1042/BJ20061483
 
      
     <Reaction name = "Dag - PA cycling3a" id="Dag PA cycling4a" >
-       <Reactant specieID="PANg"           />
+       <Reactant specieID="NgPA"           />
        <Reactant specieID="Lipin"           />
-        <Product  specieID="PANgLipin"               />
+        <Product  specieID="NgPALipin"               />
 
         <forwardRate> 1.133e-8  </forwardRate>
 	<reverseRate> 1e-3  </reverseRate>
@@ -427,8 +427,8 @@ https://doi.org/10.1042/BJ20061483
      </Reaction>
 
      <Reaction name = "Dag - PA cycling3b" id="Dag PA cycling4b" >
-       <Reactant specieID="PANgLipin"           />
-       <Prodyyct specieID="Lipin"           />
+       <Reactant specieID="NgPALipin"           />
+       <Product specieID="Lipin"           />
        <Product  specieID="Dag"               />
        <Product  specieID="Ng"               />
         <forwardRate> 0.7e-3  </forwardRate>

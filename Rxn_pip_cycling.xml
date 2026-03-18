@@ -1050,7 +1050,10 @@
   <Specie name="pNgPP1" id="pNgPP1" kdiff="6" kdiffunit="mu2/s"/>
   <Specie name="PAPP1" id="PAPP1" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="NgPA" id="NgPA" kdiff="0" kdiffunit="mu2/s"/>
-  
+  <Specie name="Lipin" id="Lipin" kdiff="3" kdiffunit="mu2/s"/>
+  <Specie name="PALipin" id="PALipin" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="PAPP1Lipin" id="PAPP1Lipin" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="PANgLipin" id="PANgLipin" kdiff="0" kdiffunit="mu2/s"/>  
  
  
   <Reaction name="CaMCa4+PP2B--PP2BCaMCa4 reac" id="CaMCa4+PP2B--PP2BCaMCa4_id">
@@ -1341,47 +1344,67 @@
         <reverseRate> 5.84e-9     </reverseRate>
     </Reaction>
 
-    <Reaction name="Dag - PA cycling" id="Dag PA cycling">
+    <Reaction name="Dag - PA cycling1a" id="Dag PA cycling1a">
         <Reactant specieID="PA"/>
-        <Product specieID="Dag"/>
-
-        <forwardRate> 2e-4  </forwardRate>
-        <reverseRate> 2e-4     </reverseRate>
+        <Reactant specieID="Lipin"/>
+        <Product specieID="PALipin"/>
+	
+        <forwardRate> 1.133e-8  </forwardRate>
+        <reverseRate> 1e-3     </reverseRate>
     </Reaction>
 
-     <Reaction name="Dag - PA cycling2" id="Dag PA cycling2">
-        <Reactant specieID="PAPP1"/>
+    <Reaction name="Dag - PA cycling1b" id="Dag PA cycling1b">
+        <Reactant specieID="PALipin"/>
+        <Product specieID="Lipin"/>
         <Product specieID="Dag"/>
-	<Product specieID="PP1"/>
-
-        <forwardRate> 2e-4  </forwardRate>
-
-     </Reaction>
-     <Reaction name="Dag - PA cycling3" id="Dag PA cycling3">
-        <Reactant specieID="NgPA"/>
-        <Product specieID="Dag"/>
-	<Product specieID="Ng"/>
-
-        <forwardRate> 2e-4  </forwardRate>
-
-     </Reaction>
-
-     <Reaction name="Dag - PA cycling4" id="Dag PA cycling4">
-        <Reactant specieID="Dag_CaPKC_act"/>
-        <Product specieID="CaPKC_act"/>
-	<Product specieID="PA"/>
-
-        <forwardRate> 2e-4  </forwardRate>
-
-     </Reaction>
-     <Reaction name="Dag - PA cycling5" id="Dag PA cycling5">
-        <Reactant specieID="Dag_Ca2PKC_act"/>
-        <Product specieID="PA"/>
-	<Product specieID="Ca2PKC_act"/>
-
-        <forwardRate> 2e-4  </forwardRate>
-
+	
+        <forwardRate> 0.7e-3  </forwardRate>
+        <reverseRate> 0     </reverseRate>
     </Reaction>
+
+    
+     <Reaction name="Dag - PA cycling3a" id="Dag PA cycling3a">
+       <Reactant specieID="PAPP1"/>
+       <Reactant specieID="Lipin"/>
+        <Product specieID="PAPP1Lipin"/>
+
+        <forwardRate> 1.133e-8  </forwardRate>
+	<reverseRate> 1e-3  </reverseRate>
+
+     </Reaction>
+
+     <Reaction name="Dag - PA cycling3b" id="Dag PA cycling3b">
+       <Reactant specieID="PAPP1Lipin"/>
+       <Prodyyct specieID="Lipin"/>
+       <Product specieID="Dag"/>
+       <Product specieID="PP1"/>
+        <forwardRate> 0.7e-3  </forwardRate>
+	<reverseRate> 0  </reverseRate>
+
+     </Reaction>
+
+     
+    <Reaction name="Dag - PA cycling3a" id="Dag PA cycling4a">
+       <Reactant specieID="PANg"/>
+       <Reactant specieID="Lipin"/>
+        <Product specieID="PANgLipin"/>
+
+        <forwardRate> 1.133e-8  </forwardRate>
+	<reverseRate> 1e-3  </reverseRate>
+
+     </Reaction>
+
+     <Reaction name="Dag - PA cycling3b" id="Dag PA cycling4b">
+       <Reactant specieID="PANgLipin"/>
+       <Prodyyct specieID="Lipin"/>
+       <Product specieID="Dag"/>
+       <Product specieID="Ng"/>
+        <forwardRate> 0.7e-3  </forwardRate>
+	<reverseRate> 0  </reverseRate>
+
+     </Reaction>
+ 
+ 
 
 
 <Specie name="PMJ" id="PMJ" kdiff="0." kdiffunit="mu2/s"/>

@@ -506,7 +506,7 @@
         <Product specieID="Plc"/>
         <Product specieID="GqaGDP"/>
 
-        <forwardRate>   12e-03   </forwardRate>
+        <forwardRate>   3e-03   </forwardRate>
         <reverseRate>   0  </reverseRate>
     </Reaction>
 
@@ -515,7 +515,7 @@
         <Product specieID="PlcCa"/>
         <Product specieID="GqaGDP"/>
 
-        <forwardRate>   12e-03   </forwardRate>
+        <forwardRate>   3e-03   </forwardRate>
         <reverseRate>   0  </reverseRate>
     </Reaction>
   
@@ -1339,22 +1339,22 @@
         <forwardRate> 7.03e-11   </forwardRate>
         <reverseRate> 5.84e-9     </reverseRate>
     </Reaction>
-
-    <Reaction name="Dag - PA cycling1a" id="Dag PA cycling1a">
+ <Reaction name="Dag - PA cycling1a" id="Dag PA cycling1a">
         <Reactant specieID="PA"/>
         <Reactant specieID="Lipin"/>
         <Product specieID="PALipin"/>
 	
-        <forwardRate> 1.133e-8  </forwardRate>
-        <reverseRate> 1e-3     </reverseRate>
+        <forwardRate> 7.786666666666667e-10  </forwardRate>
+        <reverseRate> 0.1e-3     </reverseRate>
     </Reaction>
 
+   
     <Reaction name="Dag - PA cycling1b" id="Dag PA cycling1b">
         <Reactant specieID="PALipin"/>
         <Product specieID="Lipin"/>
         <Product specieID="Dag"/>
 	
-        <forwardRate> 0.7e-3  </forwardRate>
+        <forwardRate> 16.8e-6  </forwardRate>
         <reverseRate> 0     </reverseRate>
     </Reaction>
 

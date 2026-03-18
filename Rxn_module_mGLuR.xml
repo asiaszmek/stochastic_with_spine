@@ -309,7 +309,7 @@ Kd of PLCbeta to Pip2 is 1uM-->
         <Product  specieID="Plc"               />
         <Product  specieID="GqaGDP"            />
 
-        <forwardRate>   12e-03   </forwardRate>
+        <forwardRate>   3e-03   </forwardRate>
         <reverseRate>   0  </reverseRate>
     </Reaction>
 
@@ -319,7 +319,7 @@ Kd of PLCbeta to Pip2 is 1uM-->
         <Product  specieID="PlcCa"               />
         <Product  specieID="GqaGDP"            />
 
-        <forwardRate>   12e-03   </forwardRate>
+        <forwardRate>   3e-03   </forwardRate>
         <reverseRate>   0  </reverseRate>
     </Reaction>
   

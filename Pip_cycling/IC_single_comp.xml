@@ -40,7 +40,8 @@
     <NanoMolarity specieID="IP2" value="508" />
     <NanoMolarity specieID="STIM_2CaER" value="375" />
     <NanoMolarity specieID="STIM_2" value="22.5" />
-    <NanoMolarity specieID="PP1" value="11e3" />
+    <!--different groups like different concentrations, Rangamani's using 1.25 uM, Blackwell's using 1.5 to 11 uM, let's use a lot, but not a lot lot -->
+    <NanoMolarity specieID="PP1" value="4e3" />
     <NanoMolarity specieID="PP2B" value="4e3" />
     <NanoMolarity specieID="PKCc" value="4e3" />
   </ConcentrationSet>

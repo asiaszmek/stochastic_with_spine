@@ -152,7 +152,7 @@ https://doi.org/10.1042/BJ20061483
         <Reactant specieID="Dag"              />
         <Product  specieID="Dag_Ca2PKC_act"               />
 
-        <forwardRate> 0.8e-7   </forwardRate>
+        <forwardRate> 0.8e-6   </forwardRate>
         <reverseRate> 1e-3       </reverseRate>
      </Reaction>
 
@@ -161,7 +161,7 @@ https://doi.org/10.1042/BJ20061483
         <Reactant specieID="Dag"              />
         <Product  specieID="Dag_CaPKC_act"               />
 
-        <forwardRate> 0.8e-7   </forwardRate>
+        <forwardRate> 0.8e-6   </forwardRate>
         <reverseRate> 1e-3       </reverseRate>
     </Reaction>
 

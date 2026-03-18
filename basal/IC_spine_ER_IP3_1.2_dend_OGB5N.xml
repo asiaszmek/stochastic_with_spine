@@ -11,14 +11,16 @@
     <!-- total calbindin = 160 uM -->
     <NanoMolarity specieID="Calbin" value="134859"/>
     <NanoMolarity specieID="CalbinC" value="15141"/>
+    <NanoMolarity specieID="CaM" value="3360"/>
 
-    <NanoMolarity specieID="CaM" value="1869"/>
-    <NanoMolarity specieID="CaM_0_1" value="2"/>
-    <NanoMolarity specieID="CaM_1_0" value="75"/>
-    <NanoMolarity specieID="CaMCa2C" value="5"/>
-    <NanoMolarity specieID="Ng" value="26548"/>
-    <NanoMolarity specieID="NgCaM" value="38458"/>
-   
+    <NanoMolarity specieID="CaM_0_1" value="4"/>
+    <NanoMolarity specieID="CaM_1_0" value="187"/>
+    <NanoMolarity specieID="CaMCa2C" value="20"/>
+    <NanoMolarity specieID="CaMCa4" value="0"/>
+    <NanoMolarity specieID="Ng" value="18000"/>
+    <NanoMolarity specieID="NgCaM" value="47000"/>
+
+    
     <NanoMolarity specieID="CaER"         value="0.8e5"     />
     <NanoMolarity       specieID="CRTP" value="88750"/>
     <NanoMolarity       specieID="CRT" value="11250"/>

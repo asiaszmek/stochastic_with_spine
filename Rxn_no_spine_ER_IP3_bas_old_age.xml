@@ -855,8 +855,8 @@
     <Reactant specieID="PlcCaPip2"/>
     <Product specieID="PlcCaGqaGTPPip2"/>
 
-    <forwardRate>7e-04   </forwardRate>
-    <reverseRate> 0.7e-03        </reverseRate>
+    <forwardRate>7e-03   </forwardRate>
+    <reverseRate> 0.7e-02        </reverseRate>
     <Q10>         0.2           </Q10>
   </Reaction>
   

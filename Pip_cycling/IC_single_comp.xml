@@ -79,7 +79,6 @@
     <PicoSD  specieID="NMDARC1B" value="4"  />
 
     <PicoSD specieID="PMJ" value="6"/>
-    <PicoSD specieID="PM" value="20000"/>
     <PicoSD specieID="Orai" value="200"/>
   </SurfaceDensitySet>
   

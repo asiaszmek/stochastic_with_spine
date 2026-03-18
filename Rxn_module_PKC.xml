@@ -152,7 +152,7 @@ https://doi.org/10.1042/BJ20061483
         <Reactant specieID="Dag"              />
         <Product  specieID="Dag_Ca2PKC_act"               />
 
-        <forwardRate> 0.8e-7   </forwardRate>
+        <forwardRate> 0.8e-6   </forwardRate>
         <reverseRate> 1e-3       </reverseRate>
      </Reaction>
 
@@ -161,7 +161,7 @@ https://doi.org/10.1042/BJ20061483
         <Reactant specieID="Dag"              />
         <Product  specieID="Dag_CaPKC_act"               />
 
-        <forwardRate> 0.8e-7   </forwardRate>
+        <forwardRate> 0.8e-6   </forwardRate>
         <reverseRate> 1e-3       </reverseRate>
     </Reaction>
 
@@ -374,23 +374,23 @@ https://doi.org/10.1042/BJ20061483
         <forwardRate> 7.03e-11   </forwardRate>
         <reverseRate> 5.84e-9     </reverseRate>
     </Reaction>
-
+ <!--  https://doi.org/10.1016/S0014-5793(98)00421-9  and https://doi.org/10.1007/BF00169371 - use the rat brain vmax and km with the assumption that lipin molecular weight with posttranslational modifications is rought 120 kDa -->
     <Reaction name = "Dag - PA cycling1a" id="Dag PA cycling1a" >
         <Reactant specieID="PA"           />
         <Reactant  specieID="Lipin"               />
         <Product  specieID="PALipin"               />
 	
-        <forwardRate> 1.133e-8  </forwardRate>
-        <reverseRate> 1e-3     </reverseRate>
+        <forwardRate> 7.786666666666667e-10  </forwardRate>
+        <reverseRate> 0.1e-3     </reverseRate>
     </Reaction>
 
-    <!--  https://doi.org/10.1016/S0014-5793(98)00421-9  and https://doi.org/10.1007/BF00169371-->
+   
     <Reaction name = "Dag - PA cycling1b" id="Dag PA cycling1b" >
         <Reactant specieID="PALipin"           />
         <Product  specieID="Lipin"               />
         <Product  specieID="Dag"               />
 	
-        <forwardRate> 0.7e-3  </forwardRate>
+        <forwardRate> 16.8e-6  </forwardRate>
         <reverseRate> 0     </reverseRate>
     </Reaction>
 

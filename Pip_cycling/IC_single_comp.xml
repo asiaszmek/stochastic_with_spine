@@ -27,7 +27,7 @@
     <NanoMolarity specieID="Cyt_SERCA_Ca" value="412" />
     <NanoMolarity specieID="Cyt_SERCA_Ca2" value="42" />
 
-    <NanoMolarity specieID="LeakER" value="430" />
+    <NanoMolarity specieID="LeakER" value="460" />
    
     <NanoMolarity specieID="IP3R"      value="200"     />
     <NanoMolarity specieID="IP3K" value="300" />
@@ -40,7 +40,8 @@
     <NanoMolarity specieID="IP2" value="508" />
     <NanoMolarity specieID="STIM_2CaER" value="375" />
     <NanoMolarity specieID="STIM_2" value="22.5" />
-    <NanoMolarity specieID="PP1" value="11e3" />
+    <!--different groups like different concentrations, Rangamani's using 1.25 uM, Blackwell's using 1.5 to 11 uM, let's use a lot, but not a lot lot -->
+    <NanoMolarity specieID="PP1" value="4e3" />
     <NanoMolarity specieID="PP2B" value="4e3" />
     <NanoMolarity specieID="PKCc" value="4e3" />
   </ConcentrationSet>
@@ -77,7 +78,7 @@
 
     <PicoSD  specieID="Dag" value="700"  />
     <PicoSD  specieID="DagKdag" value="0"  />
-    <PicoSD  specieID="PA" value="8174"  />
+    <PicoSD  specieID="PA" value="16348"  />
     <PicoSD  specieID="NMDARCB" value="58"  />
     <PicoSD  specieID="NMDARC1B" value="4"  />
 

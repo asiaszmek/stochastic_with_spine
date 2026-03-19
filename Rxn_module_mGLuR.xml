@@ -255,7 +255,7 @@ Kd of PLCbeta to Pip2 is 1uM-->
     <Reactant specieID="PlcCaPip2"              />
     <Product  specieID="PlcCaGqaGTPPip2"               />
 
-    <forwardRate>3.5e-04   </forwardRate>
+    <forwardRate> 3.5e-04   </forwardRate>
     <reverseRate> 3.5e-03        </reverseRate>
     <Q10>         0.2           </Q10>
   </Reaction>
@@ -346,7 +346,7 @@ Change to original Avrama's values
       <Product  specieID="PA"        />
       <Product  specieID="DagK"        />
 
-      <forwardRate> 0.2e-03      </forwardRate>
+      <forwardRate> 2e-03      </forwardRate>
       <reverseRate> 0.0e-03      </reverseRate>
     </Reaction>
     

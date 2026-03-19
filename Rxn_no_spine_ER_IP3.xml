@@ -809,6 +809,7 @@
 
  
 
+ 
   <Reaction name="Plc+Ca--PlcCa" id="Plc+Ca--PlcCa">
     <Reactant specieID="Ca"/>
     <Reactant specieID="Plc"/>
@@ -823,10 +824,9 @@
   <Reaction name="PlcCa+GqaGTP--PlcCaGqaGTP" id="PlcCa+GqaGTP--PlcCaGqaGTP">
     <Reactant specieID="GqaGTP"/>
     <Reactant specieID="PlcCa"/>
-    <Product specieID="PlcCaGqaGTP"/>
-    
+    <Product specieID="PlcCaGqaGTP"/>    
     <forwardRate> 3.5e-04   </forwardRate>
-    <reverseRate> 0.7e-03        </reverseRate>
+    <reverseRate> 3.5e-03        </reverseRate>
     <Q10>         0.2           </Q10>
   </Reaction>
   <Reaction name="Plc+GqaGTP--PlcGqaGTP" id="Plc+GqaGTP--PlcGqaGTP">
@@ -835,7 +835,7 @@
     <Product specieID="PlcGqaGTP"/>
 
     <forwardRate> 7e-04   </forwardRate>
-    <reverseRate> 0.7e-03        </reverseRate>
+    <reverseRate> 3.5e-03        </reverseRate>
     <Q10>         0.2           </Q10>
   </Reaction>
 
@@ -844,7 +844,7 @@
     <Reactant specieID="PlcGqaGTP"/>
     <Product specieID="PlcCaGqaGTP"/>
     
-    <forwardRate> 0.0025e-03   </forwardRate>
+    <forwardRate> 0.00025e-03   </forwardRate>
     <reverseRate> 1.0e-03        </reverseRate>
     <Q10>         0.2           </Q10>
   </Reaction>
@@ -869,8 +869,8 @@
     <Reactant specieID="PlcCaPip2"/>
     <Product specieID="PlcCaGqaGTPPip2"/>
 
-    <forwardRate>7e-03   </forwardRate>
-    <reverseRate> 0.7e-02        </reverseRate>
+    <forwardRate>3.5e-04   </forwardRate>
+    <reverseRate> 3.5e-03        </reverseRate>
     <Q10>         0.2           </Q10>
   </Reaction>
   

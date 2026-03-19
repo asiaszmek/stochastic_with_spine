@@ -196,58 +196,58 @@ Kd of mGlur5 for glu is ~ 2.2 uM 10.1007/s11064-016-2026-6
 <!-- https://doi.org/10.1074/jbc.271.41.25071
 Kd of PLCbeta to Pip2 is 1uM-->
 
-  <!-- <Reaction name = "Plc+Pip2-\-PlcPip2" id="Plc+Pip2-\-PlcPip2"> -->
-  <!--   <Reactant specieID="Plc"               /> -->
-  <!--   <Reactant specieID="Pip2"             /> -->
-  <!--   <Product  specieID="PlcPip2"            /> -->
+  <Reaction name = "Plc+Pip2--PlcPip2" id="Plc+Pip2--PlcPip2">
+    <Reactant specieID="Plc"               />
+    <Reactant specieID="Pip2"             />
+    <Product  specieID="PlcPip2"            />
     
-  <!--   <forwardRate> 1e-6   </forwardRate> -->
-  <!--   <reverseRate> 2e-3   </reverseRate> -->
-  <!--   <Q10>         0.2           </Q10> -->
-  <!-- </Reaction> -->
-
-<!-- CA, Plc, Gq reactions are thermodynamically balanced JJS -->
- <!--  <Reaction name = "PlcPip2+Ca-\-PlcCaPip2" id="PlcPip2+Ca-\-PlcCaPip2"> -->
- <!--    <Reactant specieID="Ca"           /> -->
- <!--    <Reactant specieID="PlcPip2"              /> -->
- <!--    <Product  specieID="PlcCaPip2"               /> -->
-
- <!--    <forwardRate> 6e-08   </forwardRate> -->
- <!--    <reverseRate> 1.2e-3        </reverseRate> -->
- <!--    <Q10>         0.2           </Q10> -->
- <!--  </Reaction> -->
+    <forwardRate> 1e-6   </forwardRate>
+    <reverseRate> 2e-3   </reverseRate>
+    <Q10>         0.2           </Q10>
+  </Reaction>
 
 
- <!--  <Reaction name = "PlcPip2+Gqa-\-PlcPip2GqaGTP" id="PlcPip2+Gqa-\-PlcPip2GqaGTP"> -->
- <!--    <Reactant specieID="GqaGTP"           /> -->
- <!--    <Reactant specieID="PlcPip2"              /> -->
- <!--    <Product  specieID="PlcGqaGTPPip2"               /> -->
+  <Reaction name = "PlcPip2+Ca--PlcCaPip2" id="PlcPip2+Ca--PlcCaPip2">
+    <Reactant specieID="Ca"           />
+    <Reactant specieID="PlcPip2"              />
+    <Product  specieID="PlcCaPip2"               />
 
- <!--    <forwardRate> 7e-05   </forwardRate> -->
- <!--    <reverseRate>   0.7e-03      </reverseRate> -->
- <!--    <Q10>         0.2           </Q10> -->
- <!--  </Reaction> -->
+    <forwardRate> 6e-07   </forwardRate>
+    <reverseRate> 1.2e-3        </reverseRate>
+    <Q10>         0.2           </Q10>
+  </Reaction>
 
- <!--  <Reaction name = "PlcGqaGTP+Pip2-\-PlcPip2GqaGTP" id="PlcGqaGTP+Pip2-\-PlcPip2GqaGTP"> -->
- <!--    <Reactant specieID="PlcGqaGTP"           /> -->
- <!--    <Reactant specieID="Pip2"              /> -->
- <!--    <Product  specieID="PlcGqaGTPPip2"               /> -->
 
- <!--    <forwardRate> 1e-6   </forwardRate> -->
- <!--    <reverseRate> 2e-3        </reverseRate> -->
- <!--    <Q10>         0.2           </Q10> -->
- <!--  </Reaction> -->
+  <Reaction name = "PlcPip2+Gqa--PlcPip2GqaGTP" id="PlcPip2+Gqa--PlcPip2GqaGTP">
+    <Reactant specieID="GqaGTP"           />
+    <Reactant specieID="PlcPip2"              />
+    <Product  specieID="PlcGqaGTPPip2"               />
 
- <!-- <Reaction name = "PlcGqaGTPPip2+Ca-\-PlcCaGqaGTPPip2" id="PlcGqaGTPPip2+Ca-\-PlcCaPip2GqaGTP"> -->
- <!--    <Reactant specieID="PlcGqaGTPPip2"           /> -->
- <!--    <Reactant specieID="Ca"              /> -->
- <!--    <Product  specieID="PlcCaGqaGTPPip2"               /> -->
+    <forwardRate> 7e-04   </forwardRate>
+    <reverseRate>   3.5e-03      </reverseRate>
+    <Q10>         0.2           </Q10>
+  </Reaction>
 
- <!--    <forwardRate> 6.382978723404255e-08   </forwardRate> -->
- <!--    <reverseRate> 0.00127659574468085        </reverseRate> -->
- <!--    <Q10>         0.2           </Q10> -->
- <!--  </Reaction> -->
-  
+  <Reaction name = "PlcGqaGTP+Pip2--PlcPip2GqaGTP" id="PlcGqaGTP+Pip2--PlcPip2GqaGTP">
+    <Reactant specieID="PlcGqaGTP"           />
+    <Reactant specieID="Pip2"              />
+    <Product  specieID="PlcGqaGTPPip2"               />
+
+    <forwardRate> 1e-6   </forwardRate>
+    <reverseRate> 2e-3        </reverseRate>
+    <Q10>         0.2           </Q10>
+  </Reaction>
+
+ <Reaction name = "PlcGqaGTPPip2+Ca--PlcCaGqaGTPPip2" id="PlcGqaGTPPip2+Ca--PlcCaPip2GqaGTP">
+    <Reactant specieID="PlcGqaGTPPip2"           />
+    <Reactant specieID="Ca"              />
+    <Product  specieID="PlcCaGqaGTPPip2"               />
+
+    <forwardRate> 6e-7   </forwardRate>
+    <reverseRate> 2.4e-3        </reverseRate>
+    <Q10>         0.2           </Q10>
+  </Reaction>
+   
 
 <!-- 10.1085/jgp.202113001 suggested Kd of 20 uM in the hippocampus model-->
   <Reaction name = "PlcCaPip2+GqaGTP--PlcCaPip2GqaGTP" id="PlcCaPip2+GqaGTP--PlcPip2GqaGTP">

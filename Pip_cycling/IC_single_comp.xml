@@ -61,13 +61,13 @@
     <PicoSD specieID="GqaGTP" value="0"/>
     <PicoSD specieID="GqaGDP" value="14"/>
     
-    <PicoSD  specieID="Plc"  value="711"    />
+    <PicoSD  specieID="PlcPip2"  value="711"    />
     <PicoSD  specieID="PlcCa"  value="35"    />
     <PicoSD  specieID="PlcCaPip2"  value="12"    />
     <PicoSD  specieID="PlcCaGqaGTP"  value="1.2"    />
     <PicoSD  specieID="PlcGqaGTP"  value="1"    />
 
-    <PicoSD  specieID="Pip2" value="3978"  />
+    <PicoSD  specieID="Pip2" value="3267"  />
     <PicoSD  specieID="Pip2_buf" value="7965"  />
     <PicoSD  specieID="PI" value="230779"/>
     <PicoSD  specieID="PI4P" value="42988"  />

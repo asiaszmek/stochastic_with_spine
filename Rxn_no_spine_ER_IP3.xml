@@ -733,9 +733,11 @@
   <Specie name="GqaGDP" id="GqaGDP" kdiff="0" kdiffunit="mu2/s"/>  
 
   <Specie name="Plc" id="Plc" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="PlcPip2" id="PlcPip2" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="PlcCa" id="PlcCa" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="PlcCaGqaGTP" id="PlcCaGqaGTP" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="PlcGqaGTP" id="PlcGqaGTP" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="PlcGqaGTPPip2" id="PlcGqaGTPPip2" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Pip2" id="Pip2" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Pip2_buf" id="Pip2_buf" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Dag" id="Dag" kdiff="0" kdiffunit="mu2/s"/>

@@ -286,8 +286,8 @@ Kd of PLCbeta to Pip2 is 1uM-->
     <Reactant specieID="Pip2"             />
     <Product  specieID="PlcCaGqaGTPPip2"            />
     
-    <forwardRate>  3e-06   </forwardRate>
-    <reverseRate>  6e-03   </reverseRate>
+    <forwardRate>  30e-06   </forwardRate>
+    <reverseRate>  60e-03   </reverseRate>
     <Q10>         0.2           </Q10>
   </Reaction>
   

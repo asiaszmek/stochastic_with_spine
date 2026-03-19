@@ -868,7 +868,7 @@
     <Product specieID="PlcCaPip2"/>
     
     <forwardRate> 6e-8   </forwardRate>
-    <reverseRate> 1.2e-3   </reverseRate>
+    <reverseRate> 1.2e-4   </reverseRate>
     <Q10>         0.2           </Q10>
   </Reaction>
 
@@ -906,7 +906,7 @@
     <Product specieID="PlcCaGqaGTPPip2"/>
     
     <forwardRate>  3e-06   </forwardRate>
-    <reverseRate>  60e-03   </reverseRate>
+    <reverseRate>  6e-03   </reverseRate>
     <Q10>         0.2           </Q10>
   </Reaction>
   
@@ -924,7 +924,7 @@
         <Product specieID="Plc"/>
         <Product specieID="GqaGDP"/>
 
-        <forwardRate>   3e-03   </forwardRate>
+        <forwardRate>   12e-03   </forwardRate>
         <reverseRate>   0  </reverseRate>
     </Reaction>
 
@@ -933,7 +933,7 @@
         <Product specieID="PlcCa"/>
         <Product specieID="GqaGDP"/>
 
-        <forwardRate>   3e-03   </forwardRate>
+        <forwardRate>   12e-03   </forwardRate>
         <reverseRate>   0  </reverseRate>
     </Reaction>
   

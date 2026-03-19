@@ -1025,7 +1025,7 @@
     <Reactant specieID="IP2"/>   
     <Product specieID="I"/>
 
-    <forwardRate> 2.0e-5    </forwardRate>
+    <forwardRate> 2.0e-4    </forwardRate>
     <reverseRate> 0    </reverseRate>
     <Q10>         0.2           </Q10>
 </Reaction>

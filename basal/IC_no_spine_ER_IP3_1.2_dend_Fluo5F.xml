@@ -38,8 +38,8 @@
     <NanoMolarity specieID="IP3R"      value="200"     />
 
     <NanoMolarity specieID="IP3"      value="3"     />
-    <NanoMolarity specieID="IP3K" value="300" />
-    <NanoMolarity specieID="IP5P" value="333" />
+    <NanoMolarity specieID="IP3K" value="400" />
+    <NanoMolarity specieID="IP5P" value="1000" />
     <NanoMolarity specieID="Dye" value="998140" />
     <NanoMolarity specieID="CaDye" value="1860" />
     

@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<ReactionScheme>
+  <Specie name="Tubby"            id="Tubby"            kdiff="4"   kdiffunit="mu2/s"/>
+  <Specie name="Pip2_Tubby"      id="Pip2_Tubby" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="Pip2"      id="Pip2" kdiff="0" kdiffunit="mu2/s"/>
+  <!--jRGECO binding doi: 10.1074/jbc.RA118.004543-->
+  <Reaction name = "Pip2+Tubby->Pip2_Tubby" id="Pip2+Tubby--Pip2_Tubby">
+    <Reactant specieID="Pip2"       />
+    <Reactant  specieID="Tubby"               />
+    <Product  specieID="Pip2_Tubby"               />
+<!-- Hille's models, Kd 1.5 uM, kf 1/uM/ms-->
+    <forwardRate> 1e-6   </forwardRate>
+    <reverseRate> 1.5e-3   </reverseRate>
+  </Reaction>    
+
+  
+</ReactionScheme>

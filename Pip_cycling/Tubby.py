@@ -114,13 +114,13 @@ def get_concentrations_region_list(my_file, my_list, trial, out, specie,
     return numbers
 
 
-def get_fluo_sig(signal, t_init, dt, futile=1000):
+def get_fluo_sig(signal, t_init, dt, futile=10000):
    
     min_len = min([len(dat) for dat in signal])
     out = np.array([data[:min_len] for data in signal]).mean(axis=0)
     basal = out[int(futile/dt):int(t_init/dt)].mean(axis=0)
     out = out/basal
-    return out
+    return out[int(futile/dt):]
 
 if __name__ == "__main__":
     fnames = []
@@ -131,7 +131,7 @@ if __name__ == "__main__":
         sys.exit('Do specify at least one totals filename')
     t_init = args.t_init
     specie = args.specie
-   
+    futile = 0
     output = args.output
     for fname in fnames:
         data = []
@@ -149,8 +149,8 @@ if __name__ == "__main__":
                                                    out=output, specie="Tubby")
             data.append(tubby)
         dt = time[1] - time[0]
-        out = get_fluo_sig(data, t_init, dt)
-        time = np.linspace(-t_init, len(out)*dt-t_init, len(out))
+        out = get_fluo_sig(data, t_init, dt, futile)
+        time = np.linspace(-t_init+futile, len(out)*dt-t_init, len(out))
         fig, ax = plt.subplots(1, 1, figsize=(5, 5))
         exp_data = np.loadtxt(exp_fname, skiprows=1, delimiter=",")
         ax.plot(time/1000, out, "tab:green", label="Tubby model")

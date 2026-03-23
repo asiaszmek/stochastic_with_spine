@@ -16,7 +16,9 @@ def read_in_species(species):
 if __name__ == "__main__":
     args = parser.parse_args()
     species = read_in_species(args.species)
-    
+    means = {}
+    for specie in species:
+        means[specie] = []
     for fname in args.files:
         print(fname)
         try:
@@ -25,6 +27,7 @@ if __name__ == "__main__":
             print("Could not find %s" % fname)
         header = f.readline().split()
         data = np.loadtxt(f)
+
         for specie in species:
             try:
                 idx = header.index(specie)
@@ -34,4 +37,8 @@ if __name__ == "__main__":
             mean = data[:, idx].mean()
             std =  np.sqrt(data[:, idx].var())
             out = "%s, mean: %f, std: %f" % (specie, mean, std)
-            print(out)
+            means[specie].append(mean)
+    for specie in means.keys():
+        if len(means[specie]):
+            print(specie, sum(means[specie])/len(means[specie]))
+            

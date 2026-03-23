@@ -33,13 +33,13 @@
     <NanoMolarity specieID="IP3K" value="400" />
     <NanoMolarity specieID="IP5P" value="1000" />
     <!--Gallimore's values-->
-    <NanoMolarity specieID="DagK"               value="300"  />
+    <NanoMolarity specieID="DagK"               value="290"  />
 
     <NanoMolarity specieID="IP3" value="10" />
-    <NanoMolarity specieID="Tubby" value="6644" />
-    <NanoMolarity specieID="I" value="583" />
-    <NanoMolarity specieID="STIM_2CaER" value="375" />
-    <NanoMolarity specieID="STIM_2" value="22.5" />
+    <NanoMolarity specieID="Tubby" value="1361" />
+    <NanoMolarity specieID="I" value="620" />
+    <NanoMolarity specieID="STIM_2CaER" value="382" />
+    <NanoMolarity specieID="STIM_2" value="12" />
     <!--different groups like different concentrations, Rangamani's using 1.25 uM, Blackwell's using 1.5 to 11 uM, let's use a lot, but not a lot lot -->
   </ConcentrationSet>
 
@@ -54,27 +54,31 @@
     <PicoSD specieID="pmca2b" value="40"/>
     <PicoSD specieID="pmca2bCa" value="0"/>
     <!-- doi.org/10.3390/ijms22115867 -->
-    <PicoSD  specieID="MgluR" value="34"  />
+    <PicoSD  specieID="MgluR" value="33"  />
     <PicoSD  specieID="GluMgluR" value="0"  />
-    <PicoSD specieID="MgluRGq" value="448"/>
-    <PicoSD specieID="Gqabg" value="8000"/>
-    <PicoSD specieID="GluMgluRGq" value="10"/>
+    <PicoSD specieID="MgluRGq" value="428"/>
+    <PicoSD specieID="Gqabg" value="7970"/>
+    <PicoSD specieID="GluMgluRGq" value="31"/>
     <PicoSD specieID="GqaGTP" value="0"/>
-    <PicoSD specieID="GqaGDP" value="14"/>
+    <PicoSD specieID="GqaGDP" value="23"/>
     
-    <PicoSD  specieID="PlcPip2"  value="711"    />
-    <PicoSD  specieID="PlcCa"  value="35"    />
-    <PicoSD  specieID="PlcCaPip2"  value="12"    />
+    <PicoSD  specieID="PlcPip2"  value="575"    />
+    <PicoSD  specieID="PlcCa"  value="9"    />
+    <PicoSD  specieID="PlcCaPip2"  value="19"    />
     <PicoSD  specieID="PlcCaGqaGTP"  value="1.2"    />
-    <PicoSD  specieID="PlcGqaGTP"  value="1"    />
+    <PicoSD  specieID="PlcCaGqaGTPPip2"  value="1.2"    />
+    <PicoSD  specieID="Plc"  value="132"    />
+    <PicoSD  specieID="PlcGqaGTP"  value="2"    />
+    <PicoSD  specieID="PlcGqaGTPPip2"  value="30"    />
 
-    <PicoSD  specieID="Pip2" value="3267"  />
-    <PicoSD  specieID="Pip2_buf" value="7965"  />
-    <PicoSD  specieID="PI" value="230779"/>
-    <PicoSD  specieID="PI4P" value="42988"  />
+    <PicoSD  specieID="Pip2" value="3566"  />
+    <PicoSD  specieID="Pip2_Tubby" value="3157"  />
+    <PicoSD  specieID="Pip2_buf" value="7133"  />
+    <PicoSD  specieID="PI" value="228976"/>
+    <PicoSD  specieID="PI4P" value="42166"  />
 
-    <PicoSD  specieID="Dag" value="700"  />
-    <PicoSD  specieID="DagKdag" value="0"  />
+    <PicoSD  specieID="Dag" value="786"  />
+    <PicoSD  specieID="DagKdag" value="6"  />
     <PicoSD  specieID="PA" value="0"  />
 
     <PicoSD specieID="PMJ" value="6"/>

@@ -131,7 +131,7 @@ if __name__ == "__main__":
         sys.exit('Do specify at least one totals filename')
     t_init = args.t_init
     specie = args.specie
-    futile = 0
+    futile = 30000
     output = args.output
     for fname in fnames:
         data = []

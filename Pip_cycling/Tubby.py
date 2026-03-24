@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 from lxml import etree
 from scipy.constants import Avogadro
 NA = Avogadro*1e-23
-exp_fname = "10_uM_DPHG_20_s_Tubby.csv"
+exp_fname = "10_uM_DPHG_20_s_Tubby_3.csv"
 
 def moving_average(x, w):
     return np.convolve(x, np.ones(w), 'valid') / w
@@ -131,7 +131,7 @@ if __name__ == "__main__":
         sys.exit('Do specify at least one totals filename')
     t_init = args.t_init
     specie = args.specie
-    futile = 30000
+    futile = 0
     output = args.output
     for fname in fnames:
         data = []
@@ -153,17 +153,20 @@ if __name__ == "__main__":
         time = np.linspace(-t_init+futile, len(out)*dt-t_init, len(out))
         fig, ax = plt.subplots(1, 1, figsize=(5, 5))
         exp_data = np.loadtxt(exp_fname, skiprows=1, delimiter=",")
-        ax.plot(time/1000, out, "tab:green", label="Tubby model")
-        ax.plot(exp_data[:, 0], exp_data[:,1], "tab:red", label="Tubby experiment")
+        ax.plot(time/1000, out, "tab:green", label="model")
+        ax.plot(exp_data[:, 0], exp_data[:,1], "tab:red", label="experiment")
         ax.set_xlabel("time (s)", fontsize=15)
-        ax.set_ylabel("Relative fluorescence change", fontsize=15)
+        ax.set_ylabel("Relative Tubby-GFP change", fontsize=15)
         ax.legend()
         output = "%s_%s_dR_R.png" % (fname.split(".h5")[0],
                                      specie)
         ax.tick_params(axis='x', labelsize=15)
         ax.tick_params(axis='y', labelsize=15)
         ax.set_title(fname)
-        fig.savefig(output, format="png",
+        ax.set_xlim([-40, 60])
+        fig.savefig("Pip2_tuning_Tubby.png", format="png",
+                    dpi=100, bbox_inches="tight")
+        fig.savefig("Pip2_tuning_Tubby.eps", format="eps",
                     dpi=100, bbox_inches="tight")
 
     plt.show()

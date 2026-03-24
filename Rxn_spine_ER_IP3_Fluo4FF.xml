@@ -881,8 +881,8 @@
         <Reactant specieID="MgluR"/>
         <Product specieID="GluMgluR"/>
 
-        <forwardRate> 2e-7 </forwardRate>
-        <reverseRate> 0.5e-03      </reverseRate>
+        <forwardRate> 11.11e-7</forwardRate>
+        <reverseRate>100e-4     </reverseRate>
     </Reaction>
 
     <Reaction name="Gqabg+GluMgluR--GluMgluRGq" id="Gqabg+GluMgluR--GluMgluRGq">
@@ -899,8 +899,8 @@
         <Reactant specieID="MgluR"/>
         <Product specieID="MgluRGq"/>
 
-        <forwardRate> 4.5e-7 </forwardRate>
-        <reverseRate> 0.68e-03 </reverseRate>
+        <forwardRate> 2.4997500000000005e-06 </forwardRate>
+        <reverseRate> 1.36e-03 </reverseRate>
    </Reaction>
 
    <Reaction name="Glu+MgluRGq- -GluMgluRGq" id="Glu+MgluRGq- -GluMgluRGq">
@@ -908,8 +908,8 @@
         <Reactant specieID="MgluRGq"/>
         <Product specieID="GluMgluRGq"/>
 
-        <forwardRate> 0.004e-03 </forwardRate>
-        <reverseRate> 1e-03 </reverseRate>
+        <forwardRate>  2e-7 </forwardRate>
+        <reverseRate> 0.5e-03 </reverseRate>
    </Reaction>
 
    <Reaction name="GluMgluRGq--GqaGTP+GluMgluRGbg" id="GluMgluRGq--GqaGTP+GluMgluRGbg">

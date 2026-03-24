@@ -332,7 +332,6 @@
   <Specie name="PlcGqaGTP" id="PlcGqaGTP" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="PlcGqaGTPPip2" id="PlcGqaGTPPip2" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Pip2" id="Pip2" kdiff="0" kdiffunit="mu2/s"/>
-  <Specie name="Pip2_buf" id="Pip2_buf" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Dag" id="Dag" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="DagK" id="DagK" kdiff="3" kdiffunit="mu2/s"/>
   <Specie name="DagKdag" id="DagKdag" kdiff="0" kdiffunit="mu2/s"/>
@@ -719,17 +718,6 @@
     <reverseRate> 0.000162  </reverseRate>
     <Q10>         0.2           </Q10>
 </Reaction>
-
-<Reaction name="Pip2buf" id="Pip2buf">
-    <Reactant specieID="Pip2"/>   
-    <Product specieID="Pip2_buf"/>
-
-    <forwardRate> 2    </forwardRate>
-    <reverseRate>  1   </reverseRate>
-    <Q10>         0.2           </Q10>
-</Reaction>
-
-
 
 <Reaction name="PlcGqaGTP--Plc+GqaGDP" id="PlcGqaGTP--Plc+GqaGDP">
     <Reactant specieID="PlcGqaGTP"/>

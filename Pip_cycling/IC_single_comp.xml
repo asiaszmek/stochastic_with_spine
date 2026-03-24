@@ -75,7 +75,7 @@
     <PicoSD  specieID="Pip2_Tubby" value="3157"  />
     <!-- <PicoSD  specieID="Pip2_buf" value="7133"  /> -->
     <PicoSD  specieID="PI" value="228976"/>
-    <PicoSD  specieID="PI4P" value="42166"  />
+    <PicoSD  specieID="PI4P" value="49299"  />
 
     <PicoSD  specieID="Dag" value="786"  />
     <PicoSD  specieID="DagKdag" value="6"  />

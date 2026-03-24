@@ -1045,8 +1045,8 @@
     <Reactant specieID="Tubby"/>
     <Product specieID="Pip2_Tubby"/>
 <!-- Hille's models, Kd 1.5 uM, kf 1/uM/ms-->
-    <forwardRate> 5e-6   </forwardRate>
-    <reverseRate> 7.5e-3   </reverseRate>
+    <forwardRate> 1e-6   </forwardRate>
+    <reverseRate> 1.5e-3   </reverseRate>
   </Reaction>    
 
   

@@ -137,10 +137,10 @@
     <NanoMolarity specieID="STIM_2CaER" value="746"/>
     <NanoMolarity specieID="STIM_2" value="22"/>
     <NanoMolarity specieID="STIM_2" value="4"/>
-    <NanoMolarity specieID="MgluR"              value="275"     />
-    <NanoMolarity specieID="GluMgluR"              value="5"     />
-    <NanoMolarity specieID="MgluRGq"              value="1345"     />
-    <NanoMolarity specieID="GluMgluRGq"              value="109"     /> 
+    <NanoMolarity specieID="MgluR"              value="138"     />
+    <NanoMolarity specieID="GluMgluR"              value="2"     />
+    <NanoMolarity specieID="MgluRGq"              value="672"     />
+    <NanoMolarity specieID="GluMgluRGq"              value="55"     /> 
     <NanoMolarity specieID="Gqabg"              value="7240"  />
     <NanoMolarity specieID="Plc"                value="450"   />
     <NanoMolarity specieID="PlcCa"              value="26"    />

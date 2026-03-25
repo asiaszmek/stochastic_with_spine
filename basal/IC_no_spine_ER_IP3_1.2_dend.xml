@@ -75,8 +75,8 @@
     <PicoSD  specieID="PI" value="208105"/>
     <PicoSD  specieID="PI4P" value="45681"  />
 
-    <PicoSD  specieID="Dag" value="850"  />
-    <PicoSD  specieID="DagKdag" value="6"  />
+    <PicoSD  specieID="Dag" value="0"  />
+    <PicoSD  specieID="DagKdag" value="0"  />
     <PicoSD  specieID="PA" value="0"  />
   </SurfaceDensitySet>
   <ConcentrationSet region="PSD">
@@ -104,8 +104,8 @@
     <NanoMolarity  specieID="PI" value="191181"  />
     <NanoMolarity  specieID="PI4P" value="42053"  />
 
-    <NanoMolarity  specieID="Dag" value="380"  />
-    <NanoMolarity  specieID="DagKdag" value="2"  />
+    <NanoMolarity  specieID="Dag" value="0"  />
+    <NanoMolarity  specieID="DagKdag" value="0"  />
     <NanoMolarity  specieID="PA" value="0"  /> 
   </ConcentrationSet>
 
@@ -143,8 +143,8 @@
     <NanoMolarity specieID="IP3R"      value="0"     />
     <NanoMolarity specieID="GqaGTP"      value="0"     />
     <NanoMolarity specieID="GqaGDP"      value="82"     />
-    <NanoMolarity  specieID="Dag" value="900"  />
-    <NanoMolarity  specieID="DagKdag" value="6"  />
+    <NanoMolarity  specieID="Dag" value="0"  />
+    <NanoMolarity  specieID="DagKdag" value="0"  />
     <NanoMolarity  specieID="PA" value="0"  /> 
    
  

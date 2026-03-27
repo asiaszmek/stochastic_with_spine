@@ -172,7 +172,7 @@ flist_no_ER_spine_stim_OGB5N_IP3 = flist_no_ER_spine_stim + [
 
 flist_ER_spine_stim_jRGECO1 = flist_ER_spine_HFGlu + [
     "Rxn_module_jRGECO1.xml",
-    ]
+]
 
 flist_no_ER_spine_stim_jRGECO1 = flist_no_ER_spine_HFGlu + [
      "Rxn_module_jRGECO1.xml"]

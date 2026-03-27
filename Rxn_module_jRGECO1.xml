@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 <ReactionScheme>
   <Specie name="Dye"            id="Dye"            kdiff="4"   kdiffunit="mu2/s"/>
-  <Specie name="Ca2Dye"      id="Ca2Dye" kdiff="4" kdiffunit="mu2/s"/>
+  <Specie name="CaDye"      id="CaDye" kdiff="4" kdiffunit="mu2/s"/>
   <!--jRGECO binding doi: 10.1074/jbc.RA118.004543-->
   <Reaction name = "2Ca+Dye--Ca2Dye" id="2Ca+Dye--Ca2Dye">
     <Reactant specieID="Ca"      power="2"     />
     <Reactant  specieID="Dye"               />
-    <Product  specieID="Ca2Dye"               />
+    <Product  specieID="CaDye"               />
 
     <forwardRate> 1.14e-7   </forwardRate>
     <reverseRate> 3e-3   </reverseRate>

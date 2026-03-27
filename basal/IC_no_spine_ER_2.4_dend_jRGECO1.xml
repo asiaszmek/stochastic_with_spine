@@ -28,7 +28,7 @@
     <NanoMolarity specieID="STIM_4" value="0.5" />
     <NanoMolarity specieID="STIM_2CaER" value="195" />
     <NanoMolarity specieID="Dye" value="9e2" />
-    <NanoMolarity specieID="Ca2Dye" value="1e2" />
+    <NanoMolarity specieID="CaDye" value="1e2" />
 
     
   </ConcentrationSet>

@@ -1,0 +1,60 @@
+<OutputScheme>
+  <!--
+      Each file will have a set of concentrations in compartments
+      sampled according to a specific dt
+  -->
+  
+  <!--
+      Every Output block must have in its definition one (and only)
+      instance of:
+      * filename
+      And might have one (and only) instance of:
+      * region or
+      * dt
+      If "region" is ommited then the concs for the whole system will be
+      saved.
+      If "dt" is ommited than the concs will be written at each time step.
+      So the "io file" will be dependent on information stated in the
+      "morph" (regions) and "model" (dt).
+  -->
+  <OutputSet filename = "PSD" region="PSD"  dt=".25">
+    <OutputSpecie name="Ca"/>
+    <OutputSpecie name="CaER"/>
+    <OutputSpecie name="CaOut"/>
+    <OutputSpecie name="NMDARO"/>
+    <OutputSpecie name="Glu"/>
+    <OutputSpecie name="CaMCa4"/>
+    <OutputSpecie name="pmca2b"/>
+    <OutputSpecie name="pmca2bCa"/>
+    <OutputSpecie name="CaMCa4pmca2b"/>
+    <OutputSpecie name="CaMCa4pmca2bCa"/>
+    <OutputSpecie name="CaMpmca2b"/>
+  </OutputSet>
+
+  
+  <OutputSet filename = "head" region="head"  dt="1.0">
+    <OutputSpecie name="Ca"/>
+    <OutputSpecie name="CaER"/>
+    <OutputSpecie name="CaOut"/>
+    <OutputSpecie name="CaMCa4"/>
+    <OutputSpecie name="pmca1a"/>
+    <OutputSpecie name="pmca1aCa"/>
+    <OutputSpecie name="CaMCa4pmca1a"/>
+    <OutputSpecie name="CaMCa4pmca1aCa"/>
+    <OutputSpecie name="CaMpmca1a"/>
+  </OutputSet>
+
+
+  <OutputSet filename = "neck" region="neck"  dt="1.0">
+    <OutputSpecie name="Ca"/>
+    <OutputSpecie name="CaER"/>
+    <OutputSpecie name="CaOut"/>
+    <OutputSpecie name="CaMCa4"/>
+  </OutputSet>
+
+  <OutputSet filename = "dye"   dt="1.0">
+    <OutputSpecie name="CaDye"/>
+  </OutputSet>
+
+  
+</OutputScheme>

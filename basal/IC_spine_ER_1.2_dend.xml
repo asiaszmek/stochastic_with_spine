@@ -38,7 +38,7 @@
 
   <SurfaceDensitySet>
     <PicoSD specieID="Leak" value="5"/>
-    <PicoSD specieID="CaOutLeak" value="1400"/>
+    <PicoSD specieID="CaOutLeak" value="1300"/>
     <PicoSD specieID="ncx" value="2750"/>
     <PicoSD specieID="ncxCa" value="250"/>
     <PicoSD specieID="pmca1a" value="1000"/>

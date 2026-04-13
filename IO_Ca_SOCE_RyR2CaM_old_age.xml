@@ -19,11 +19,7 @@
 -->
 
   <OutputSet filename = "PSD" region="PSD"  dt="0.25">
-    <OutputSpecie name="Ca"/>
-    <OutputSpecie name="CaER"/>
-    <OutputSpecie name="CaOut"/>
-    <OutputSpecie name="CaMCa4"/>
-    <OutputSpecie name="V"/>
+     <OutputSpecie name="V"/>
     <OutputSpecie name="NMDARO"/>
     <OutputSpecie name="Glu"/>
     <OutputSpecie name="CaMCa4"/>
@@ -35,10 +31,6 @@
   </OutputSet>
 
   <OutputSet filename = "head" region="head"  dt="1.0">
-    <OutputSpecie name="Ca"/>
-    <OutputSpecie name="CaER"/>
-    <OutputSpecie name="CaOut"/>
-    <OutputSpecie name="CaMCa4"/>
     <OutputSpecie name="pmca1a"/>
     <OutputSpecie name="pmca1aCa"/>
     <OutputSpecie name="CaMCa4pmca1a"/>
@@ -47,11 +39,13 @@
 
   </OutputSet>
 
-  <OutputSet filename = "neck" region="neck"  dt="1.0">
+  <OutputSet filename = "Ca" dt="1.0">
     <OutputSpecie name="Ca"/>
-    <OutputSpecie name="CaER"/>
-    <OutputSpecie name="CaOut"/>
     <OutputSpecie name="CaMCa4"/>
+    <OutputSpecie name="RyR2CaMO1"/>
+    <OutputSpecie name="RyR2CaMO2"/>
+    <OutputSpecie name="RyR2O1"/>
+    <OutputSpecie name="RyR2O2"/>
   </OutputSet>
 
 </OutputScheme>

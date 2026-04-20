@@ -21,8 +21,8 @@
     <NanoMolarity specieID="CaER"         value="0.82e5"     />
     <NanoMolarity       specieID="CRTP" value="8.92e+4"/>
     <NanoMolarity       specieID="CRT" value="10800"/>
-    <NanoMolarity specieID="RyR2CaM"      value="6"    />
-    <NanoMolarity specieID="RyR2"      value="6"    />
+    <NanoMolarity specieID="RyR2CaM"      value="12"    />
+    <NanoMolarity specieID="RyR2"      value="12"    />
   
     <NanoMolarity specieID="Cyt_SERCA"       value="1262" />
     <NanoMolarity specieID="Cyt_SERCA_Ca"       value="200" />

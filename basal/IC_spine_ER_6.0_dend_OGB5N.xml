@@ -19,7 +19,7 @@
     <NanoMolarity specieID="CaER"         value="0.82e5"     />
     <NanoMolarity       specieID="CRTP" value="8.9e+4"/>
     <NanoMolarity       specieID="CRT" value="1.1e+4"/>
-    <NanoMolarity specieID="RyR2CaM"      value="4"    />
+
     
     <NanoMolarity specieID="Cyt_SERCA"       value="480"     />
     <NanoMolarity specieID="Cyt_SERCA_Ca"       value="78"     />
@@ -40,7 +40,7 @@
     <PicoSD specieID="pmca1aCa" value="48"/>
     <PicoSD specieID="PMJ" value="6"/>
     <PicoSD specieID="Orai" value="200"/>
-    
+    <PicoSD specieID="RyR2CaM"      value="10"    />    
   </SurfaceDensitySet>
 
   <ConcentrationSet region="PSD">

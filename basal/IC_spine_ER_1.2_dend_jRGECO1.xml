@@ -11,8 +11,8 @@
     <!-- total calbindin = 150 uM -->
     <NanoMolarity specieID="Calbin" value="134891"/>
     <NanoMolarity specieID="CalbinC" value="15114.686988409981"/>
-
-     <NanoMolarity specieID="CaM" value="3360"/>
+    
+    <NanoMolarity specieID="CaM" value="3360"/>
     <NanoMolarity specieID="CaM_0_1" value="4"/>
     <NanoMolarity specieID="CaM_1_0" value="187"/>
     <NanoMolarity specieID="CaMCa2C" value="20"/>
@@ -23,7 +23,7 @@
     <NanoMolarity specieID="CaER"         value="0.8e5"     />
     <NanoMolarity       specieID="CRTP" value="88750"/>
     <NanoMolarity       specieID="CRT" value="11250"/>
-    <NanoMolarity specieID="RyR2CaM"      value="16"    />
+    
     <!-- Bartol et al 2015-->
     <NanoMolarity specieID="Cyt_SERCA" value="2450" />
     <NanoMolarity specieID="Cyt_SERCA_Ca" value="300" />
@@ -50,7 +50,7 @@
     <PicoSD specieID="Orai" value="198"/>
     <PicoSD specieID="OraiSTIM_4" value="1.3333"/>
     <PicoSD specieID="Orai2STIM_4" value=".3333"/>
-
+    <PicoSD specieID="RyR2CaM"      value="10"    />
   </SurfaceDensitySet>
   <ConcentrationSet region="PSD">
     <NanoMolarity specieID="pmca2b"      value="2674"    />

@@ -23,7 +23,7 @@
     <NanoMolarity specieID="CaER"         value="0.8e5"     />
     <NanoMolarity       specieID="CRTP" value="88750"/>
     <NanoMolarity       specieID="CRT" value="11250"/>
-    <NanoMolarity specieID="RyR2CaM"      value="16"    />
+
     <!-- Bartol et al 2015-->
     <NanoMolarity specieID="Cyt_SERCA" value="3219" />
     <NanoMolarity specieID="Cyt_SERCA_Ca" value="412" />
@@ -49,7 +49,7 @@
 
 
   <SurfaceDensitySet>
-     <PicoSD specieID="Leak" value="5"/>
+    <PicoSD specieID="Leak" value="5"/>
     <PicoSD specieID="CaOutLeak" value="1250"/>
     <PicoSD specieID="ncx" value="2781"/>
     <PicoSD specieID="ncxCa" value="219"/>
@@ -82,6 +82,7 @@
     <PicoSD  specieID="Dag" value="386"  />
     <PicoSD  specieID="DagKdag" value="3"  />
     <PicoSD  specieID="PA" value="0"  />
+    <PicoSD specieID="RyR2CaM"      value="10"    />
   </SurfaceDensitySet>
   <ConcentrationSet region="PSD">
      <NanoMolarity specieID="pmca2b"      value="3651"    />

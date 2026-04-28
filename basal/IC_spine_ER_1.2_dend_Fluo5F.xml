@@ -41,8 +41,8 @@
   <SurfaceDensitySet>
     <PicoSD specieID="Leak" value="5"/>
     <PicoSD specieID="CaOutLeak" value="1250"/>
-    <PicoSD specieID="ncx" value="2750"/>
-    <PicoSD specieID="ncxCa" value="250"/>
+    <PicoSD specieID="ncx" value="501"/>
+    <PicoSD specieID="ncxCa" value="0"/>
     <PicoSD specieID="pmca1a" value="900"/>
     <PicoSD specieID="pmca1aCa" value="100"/>
     <PicoSD specieID="PMJ" value="6"/>
@@ -77,7 +77,7 @@
 
     <NanoMolarity specieID="pmca1a" value="4940"/>
     <NanoMolarity specieID="pmca1aCa" value="40"/>
-    <NanoMolarity specieID="ncx" value="1000"/>
+    <NanoMolarity specieID="ncx" value="101"/>
     <NanoMolarity specieID="ncxCa" value="0"/>
     <NanoMolarity specieID="RyR2CaM"      value="0"    />
 
@@ -98,7 +98,7 @@
     <NanoMolarity specieID="CaOutLeak" value="1250"/>
     <NanoMolarity specieID="pmca1a" value="2170"/>
     <NanoMolarity specieID="pmca1aCa" value="30"/>
-    <NanoMolarity specieID="ncx" value="1000"/>
+    <NanoMolarity specieID="ncx" value="101"/>
     <NanoMolarity specieID="ncxCa" value="0"/>
 
     <NanoMolarity specieID="RyR2CaM"      value="0"    />

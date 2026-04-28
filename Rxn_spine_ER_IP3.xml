@@ -170,8 +170,8 @@
     <Reactant specieID="ncx"/>
     <Product specieID="ncxCa"/>
     
-    <forwardRate>1.68e-5</forwardRate>
-    <reverseRate>0.0112</reverseRate>
+    <forwardRate>3.8e-4</forwardRate>
+    <reverseRate>0.3</reverseRate>
   </Reaction>
   
   <Reaction name="Ca_pump2b" id="Ca_pump2b">
@@ -179,7 +179,7 @@
     <Product specieID="ncx"/>
     <Product specieID="CaOut"/>
 
-    <forwardRate>0.0056</forwardRate>
+    <forwardRate>0.6</forwardRate>
     <reverseRate>0</reverseRate>
   </Reaction>
   <Reaction name="Ca_leak1" id="Ca_leak1">

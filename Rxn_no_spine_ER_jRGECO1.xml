@@ -170,7 +170,7 @@
     <Reactant specieID="ncx"/>
     <Product specieID="ncxCa"/>
     
-    <forwardRate>3.8e-4</forwardRate>
+    <forwardRate>3.e-4</forwardRate>
     <reverseRate>0.3</reverseRate>
   </Reaction>
   

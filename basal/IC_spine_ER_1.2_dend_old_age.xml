@@ -23,9 +23,9 @@
     <NanoMolarity       specieID="CRTP" value="53.7e4"/>
     <NanoMolarity       specieID="CRT" value="6.3e4"/>
     <!-- Bartol et al 2015 -->
-    <NanoMolarity specieID="Cyt_SERCA" value="1935" />
-    <NanoMolarity specieID="Cyt_SERCA_Ca" value="291" />
-    <NanoMolarity specieID="Cyt_SERCA_Ca2" value="41.5" />
+    <NanoMolarity specieID="Cyt_SERCA" value="2450" />
+    <NanoMolarity specieID="Cyt_SERCA_Ca" value="300" />
+    <NanoMolarity specieID="Cyt_SERCA_Ca2" value="30" />
  
     <NanoMolarity specieID="STIM_2CaER" value="385" />
     <NanoMolarity specieID="STIM_2" value="11.0" />

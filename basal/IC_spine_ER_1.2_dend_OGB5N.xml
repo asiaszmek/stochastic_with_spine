@@ -20,7 +20,7 @@
     <NanoMolarity specieID="Ng" value="18000"/>
     <NanoMolarity specieID="NgCaM" value="47000"/>
     
-    <NanoMolarity specieID="CaER"         value="0.57e3"     />
+    <NanoMolarity specieID="CaER"         value="0.57e5"     />
     <NanoMolarity       specieID="CRTP" value="510771"/>
     <NanoMolarity       specieID="CRT" value="89221"/>
 

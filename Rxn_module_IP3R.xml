@@ -1,9 +1,6 @@
 <?xml version="1.0"?>
 <ReactionScheme>
 <!--this part should be identical for all reaction files-->
-    <!-- IP3R Model based on Fraiman D, Dawson SP (2004) A model of IP3 receptor with a luminal
-       calcium binding site: stochastic simulations and analysis. Cell
-       Calcium 35: 403-413, 2004 -->
   
   <!-- Receptor States:
        IP3R  state
@@ -13,7 +10,7 @@
        IP3RC2
        IP3RC3
        IP3RC4
-       
+       THis is Doi's model Doi et al 201
   -->
   <!-- you can specify the units of the diffusion constant. If they are not specified they are assumed to be micron^2/second, (microns written "mu" here) it should understand microns, mm, and m for distances and seconds and ms for times -->
   <!-- This code is implemented CaMKII_bimols Rns -0.44, 0.28, 0.088. Fix 3 products 2rxns break down to 2nd order rxn : LbARG/IP35P1P2 -->
@@ -40,8 +37,8 @@
     <Reactant specieID="IP3"              />
     <Product  specieID="IP3RIP3"               />
 
-    <forwardRate> 0.00001   </forwardRate>
-    <reverseRate> 0.01       </reverseRate>
+    <forwardRate> 1000e-6   </forwardRate>
+    <reverseRate> 25800e-3       </reverseRate>
     <Q10>         0.2           </Q10>
   </Reaction>
 
@@ -50,8 +47,8 @@
     <Reactant specieID="Ca"           />
     <Product  specieID="IP3RO"               />
     
-    <forwardRate> 0.00008   </forwardRate>
-    <reverseRate> .02    </reverseRate>
+    <forwardRate> 8000e-6   </forwardRate>
+    <reverseRate> 2000e-3    </reverseRate>
     <Q10>         0.2           </Q10>
   </Reaction>
 
@@ -60,19 +57,18 @@
     <Reactant specieID="Ca"              />                                                                     
     <Product  specieID="IP3RC"               />                                                                 
                                                                                                                 
-    <forwardRate> 2.22e-6  </forwardRate>                                                                       
+    <forwardRate> 8.889e-6  </forwardRate>                                                                       
     <reverseRate> 5e-3      </reverseRate>                                                                      
     <Q10>         0.2           </Q10>                                                                          
   </Reaction>                                                                                                   
                                                                                                                 
   <!--4. IP3R_Pa <-> IP3R_Pb -->
   <Reaction name = "IP3RC+Ca" id="IP3C+Ca">
-  <Reactant specieID="IP3RC"           />
-      <Reactant specieID="Ca"              />
-
+    <Reactant specieID="IP3RC"           />
+    <Reactant specieID="Ca"              />
     <Product  specieID="IP3RC2"               />
 
-    <forwardRate> 4.44e-6   </forwardRate>
+    <forwardRate> 20e-6   </forwardRate>
     <reverseRate> 10e-3       </reverseRate>
     <Q10>         0.2           </Q10>
   </Reaction>
@@ -83,7 +79,7 @@
     
     <Product  specieID="IP3RC3"               />
     
-    <forwardRate> 6.66e-6   </forwardRate>
+    <forwardRate> 40e-6   </forwardRate>
     <reverseRate> 15e-3       </reverseRate>
     <Q10>         0.2           </Q10>
   </Reaction>
@@ -93,7 +89,7 @@
     
     <Product  specieID="IP3RC4"               />
     
-    <forwardRate> 8.88e-6   </forwardRate>
+    <forwardRate> 60e-6   </forwardRate>
     <reverseRate> 20e-3       </reverseRate>
     <Q10>         0.2           </Q10>
   </Reaction>

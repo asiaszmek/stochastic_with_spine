@@ -1184,8 +1184,8 @@
     <Reactant specieID="IP3"/>
     <Product specieID="IP3RIP3"/>
 
-    <forwardRate> 0.00001   </forwardRate>
-    <reverseRate> 0.01       </reverseRate>
+    <forwardRate> 1000e-6   </forwardRate>
+    <reverseRate> 25800e-3       </reverseRate>
     <Q10>         0.2           </Q10>
   </Reaction>
 
@@ -1194,8 +1194,8 @@
     <Reactant specieID="Ca"/>
     <Product specieID="IP3RO"/>
     
-    <forwardRate> 0.00008   </forwardRate>
-    <reverseRate> .02    </reverseRate>
+    <forwardRate> 8000e-6   </forwardRate>
+    <reverseRate> 2000e-3    </reverseRate>
     <Q10>         0.2           </Q10>
   </Reaction>
 
@@ -1204,18 +1204,17 @@
     <Reactant specieID="Ca"/>                                                                     
     <Product specieID="IP3RC"/>                                                                 
                                                                                                                 
-    <forwardRate> 2.22e-6  </forwardRate>                                                                       
+    <forwardRate> 8.889e-6  </forwardRate>                                                                       
     <reverseRate> 5e-3      </reverseRate>                                                                      
     <Q10>         0.2           </Q10>                                                                          
   </Reaction>                                                                                                   
                                                                                                                 
   <Reaction name="IP3RC+Ca" id="IP3C+Ca">
-  <Reactant specieID="IP3RC"/>
-      <Reactant specieID="Ca"/>
-
+    <Reactant specieID="IP3RC"/>
+    <Reactant specieID="Ca"/>
     <Product specieID="IP3RC2"/>
 
-    <forwardRate> 4.44e-6   </forwardRate>
+    <forwardRate> 20e-6   </forwardRate>
     <reverseRate> 10e-3       </reverseRate>
     <Q10>         0.2           </Q10>
   </Reaction>
@@ -1226,7 +1225,7 @@
     
     <Product specieID="IP3RC3"/>
     
-    <forwardRate> 6.66e-6   </forwardRate>
+    <forwardRate> 40e-6   </forwardRate>
     <reverseRate> 15e-3       </reverseRate>
     <Q10>         0.2           </Q10>
   </Reaction>
@@ -1236,7 +1235,7 @@
     
     <Product specieID="IP3RC4"/>
     
-    <forwardRate> 8.88e-6   </forwardRate>
+    <forwardRate> 60e-6   </forwardRate>
     <reverseRate> 20e-3       </reverseRate>
     <Q10>         0.2           </Q10>
   </Reaction>

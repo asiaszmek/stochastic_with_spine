@@ -2,7 +2,7 @@
 
 <!-- PKC phos neurogranin Km=150 nM, kCat = 3.571s-1 https://pubmed.ncbi.nlm.nih.gov/8424932/ -->
 <ReactionScheme>
-  <Specie name="Ca" id="Ca" kdiff="200" kdiffunit="mu2/s" />
+  <Specie name="Ca" id="Ca" kdiff="223" kdiffunit="mu2/s" />
   <Specie name="CaMCa4" id="CaMCa4" kdiff="4" kdiffunit="mu2/s" />
  
   <!-- Add mGluRs from Blackwell's model -->

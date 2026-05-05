@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <ReactionScheme>
- <Specie name="Ca" id="Ca" kdiff="100" kdiffunit="mu2/s" />
+ <Specie name="Ca" id="Ca" kdiff="223" kdiffunit="mu2/s" />
  
   <Specie name="PMJ" id="PMJ" kdiff="0." kdiffunit="mu2/s" />
   <Specie name="PMJ_STIM_4" id="PMJ_STIM_4" kdiff="0." kdiffunit="mu2/s" />

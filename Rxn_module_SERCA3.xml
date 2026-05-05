@@ -23,7 +23,7 @@
 
   <!--https://pmc.ncbi.nlm.nih.gov/articles/PMC2774461/-->
   <Specie name="CaER" id="CaER" kdiff="10." kdiffunit="mu2/s"/>
-  <Specie name="Ca" id="Ca" kdiff="100." kdiffunit="mu2/s"/>
+  <Specie name="Ca" id="Ca" kdiff="223." kdiffunit="mu2/s"/>
   <Specie name="Cyt_SERCA3" id="Cyt_SERCA3" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Cyt_SERCA3_Ca" id="Cyt_SERCA3_Ca" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Cyt_SERCA3_Ca2" id="Cyt_SERCA3_Ca2" kdiff="0" kdiffunit="mu2/s"/>

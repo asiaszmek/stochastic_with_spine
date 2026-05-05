@@ -1,6 +1,6 @@
 
 <ReactionScheme>
-  <Specie name="Ca" id="Ca" kdiff="100" kdiffunit="mu2/s" />
+  <Specie name="Ca" id="Ca" kdiff="223" kdiffunit="mu2/s" />
   <Specie name="CaOut" id="CaOut" kdiff="10" kdiffunit="mu2/s" />
   <!-- 10.1016/j.tins.2011.03.002 for Glu diffusion-->
   <Specie name="Glu" id="Glu" kdiff="320" kdiffunit="mu2/s" />

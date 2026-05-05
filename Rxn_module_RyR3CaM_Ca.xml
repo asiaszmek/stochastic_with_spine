@@ -1,5 +1,5 @@
 <ReactionScheme>
-  <Specie name="Ca" id="Ca" kdiff="200" kdiffunit="mu2/s"/>
+  <Specie name="Ca" id="Ca" kdiff="223" kdiffunit="mu2/s"/>
   <Specie name="RyR3_4CaMCa4" id="RyR3_4CaMCa4" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="RyR3_1CaMCa2C_3CaMCa4" id="RyR3_1CaMCa2C_3CaMCa4" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="RyR3_2CaMCa2C_2CaMCa4" id="RyR3_2CaMCa2C_2CaMCa4" kdiff="0" kdiffunit="mu2/s"/>

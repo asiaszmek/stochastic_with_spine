@@ -1,5 +1,5 @@
 <ReactionScheme>
-  <Specie name="Ca" id="Ca" kdiff="200" kdiffunit="mu2/s"/>
+  <Specie name="Ca" id="Ca" kdiff="223" kdiffunit="mu2/s"/>
   <Specie name="CaM" id="CaM" kdiff="4" kdiffunit="mu2/s"/>
   <Specie name="CaMCa2C" id="CaMCa2C" kdiff="4" kdiffunit="mu2/s"/>
   <Specie name="CaMCa4" id="CaMCa4" kdiff="4" kdiffunit="mu2/s"/>

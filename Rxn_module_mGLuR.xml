@@ -129,8 +129,8 @@ Kd of mGlur5 for glu is ~ 2.2 uM 10.1007/s11064-016-2026-6
     <Reactant specieID="Plc"              />
     <Product  specieID="PlcCa"               />
 
-    <forwardRate> 0.0005e-03   </forwardRate>
-    <reverseRate> 1e-03        </reverseRate>
+    <forwardRate> 300e-6   </forwardRate>
+    <reverseRate> 100e-03        </reverseRate>
     <Q10>         0.2           </Q10>
   </Reaction>
 
@@ -167,8 +167,8 @@ Kd of mGlur5 for glu is ~ 2.2 uM 10.1007/s11064-016-2026-6
     <Reactant specieID="PlcGqaGTP"              />
     <Product  specieID="PlcCaGqaGTP"               />
     
-    <forwardRate> 0.00025e-03   </forwardRate>
-    <reverseRate> 1.0e-03        </reverseRate>
+    <forwardRate> 300e-6   </forwardRate>
+    <reverseRate> 200.0e-03        </reverseRate>
     <Q10>         0.2           </Q10>
   </Reaction>
 
@@ -212,8 +212,8 @@ Kd of PLCbeta to Pip2 is 1uM-->
     <Reactant specieID="PlcPip2"              />
     <Product  specieID="PlcCaPip2"               />
 
-    <forwardRate> 6e-07   </forwardRate>
-    <reverseRate> 1.2e-3        </reverseRate>
+    <forwardRate> 300e-6   </forwardRate>
+    <reverseRate> 100e-3        </reverseRate>
     <Q10>         0.2           </Q10>
   </Reaction>
 
@@ -224,7 +224,7 @@ Kd of PLCbeta to Pip2 is 1uM-->
     <Product  specieID="PlcGqaGTPPip2"               />
 
     <forwardRate> 14e-04   </forwardRate>
-    <reverseRate>   7e-03      </reverseRate>
+    <reverseRate> 7e-03      </reverseRate>
     <Q10>         0.2           </Q10>
   </Reaction>
 
@@ -243,8 +243,8 @@ Kd of PLCbeta to Pip2 is 1uM-->
     <Reactant specieID="Ca"              />
     <Product  specieID="PlcCaGqaGTPPip2"               />
 
-    <forwardRate> 6e-7   </forwardRate>
-    <reverseRate> 2.4e-3        </reverseRate>
+    <forwardRate> 300e-6   </forwardRate>
+    <reverseRate> 200e-3        </reverseRate>
     <Q10>         0.2           </Q10>
   </Reaction>
    

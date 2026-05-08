@@ -29,7 +29,7 @@
     <NanoMolarity specieID="Cyt_SERCA_Ca" value="90" />
     <NanoMolarity specieID="Cyt_SERCA_Ca2" value="9" />
 
-    <NanoMolarity specieID="LeakER" value="120" />
+    <NanoMolarity specieID="LeakER" value="140" />
  
     <NanoMolarity specieID="STIM_2CaER" value="380" />
     <NanoMolarity specieID="STIM_2" value="12" />
@@ -67,10 +67,10 @@
     <PicoSD specieID="GqaGTP" value="0"/>
     <PicoSD specieID="GqaGDP" value="0"/>
     
-    <PicoSD  specieID="Plc"  value="65"    />
-    <PicoSD  specieID="PlcCa"  value="4"   />
-    <PicoSD  specieID="PlcCaPip2"  value="12"   />
-    <PicoSD  specieID="PlcPip2"  value="275"    />
+    <PicoSD  specieID="Plc"  value="32"    />
+    <PicoSD  specieID="PlcCa"  value="2"   />
+    <PicoSD  specieID="PlcCaPip2"  value="6"   />
+    <PicoSD  specieID="PlcPip2"  value="138"    />
     <PicoSD  specieID="PlcCaGqaGTP"  value="0"    />
     <PicoSD  specieID="PlcGqaGTP"  value="0"    />
     <PicoSD  specieID="PlcGqaGTPPip2"  value="0"    />

@@ -48,7 +48,7 @@ flist_pip_cycling = [
 
 flist_no_ER_spine_basal = [
     "Rxn_module_Ca.xml",
-    "Rxn_module_NMDAR.xml",
+    "Rxn_module_CaCbuf.xml",
     "Rxn_module_GluBuf.xml",
     "Rxn_module_RyR2CaM_KeizerSmith.xml",
     "Rxn_module_SERCA2.xml",
@@ -120,14 +120,14 @@ flist_ER_spine_basal_old_age = flist_no_ER_spine_basal_old_age + [
     "Rxn_module_SERCA3.xml",
     "Rxn_module_RyR3.xml",
     ]
-flist_ER_spine_stim = flist_ER_spine_basal + ["Rxn_module_CaCbuf.xml"]
+flist_ER_spine_stim = flist_ER_spine_basal + [ "Rxn_module_NMDAR.xml",]
 
 flist_ER_spine_stim_IP3 = flist_ER_spine_stim + [
     "Rxn_module_mGLuR.xml",
     "Rxn_module_IP3R.xml",
     "Rxn_module_GluBuf.xml",
 ]
-flist_no_ER_spine_stim = flist_no_ER_spine_basal + ["Rxn_module_CaCbuf.xml"]
+flist_no_ER_spine_stim = flist_no_ER_spine_basal + ["Rxn_module_NMDAR.xml"]
 
 flist_no_ER_spine_stim_IP3 = flist_no_ER_spine_stim + [
     "Rxn_module_mGLuR.xml",

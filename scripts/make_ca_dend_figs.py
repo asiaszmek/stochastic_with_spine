@@ -71,7 +71,7 @@ if __name__ == '__main__':
                 continue
             conc, voxels = utils.get_dynamics_in_region(my_file,
                                                         specie_list,
-                                                        reg_list, trial, "__main__")
+                                                        reg_list, trial, "Ca")
             conc_dict[trial] = conc
             time = utils.get_times(my_file, trial, "__main__")
             time_dict[trial] = time

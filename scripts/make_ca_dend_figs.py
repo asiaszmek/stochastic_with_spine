@@ -63,9 +63,13 @@ if __name__ == '__main__':
     if len(sys.argv) == 1:
         sys.exit('No filename given')
     for fname in sys.argv[1:]:
+        print(fname)
         my_file = h5py.File(fname, 'r')
         conc_dict = {}
         time_dict = {}
+        vmin = 1200
+        vmax = 0
+        peak = []
         for trial in my_file.keys():
             if trial == "model":
                 continue
@@ -75,13 +79,20 @@ if __name__ == '__main__':
             conc_dict[trial] = conc
             time = utils.get_times(my_file, trial, "__main__")
             time_dict[trial] = time
-        vmin = 0
-        vmax = 1200
+            new_max = conc_dict[trial].max()
+            new_min = conc_dict[trial].min()
+            peak.append(vmax)
+            if len(np.where(conc[3000:]>202.5)[0])>1:
+                print(len(np.where(conc[3000:]>202.5)[1]))
+                #print(set(np.where(conc[3000:]>202.5)[0][1]))
+            if new_max > vmax:
+                vmax = new_max
+            if new_min < vmin:
+                vmin = new_min
+
+        print(np.mean(peak), np.std(peak))
         diam = fname.split("diam_")[-1][:3]
-        # for key in conc_dict:
-        #     new_max = conc_dict[key].max()
-        #     if new_max > vmax:
-        #         vmax = new_max
+
         for key in conc_dict:
             fig, ax = plt.subplots(1, 1)
             time = time_dict[key]
@@ -91,7 +102,7 @@ if __name__ == '__main__':
                                                      time[-1]*1e-3,
                                                      voxels[0],
                                                      voxels[-1]],
-                           cmap=plt.get_cmap("Reds"))
+                           cmap=plt.get_cmap("Reds"), vmin=vmin, vmax=vmax)
             ax.set_xlabel(r"time (s)", fontsize=14)
             ax.set_ylabel(r"dendrite $(\mathrm{\mu m})$", fontsize=14)
             fig.colorbar(im)
@@ -100,7 +111,7 @@ if __name__ == '__main__':
                          fontsize=14)
             fig.savefig(fname[:-3]+"_"+key+".png", dpi=100,
                         bbox_inches="tight")
-    
+            plt.close()
     
     
  

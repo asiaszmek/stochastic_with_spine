@@ -1,0 +1,14 @@
+<StimulationSet>
+  <InjectionStim specieID="Ca" injectionSite="sa1[0].pointA">
+    <onset>3000</onset>
+    <duration>4</duration>
+    <rate>2400</rate>
+    <end>8000</end>    
+  </InjectionStim>
+   <InjectionStim specieID="Ca" injectionSite="dend11:submembrane">
+    <onset>3000</onset>
+    <duration>4</duration>
+    <rate>2400</rate>
+    <end>8000</end>    
+   </InjectionStim>
+</StimulationSet>

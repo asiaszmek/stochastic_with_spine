@@ -5,10 +5,34 @@
     <rate>60</rate>
     <end>8000</end>    
   </InjectionStim>
+  <InjectionStim specieID="Ca" injectionSite="dend09:submembrane">
+    <onset>3000</onset>
+    <duration>40</duration>
+    <rate>20</rate>
+    <end>8000</end>    
+  </InjectionStim>
+  <InjectionStim specieID="Ca" injectionSite="dend10:submembrane">
+    <onset>3000</onset>
+    <duration>40</duration>
+    <rate>20</rate>
+    <end>8000</end>    
+  </InjectionStim>
   <InjectionStim specieID="Ca" injectionSite="dend11:submembrane">
     <onset>3000</onset>
     <duration>40</duration>
-    <rate>60</rate>
+    <rate>20</rate>
+    <end>8000</end>    
+  </InjectionStim>
+  <InjectionStim specieID="Ca" injectionSite="dend12:submembrane">
+    <onset>3000</onset>
+    <duration>40</duration>
+    <rate>20</rate>
+    <end>8000</end>    
+  </InjectionStim>
+  <InjectionStim specieID="Ca" injectionSite="dend13:submembrane">
+    <onset>3000</onset>
+    <duration>40</duration>
+    <rate>20</rate>
     <end>8000</end>    
   </InjectionStim>
 

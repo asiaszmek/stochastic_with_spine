@@ -17,8 +17,10 @@ if __name__ == "__main__":
     args = parser.parse_args()
     species = read_in_species(args.species)
     means = {}
+    stds = {}
     for specie in species:
         means[specie] = []
+        stds[specie] = []
     for fname in args.files:
         print(fname)
         try:
@@ -38,7 +40,9 @@ if __name__ == "__main__":
             std =  np.sqrt(data[:, idx].var())
             out = "%s, mean: %f, std: %f" % (specie, mean, std)
             means[specie].append(mean)
+            stds[specie].append(std)
+            print(specie, mean, std**0.5)
     for specie in means.keys():
         if len(means[specie]):
-            print(specie, sum(means[specie])/len(means[specie]))
+            print(specie, sum(means[specie])/len(means[specie]), np.mean(stds[specie])**0.5)
             

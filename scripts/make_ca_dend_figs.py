@@ -73,11 +73,20 @@ if __name__ == '__main__':
         for trial in my_file.keys():
             if trial == "model":
                 continue
-            conc, voxels = utils.get_dynamics_in_region(my_file,
-                                                        specie_list,
-                                                        reg_list, trial, "Ca")
+            try:
+                conc, voxels = utils.get_dynamics_in_region(my_file,
+                                                            specie_list,
+                                                            reg_list, trial,
+                                                            "Ca")
+                time = utils.get_times(my_file, trial, "Ca")
+            except KeyError:
+                conc, voxels = utils.get_dynamics_in_region(my_file,
+                                                            specie_list,
+                                                            reg_list, trial,
+                                                            "__main__")
+                time = utils.get_times(my_file, trial, "__main__")
+                
             conc_dict[trial] = conc
-            time = utils.get_times(my_file, trial, "__main__")
             time_dict[trial] = time
             new_max = conc_dict[trial].max()
             new_min = conc_dict[trial].min()
@@ -102,7 +111,7 @@ if __name__ == '__main__':
                                                      time[-1]*1e-3,
                                                      voxels[0],
                                                      voxels[-1]],
-                           cmap=plt.get_cmap("Reds"), vmin=vmin, vmax=vmax)
+                           cmap=plt.get_cmap("Reds"))
             ax.set_xlabel(r"time (s)", fontsize=14)
             ax.set_ylabel(r"dendrite $(\mathrm{\mu m})$", fontsize=14)
             fig.colorbar(im)

@@ -370,22 +370,17 @@ def get_dynamics_in_region(my_file, specie, region, trial,
     return out, voxel_list
 
 
-def get_conc(my_file, specie_list, region_list, output):
-    if isinstance(specie_list, str):
-        specie_list = [specie_list]
+def get_conc(my_file, specie, region_list, output):
     conc_dict = {}
     time_dict = {}
-    for specie in specie_list:
-        conc_dict[specie] = {}
     for trial in my_file.keys():
         if trial == "model":
             continue
         try:
-            for specie in specie_list:
-                pop, voxel = get_dynamics_in_region(my_file, specie,
-                                                    region_list,
-                                                    trial, output)
-                conc_dict[specie][trial] = pop.T
+            pop, voxel = get_dynamics_in_region(my_file, specie,
+                                                region_list,
+                                                trial, output)
+            conc_dict[trial] = pop.T
             time = get_times(my_file, trial, output)
             time_dict[trial] = time
         except IOError:
@@ -394,30 +389,32 @@ def get_conc(my_file, specie_list, region_list, output):
     return conc_dict, time_dict
 
 
-def get_distance(conc_dict, dt, t_init=3000, stim_len=3000, length=102):
+def get_distance(conc_dict, dt, t_init=3000, stim_len=3000, length=102, spine_idx=21):
     decays = np.zeros((len(conc_dict), 1))
     shape = conc_dict["trial0"].shape[0]
     find_max = conc_dict["trial0"][:length, :].argmax()
     full_shape = conc_dict["trial0"].shape
-    spine_idx = np.unravel_index(find_max, full_shape)[0]
+    
     for i, concentration in enumerate(conc_dict.values()):
         ca_conc = np.zeros((shape,))
-        ca_conc_mean = concentration[:, int(1000/dt):int(t_init/dt)].mean()*np.ones((shape,))
+        ca_conc_mean = concentration[:, int(1000/dt):int(t_init/dt)].mean()
+        
         new_beg = int((t_init+stim_len)/dt)
         indices = []
-        for j in range(spine_idx, spine_idx*2+1):
+        for j in range(spine_idx, length):
             try:
                 new_idx = concentration[j, new_beg:].argmax()
             except ValueError:
                 continue
+
             ca_conc[j] = concentration[j, new_beg+new_idx]
-            if ca_conc[j] > limit*ca_conc_mean[j]:
+            if ca_conc[j] > limit*ca_conc_mean:
                 if not len(indices) and j==spine_idx:
                     indices.append(j)
                 elif j+1 in indices or j-1 in indices:
                     indices.append(j)
-                elif j+2 in indices or j-2 in indices:
-                    indices.append(j)
+                # elif j+2 in indices or j-2 in indices:
+                #     indices.append(j)
         new_beg = int((t_init+stim_len)/dt)         
         for j in range(spine_idx, -1, -1):
             try:
@@ -426,14 +423,14 @@ def get_distance(conc_dict, dt, t_init=3000, stim_len=3000, length=102):
                 continue
             ca_conc[j] = concentration[j, new_beg+new_idx]
           
-            if ca_conc[j] > limit*ca_conc_mean[j]:
+            if ca_conc[j] > limit*ca_conc_mean:
                 if not len(indices) and j==spine_idx:
                     indices.append(j)
                 elif j+1 in indices or j-1 in indices:
                     indices.append(j)
-                elif j+2 in indices or j-2 in indices:
-                    indices.append(j)
-        decays[i] = len(indices)/2
+                # elif j+2 in indices or j-2 in indices:
+                #    indices.append(j)
+        decays[i] = len(indices)/2*0.5
     return decays
 
 

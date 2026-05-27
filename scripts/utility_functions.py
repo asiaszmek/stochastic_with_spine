@@ -21,6 +21,7 @@ window = 50
 
 region_list = []
 prefix = "dend"
+ca_ctrl = 71
 for i in range(1, 52):
     if i<10:
         region_list.append(prefix+"0"+str(i))
@@ -397,7 +398,7 @@ def get_distance(conc_dict, dt, t_init=3000, stim_len=3000, length=102, spine_id
     
     for i, concentration in enumerate(conc_dict.values()):
         ca_conc = np.zeros((shape,))
-        ca_conc_mean = concentration[:, int(1000/dt):int(t_init/dt)].mean()
+        
         
         new_beg = int((t_init+stim_len)/dt)
         indices = []
@@ -408,7 +409,7 @@ def get_distance(conc_dict, dt, t_init=3000, stim_len=3000, length=102, spine_id
                 continue
 
             ca_conc[j] = concentration[j, new_beg+new_idx]
-            if ca_conc[j] > limit*ca_conc_mean:
+            if ca_conc[j] > limit*ca_ctrl:
                 if not len(indices) and j==spine_idx:
                     indices.append(j)
                 elif j+1 in indices or j-1 in indices:
@@ -423,7 +424,7 @@ def get_distance(conc_dict, dt, t_init=3000, stim_len=3000, length=102, spine_id
                 continue
             ca_conc[j] = concentration[j, new_beg+new_idx]
           
-            if ca_conc[j] > limit*ca_conc_mean:
+            if ca_conc[j] > limit*ca_ctrl:
                 if not len(indices) and j==spine_idx:
                     indices.append(j)
                 elif j+1 in indices or j-1 in indices:

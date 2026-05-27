@@ -75,12 +75,10 @@ flist_no_ER_spine_basal_IP3 = flist_no_ER_spine_basal + [
 
 flist_no_ER_spine_basal_old_age = [
     "Rxn_module_Ca_old_age.xml",
-    "Rxn_module_NMDAR.xml",
     "Rxn_module_RyR2CaM_KeizerSmith.xml",
     "Rxn_module_SERCA2.xml",
     "Rxn_module_RyR2_KeizerSmith.xml",
     "Rxn_module_SOCE.xml",
-    "Rxn_module_GluBuf.xml",
     ]
 
 flist_no_ER_IP3_spine_basal_old_age = flist_no_ER_spine_basal_old_age + [

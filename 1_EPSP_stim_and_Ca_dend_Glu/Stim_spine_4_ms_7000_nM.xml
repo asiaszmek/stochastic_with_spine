@@ -1,0 +1,45 @@
+<StimulationSet>
+  <InjectionStim specieID="Ca" injectionSite="sa1[0].pointA">
+    <onset>3000</onset>
+    <duration>4</duration>
+    <rate>2400</rate>
+    <end>8000</end>    
+  </InjectionStim>
+ <InjectionStim injectionSite="sa1[0].pointA" specieID="GluGlubuf">
+    <onset>3000</onset>
+    <duration>1</duration>
+    <rate>40000</rate>
+    <end>3040</end>
+ </InjectionStim>
+
+   <InjectionStim specieID="Ca" injectionSite="dend09:submembrane">
+    <onset>3000</onset>
+    <duration>4</duration>
+    <rate>300</rate>
+    <end>8000</end>    
+  </InjectionStim>
+  <InjectionStim specieID="Ca" injectionSite="dend10:submembrane">
+    <onset>3000</onset>
+    <duration>4</duration>
+    <rate>300</rate>
+    <end>8000</end>    
+  </InjectionStim>
+  <InjectionStim specieID="Ca" injectionSite="dend11:submembrane">
+    <onset>3000</onset>
+    <duration>4</duration>
+    <rate>300</rate>
+    <end>8000</end>    
+  </InjectionStim>
+  <InjectionStim specieID="Ca" injectionSite="dend12:submembrane">
+    <onset>3000</onset>
+    <duration>4</duration>
+    <rate>300</rate>
+    <end>8000</end>    
+  </InjectionStim>
+  <InjectionStim specieID="Ca" injectionSite="dend13:submembrane">
+    <onset>3000</onset>
+    <duration>4</duration>
+    <rate>300</rate>
+    <end>8000</end>    
+  </InjectionStim>
+</StimulationSet>

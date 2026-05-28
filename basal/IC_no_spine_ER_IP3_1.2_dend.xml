@@ -5,19 +5,19 @@
     <NanoMolarity specieID="Glu" value="20"/>
     <NanoMolarity specieID="Ca" value="70"/>
     <NanoMolarity specieID="CaOut" value="2000000"/>
-    <NanoMolarity specieID="fixedbuffer" value="499278.0"/>
-    <NanoMolarity specieID="fixedbufferCa" value="722"/>
+    <NanoMolarity specieID="fixedbuffer" value="499295.0"/>
+    <NanoMolarity specieID="fixedbufferCa" value="705"/>
     <!-- total calbindin = 150 uM -->
-    <NanoMolarity specieID="Calbin" value="136000"/>
-    <NanoMolarity specieID="CalbinC" value="14000"/>
+    <NanoMolarity specieID="Calbin" value="136274"/>
+    <NanoMolarity specieID="CalbinC" value="13726"/>
 
-    <NanoMolarity specieID="CaM" value="3360"/>
-    <NanoMolarity specieID="CaM_0_1" value="4"/>
-    <NanoMolarity specieID="CaM_1_0" value="187"/>
-    <NanoMolarity specieID="CaMCa2C" value="20"/>
+    <NanoMolarity specieID="CaM" value="3371"/>
+    <NanoMolarity specieID="CaM_0_1" value="3"/>
+    <NanoMolarity specieID="CaM_1_0" value="127"/>
+    <NanoMolarity specieID="CaMCa2C" value="10"/>
     <NanoMolarity specieID="CaMCa4" value="0"/>
-    <NanoMolarity specieID="Ng" value="18000"/>
-    <NanoMolarity specieID="NgCaM" value="47000"/>
+    <NanoMolarity specieID="Ng" value="17949"/>
+    <NanoMolarity specieID="NgCaM" value="47051"/>
   
     <NanoMolarity specieID="CaER"         value="0.57e5"     />
     <NanoMolarity       specieID="CRTP" value="510771"/>

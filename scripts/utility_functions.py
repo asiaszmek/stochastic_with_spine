@@ -9,8 +9,17 @@ import matplotlib.pyplot as plt
 from scipy.optimize import curve_fit
 
 
+plt.rcParams.update({
+    "text.usetex": True,
+    "font.family": "sans-serif",
+    "font.sans-serif": "Helvetica",
+})
 
-plt.rcParams['text.usetex'] = True
+plt.rcParams["text.latex.preamble"]+=r"\usepackage{sfmath}"
+plt.rcParams["text.latex.preamble"]+=r"\usepackage{siunitx}"
+plt.rcParams["text.latex.preamble"]+=r"\DeclareSIUnit{\molar}{M}"
+plt.rcParams["text.latex.preamble"]+=r"\DeclareSIUnit{\Molar}{M}"
+
 hatch_possibilities = ["/", "-", "+", "o"]
 marker = ["d", "o", "v", "^"]
 limit = 2.5
@@ -390,10 +399,11 @@ def get_conc(my_file, specie, region_list, output):
     return conc_dict, time_dict
 
 
-def get_distance(conc_dict, dt, t_init=3000, stim_len=3000, length=102, spine_idx=21):
+def get_distance(conc_dict, dt, t_init, stim_len, spine_idx):
+    
     decays = np.zeros((len(conc_dict), 1))
     shape = conc_dict["trial0"].shape[0]
-    find_max = conc_dict["trial0"][:length, :].argmax()
+    find_max = conc_dict["trial0"].argmax()
     full_shape = conc_dict["trial0"].shape
     
     for i, concentration in enumerate(conc_dict.values()):
@@ -402,7 +412,7 @@ def get_distance(conc_dict, dt, t_init=3000, stim_len=3000, length=102, spine_id
         
         new_beg = int((t_init+stim_len)/dt)
         indices = []
-        for j in range(spine_idx, length):
+        for j in range(spine_idx, shape):
             try:
                 new_idx = concentration[j, new_beg:].argmax()
             except ValueError:
@@ -496,187 +506,6 @@ def get_mean_basal(conc, dt, t_init, length):
        
     return np.array(basal)
 
-def make_distance_fig(files, t_init, stims,
-                      what_species, output_name, colors, types, markers):
-    fig1, ax1 = plt.subplots(1, len(dend_diam), figsize=(len(dend_diam)*5, 5))
-   
-    for j, fname in enumerate(files):
-        for i, diam in enumerate(stims):
-            new_fname = fname % (stim)
-            try:
-                my_file = h5py.File(new_fname)
-                print(new_fname)
-            except FileNotFoundError:
-                print("File not found", new_fname)
-                continue
-            conc_dict, times_dict = get_conc(my_file,
-                                             what_species,
-                                             region_list,
-                                             output_name)
-            try:
-                dt = times_dict["trial0"][1]-times_dict["trial0"][0]
-            except KeyError:
-                continue
-            
-            length = conc_dict["Ca"]["trial0"].shape[0]
-            grid = np.array(get_grid_list(my_file))
-            dx = abs(grid[0][0]-grid[0][3])
-            conc = max_vs_distance(conc_dict["Ca"],
-                                   dt=dt, t_init=t_init, length=length)
-            basal = get_max_basal(conc_dict["Ca"], dt=dt, t_init=t_init, spine_idx=spine_idx,
-                              length=length)
-            mean_basal = basal.mean(axis=0)
-            distance = np.linspace(0, len(mean_basal)*dx, len(mean_basal))
-            std_basal = basal.std(axis=0)/(basal.shape[0]**0.5)
-
-            max_conc = conc.mean(axis=0)
-            
-            std_conc = conc.std(axis=0)/(len(conc)**0.5)
-            ax1[i].errorbar(distance,
-                            max_conc, yerr=std_conc, marker=markers[j], linestyle="",
-                            color=colors[diam], fillstyle="full", label=types[j]+" after stim")
-            ax1[i].errorbar(distance, mean_basal, yerr=std_basal, color="k",
-                            fillstyle="none", marker=markers[j], label=types[j]+" before stim",
-                            linestyle="")
-
-        ax1[i].tick_params(axis='x', labelsize=15)
-        ax1[i].tick_params(axis='y', labelsize=15)
-    ax1[0].set_ylabel("$\mathrm{\max Ca_i\, (nM)}$", fontsize=15)
-    ax1[0].set_xlabel(r"Distance from stim spine $\mu \mathrm{m}$", fontsize=15)
-    mini = min([min(x.get_ylim()) for x in ax1])
-    maxi = max([max(x.get_ylim()) for x in ax1])
-    ax1[0].legend()
-    for i, diam in enumerate(dend_diam):
-        
-        ax1[i].set_title(r"dend diam %s $\mathrm{\mu  m}$" % diam,
-                         fontsize=15)
-        ax1[i].set_ylim([mini, maxi])
-        if i:
-            ax1[i].set_yticks([])
-    return fig1
-
-
-def make_mean_distance_fig(files, t_init, stim_dur, dend_diam,
-                      what_species, output_name, colors, types, markers):
-    fig1, ax1 = plt.subplots(1, len(dend_diam), figsize=(len(dend_diam)*5, 5))
-    for i, diam in enumerate(dend_diam):
-        for j, fname in enumerate(files):
-            new_fname = fname % (diam)
-            try:
-                my_file = h5py.File(new_fname)
-                print(new_fname)
-            except FileNotFoundError:
-                print("File not found", new_fname)
-                continue
-            conc_dict, times_dict = get_conc(my_file,
-                                             what_species,
-                                             region_list,
-                                             output_name)
-            try:
-                dt = times_dict["trial0"][1]-times_dict["trial0"][0]
-            except KeyError:
-                continue
-            
-            length = conc_dict["Ca"]["trial0"].shape[0]
-            spine_idx = (length-1)//2 -1
-            grid = np.array(get_grid_list(my_file))
-            dx = abs(grid[0][0]-grid[0][3])
-            conc = mean_vs_distance(conc_dict["Ca"],
-                                   dt=dt, t_init=t_init+stim_dur, spine_idx=spine_idx, length=length)
-            basal = get_mean_basal(conc_dict["Ca"], dt=dt, t_init=t_init, spine_idx=spine_idx,
-                              length=length)
-            mean_basal = basal.mean(axis=0)
-            distance = np.linspace(0, len(mean_basal)*dx, len(mean_basal))
-            std_basal = basal.std(axis=0)/(basal.shape[0]**0.5)
-
-            mean_conc = conc.mean(axis=0)
-            
-            std_conc = conc.std(axis=0)/(len(conc)**0.5)
-            ax1[i].errorbar(distance,
-                            mean_conc, yerr=std_conc, marker=markers[j], linestyle="",
-                            color=colors[diam], fillstyle="full", label=types[j])
-            ax1[i].errorbar(distance, mean_basal, yerr=std_basal, color="k",
-                            fillstyle="none", marker=markers[j],
-                            linestyle="")
-
-        ax1[i].tick_params(axis='x', labelsize=15)
-        ax1[i].tick_params(axis='y', labelsize=15)
-    ax1[0].set_ylabel("$\mathrm{dendritic\ mean\ Ca_i\, (nM)}$", fontsize=15)
-    ax1[0].set_xlabel(r"Distance from stim $\mu \mathrm{m}$", fontsize=15)
-    mini = min([min(x.get_ylim()) for x in ax1])
-    maxi = max([max(x.get_ylim()) for x in ax1])
-    ax1[0].legend()
-    for i, diam in enumerate(dend_diam):
-        
-        ax1[i].set_title(r"dend diam %s $\mathrm{\mu  m}$" % diam,
-                         fontsize=15)
-        ax1[i].set_ylim([mini, maxi])
-        if i:
-            ax1[i].set_yticks([])
-    return fig1
-
-
-
-def make_distance_fig_compare_with_mean(files, t_init, stim_len, dend_diam,
-                                        what_species, output_name, colors, types, markers):
-    fig1, ax1 = plt.subplots(1, len(dend_diam), figsize=(len(dend_diam)*5, 5))
-    for i, diam in enumerate(dend_diam):
-        means = []
-        stds = []
-        paradigm = []
-        for j, fname in enumerate(files):
-            new_fname = fname % (diam)
-            try:
-                my_file = h5py.File(new_fname)
-                print(new_fname)
-            except FileNotFoundError:
-                print("File not found", new_fname)
-                continue
-            conc_dict, times_dict = get_conc(my_file,
-                                             what_species,
-                                             region_list,
-                                             output_name)
-            try:
-                dt = times_dict["trial0"][1]-times_dict["trial0"][0]
-            except KeyError:
-                continue
-            length = conc_dict["Ca"]["trial0"].shape[0]
-            spine_idx = 49
-            grid = np.array(get_grid_list(my_file))
-            dx = abs(grid[0][0]-grid[0][3])
-
-            conc = max_vs_distance(conc_dict["Ca"],
-                                   dt=dt, t_init=t_init, spine_idx=spine_idx, length=length)
-            basal = get_mean_basal(conc_dict["Ca"], dt=dt, t_init=t_init, spine_idx=spine_idx,
-                              length=length)
-            new_conc = conc/basal
-            distance = np.linspace(0, basal.shape[1]*dx, basal.shape[1])
-            if "old" not in fname:
-                ax1[i].errorbar(distance, new_conc.mean(axis=0), yerr=new_conc.std(axis=0), marker=markers[j], linestyle="",
-                                color=colors[diam], fillstyle="full", label=types[j])
-            else:
-                ax1[i].errorbar(distance, new_conc.mean(axis=0), yerr=new_conc.std(axis=0), marker=markers[j], linestyle="",
-                                color=colors[diam], fillstyle="none", label=types[j])
-        ax1[i].tick_params(axis='x', labelsize=15)
-        ax1[i].tick_params(axis='y', labelsize=15)
-
-    ax1[0].set_ylabel("$\mathrm{\max Ca_i}$/mean resting $\mathrm{Ca_i}$",  fontsize=15)
-    ax1[0].set_xlabel("Distance from spine $\mathrm{(\mu \, m)}$", fontsize=15)
-    ax1[-1].legend()
-    mini = min([min(x.get_ylim()) for x in ax1])
-    maxi = max([max(x.get_ylim()) for x in ax1])
-    ax1[0].legend()
-    for i, diam in enumerate(dend_diam):
-        
-        ax1[i].set_title(r"dend diam %s $\mathrm{\mu  m}$" % diam,
-                         fontsize=15)
-        ax1[i].set_ylim([mini, maxi])
-        if i:
-            ax1[i].set_yticks([])
-    return fig1
-
-
-
 def fit_exp(time, ca_conc, dt, duration=2000, t_init=3000, stim_len=3000, spatial=False):
 
     if not spatial:
@@ -704,168 +533,155 @@ def fit_exp(time, ca_conc, dt, duration=2000, t_init=3000, stim_len=3000, spatia
     return popt[1]
 
 
-def make_decay_fig(files, t_init, stim_len, dend_diam,
-                   what_species, output_name, colors, types, markers):
 
-    fig1, ax1 = plt.subplots(1, len(dend_diam), figsize=(len(dend_diam)*5, 5))
-    for i, diam in enumerate(dend_diam):
-        means = []
-        stds = []
-        paradigm = []
-        for j, fname in enumerate(files):
-            new_fname = fname % (diam)
-            try:
-                my_file = h5py.File(new_fname)
-                print(new_fname)
-            except FileNotFoundError:
-                print("File not found", new_fname)
-                continue
-            conc_dict, times_dict = get_conc(my_file,
-                                             what_species,
-                                             region_list=spine,
-                                             output="all")
-            try:
-                dt = times_dict["trial0"][1]-times_dict["trial0"][0]
-            except KeyError:
-                continue
-            t_decays1 = []
-            for k, trial in enumerate(conc_dict["Ca"].keys()):
-                
-                ca = conc_dict["Ca"][trial].sum(axis=0)
-                time = times_dict[trial]
-                
-                try:
-                    t1 = fit_exp(time, ca, dt, t_init=t_init, stim_len=3000)
-                except ValueError:
-                    continue
-                print(t1)
-                if t1 > 0 and t1<50000:
-                    t_decays1.append(t1)
-                    
-            means.append(np.mean(t_decays1))
-            stds.append(np.std(t_decays1)/(len(t_decays1)**.5))
-            paradigm.append(types[j])
-       
-        ax1[i].errorbar(paradigm, means, yerr=stds, marker="s", linestyle="",
-                        color=colors[diam], fillstyle="full")
 
-        ax1[i].tick_params(axis='x', labelsize=15)
-        ax1[i].tick_params(axis='y', labelsize=15)
-        ax1[i].set_xticklabels(types, rotation=90)
-    ax1[0].set_ylabel("Time decay $(\mathrm{ms})$",  fontsize=15)
-    ax1[0].set_xlabel("Paradigm", fontsize=15)
-    mini = min([min(x.get_ylim()) for x in ax1])
-    maxi = max([max(x.get_ylim()) for x in ax1])
-   
-    for i, diam in enumerate(dend_diam):
+
+def make_distance_figs(directories, stim_dict, output, types, markers,
+                       fillstyles, length=42, spine_idx=21, t_init=3000,
+                       xlabel=r"Auc head/Auc basal",
+                       ylabel=r"Spatial spread ($\unit{\micro\metre}$))"):
+    fig1, ax1 = plt.subplots(1, len(stim_dict.keys()),
+                             figsize=(len(stim_dict.keys())*5, 5))
+    for k, dur in enumerate(stim_dict.keys()):
+        period_spine = 1000+int(dur)
+        period_dend = 500+int(dur)
         
-        ax1[i].set_title(r"dend diam %s $\mathrm{\mu  m}$" % diam,
-                         fontsize=15)
-        ax1[i].set_ylim([mini, maxi])
-        if i:
-            ax1[i].set_yticks([])
-    return fig1
-
-
-
-def make_distance_fig_sep_dends(directories,  dend_diam, stims, output_name,
-                                colors, types, marker, fillstyle, legend=None,
-                                title=True, find_middle=False):
-    fig1, ax1 = plt.subplots(1, len(dend_diam), figsize=(len(dend_diam)*5, 5))
-    if len(dend_diam) == 1:
-        ax1 = [ax1]
-
-    base = "dend"
-    reg_list = [base, "dend01", "dend02", "dend03", "dend04",
-                "dend05", "dend06", "dend07", "dend08", "dend09",]
-    for i in range(10, 102, 1):
-        reg_list.append("%s%d" %(base, i))
- 
-    for k, (d, fname) in enumerate(directories):
-        my_path = os.path.join("..", d)
-        for stim_type in [""]:
-            for j, diam in enumerate(dend_diam):
-                y = []
-                y_err = []
-                x = []
-                x_err = []
-                for i, stim in enumerate(stims):
-                    #print(fname)
-                    new_fname = fname % (stim_type, diam, stim)
-                    my_file = os.path.join(my_path % diam, new_fname)
-                    deterministic=False
-                    try:
-                        conc_dict, times_dict = get_conc(my_file,
-                                                         ["Ca"],
-                                                         reg_list,
-                                                         output_name)
-                    except TypeError:
-                        continue
-                    except OSError:
-                        new_file = open(my_file)
-                        header = new_file.readline().split()
-                        data = np.loadtxt(new_file, max_rows=518)
-                        times_dict = {}
-                        times_dict["trial0"] = data[:, 0]
-                        conc_dict = {}
-                        conc_dict["Ca"] = {}
-                        new_conc = np.zeros((data.shape[0], (data.shape[-1]-1)//3))
-                        
-                        for i in range((data.shape[-1]-1)//3):
-                            new_conc[:, i] = nano_molarity(data[:,1+3*i] + data[:, 1+3*i+1] + data[:,1+ 3*i+2], 3*v)
-                        conc_dict["Ca"]["trial0"] = new_conc.T    
-                        
-                        deterministic = True
-                    try:
-                        dt = times_dict["trial0"][1]-times_dict["trial0"][0]
-                    except KeyError:
-                        continue
-                    try:
-                        length = get_length(my_file)
-                    except OSError:
-                        length = (data.shape[-1]-1)//3
-                    try:
-                        dist, branch, delay = get_distance(conc_dict["Ca"],
-                                                           dt,
-                                                           length=length)
-                    except TypeError:
-                        continue
-                    for l, b in enumerate(branch):
-                        print("%s,%s,%4.3f,%4.2f" %(d[:-3], diam,
-                                                    branch.mean()/1000, delay[l]))
-                        
-                    y.append(delay.mean())
-                    y_err.append(delay.std()/len(delay)**0.5)
-                    b_diam = float(diam)
-                    x.append(np.mean(branch)/1000)
-                    x_err.append((branch/1000).std()/len(branch)**0.5)
-                    #print(d, diam, x[-1], (branch/1000).var(), y[-1], delay.var())
-                #print(x, y, y_err, x_err)
-                if not len(y):
+        for i, fname in  enumerate(directories):
+            auc_head_m = []
+            auc_head_e = []
+            spread_m = []
+            spread_e = []
+            for inj in stim_dict[dur]:
+                print(fname % (dur, inj))
+                try:
+                    my_data = h5py.File(fname % (dur, inj))
+                except FileNotFoundError:
+                    print("Cound not open ", fname % (dur, inj))
                     continue
-                ax1[j].tick_params(axis='x', labelsize=15)
-                ax1[j].tick_params(axis='y', labelsize=15)
-                ax1[j].errorbar(x, y,  yerr=y_err, xerr=x_err,
-                                color=colors[diam],
-                                fillstyle=fillstyle[k],
-                                label=types[k], marker=marker[k],
-                                linestyle="")
-                if legend is None:
-                    if len(directories) == 4 and j == 2:
-                        ax1[j].legend(loc="center right", prop={'size': 10})
-                    else:
-                        ax1[j].legend(loc="lower right", prop={'size': 10})
-    if legend is not None:
-        ax1[-1].legend(handles=legend)
-    ax1[0].set_ylabel(r"Spatial extent $(\unit{\micro\metre})$", fontsize=15)
-    mini = min([min(x.get_ylim()) for x in ax1])
-    maxi = max([max(x.get_ylim()) for x in ax1])
-    ax1[0].set_xlabel(r"Peak $\mathrm{Ca^{2+}_i}$ at stimulated site $(\unit{\micro\Molar})$", fontsize=15)
-    for i, diam in enumerate(dend_diam):
-        if title:
-            ax1[i].set_title(r"dend diam %s $\unit{\micro\metre}$" % diam,
-                             fontsize=15)
-        ax1[i].set_ylim([0, maxi])
-        if i:
-            ax1[i].set_yticks([])
+        
+                dend_ca, time_dict = get_conc(my_data, "Ca", region_list, output)
+                head_ca, time_head_dict = get_conc(my_data, "Ca", ['head'], output)
+                dt = time_dict["trial0"][1]-time_dict["trial0"][0]
+                t_start = int(t_init/dt)
+               
+                length = time_dict["trial0"][-1] - t_start
+                nothing_spine = period_spine*dt*71
+                nothing_dend = period_dend*dt*71
+                trials = len(dend_ca.keys())
+                auch = np.zeros((trials))
+                for j, trial in enumerate(dend_ca.keys()):
+                    auch[j] = head_ca[trial][1, t_start:t_start+period_spine].max().sum()/nothing_spine
+
+                spread = get_distance(dend_ca, dt, t_init=t_init, stim_len=int(dur),
+                                      spine_idx=spine_idx)
+                auc_head_m.append(auch.mean())
+                auc_head_e.append(auch.std()/trials**0.5)
+                spread_m.append(spread.mean())
+                spread_e.append(spread.std()/trials**0.5)
+              
+            print(spread_m)
+            ax1[k].errorbar(x=auc_head_m, y=spread_m, xerr=auc_head_e, yerr=spread_e,label=types[i], marker=markers[i],
+                            fillstyle=fillstyles[i], color="tab:blue", linewidth=0)
+
+           
+            
+        ax1[k].set_ylabel(ylabel)
+        ax1[k].set_xlabel(xlabel)
+        ax1[k].legend()
     return fig1
+
+
+def max_vs_auc_head_neck_dend(directories, stim_dict, output, types, markers,
+                       fillstyles, length=42, which_dend=["dend11"], t_init=3000):
+    fig_dh, ax_dh = plt.subplots(1, len(stim_dict.keys()),
+                                 figsize=(len(stim_dict.keys())*5, 5))
+    fig_max_dh, ax_max_dh = plt.subplots(1, len(stim_dict.keys()),
+                                          figsize=(len(stim_dict.keys())*5, 5))
+    fig_nh, ax_nh = plt.subplots(1, len(stim_dict.keys()),
+                                 figsize=(len(stim_dict.keys())*5, 5))
+    for k, dur  in enumerate(stim_dict.keys()):
+        period_spine = 1000+int(dur)
+        period_dend = 1000+int(dur)     
+        for i, fname in enumerate(directories):
+            auc_head_m = []
+            auc_neck_m = []
+            auc_dend_m = []
+            max_head_m = []
+            max_dend_m = []
+            auc_head_e = []
+            auc_neck_e = []
+            auc_dend_e = []
+            max_head_e = []
+            max_dend_e = []
+            for inj in stim_dict[dur]:
+              
+                print(fname % (dur, inj))
+                try:
+                    my_data = h5py.File(fname % (dur, inj))
+                except FileNotFoundError:
+                    print("Cound not open ", fname % (dur, inj))
+                    continue
+        
+                dend_ca, time_dict = get_conc(my_data, "Ca", which_dend, output)
+                head_ca, time_head_dict = get_conc(my_data, "Ca", ['head'], output)
+                neck_ca, time_head_dict = get_conc(my_data, "Ca", ['neck'], output)
+               
+                dt = time_dict["trial0"][1]-time_dict["trial0"][0]
+                t_start = int(t_init/dt)
+               
+                length = time_dict["trial0"][-1] - t_start
+                nothing_spine = period_spine*dt*71
+                nothing_dend = period_dend*dt*71
+                trials = len(dend_ca.keys())
+                auch = np.zeros((trials))
+                aucn = np.zeros((trials))
+                aucd = np.zeros((trials))
+                maxh = np.zeros((trials))
+                maxd = np.zeros((trials))
+              
+
+                for j, trial in enumerate(dend_ca.keys()):
+                    maxh[j] = head_ca[trial][1, t_start:t_start+period_spine].max()/1000
+                    maxd[j] = dend_ca[trial][:, t_start:t_start+period_dend].mean(axis=0).max()
+                    auch[j] = head_ca[trial][1, t_start:t_start+period_spine].sum()/nothing_spine
+                    aucn[j] = neck_ca[trial][:, t_start:t_start+period_spine].sum()/nothing_spine
+                    aucd[j] = dend_ca[trial][:, t_start:t_start+period_dend].sum()/2/nothing_dend
+                    
+             
+                auc_head_m.append(auch.mean())
+                auc_neck_m.append(aucn.mean())
+                auc_dend_m.append(aucd.mean())
+                max_head_m.append(maxh.mean())
+                max_dend_m.append(maxd.mean())
+                auc_head_e.append(auch.std()/trials**0.5)
+                auc_neck_e.append(aucn.std()/trials**0.5)
+                auc_dend_e.append(aucd.std()/trials**0.5)
+                max_head_e.append(maxh.std()/trials**0.5)
+                max_dend_e.append(maxd.std()/trials**0.5)
+
+              
+                
+            ax_max_dh[k].errorbar(x=max_head_m, y=max_dend_m, xerr=max_head_e,
+                                  yerr=max_dend_e, label=types[i],
+                                  marker=markers[i], fillstyle=fillstyles[i],
+                                  color="tab:blue", linewidth=0)
+            ax_dh[k].errorbar(x=auc_head_m, y=auc_dend_m, xerr=auc_head_e, yerr=auc_dend_e,label=types[i], marker=markers[i],
+                              fillstyle=fillstyles[i], color="tab:blue", linewidth=0)
+            ax_nh[k].errorbar(x=auc_head_m, y=auc_neck_m, xerr=auc_head_e,
+                              yerr=auc_neck_e, label=types[i],
+                              marker=markers[i], fillstyle=fillstyles[i],
+                              color="tab:blue", linewidth=0)
+
+           
+            if not k:
+                ax_max_dh[k].set_ylabel(r"Max dend Ca ($\unit{\nano\Molar}$)")
+                ax_dh[k].set_ylabel("Auc dend Ca/Auc basal")
+                ax_nh[k].set_ylabel("Auc neck Ca/Auc basal")                
+            ax_max_dh[k].set_xlabel(r"Max head Ca ($\unit{\micro\Molar}$)")
+            ax_dh[k].set_xlabel("Auc head Ca/Auc basal")
+            ax_nh[k].set_xlabel("Auc head Ca/Auc basal")
+    ax_max_dh[0].legend()         
+    ax_dh[0].legend()
+    ax_nh[0].legend()
+    
+    return fig_dh, fig_max_dh, fig_nh

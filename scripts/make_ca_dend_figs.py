@@ -41,8 +41,8 @@ def Parser():
                         help='input h5 files')
     parser.add_argument('--species', default="Ca",
                         help='Ca, RyRO, CaER, CaOut, RyRO, Fura')
-    parser.add_argument('--scale', default="linear",
-                        help='linear, log')
+    parser.add_argument('--output', default="Ca",
+                        help='Ca, __main__')
 
     return parser
 
@@ -51,8 +51,10 @@ def Parser():
 
 
 if __name__ == '__main__':
-    specie_list = ["Ca"]
-    specie = "Ca"
+
+    args = Parser().parse_args()
+    specie = args.species
+    output = args.output
     base = "dend"
     reg_list = [base, "dend01", "dend02", "dend03", "dend04", "dend05",
                 "dend06", "dend07", "dend08", "dend09",]
@@ -75,13 +77,13 @@ if __name__ == '__main__':
                 continue
             try:
                 conc, voxels = utils.get_dynamics_in_region(my_file,
-                                                            specie_list,
+                                                            [specie],
                                                             reg_list, trial,
-                                                            "Ca")
-                time = utils.get_times(my_file, trial, "Ca")
+                                                            output)
+                time = utils.get_times(my_file, trial, output)
             except KeyError:
                 conc, voxels = utils.get_dynamics_in_region(my_file,
-                                                            specie_list,
+                                                            [specie],
                                                             reg_list, trial,
                                                             "__main__")
                 time = utils.get_times(my_file, trial, "__main__")

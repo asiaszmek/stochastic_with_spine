@@ -33,7 +33,7 @@ file_spine_ER_dend_ER_dend_Ca = os.path.join("..", "1_spine_different_Ca_amp_Ca_
                                       "model_Ca_dend_RyR2CaM_RyR3CaM_1.2_um_dend_spine_%s_ms_%s.h5")
 t_init = 3000
 output = "Ca"
-types = ["no SA IP3 no Ltype", "no SA IP3+Ltype", "SA IP3 no Ltype", "SA IP3+Ltype",]
+types = ["no SA mGluR no Ltype", "no SA mGluR+Ltype", "SA mGluR no Ltype", "SA mGluR+Ltype",]
 markers = ["s", "s", "o", "o"]
 fillstyles = ["none", "full", "none", "full"]
 stim_dict = {
@@ -47,71 +47,11 @@ region_list = ["dend01", "dend02", "dend03", "dend04", "dend05", "dend06", "dend
                "dend21"]
 spine_idx = 21
 if __name__ == '__main__':
-    for dur in stim_dict.keys():
-        
-        fig1, ax1 = plt.subplots(1, 1)
-        
-        
-        period_spine = 1000+int(dur)
-        period_dend = 500+int(dur)
-        
-        for i, fname in enumerate([file_dend_ER_IP3, file_dend_ER_Ltype_IP3,
-                                   file_spine_ER_dend_ER_IP3, file_spine_ER_dend_ER_Ltype_IP3]):
-            auc_head_m = []
-            auc_head_e = []
-            spread_m = []
-            spread_e = []
-           
-
-            for inj in stim_dict[dur]:
-              
-                print(fname % (dur, inj))
-                if inj in ["400", "800"]:
-                    continue
-
-                try:
-                    my_data = h5py.File(fname % (dur, inj))
-                except FileNotFoundError:
-                    print("Cound not open ", fname % (dur, inj))
-                    continue
-        
-                dend_ca, time_dict = utils.get_conc(my_data, "Ca", region_list, output)
-                head_ca, time_head_dict = utils.get_conc(my_data, "Ca", ['head'], output)
-                
-               
-                dt = time_dict["trial0"][1]-time_dict["trial0"][0]
-                t_start = int(t_init/dt)
-               
-                length = time_dict["trial0"][-1] - t_start
-                nothing_spine = period_spine*dt*71
-                nothing_dend = period_dend*dt*71
-                trials = len(dend_ca.keys())
-                auch = np.zeros((trials))
-                spread = utils.get_distance(dend_ca, dt, t_init=3000, stim_len=int(dur), length=42)
-                for j, trial in enumerate(dend_ca.keys()):
-                    auch[j] = head_ca[trial][1, t_start:t_start+period_spine].sum()/nothing_spine
-                    
-                print(spread)
-                auc_head_m.append(auch.mean())
-                auc_head_e.append(auch.std()/trials**0.5)
-                spread_m.append(spread.mean())
-                spread_e.append(spread.std()/trials**0.5)
-              
-            print(spread_m)
-            ax1.errorbar(x=auc_head_m, y=spread_m, xerr=auc_head_e, yerr=spread_e,label=types[i], marker=markers[i],
-                         fillstyle=fillstyles[i], color="tab:blue", linewidth=0)
-
-           
-            
-        ax1.set_ylabel("Spatial spread (um)")
-        ax1.set_xlabel("Auc head Ca/Auc basal")
-
-      
-
-       
-
-        ax1.legend()
-        fig1.savefig("Spatial_spread_Ltype_IP3_%s_ms.png" % dur, dpi=100, bbox_inches="tight")
+    dirs = [file_dend_ER_IP3, file_dend_ER_Ltype_IP3,
+            file_spine_ER_dend_ER_IP3, file_spine_ER_dend_ER_Ltype_IP3]
+    fig = utils.make_distance_figs(dirs, stim_dict, output, types, markers,
+                       fillstyles, length=42, spine_idx=21, t_init=t_init)
+    fig.savefig("Spatial_spread_Ltype_IP3.png" % dur, dpi=100, bbox_inches="tight")
         
     
     #plt.show()

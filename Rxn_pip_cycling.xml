@@ -848,10 +848,10 @@
    </Reaction>
     
 
- <Specie name="GluOut" id="GluOut" kdiff="32" kdiffunit="mu2/s"/>
-  <Specie name="GluBuf" id="GluBuf" kdiff="32" kdiffunit="mu2/s"/>
-  <Specie name="GluGlubuf" id="GluGlubuf" kdiff="32" kdiffunit="mu2/s"/>
-  <Specie name="Glubuf" id="Glubuf" kdiff="32" kdiffunit="mu2/s"/>
+ <Specie name="GluOut" id="GluOut" kdiff="320" kdiffunit="mu2/s"/>
+  <Specie name="GluBuf" id="GluBuf" kdiff="320" kdiffunit="mu2/s"/>
+  <Specie name="GluGlubuf" id="GluGlubuf" kdiff="320" kdiffunit="mu2/s"/>
+  <Specie name="Glubuf" id="Glubuf" kdiff="320" kdiffunit="mu2/s"/>
 <Reaction name="Glu--GluOut" id="Glu--GluOut">
     <Reactant specieID="Glu"/>
     <Product specieID="GluOut"/>

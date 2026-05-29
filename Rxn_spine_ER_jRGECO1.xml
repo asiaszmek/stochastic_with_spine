@@ -316,6 +316,7 @@
 
   
 <Specie name="Glu" id="Glu" kdiff="320" kdiffunit="mu2/s"/>
+ 
   <Specie name="GluOut" id="GluOut" kdiff="320" kdiffunit="mu2/s"/>
   <Specie name="GluBuf" id="GluBuf" kdiff="320" kdiffunit="mu2/s"/>
   <Specie name="GluGlubuf" id="GluGlubuf" kdiff="320" kdiffunit="mu2/s"/>
@@ -371,7 +372,7 @@
   </Reaction>
 
   
-<Reaction name="Glu--GluOut" id="Glu--GluOut">
+  <Reaction name="Glu--GluOut" id="Glu--GluOut">
     <Reactant specieID="Glu"/>
     <Product specieID="GluOut"/>
   
@@ -379,6 +380,7 @@
     <reverseRate>4e-9</reverseRate>
     <Q10>0.2</Q10>
   </Reaction>
+
 
    
   <Reaction name="GluOut+GluBuf--NULL" id="GluOut_buf--NULL">

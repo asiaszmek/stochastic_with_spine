@@ -4,6 +4,7 @@
   <Specie name="CaOut" id="CaOut" kdiff="10" kdiffunit="mu2/s" />
   <!-- 10.1016/j.tins.2011.03.002 for Glu diffusion-->
   <Specie name="Glu" id="Glu" kdiff="320" kdiffunit="mu2/s" />
+ 
   <Specie name="GluOut" id="GluOut" kdiff="320" kdiffunit="mu2/s" />
   <Specie name="GluBuf" id="GluBuf" kdiff="320" kdiffunit="mu2/s" />
   <Specie name="GluGlubuf" id="GluGlubuf" kdiff="320" kdiffunit="mu2/s" />
@@ -63,8 +64,10 @@ Use Bartol el al. 2015 model
   </Reaction>
 
   
-<!--https://doi.org/10.1523/JNEUROSCI.5125-04.2005 for astrocytes from adult animals ~ 1 ms-1, juvenile 1/5ms 0.2 ms-1 -->
-  <Reaction name = "Glu--GluOut" id="Glu--GluOut">
+  <!--https://doi.org/10.1523/JNEUROSCI.5125-04.2005 for astrocytes from adult animals ~ 1 ms-1, juvenile 1/5ms 0.2 ms-1 -->
+  <!--J Neurosci
+. 1998 May 1;18(9):3158–3170. doi: 10.1523/JNEUROSCI.18-09-03158.1998 -->
+ <Reaction name = "Glu--GluOut" id="Glu--GluOut">
     <Reactant specieID="Glu"/>
     <Product specieID="GluOut"/>
   
@@ -72,6 +75,7 @@ Use Bartol el al. 2015 model
     <reverseRate>4e-9</reverseRate>
     <Q10>0.2</Q10>
   </Reaction>
+
 
    
   <Reaction name="GluOut+GluBuf--NULL" id="GluOut_buf--NULL">

@@ -51,7 +51,7 @@ if __name__ == '__main__':
             file_spine_ER_dend_ER_IP3, file_spine_ER_dend_ER_Ltype_IP3]
     fig = utils.make_distance_figs(dirs, stim_dict, output, types, markers,
                        fillstyles, length=42, spine_idx=21, t_init=t_init)
-    fig.savefig("Spatial_spread_Ltype_IP3.png" % dur, dpi=100, bbox_inches="tight")
+    fig.savefig("Spatial_spread_Ltype_IP3.png", dpi=100, bbox_inches="tight")
         
     
     #plt.show()

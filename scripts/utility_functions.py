@@ -582,6 +582,7 @@ def make_distance_figs(directories, stim_dict, output, types, markers,
             print(spread_m)
             ax1[k].errorbar(x=auc_head_m, y=spread_m, xerr=auc_head_e, yerr=spread_e,label=types[i], marker=markers[i],
                             fillstyle=fillstyles[i], color="tab:blue", linewidth=0)
+        ax1[k].set_title("Stimulation %s (ms)"% dur)      
 
            
             
@@ -673,13 +674,16 @@ def max_vs_auc_head_neck_dend(directories, stim_dict, output, types, markers,
                               color="tab:blue", linewidth=0)
 
            
-            if not k:
-                ax_max_dh[k].set_ylabel(r"Max dend Ca ($\unit{\nano\Molar}$)")
-                ax_dh[k].set_ylabel("Auc dend Ca/Auc basal")
-                ax_nh[k].set_ylabel("Auc neck Ca/Auc basal")                
-            ax_max_dh[k].set_xlabel(r"Max head Ca ($\unit{\micro\Molar}$)")
-            ax_dh[k].set_xlabel("Auc head Ca/Auc basal")
-            ax_nh[k].set_xlabel("Auc head Ca/Auc basal")
+        if not k:
+            ax_max_dh[k].set_ylabel(r"Max dend Ca ($\unit{\nano\Molar}$)")
+            ax_dh[k].set_ylabel("Auc dend Ca/Auc basal")
+            ax_nh[k].set_ylabel("Auc neck Ca/Auc basal")                
+        ax_max_dh[k].set_xlabel(r"Max head Ca ($\unit{\micro\Molar}$)")
+        ax_dh[k].set_xlabel("Auc head Ca/Auc basal")
+        ax_nh[k].set_xlabel("Auc head Ca/Auc basal")
+        ax_max_dh[k].set_title("Stimulation %s (ms)"% dur)
+        ax_dh[k].set_title("Stimulation %s (ms)"% dur)
+        ax_nh[k].set_title("Stimulation %s (ms)"% dur)      
     ax_max_dh[0].legend()         
     ax_dh[0].legend()
     ax_nh[0].legend()

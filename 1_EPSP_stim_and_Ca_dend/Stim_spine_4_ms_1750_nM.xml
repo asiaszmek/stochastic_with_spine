@@ -5,8 +5,56 @@
     <rate>600</rate>
     <end>8000</end>    
   </InjectionStim>
+    <InjectionStim specieID="Ca" injectionSite="dend01:submembrane">
+    <onset>3000</onset>
+    <duration>4</duration>
+    <rate>200</rate>
+    <end>8000</end>    
+  </InjectionStim>
+  <InjectionStim specieID="Ca" injectionSite="dend02:submembrane">
+    <onset>3000</onset>
+    <duration>4</duration>
+    <rate>200</rate>
+    <end>8000</end>    
+  </InjectionStim>
+  <InjectionStim specieID="Ca" injectionSite="dend03:submembrane">
+    <onset>3000</onset>
+    <duration>4</duration>
+    <rate>200</rate>
+    <end>8000</end>    
+  </InjectionStim>
+  <InjectionStim specieID="Ca" injectionSite="dend04:submembrane">
+    <onset>3000</onset>
+    <duration>4</duration>
+    <rate>200</rate>
+    <end>8000</end>    
+  </InjectionStim>
+  <InjectionStim specieID="Ca" injectionSite="dend05:submembrane">
+    <onset>3000</onset>
+    <duration>4</duration>
+    <rate>200</rate>
+    <end>8000</end>    
+  </InjectionStim>
+  <InjectionStim specieID="Ca" injectionSite="dend06:submembrane">
+    <onset>3000</onset>
+    <duration>4</duration>
+    <rate>200</rate>
+    <end>8000</end>    
+  </InjectionStim>
+  <InjectionStim specieID="Ca" injectionSite="dend07:submembrane">
+    <onset>3000</onset>
+    <duration>4</duration>
+    <rate>200</rate>
+    <end>8000</end>    
+  </InjectionStim>
+  <InjectionStim specieID="Ca" injectionSite="dend08:submembrane">
+    <onset>3000</onset>
+    <duration>4</duration>
+    <rate>200</rate>
+    <end>8000</end>    
+  </InjectionStim>
   <InjectionStim specieID="Ca" injectionSite="dend09:submembrane">
-      <onset>3000</onset>
+    <onset>3000</onset>
     <duration>4</duration>
     <rate>200</rate>
     <end>8000</end>    
@@ -30,6 +78,54 @@
     <end>8000</end>    
   </InjectionStim>
   <InjectionStim specieID="Ca" injectionSite="dend13:submembrane">
+    <onset>3000</onset>
+    <duration>4</duration>
+    <rate>200</rate>
+    <end>8000</end>    
+  </InjectionStim>
+  <InjectionStim specieID="Ca" injectionSite="dend14:submembrane">
+    <onset>3000</onset>
+    <duration>4</duration>
+    <rate>200</rate>
+    <end>8000</end>    
+  </InjectionStim>
+  <InjectionStim specieID="Ca" injectionSite="dend15:submembrane">
+    <onset>3000</onset>
+    <duration>4</duration>
+    <rate>200</rate>
+    <end>8000</end>    
+  </InjectionStim>
+  <InjectionStim specieID="Ca" injectionSite="dend16:submembrane">
+    <onset>3000</onset>
+    <duration>4</duration>
+    <rate>200</rate>
+    <end>8000</end>    
+  </InjectionStim>
+  <InjectionStim specieID="Ca" injectionSite="dend17:submembrane">
+    <onset>3000</onset>
+    <duration>4</duration>
+    <rate>200</rate>
+    <end>8000</end>    
+  </InjectionStim>
+  <InjectionStim specieID="Ca" injectionSite="dend18:submembrane">
+    <onset>3000</onset>
+    <duration>4</duration>
+    <rate>200</rate>
+    <end>8000</end>    
+  </InjectionStim>
+  <InjectionStim specieID="Ca" injectionSite="dend19:submembrane">
+    <onset>3000</onset>
+    <duration>4</duration>
+    <rate>200</rate>
+    <end>8000</end>    
+  </InjectionStim>
+  <InjectionStim specieID="Ca" injectionSite="dend20:submembrane">
+    <onset>3000</onset>
+    <duration>4</duration>
+    <rate>200</rate>
+    <end>8000</end>    
+  </InjectionStim>
+  <InjectionStim specieID="Ca" injectionSite="dend21:submembrane">
     <onset>3000</onset>
     <duration>4</duration>
     <rate>200</rate>

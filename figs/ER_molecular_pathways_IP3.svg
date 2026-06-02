@@ -7,9 +7,9 @@
    viewBox="0 0 5716.3382 3666.9683"
    version="1.1"
    id="svg5799"
-   inkscape:version="1.4.4 (dcaf3e7d9e, 2026-05-05)"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
    sodipodi:docname="ER_molecular_pathways_IP3.svg"
-   inkscape:export-filename="/home/jszmek/ryr_cam/ER_molecular_pathways.png"
+   inkscape:export-filename="/home/jszmek/stochastic_with_spine/scripts/ER_molecular_pathways_IP3.png"
    inkscape:export-xdpi="96"
    inkscape:export-ydpi="96"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
@@ -27,12 +27,12 @@
      inkscape:document-units="mm"
      showgrid="true"
      inkscape:zoom="0.041415912"
-     inkscape:cx="13569.664"
+     inkscape:cx="13183.339"
      inkscape:cy="6760.6866"
-     inkscape:window-width="1920"
-     inkscape:window-height="1011"
+     inkscape:window-width="2560"
+     inkscape:window-height="1391"
      inkscape:window-x="0"
-     inkscape:window-y="0"
+     inkscape:window-y="25"
      inkscape:window-maximized="1"
      inkscape:current-layer="layer1"
      fit-margin-top="2"
@@ -2217,6 +2217,42 @@
          style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:0.625;stroke-linejoin:round"
          id="path25462-3-0" />
     </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow2Lend-36"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow2Lend"
+       inkscape:isstock="true"
+       viewBox="0 0 12.705841 9.5264135"
+       markerWidth="12.705841"
+       markerHeight="9.5264139"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="matrix(-1.1,0,0,-1.1,-1.1,0)"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:0.625;stroke-linejoin:round"
+         id="path25462-7" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow2Lend-35"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow2Lend"
+       inkscape:isstock="true"
+       viewBox="0 0 12.705841 9.5264135"
+       markerWidth="12.705841"
+       markerHeight="9.5264139"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="matrix(-1.1,0,0,-1.1,-1.1,0)"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:0.625;stroke-linejoin:round"
+         id="path25462-62" />
+    </marker>
   </defs>
   <g
      inkscape:label="Layer 1"
@@ -2278,7 +2314,10 @@
          x="6421.3413"
          y="1130.0251">R</tspan></text>
     <g
-       id="g9">
+       id="g7493"
+       inkscape:export-filename="/home/jszmek/stochastic_with_spine/scripts/ER_molecular_pathways_IP3.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
       <g
          id="g7195"
          transform="matrix(2.8,0,0,2.8,781.3111,-2462.1979)">
@@ -5172,10 +5211,6 @@
          height="4.1341147"
          x="3150.9268"
          y="1217.6086" />
-      <path
-         style="fill:#ff0000;stroke:#ff0000;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#StopL)"
-         d="m 2821.8512,-859.37047 304.2708,502.70833"
-         id="path65" />
       <circle
          r="22.60844"
          cy="-1229.6584"
@@ -5797,10 +5832,10 @@
          sodipodi:arg2="1.4137167"
          inkscape:rounded="0"
          inkscape:randomized="0"
-         d="m 11194.375,2963.9758 -142.301,-48.2558 -120.425,89.8676 1.92,-150.2486 -122.682,-86.7603 143.488,-44.6029 44.603,-143.4883 86.76,122.6824 150.249,-1.9204 -89.868,120.4249 z"
          transform="matrix(0.26458333,0,0,0.26458333,-986.69881,-2670.0745)"
          inkscape:transform-center-x="2.8941277"
-         inkscape:transform-center-y="-2.8941017" />
+         inkscape:transform-center-y="-2.8941017"
+         d="m 11194.375,2963.9758 -142.301,-48.2558 -120.425,89.8676 1.92,-150.2486 -122.682,-86.7603 143.488,-44.6029 44.603,-143.4883 86.76,122.6824 150.249,-1.9204 -89.868,120.4249 z" />
       <g
          id="g25767-2"
          transform="translate(-1397,931.33339)">
@@ -6711,6 +6746,10 @@
              x="1720.506"
              y="-1349.6797">IP3</tspan></text>
       </g>
+      <path
+         style="fill:#ff0000;stroke:#ff0000;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow2Lend-35)"
+         d="m 2815.0712,-854.3497 304.2708,502.70833"
+         id="path65" />
     </g>
   </g>
 </svg>

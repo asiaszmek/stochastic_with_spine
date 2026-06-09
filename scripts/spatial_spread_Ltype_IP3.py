@@ -18,12 +18,18 @@ file_dend_ER_IP3 = os.path.join("..", "1_spine_different_Ca_amp",
 file_dend_ER_Ltype_IP3 = os.path.join("..", "1_spine_different_Ca_amp_Ca_dend",
                                 "model_Ca_dend_RyR2CaM_IP3_1.2_um_dend_spine_%s_ms_%s.h5")
 
+file_dend_ER_Ltype = os.path.join("..", "1_spine_different_Ca_amp_Ca_dend",
+                                "model_Ca_dend_RyR2CaM_1.2_um_dend_spine_%s_ms_%s.h5")
+
 file_spine_ER_dend_ER = os.path.join("..", "1_spine_different_Ca_amp",
                                       "model_RyR2CaM_RyR3CaM_1.2_um_dend_spine_%s_ms_%s.h5")
 file_spine_ER_dend_ER_IP3 = os.path.join("..", "1_spine_different_Ca_amp",
                                          "model_RyR2CaM_RyR3CaM_IP3_1.2_um_dend_spine_%s_ms_%s.h5")
 file_spine_ER_dend_ER_Ltype_IP3 = os.path.join("..", "1_spine_different_Ca_amp_Ca_dend",
                                          "model_Ca_dend_RyR2CaM_RyR3CaM_IP3_1.2_um_dend_spine_%s_ms_%s.h5")
+
+file_spine_ER_dend_ER_Ltype = os.path.join("..", "1_spine_different_Ca_amp_Ca_dend",
+                                         "model_Ca_dend_RyR2CaM_RyR3CaM_1.2_um_dend_spine_%s_ms_%s.h5")
 
 file_spine_ER_no_dend_ER = os.path.join("..", "1_spine_different_Ca_amp",
                                          "model_RyR3CaM_1.2_um_dend_spine_%s_ms_%s.h5")
@@ -33,7 +39,7 @@ file_spine_ER_dend_ER_dend_Ca = os.path.join("..", "1_spine_different_Ca_amp_Ca_
                                       "model_Ca_dend_RyR2CaM_RyR3CaM_1.2_um_dend_spine_%s_ms_%s.h5")
 t_init = 3000
 output = "Ca"
-types = ["no SA mGluR no Ltype", "no SA mGluR+Ltype", "SA mGluR no Ltype", "SA mGluR+Ltype",]
+types = ["no SA no mGluR", "no SA mGluR", "SA no mGluR", "SA mGluR",]
 markers = ["s", "s", "o", "o"]
 fillstyles = ["none", "full", "none", "full"]
 stim_dict = {
@@ -47,8 +53,8 @@ region_list = ["dend01", "dend02", "dend03", "dend04", "dend05", "dend06", "dend
                "dend21"]
 spine_idx = 21
 if __name__ == '__main__':
-    dirs = [file_dend_ER_IP3, file_dend_ER_Ltype_IP3,
-            file_spine_ER_dend_ER_IP3, file_spine_ER_dend_ER_Ltype_IP3]
+    dirs = [file_dend_ER_Ltype, file_dend_ER_Ltype_IP3,
+            file_spine_ER_dend_ER_Ltype, file_spine_ER_dend_ER_Ltype_IP3]
     fig = utils.make_distance_figs(dirs, stim_dict, output, types, markers,
                        fillstyles, length=42, spine_idx=21, t_init=t_init)
     fig.savefig("Spatial_spread_Ltype_IP3.png", dpi=100, bbox_inches="tight")

@@ -38,7 +38,15 @@ for i in range(1, 52):
         region_list.append(prefix+str(i))
 
 
-     
+def pretty_axis(ax1):
+    max_ylim = max([max(ax.get_ylim()) for ax in ax1])
+    max_xlim = max([max(ax.get_xlim()) for ax in ax1])
+    for x in ax1:
+        x.set_ylim([-0.05, max_ylim+0.05])
+        x.set_xlim([-0.05, max_xlim+0.05])
+        
+
+        
 
 def get_array(conc_dict, specie):
     mini  = min([conc_dict[specie][key].shape[-1]
@@ -410,38 +418,51 @@ def get_distance(conc_dict, dt, t_init, stim_len, spine_idx):
         ca_conc = np.zeros((shape,))
         
         
-        new_beg = int((t_init+stim_len)/dt)
+        new_beg = int((t_init)/dt)
         indices = []
         for j in range(spine_idx, shape):
+            
             try:
-                new_idx = concentration[j, new_beg:].argmax()
+                new_idx = concentration[j, new_beg-100:new_beg+stim_len+700].argmax()
             except ValueError:
                 continue
 
-            ca_conc[j] = concentration[j, new_beg+new_idx]
-            if ca_conc[j] > limit*ca_ctrl:
-                if not len(indices) and j==spine_idx:
+            ca_conc[j] = concentration[j, new_beg-100+new_idx]
+
+            if ca_conc[j] > limit*ca_ctrl and j==spine_idx:
+                indices.append(j)
+            elif ca_conc[j] > limit*ca_ctrl and j-1 in indices:
                     indices.append(j)
-                elif j+1 in indices or j-1 in indices:
+            elif ca_conc[j] > limit*ca_ctrl and j-2 in indices:
                     indices.append(j)
-                # elif j+2 in indices or j-2 in indices:
-                #     indices.append(j)
-        new_beg = int((t_init+stim_len)/dt)         
-        for j in range(spine_idx, -1, -1):
+                    indices.append(j-1)
+            else:
+                break
+            print(j, ca_conc[j], new_beg +new_idx -100-int((t_init)/dt))
+            new_beg = new_beg +new_idx -100
+    
+        new_beg = int((t_init)/dt)         
+        for j in range(spine_idx-1, -1, -1):
             try:
-                new_idx = concentration[j, new_beg:].argmax()
+                new_idx = concentration[j, new_beg-100:new_beg+stim_len+700].argmax()
             except ValueError:
                 continue
-            ca_conc[j] = concentration[j, new_beg+new_idx]
-          
-            if ca_conc[j] > limit*ca_ctrl:
-                if not len(indices) and j==spine_idx:
-                    indices.append(j)
-                elif j+1 in indices or j-1 in indices:
-                    indices.append(j)
-                # elif j+2 in indices or j-2 in indices:
-                #    indices.append(j)
+            ca_conc[j] = concentration[j, new_beg-100+new_idx]
+         
+            if ca_conc[j] > limit*ca_ctrl and j==spine_idx-1:
+                indices.append(j)
+                
+            elif ca_conc[j] > limit*ca_ctrl and j+1 in indices:
+                indices.append(j)
+            elif ca_conc[j] > limit*ca_ctrl and j+2 in indices:
+                indices.append(j)
+                indices.append(j+1)
+            else:
+                break
+            print(j, ca_conc[j], new_beg +new_idx -100-int((t_init)/dt))
+            new_beg = new_beg +new_idx -100
         decays[i] = len(indices)/2*0.5
+        #print(indices)
     return decays
 
 
@@ -544,7 +565,7 @@ def make_distance_figs(directories, stim_dict, output, types, markers,
                              figsize=(len(stim_dict.keys())*5, 5))
     for k, dur in enumerate(stim_dict.keys()):
         period_spine = 1000+int(dur)
-        period_dend = 500+int(dur)
+        
         
         for i, fname in  enumerate(directories):
             auc_head_m = []
@@ -565,12 +586,11 @@ def make_distance_figs(directories, stim_dict, output, types, markers,
                 t_start = int(t_init/dt)
                
                 length = time_dict["trial0"][-1] - t_start
-                nothing_spine = period_spine*dt*71
-                nothing_dend = period_dend*dt*71
+         
                 trials = len(dend_ca.keys())
                 auch = np.zeros((trials))
                 for j, trial in enumerate(dend_ca.keys()):
-                    auch[j] = head_ca[trial][1, t_start:t_start+period_spine].max().sum()/nothing_spine
+                    auch[j] = head_ca[trial][1, t_start:t_start+period_spine].sum()/(period_spine*dt*71)
 
                 spread = get_distance(dend_ca, dt, t_init=t_init, stim_len=int(dur),
                                       spine_idx=spine_idx)
@@ -578,9 +598,9 @@ def make_distance_figs(directories, stim_dict, output, types, markers,
                 auc_head_e.append(auch.std()/trials**0.5)
                 spread_m.append(spread.mean())
                 spread_e.append(spread.std()/trials**0.5)
-              
-            print(spread_m)
-            ax1[k].errorbar(x=auc_head_m, y=spread_m, xerr=auc_head_e, yerr=spread_e,label=types[i], marker=markers[i],
+                
+            print(auc_head_m, spread_m, spread_e)
+            ax1[k].errorbar(auc_head_m, spread_m, yerr=spread_e, xerr=auc_head_e,label=types[i], marker=markers[i],
                             fillstyle=fillstyles[i], color="tab:blue", linewidth=0)
         ax1[k].set_title("Stimulation %s (ms)"% dur)      
 
@@ -588,7 +608,8 @@ def make_distance_figs(directories, stim_dict, output, types, markers,
             
         ax1[k].set_ylabel(ylabel)
         ax1[k].set_xlabel(xlabel)
-        ax1[k].legend()
+    pretty_axis(ax1)
+    ax1[0].legend()
     return fig1
 
 
@@ -683,9 +704,11 @@ def max_vs_auc_head_neck_dend(directories, stim_dict, output, types, markers,
         ax_nh[k].set_xlabel("Auc head Ca/Auc basal")
         ax_max_dh[k].set_title("Stimulation %s (ms)"% dur)
         ax_dh[k].set_title("Stimulation %s (ms)"% dur)
-        ax_nh[k].set_title("Stimulation %s (ms)"% dur)      
+        ax_nh[k].set_title("Stimulation %s (ms)"% dur)
+    pretty_axis(ax_max_dh)
+    pretty_axis(ax_dh)
+    pretty_axis(ax_nh)
     ax_max_dh[0].legend()         
     ax_dh[0].legend()
     ax_nh[0].legend()
-    
     return fig_dh, fig_max_dh, fig_nh

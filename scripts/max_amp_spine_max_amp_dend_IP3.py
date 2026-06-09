@@ -13,19 +13,33 @@ file_no_ER_ctrl = os.path.join("..", "1_spine_different_Ca_amp",
                                 "model_1.2_um_dend_spine_%s_ms_%s.h5")
 file_dend_ER_ctrl = os.path.join("..", "1_spine_different_Ca_amp",
                                   "model_RyR2CaM_1.2_um_dend_spine_%s_ms_%s.h5")
+file_dend_ER_IP3 = os.path.join("..", "1_spine_different_Ca_amp",
+                                "model_RyR2CaM_IP3_1.2_um_dend_spine_%s_ms_%s.h5")
+file_dend_ER_Ltype_IP3 = os.path.join("..", "1_spine_different_Ca_amp_Ca_dend",
+                                "model_Ca_dend_RyR2CaM_IP3_1.2_um_dend_spine_%s_ms_%s.h5")
+
+file_dend_ER_Ltype = os.path.join("..", "1_spine_different_Ca_amp_Ca_dend",
+                                "model_Ca_dend_RyR2CaM_1.2_um_dend_spine_%s_ms_%s.h5")
+
 file_spine_ER_dend_ER = os.path.join("..", "1_spine_different_Ca_amp",
                                       "model_RyR2CaM_RyR3CaM_1.2_um_dend_spine_%s_ms_%s.h5")
-file_spine_ER_no_dend_ER = os.path.join("..", "1_spine_different_Ca_amp",
-                                         "model_RyR3CaM_1.2_um_dend_spine_%s_ms_%s.h5")
-
 file_spine_ER_dend_ER_IP3 = os.path.join("..", "1_spine_different_Ca_amp",
                                          "model_RyR2CaM_RyR3CaM_IP3_1.2_um_dend_spine_%s_ms_%s.h5")
-file_dend_ER_ctrl_IP3 = os.path.join("..", "1_spine_different_Ca_amp",
-                                     "model_RyR2CaM_IP3_1.2_um_dend_spine_%s_ms_%s.h5")
+file_spine_ER_dend_ER_Ltype_IP3 = os.path.join("..", "1_spine_different_Ca_amp_Ca_dend",
+                                         "model_Ca_dend_RyR2CaM_RyR3CaM_IP3_1.2_um_dend_spine_%s_ms_%s.h5")
 
+file_spine_ER_dend_ER_Ltype = os.path.join("..", "1_spine_different_Ca_amp_Ca_dend",
+                                         "model_Ca_dend_RyR2CaM_RyR3CaM_1.2_um_dend_spine_%s_ms_%s.h5")
+
+file_spine_ER_no_dend_ER = os.path.join("..", "1_spine_different_Ca_amp",
+                                         "model_RyR3CaM_1.2_um_dend_spine_%s_ms_%s.h5")
+file_dend_ER_dend_Ca = os.path.join("..", "1_spine_different_Ca_amp_Ca_dend",
+                                  "model_Ca_dend_RyR2CaM_1.2_um_dend_spine_%s_ms_%s.h5")
+file_spine_ER_dend_ER_dend_Ca = os.path.join("..", "1_spine_different_Ca_amp_Ca_dend",
+                                      "model_Ca_dend_RyR2CaM_RyR3CaM_1.2_um_dend_spine_%s_ms_%s.h5")
 t_init = 3000
 output = "Ca"
-types = ["ER", "ER with IP3R", "ER+SA", "ER with IP3R+SA"]
+types = ["no SA no mGluR", "no SA mGluR", "SA no mGluR", "SA mGluR",]
 markers = ["s", "s", "o", "o"]
 fillstyles = ["none", "full", "none", "full"]
 stim_dict = {
@@ -39,7 +53,8 @@ region_list = ["dend01", "dend02", "dend03", "dend04", "dend05", "dend06", "dend
                "dend21"]
 
 if __name__ == '__main__':
-    directories = [file_dend_ER_ctrl, file_dend_ER_ctrl_IP3, file_spine_ER_dend_ER, file_spine_ER_dend_ER_IP3]
+    directories = [file_dend_ER_Ltype, file_dend_ER_Ltype_IP3,
+            file_spine_ER_dend_ER_Ltype, file_spine_ER_dend_ER_Ltype_IP3]
     fig1, fig2, fig3 = utils.max_vs_auc_head_neck_dend(directories, stim_dict, output, types, markers,
                                                  fillstyles, length=42, which_dend=["dend11"], t_init=3000)
     fig1.savefig("IP3_Ltype_aucdend_auchead.png", dpi=100, bbox_inches="tight")

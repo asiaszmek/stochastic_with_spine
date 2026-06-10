@@ -11,13 +11,13 @@
     <NanoMolarity specieID="Calbin" value="136100"/>
     <NanoMolarity specieID="CalbinC" value="13900"/>
  
-    <NanoMolarity specieID="CaM" value="3360"/>
+    <NanoMolarity specieID="CaM" value="3356"/>
     <NanoMolarity specieID="CaM_0_1" value="4"/>
-    <NanoMolarity specieID="CaM_1_0" value="187"/>
-    <NanoMolarity specieID="CaMCa2C" value="20"/>
+    <NanoMolarity specieID="CaM_1_0" value="133"/>
+    <NanoMolarity specieID="CaMCa2C" value="10"/>
     <NanoMolarity specieID="CaMCa4" value="0"/>
-    <NanoMolarity specieID="Ng" value="17922"/>
-    <NanoMolarity specieID="NgCaM" value="47078"/>
+    <NanoMolarity specieID="Ng" value="17984"/>
+    <NanoMolarity specieID="NgCaM" value="47016"/>
 
     <NanoMolarity specieID="CaER"         value="0.57e5"     />
     <NanoMolarity       specieID="CRTP" value="510771"/>

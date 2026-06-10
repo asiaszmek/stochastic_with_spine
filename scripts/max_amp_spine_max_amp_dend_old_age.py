@@ -13,19 +13,20 @@ file_no_ER_ctrl = os.path.join("..", "1_spine_different_Ca_amp",
                                 "model_1.2_um_dend_spine_%s_ms_%s.h5")
 file_dend_ER_ctrl = os.path.join("..", "1_spine_different_Ca_amp",
                                   "model_RyR2CaM_1.2_um_dend_spine_%s_ms_%s.h5")
+file_dend_ER_oa = os.path.join("..", "1_spine_different_Ca_amp",
+                                  "model_RyR2CaM_old_age_1.2_um_dend_spine_%s_ms_%s.h5")
 file_spine_ER_dend_ER = os.path.join("..", "1_spine_different_Ca_amp",
                                       "model_RyR2CaM_RyR3CaM_1.2_um_dend_spine_%s_ms_%s.h5")
+file_spine_ER_dend_ER_oa = os.path.join("..", "1_spine_different_Ca_amp",
+                                      "model_RyR2CaM_RyR3CaM_old_age_1.2_um_dend_spine_%s_ms_%s.h5")
+
 file_spine_ER_no_dend_ER = os.path.join("..", "1_spine_different_Ca_amp",
                                          "model_RyR3CaM_1.2_um_dend_spine_%s_ms_%s.h5")
-file_dend_ER_dend_Ca = os.path.join("..", "1_spine_different_Ca_amp_Ca_dend",
-                                  "model_Ca_dend_RyR2CaM_1.2_um_dend_spine_%s_ms_%s.h5")
-file_spine_ER_dend_ER_dend_Ca = os.path.join("..", "1_spine_different_Ca_amp_Ca_dend",
-                                      "model_Ca_dend_RyR2CaM_RyR3CaM_1.2_um_dend_spine_%s_ms_%s.h5")
 t_init = 3000
 output = "Ca"
-types = ["no SA no L-type", "no SA", "SA no L-type", "SA",]
+types = ["ER no SA ctrl", "ER no SA old age", "ER+SA ctrl", "ER+SA old age"]
 markers = ["s", "s", "o", "o"]
-fillstyles = ["none", "full", "none", "full"]
+fillstyles = ["full", "none", "full", "none"]
 stim_dict = {
     "4": ["01750", "03500", "07000", "10500"],
     "40": ["0175", "0350", "0700", "1050"],
@@ -35,11 +36,18 @@ spine_dend = "dend11"
 region_list = ["dend01", "dend02", "dend03", "dend04", "dend05", "dend06", "dend07","dend08", "dend08", "dend09", "dend10",
                "dend11", "dend12", "dend13", "dend14", "dend15", "dend16", "dend17",  "dend18", "dend18", "dend19", "dend20",
                "dend21"]
-spine_idx = 21
+
 if __name__ == '__main__':
-    rollo = False
-    dirs = [file_dend_ER_ctrl,file_dend_ER_dend_Ca, file_spine_ER_dend_ER,
-                                   file_spine_ER_dend_ER_dend_Ca]
-    fig = utils.make_distance_figs(dirs, stim_dict, output, types, markers,
-                       fillstyles, length=42, spine_idx=21, t_init=t_init)
-    fig.savefig("Spatial_spread_Ltype_%s.png" % rollo)
+    directories = [file_dend_ER_ctrl, file_dend_ER_oa, file_spine_ER_dend_ER, file_spine_ER_dend_ER_oa] 
+    fig1, fig2, fig3 = utils.max_vs_auc_head_neck_dend(directories,
+                                                       stim_dict, output,
+                                                       types, markers,
+                                                       fillstyles,
+                                                       length=42,
+                                                       which_dend=["dend11"],
+                                                       t_init=3000)
+       
+
+    fig1.savefig("Old_age_no_Ltype_aucdend_auchead.png", dpi=100, bbox_inches="tight")
+    fig2.savefig("Old_age_no_Ltype_maxdend_maxhead.png", dpi=100, bbox_inches="tight")
+    fig3.savefig("Old_age_no_Ltype_aucneck_auchead.png", dpi=100, bbox_inches="tight")

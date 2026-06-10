@@ -21,11 +21,15 @@ file_dend_ER_dend_Ca = os.path.join("..", "1_spine_different_Ca_amp_Ca_dend",
                                   "model_Ca_dend_RyR2CaM_1.2_um_dend_spine_%s_ms_%s.h5")
 file_spine_ER_dend_ER_dend_Ca = os.path.join("..", "1_spine_different_Ca_amp_Ca_dend",
                                       "model_Ca_dend_RyR2CaM_RyR3CaM_1.2_um_dend_spine_%s_ms_%s.h5")
+file_dend_ER_oa = os.path.join("..", "1_spine_different_Ca_amp",
+                                  "model_RyR2CaM_old_age_1.2_um_dend_spine_%s_ms_%s.h5")
+file_spine_ER_dend_ER_oa = os.path.join("..", "1_spine_different_Ca_amp",
+                                      "model_RyR2CaM_RyR3CaM_old_age_1.2_um_dend_spine_%s_ms_%s.h5")
 t_init = 3000
 output = "Ca"
-types = ["no SA no L-type", "no SA", "SA no L-type", "SA",]
+types = ["ER no SA ctrl", "ER no SA old age", "ER+SA ctrl", "ER+SA old age"]
 markers = ["s", "s", "o", "o"]
-fillstyles = ["none", "full", "none", "full"]
+fillstyles = ["full", "none", "full", "none"]
 stim_dict = {
     "4": ["01750", "03500", "07000", "10500"],
     "40": ["0175", "0350", "0700", "1050"],
@@ -38,8 +42,7 @@ region_list = ["dend01", "dend02", "dend03", "dend04", "dend05", "dend06", "dend
 spine_idx = 21
 if __name__ == '__main__':
     rollo = False
-    dirs = [file_dend_ER_ctrl,file_dend_ER_dend_Ca, file_spine_ER_dend_ER,
-                                   file_spine_ER_dend_ER_dend_Ca]
+    dirs = [file_dend_ER_ctrl, file_dend_ER_oa, file_spine_ER_dend_ER, file_spine_ER_dend_ER_oa] 
     fig = utils.make_distance_figs(dirs, stim_dict, output, types, markers,
                        fillstyles, length=42, spine_idx=21, t_init=t_init)
-    fig.savefig("Spatial_spread_Ltype_%s.png" % rollo)
+    fig.savefig("Spatial_spread_ER_no_ER_old_age_%s.png" % rollo)

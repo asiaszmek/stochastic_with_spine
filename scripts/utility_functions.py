@@ -407,7 +407,8 @@ def get_conc(my_file, specie, region_list, output):
     return conc_dict, time_dict
 
 
-def get_distance(conc_dict, dt, t_init, stim_len, spine_idx):
+def get_distance(conc_dict, dt, t_init, stim_len, spine_idx, rollo=True,
+                 interval=700):
     
     decays = np.zeros((len(conc_dict), 1))
     shape = conc_dict["trial0"].shape[0]
@@ -423,7 +424,8 @@ def get_distance(conc_dict, dt, t_init, stim_len, spine_idx):
         for j in range(spine_idx, shape):
             
             try:
-                new_idx = concentration[j, new_beg-100:new_beg+stim_len+700].argmax()
+                new_idx = concentration[j, new_beg-100:new_beg + stim_len
+                                        + interval].argmax()
             except ValueError:
                 continue
 
@@ -439,12 +441,14 @@ def get_distance(conc_dict, dt, t_init, stim_len, spine_idx):
             else:
                 break
             print(j, ca_conc[j], new_beg +new_idx -100-int((t_init)/dt))
-            new_beg = new_beg +new_idx -100
+            if rollo:
+                new_beg = new_beg +new_idx -100
     
         new_beg = int((t_init)/dt)         
         for j in range(spine_idx-1, -1, -1):
             try:
-                new_idx = concentration[j, new_beg-100:new_beg+stim_len+700].argmax()
+                new_idx = concentration[j, new_beg-100:new_beg
+                                        +stim_len+interval].argmax()
             except ValueError:
                 continue
             ca_conc[j] = concentration[j, new_beg-100+new_idx]
@@ -460,7 +464,8 @@ def get_distance(conc_dict, dt, t_init, stim_len, spine_idx):
             else:
                 break
             print(j, ca_conc[j], new_beg +new_idx -100-int((t_init)/dt))
-            new_beg = new_beg +new_idx -100
+            if rollo:
+                new_beg = new_beg + new_idx -100
         decays[i] = len(indices)/2*0.5
         #print(indices)
     return decays
@@ -564,7 +569,7 @@ def make_distance_figs(directories, stim_dict, output, types, markers,
     fig1, ax1 = plt.subplots(1, len(stim_dict.keys()),
                              figsize=(len(stim_dict.keys())*5, 5))
     for k, dur in enumerate(stim_dict.keys()):
-        period_spine = 1000+int(dur)
+        
         
         
         for i, fname in  enumerate(directories):
@@ -590,7 +595,7 @@ def make_distance_figs(directories, stim_dict, output, types, markers,
                 trials = len(dend_ca.keys())
                 auch = np.zeros((trials))
                 for j, trial in enumerate(dend_ca.keys()):
-                    auch[j] = head_ca[trial][1, t_start:t_start+period_spine].sum()/(period_spine*dt*71)
+                    auch[j] = head_ca[trial][1, t_start:].sum()/(71*len(head_ca[trial][1, t_start:]))
 
                 spread = get_distance(dend_ca, dt, t_init=t_init, stim_len=int(dur),
                                       spine_idx=spine_idx)
@@ -622,8 +627,7 @@ def max_vs_auc_head_neck_dend(directories, stim_dict, output, types, markers,
     fig_nh, ax_nh = plt.subplots(1, len(stim_dict.keys()),
                                  figsize=(len(stim_dict.keys())*5, 5))
     for k, dur  in enumerate(stim_dict.keys()):
-        period_spine = 1000+int(dur)
-        period_dend = 1000+int(dur)     
+         
         for i, fname in enumerate(directories):
             auc_head_m = []
             auc_neck_m = []
@@ -652,8 +656,7 @@ def max_vs_auc_head_neck_dend(directories, stim_dict, output, types, markers,
                 t_start = int(t_init/dt)
                
                 length = time_dict["trial0"][-1] - t_start
-                nothing_spine = period_spine*dt*71
-                nothing_dend = period_dend*dt*71
+                
                 trials = len(dend_ca.keys())
                 auch = np.zeros((trials))
                 aucn = np.zeros((trials))
@@ -663,11 +666,14 @@ def max_vs_auc_head_neck_dend(directories, stim_dict, output, types, markers,
               
 
                 for j, trial in enumerate(dend_ca.keys()):
-                    maxh[j] = head_ca[trial][1, t_start:t_start+period_spine].max()/1000
-                    maxd[j] = dend_ca[trial][:, t_start:t_start+period_dend].mean(axis=0).max()
-                    auch[j] = head_ca[trial][1, t_start:t_start+period_spine].sum()/nothing_spine
-                    aucn[j] = neck_ca[trial][:, t_start:t_start+period_spine].sum()/nothing_spine
-                    aucd[j] = dend_ca[trial][:, t_start:t_start+period_dend].sum()/2/nothing_dend
+                    try: 
+                        maxh[j] = head_ca[trial][1, t_start:].max()/1000
+                    except ValueError:
+                        break
+                    maxd[j] = dend_ca[trial][:, t_start:].mean(axis=0).max()
+                    auch[j] = head_ca[trial][1, t_start:].sum()/71/len(head_ca[trial][1, t_start:])
+                    aucn[j] = neck_ca[trial][:, t_start:].sum()/71/len(head_ca[trial][1, t_start:])
+                    aucd[j] = dend_ca[trial][:, t_start:].sum()/2/71/len(head_ca[trial][1, t_start:])
                     
              
                 auc_head_m.append(auch.mean())

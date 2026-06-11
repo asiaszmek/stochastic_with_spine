@@ -18,9 +18,6 @@
       "morph" (regions) and "model" (dt).
   -->
   <OutputSet filename = "PSD" region="PSD"  dt=".25">
-    <OutputSpecie name="NMDARO"/>
-    <OutputSpecie name="V"/>
-    <OutputSpecie name="Glu"/>
     <OutputSpecie name="pmca2b"/>
     <OutputSpecie name="pmca2bCa"/>
     <OutputSpecie name="CaMCa4pmca2b"/>

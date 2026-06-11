@@ -19,15 +19,11 @@
   -->
 
   <OutputSet filename = "PSD" region="PSD"  dt="0.25">
-    <OutputSpecie name="NMDARO"/>
     <OutputSpecie name="pmca2b"/>
     <OutputSpecie name="pmca2bCa"/>
     <OutputSpecie name="CaMCa4pmca2b"/>
     <OutputSpecie name="CaMCa4pmca2bCa"/>
     <OutputSpecie name="CaMpmca2b"/>
-
-    <OutputSpecie name="V"/>
-    <OutputSpecie name="Glu"/>
   </OutputSet>
 
   <OutputSet filename = "head" region="head"  dt="1.0">

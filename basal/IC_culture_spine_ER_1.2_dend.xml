@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-61;8203;1c
 <InitialConditions>
   <ConcentrationSet>
     <NanoMolarity specieID="GluOut" value="5000000"/>

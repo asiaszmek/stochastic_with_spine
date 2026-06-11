@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-
+61;8203;1c
 <InitialConditions>
   <ConcentrationSet>
     <NanoMolarity specieID="GluOut" value="5000000"/>
@@ -29,7 +29,7 @@
     <NanoMolarity specieID="Cyt_SERCA_Ca" value="102" />
     <NanoMolarity specieID="Cyt_SERCA_Ca2" value="15" />
 
-    <NanoMolarity specieID="LeakER" value="128" />
+    <NanoMolarity specieID="LeakER" value="120" />
 
  
     <NanoMolarity specieID="STIM_2CaER" value="385" />

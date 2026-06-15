@@ -9,8 +9,8 @@ colors = {"1.2": 'tab:blue',
           "2.4": 'tab:purple',
           "6.0": 'tab:green'}
 
-file_no_ER_ctrl = os.path.join("..", "1_spine_different_Ca_amp",
-                                "model_1.2_um_dend_spine_%s_ms_%s.h5")
+file_no_ER_Ltype = os.path.join("..", "1_spine_different_Ca_amp_Ca_dend",
+                                "model_Ca_dend_1.2_um_dend_spine_%s_ms_%s.h5")
 file_dend_ER_ctrl = os.path.join("..", "1_spine_different_Ca_amp",
                                   "model_RyR2CaM_1.2_um_dend_spine_%s_ms_%s.h5")
 file_spine_ER_dend_ER = os.path.join("..", "1_spine_different_Ca_amp",
@@ -23,9 +23,9 @@ file_spine_ER_dend_ER_dend_Ca = os.path.join("..", "1_spine_different_Ca_amp_Ca_
                                       "model_Ca_dend_RyR2CaM_RyR3CaM_1.2_um_dend_spine_%s_ms_%s.h5")
 t_init = 3000
 output = "Ca"
-types = ["no SA no L-type", "no SA", "SA no L-type", "SA",]
-markers = ["s", "s", "o", "o"]
-fillstyles = ["none", "full", "none", "full"]
+types = ["no SA no L-type", "no SA", "SA no L-type", "SA", "no ER"]
+markers = ["s", "s", "o", "o", "*"]
+fillstyles = ["none", "full", "none", "full", "full"]
 stim_dict = {
     "4": ["01750", "03500", "07000", "10500"],
     "40": ["0175", "0350", "0700", "1050"],
@@ -39,7 +39,7 @@ spine_idx = 21
 if __name__ == '__main__':
     rollo = False
     dirs = [file_dend_ER_ctrl,file_dend_ER_dend_Ca, file_spine_ER_dend_ER,
-                                   file_spine_ER_dend_ER_dend_Ca]
+            file_spine_ER_dend_ER_dend_Ca, file_no_ER_Ltype]
     fig = utils.make_distance_figs(dirs, stim_dict, output, types, markers,
                        fillstyles, length=42, spine_idx=21, t_init=t_init)
     fig.savefig("Spatial_spread_Ltype_%s.png" % rollo, dpi=100, bbox_inches="tight")

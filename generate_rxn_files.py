@@ -53,6 +53,9 @@ flist_no_ER_spine_basal = [
     "Rxn_module_RyR2CaM_KeizerSmith.xml",
     "Rxn_module_SERCA2.xml",
     "Rxn_module_SOCE.xml",
+    "Rxn_module_mGLuR.xml",
+    "Rxn_module_IP3R.xml"
+
     ]
 flist_no_ER_spine_HFGlu = [
     "Rxn_module_Ca.xml",

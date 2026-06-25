@@ -44,8 +44,8 @@
     <NanoMolarity specieID="IP5P_IP4" value="30" />
     <!--Gallimore's values-->
     <NanoMolarity specieID="DagK"               value="273"  />
-    <NanoMolarity specieID="Dye" value="9e2" />
-    <NanoMolarity specieID="CaDye" value="1e2" />
+    <NanoMolarity specieID="Dye" value="149740" />
+    <NanoMolarity specieID="CaDye" value="260" />
     
   </ConcentrationSet>
 

@@ -417,57 +417,64 @@ def get_distance(conc_dict, dt, t_init, stim_len, spine_idx, rollo=True,
     
     for i, concentration in enumerate(conc_dict.values()):
         ca_conc = np.zeros((shape,))
-        
-        
+      
         new_beg = int((t_init)/dt)
+        ca_ctrl = concentration[:, int(1000/dt):new_beg].mean(axis=(0,1))
+        ca_std = concentration[:, int(1000/dt):new_beg].std()
+        try:
+            ca_max = concentration[:, new_beg:].max()/2 #ca_ctrl+6*ca_std
+       
+        except ValueError:
+            continue
+
+        ca_lim = ca_ctrl+5*ca_std
         indices = []
         for j in range(spine_idx, shape):
             
             try:
-                new_idx = concentration[j, new_beg-100:new_beg + stim_len
+                new_idx = concentration[j, new_beg:new_beg + stim_len
                                         + interval].argmax()
             except ValueError:
                 continue
 
-            ca_conc[j] = concentration[j, new_beg-100+new_idx]
-
-            if ca_conc[j] > limit*ca_ctrl and j==spine_idx:
+            ca_conc[j] = concentration[j, new_beg+new_idx]
+            
+            if ca_conc[j] > ca_lim and j==spine_idx:
                 indices.append(j)
-            elif ca_conc[j] > limit*ca_ctrl and j-1 in indices:
+            elif ca_conc[j] > ca_lim and j-1 in indices:
                     indices.append(j)
-            elif ca_conc[j] > limit*ca_ctrl and j-2 in indices:
+            elif ca_conc[j] > ca_lim and j-2 in indices:
                     indices.append(j)
                     indices.append(j-1)
             else:
                 break
-            print(j, ca_conc[j], new_beg +new_idx -100-int((t_init)/dt))
+
             if rollo:
                 new_beg = new_beg +new_idx -100
     
         new_beg = int((t_init)/dt)         
         for j in range(spine_idx-1, -1, -1):
             try:
-                new_idx = concentration[j, new_beg-100:new_beg
+                new_idx = concentration[j, new_beg:new_beg
                                         +stim_len+interval].argmax()
             except ValueError:
                 continue
-            ca_conc[j] = concentration[j, new_beg-100+new_idx]
+            ca_conc[j] = concentration[j, new_beg+new_idx]
          
-            if ca_conc[j] > limit*ca_ctrl and j==spine_idx-1:
+            if ca_conc[j] > ca_lim and j==spine_idx-1:
                 indices.append(j)
                 
-            elif ca_conc[j] > limit*ca_ctrl and j+1 in indices:
+            elif ca_conc[j] > ca_lim and j+1 in indices:
                 indices.append(j)
-            elif ca_conc[j] > limit*ca_ctrl and j+2 in indices:
+            elif ca_conc[j] > ca_lim and j+2 in indices:
                 indices.append(j)
                 indices.append(j+1)
             else:
                 break
-            print(j, ca_conc[j], new_beg +new_idx -100-int((t_init)/dt))
             if rollo:
                 new_beg = new_beg + new_idx -100
         decays[i] = len(indices)/2*0.5
-        #print(indices)
+        
     return decays
 
 
@@ -568,6 +575,8 @@ def make_distance_figs(directories, stim_dict, output, types, markers,
                        ylabel=r"Spatial spread ($\unit{\micro\metre}$))"):
     fig1, ax1 = plt.subplots(1, len(stim_dict.keys()),
                              figsize=(len(stim_dict.keys())*5, 5))
+    fig2, ax2 = plt.subplots(1, len(stim_dict.keys()),
+                              figsize=(len(stim_dict.keys())*5, 5))
     for k, dur in enumerate(stim_dict.keys()):
         
         
@@ -595,26 +604,34 @@ def make_distance_figs(directories, stim_dict, output, types, markers,
                 trials = len(dend_ca.keys())
                 auch = np.zeros((trials))
                 for j, trial in enumerate(dend_ca.keys()):
-                    auch[j] = head_ca[trial][1, t_start:].sum()/(71*len(head_ca[trial][1, t_start:]))
-
+                    auch[j] = head_ca[trial][1, t_start:].sum()/(len(head_ca[trial][1, t_start:])*head_ca[trial][1,:t_start].mean())
+                    
                 spread = get_distance(dend_ca, dt, t_init=t_init, stim_len=int(dur),
                                       spine_idx=spine_idx)
                 auc_head_m.append(auch.mean())
+                
                 auc_head_e.append(auch.std()/trials**0.5)
                 spread_m.append(spread.mean())
                 spread_e.append(spread.std()/trials**0.5)
-                
+                ax2[k].plot(auch, spread,label=types[i], marker=markers[i],
+                            fillstyle=fillstyles[i], color="tab:blue",
+                            linewidth=0)
             print(auc_head_m, spread_m, spread_e)
-            ax1[k].errorbar(auc_head_m, spread_m, yerr=spread_e, xerr=auc_head_e,label=types[i], marker=markers[i],
-                            fillstyle=fillstyles[i], color="tab:blue", linewidth=0)
+            ax1[k].errorbar(auc_head_m, spread_m, spread_e,
+                            label=types[i], marker=markers[i],
+                            fillstyle=fillstyles[i], color="tab:blue",
+                            linewidth=0)
         ax1[k].set_title("Stimulation %s (ms)"% dur)      
-
-           
-            
+        ax2[k].set_title("Stimulation %s (ms)"% dur)      
         ax1[k].set_ylabel(ylabel)
         ax1[k].set_xlabel(xlabel)
+        ax2[k].set_ylabel(ylabel)
+        ax2[k].set_xlabel(xlabel)
+
     pretty_axis(ax1)
+    pretty_axis(ax2)
     ax1[0].legend()
+    ax2[0].legend()
     return fig1
 
 
@@ -671,9 +688,9 @@ def max_vs_auc_head_neck_dend(directories, stim_dict, output, types, markers,
                     except ValueError:
                         break
                     maxd[j] = dend_ca[trial][:, t_start:].mean(axis=0).max()
-                    auch[j] = head_ca[trial][1, t_start:].sum()/71/len(head_ca[trial][1, t_start:])
-                    aucn[j] = neck_ca[trial][:, t_start:].sum()/71/len(head_ca[trial][1, t_start:])
-                    aucd[j] = dend_ca[trial][:, t_start:].sum()/2/71/len(head_ca[trial][1, t_start:])
+                    auch[j] = head_ca[trial][1, t_start:].sum()/(len(head_ca[trial][1, t_start:])*head_ca[trial][1,:t_start].mean())
+                    aucn[j] = neck_ca[trial][:, t_start:].sum()/(len(head_ca[trial][1, t_start:])*neck_ca[trial][:,:t_start].mean())
+                    aucd[j] = dend_ca[trial][:, t_start:].sum()/2/(len(head_ca[trial][1, t_start:])*dend_ca[trial][:, :t_start].mean())
                     
              
                 auc_head_m.append(auch.mean())

@@ -7,6 +7,13 @@
     <period>500</period>
     <end>10020</end>
   </InjectionStim>
+  <InjectionStim injectionSite="sa1[0].pointA" specieID="GluBuf">
+    <onset>5010</onset>
+    <duration>1</duration>
+    <rate>40000</rate>
+    <period>500</period>
+    <end>10020</end>
+  </InjectionStim>
 
   <InjectionStim injectionSite="sa1[0].pointA" specieID="V">
     <onset>5000</onset>

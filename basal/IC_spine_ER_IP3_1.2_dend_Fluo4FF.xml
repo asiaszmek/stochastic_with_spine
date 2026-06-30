@@ -29,7 +29,7 @@
     <NanoMolarity specieID="Cyt_SERCA_Ca" value="104" />
     <NanoMolarity specieID="Cyt_SERCA_Ca2" value="15" />
 
-    <NanoMolarity specieID="LeakER" value="100" />
+    <NanoMolarity specieID="LeakER" value="70" />
  
     <NanoMolarity specieID="STIM_2CaER" value="380" />
     <NanoMolarity specieID="STIM_2" value="12" />

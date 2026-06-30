@@ -44,7 +44,7 @@ region_list = ["dend01", "dend02", "dend03", "dend04", "dend05", "dend06", "dend
                "dend21"]
 spine_idx = 21
 if __name__ == '__main__':
-    rollo = True
+    rollo = False
     dirs = [
         file_dend_ER_dend_Ca, file_dend_ER_dend_Ca_old_age,
         file_spine_ER_dend_ER_dend_Ca,

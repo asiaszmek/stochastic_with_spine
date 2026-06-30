@@ -53,11 +53,18 @@ region_list = ["dend01", "dend02", "dend03", "dend04", "dend05", "dend06", "dend
                "dend21"]
 spine_idx = 21
 if __name__ == '__main__':
-    rollo = True
+    rollo = False
+    colors = {file_dend_ER_ctrl: "tab:blue",
+              file_dend_ER_Ltype: "tab:green",
+              file_dend_ER_Ltype_IP3: "tab:purple",
+              file_spine_ER_dend_ER: "tab:blue",
+              file_spine_ER_dend_ER_Ltype: "tab:green",
+              file_spine_ER_dend_ER_Ltype_IP3: "tab:purple"
+    }
     dirs = [file_dend_ER_ctrl,file_dend_ER_Ltype, file_dend_ER_Ltype_IP3,
             file_spine_ER_dend_ER, file_spine_ER_dend_ER_Ltype, file_spine_ER_dend_ER_Ltype_IP3]
     fig = utils.make_distance_figs(dirs, stim_dict, output, types, markers,
-                                   fillstyles, length=42, spine_idx=21, t_init=t_init, max_ca=True)
+                                   fillstyles, length=42, spine_idx=21, t_init=t_init, max_ca=True, colors=colors)
     fig.savefig("Spatial_spread_Ltype_IP3_%s.png" % rollo, dpi=100, bbox_inches="tight")
         
     

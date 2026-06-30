@@ -598,7 +598,12 @@ def fit_exp(time, ca_conc, dt, duration=2000, t_init=3000, stim_len=3000, spatia
 def make_distance_figs(directories, stim_dict, output, types, markers,
                        fillstyles, length=42, spine_idx=21, t_init=3000,
                        xlabel=r"Auc head/Auc basal",
-                       ylabel=r"Spatial spread ($\unit{\micro\metre}$))", max_ca=False):
+                       ylabel=r"Spatial spread ($\unit{\micro\metre}$))",
+                       max_ca=False, colors={}):
+    if not colors:
+        colors = {}
+        for fname in directories:
+            colors[fname] = "tab:blue"
     if max_ca is True:
         xlabel = r"$\mathrm{max\left(Ca_{head}^{2+}\right)}\, (\unit{\micro\Molar})$"
     fig1, ax1 = plt.subplots(1, len(stim_dict.keys()),
@@ -606,9 +611,6 @@ def make_distance_figs(directories, stim_dict, output, types, markers,
     fig2, ax2 = plt.subplots(1, len(stim_dict.keys()),
                               figsize=(len(stim_dict.keys())*5, 5))
     for k, dur in enumerate(stim_dict.keys()):
-        
-        
-        
         for i, fname in  enumerate(directories):
             auc_head_m = []
             auc_head_e = []
@@ -648,9 +650,10 @@ def make_distance_figs(directories, stim_dict, output, types, markers,
                             fillstyle=fillstyles[i], color="tab:blue",
                             linewidth=0)
             print(auc_head_m, spread_m, spread_e)
-            ax1[k].errorbar(auc_head_m, spread_m, yerr=spread_e, ecolor="tab:blue",
+            ax1[k].errorbar(auc_head_m, spread_m, yerr=spread_e,
+                            ecolor=colors[fname],
                             label=types[i], marker=markers[i],
-                            fillstyle=fillstyles[i], color="tab:blue",
+                            fillstyle=fillstyles[i], color=colors[fname],
                             linewidth=0, elinewidth=1)
         ax1[k].set_title("Stimulation %s (ms)"% dur)      
         ax2[k].set_title("Stimulation %s (ms)"% dur)      
@@ -661,7 +664,7 @@ def make_distance_figs(directories, stim_dict, output, types, markers,
 
     pretty_axis(ax1)
     pretty_axis(ax2)
-    ax1[0].legend()
+    ax1[1].legend()
     ax2[0].legend()
     return fig1
 

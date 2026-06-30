@@ -37,7 +37,7 @@ region_list = ["dend01", "dend02", "dend03", "dend04", "dend05", "dend06", "dend
                "dend21"]
 spine_idx = 21
 if __name__ == '__main__':
-    rollo = True
+    rollo = False
     dirs = [file_dend_ER_ctrl,file_dend_ER_dend_Ca, file_spine_ER_dend_ER,
             file_spine_ER_dend_ER_dend_Ca]#, file_no_ER_Ltype]
     fig = utils.make_distance_figs(dirs, stim_dict, output, types, markers,

@@ -43,7 +43,7 @@ def pretty_axis(ax1):
     max_xlim = max([max(ax.get_xlim()) for ax in ax1])
     for x in ax1:
         x.set_ylim([-0.05, max_ylim+0.05])
-        x.set_xlim([-0.05, max_xlim+0.05])
+        #x.set_xlim([-0.05, max_xlim+0.05])
         
 
         
@@ -478,6 +478,32 @@ def get_distance(conc_dict, dt, t_init, stim_len, spine_idx, rollo=True,
     return decays
 
 
+def get_blob(conc_dict, dt, t_init, stim_len, spine_idx, rollo=True,
+             interval=700):
+    
+    decays = np.zeros((len(conc_dict), 1))
+    shape = conc_dict["trial0"].shape[0]
+    find_max = conc_dict["trial0"].argmax()
+    full_shape = conc_dict["trial0"].shape
+    
+    for i, concentration in enumerate(conc_dict.values()):
+        ca_conc = np.zeros((shape,))
+      
+        new_beg = int((t_init)/dt)
+        ca_ctrl = concentration[:, int(1000/dt):new_beg].mean(axis=(0,1))
+        ca_std = concentration[:, int(1000/dt):new_beg].std()
+        try:
+            ca_max = concentration[:, new_beg:].max()/2 #ca_ctrl+6*ca_std
+       
+        except ValueError:
+            continue
+
+        ca_lim = ca_ctrl + 5*ca_std
+        indices = np.where(concentration[:, new_beg:] > ca_lim)
+        print(indices)
+    return decays
+
+
 
 def max_vs_distance(conc, dt, t_init, spine_idx=49, length=51):
     out_conc = np.zeros((len(conc.values()), spine_idx))
@@ -639,6 +665,60 @@ def make_distance_figs(directories, stim_dict, output, types, markers,
     ax2[0].legend()
     return fig1
 
+
+def area_over_250_mean(directories, stim_dict, output, types, markers,
+                         fillstyles, length=42, spine_idx=21, t_init=3000,
+                         xlabel=r"Auc head/Auc basal",
+                         ylabel=r"Auc dendrite/Auc basal)", max_ca=False):
+    if max_ca is True:
+        xlabel = r"$\mathrm{max\left(Ca_{head}^{2+}\right)}\, (\unit{\micro\Molar})$"
+    fig1, ax1 = plt.subplots(1, len(stim_dict.keys()),
+                             figsize=(len(stim_dict.keys())*5, 5))
+    fig2, ax2 = plt.subplots(1, len(stim_dict.keys()),
+                              figsize=(len(stim_dict.keys())*5, 5))
+    for k, dur in enumerate(stim_dict.keys()):
+        
+        
+        
+        for i, fname in  enumerate(directories):
+            auc_head_m = []
+            auc_head_e = []
+            spread_m = []
+            spread_e = []
+            for inj in stim_dict[dur]:
+                print(fname % (dur, inj))
+                try:
+                    my_data = h5py.File(fname % (dur, inj))
+                except FileNotFoundError:
+                    print("Cound not open ", fname % (dur, inj))
+                    continue
+        
+                dend_ca, time_dict = get_conc(my_data, "Ca", ["dend11"], output)
+                head_ca, time_head_dict = get_conc(my_data, "Ca", ['head'], output)
+                dt = time_dict["trial0"][1]-time_dict["trial0"][0]
+                t_start = int(t_init/dt)
+               
+                length = time_dict["trial0"][-1] - t_start
+         
+                trials = len(dend_ca.keys())
+                auch = np.zeros((trials))
+                for j, trial in enumerate(dend_ca.keys()):
+                    if max_ca is True:
+                        auch[j] = head_ca[trial][1,:].max()/1000
+                    else:
+                        auch[j] = head_ca[trial][1, t_start:].sum()/(len(head_ca[trial][1, t_start:])*head_ca[trial][1,:t_start].mean())
+                    
+                spread = get_blob(dend_ca, dt, t_init=t_init, stim_len=int(dur),
+                                  spine_idx=spine_idx)
+                auc_head_m.append(auch.mean())
+                
+                auc_head_e.append(auch.std()/trials**0.5)
+                spread_m.append(spread.mean())
+                spread_e.append(spread.std()/trials**0.5)
+                ax2[k].plot(auch, spread,label=types[i], marker=markers[i],
+                            fillstyle=fillstyles[i], color="tab:blue",
+                            linewidth=0)
+            print(auc_head_m, spread_m, spread_e)
             ax1[k].errorbar(auc_head_m, spread_m, spread_e,
                             label=types[i], marker=markers[i],
                             fillstyle=fillstyles[i], color="tab:blue",

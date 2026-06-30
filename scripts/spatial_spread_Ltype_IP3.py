@@ -39,9 +39,9 @@ file_spine_ER_dend_ER_dend_Ca = os.path.join("..", "1_spine_different_Ca_amp_Ca_
                                       "model_Ca_dend_RyR2CaM_RyR3CaM_1.2_um_dend_spine_%s_ms_%s.h5")
 t_init = 3000
 output = "Ca"
-types = ["no SA no mGluR", "no SA mGluR", "SA no mGluR", "SA mGluR",]
-markers = ["s", "s", "o", "o"]
-fillstyles = ["none", "full", "none", "full"]
+types = [r"no SA no L-type no $\mathrm{IP_3R}$",r"no SA + L-type no $\mathrm{IP_3R}$", r"no SA + L-type + $\mathrm{IP_3R}$", r"SA no L-type no $\mathrm{IP_3R}$",r"SA + L-type no $\mathrm{IP_3R}$", r"SA + L-type + $\mathrm{IP_3R}$",]
+markers = ["o", "^", "s",  "o", "^", "s"]
+fillstyles = ["none", "none", "none", "full", "full", "full"]
 stim_dict = {
     "4": ["01750", "03500", "07000", "10500"],
     "40": ["0175", "0350", "0700", "1050"],
@@ -54,10 +54,10 @@ region_list = ["dend01", "dend02", "dend03", "dend04", "dend05", "dend06", "dend
 spine_idx = 21
 if __name__ == '__main__':
     rollo = True
-    dirs = [file_dend_ER_Ltype, file_dend_ER_Ltype_IP3,
-            file_spine_ER_dend_ER_Ltype, file_spine_ER_dend_ER_Ltype_IP3]
+    dirs = [file_dend_ER_ctrl,file_dend_ER_Ltype, file_dend_ER_Ltype_IP3,
+            file_spine_ER_dend_ER, file_spine_ER_dend_ER_Ltype, file_spine_ER_dend_ER_Ltype_IP3]
     fig = utils.make_distance_figs(dirs, stim_dict, output, types, markers,
-                       fillstyles, length=42, spine_idx=21, t_init=t_init)
+                                   fillstyles, length=42, spine_idx=21, t_init=t_init, max_ca=True)
     fig.savefig("Spatial_spread_Ltype_IP3_%s.png" % rollo, dpi=100, bbox_inches="tight")
         
     

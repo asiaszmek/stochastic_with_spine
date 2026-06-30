@@ -41,5 +41,5 @@ if __name__ == '__main__':
     dirs = [file_dend_ER_ctrl,file_dend_ER_dend_Ca, file_spine_ER_dend_ER,
             file_spine_ER_dend_ER_dend_Ca]#, file_no_ER_Ltype]
     fig = utils.make_distance_figs(dirs, stim_dict, output, types, markers,
-                       fillstyles, length=42, spine_idx=21, t_init=t_init)
+                                   fillstyles, length=42, spine_idx=21, t_init=t_init, max_ca=True)
     fig.savefig("Spatial_spread_Ltype_%s.png" % rollo, dpi=100, bbox_inches="tight")

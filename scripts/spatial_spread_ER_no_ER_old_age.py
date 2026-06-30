@@ -27,7 +27,7 @@ file_spine_ER_dend_ER_oa = os.path.join("..", "1_spine_different_Ca_amp",
                                       "model_RyR2CaM_RyR3CaM_old_age_1.2_um_dend_spine_%s_ms_%s.h5")
 t_init = 3000
 output = "Ca"
-types = ["ER no SA ctrl", "ER no SA old age", "ER+SA ctrl", "ER+SA old age"]
+types = ["no SA ctrl", "no SA old age", "SA ctrl", "SA old age"]
 markers = ["s", "s", "o", "o"]
 fillstyles = ["full", "none", "full", "none"]
 stim_dict = {
@@ -44,5 +44,5 @@ if __name__ == '__main__':
     rollo = True
     dirs = [file_dend_ER_ctrl, file_dend_ER_oa, file_spine_ER_dend_ER, file_spine_ER_dend_ER_oa] 
     fig = utils.make_distance_figs(dirs, stim_dict, output, types, markers,
-                       fillstyles, length=42, spine_idx=21, t_init=t_init)
+                                   fillstyles, length=42, spine_idx=21, t_init=t_init, max_ca=True)
     fig.savefig("Spatial_spread_ER_no_ER_old_age_%s.png" % rollo, dpi=100, bbox_inches="tight")

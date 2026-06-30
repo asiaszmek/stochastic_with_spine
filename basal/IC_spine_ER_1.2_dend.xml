@@ -29,7 +29,7 @@
     <NanoMolarity specieID="Cyt_SERCA_Ca" value="102" />
     <NanoMolarity specieID="Cyt_SERCA_Ca2" value="15" />
 
-    <NanoMolarity specieID="LeakER" value="88" />
+    <NanoMolarity specieID="LeakER" value="100" />
 
  
     <NanoMolarity specieID="STIM_2CaER" value="385" />
@@ -59,7 +59,7 @@
     <PicoSD specieID="Orai" value="198.5"/>
     <PicoSD specieID="OraiSTIM_4" value="1.3333"/>
     <PicoSD specieID="RyR2CaM"      value="10"    />
- <PicoSD  specieID="MgluR" value="18"  />
+    <PicoSD  specieID="MgluR" value="18"  />
     <PicoSD  specieID="GluMgluR" value="0"  />
     <PicoSD specieID="MgluRGq" value="443"/>
     <PicoSD specieID="Gqabg" value="5200"/>

@@ -572,7 +572,9 @@ def fit_exp(time, ca_conc, dt, duration=2000, t_init=3000, stim_len=3000, spatia
 def make_distance_figs(directories, stim_dict, output, types, markers,
                        fillstyles, length=42, spine_idx=21, t_init=3000,
                        xlabel=r"Auc head/Auc basal",
-                       ylabel=r"Spatial spread ($\unit{\micro\metre}$))"):
+                       ylabel=r"Spatial spread ($\unit{\micro\metre}$))", max_ca=False):
+    if max_ca is True:
+        xlabel = r"$\mathrm{max\left(Ca_{head}^{2+}\right)}\, (\unit{\micro\Molar})$"
     fig1, ax1 = plt.subplots(1, len(stim_dict.keys()),
                              figsize=(len(stim_dict.keys())*5, 5))
     fig2, ax2 = plt.subplots(1, len(stim_dict.keys()),
@@ -604,7 +606,10 @@ def make_distance_figs(directories, stim_dict, output, types, markers,
                 trials = len(dend_ca.keys())
                 auch = np.zeros((trials))
                 for j, trial in enumerate(dend_ca.keys()):
-                    auch[j] = head_ca[trial][1, t_start:].sum()/(len(head_ca[trial][1, t_start:])*head_ca[trial][1,:t_start].mean())
+                    if max_ca is True:
+                        auch[j] = head_ca[trial][1,:].max()/1000
+                    else:
+                        auch[j] = head_ca[trial][1, t_start:].sum()/(len(head_ca[trial][1, t_start:])*head_ca[trial][1,:t_start].mean())
                     
                 spread = get_distance(dend_ca, dt, t_init=t_init, stim_len=int(dur),
                                       spine_idx=spine_idx)
@@ -617,6 +622,23 @@ def make_distance_figs(directories, stim_dict, output, types, markers,
                             fillstyle=fillstyles[i], color="tab:blue",
                             linewidth=0)
             print(auc_head_m, spread_m, spread_e)
+            ax1[k].errorbar(auc_head_m, spread_m, yerr=spread_e, ecolor="tab:blue",
+                            label=types[i], marker=markers[i],
+                            fillstyle=fillstyles[i], color="tab:blue",
+                            linewidth=0, elinewidth=1)
+        ax1[k].set_title("Stimulation %s (ms)"% dur)      
+        ax2[k].set_title("Stimulation %s (ms)"% dur)      
+        ax1[k].set_ylabel(ylabel)
+        ax1[k].set_xlabel(xlabel)
+        ax2[k].set_ylabel(ylabel)
+        ax2[k].set_xlabel(xlabel)
+
+    pretty_axis(ax1)
+    pretty_axis(ax2)
+    ax1[0].legend()
+    ax2[0].legend()
+    return fig1
+
             ax1[k].errorbar(auc_head_m, spread_m, spread_e,
                             label=types[i], marker=markers[i],
                             fillstyle=fillstyles[i], color="tab:blue",

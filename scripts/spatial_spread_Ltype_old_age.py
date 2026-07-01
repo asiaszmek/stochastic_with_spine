@@ -30,7 +30,7 @@ file_spine_ER_dend_ER_dend_Ca = os.path.join("..",
 
 t_init = 3000
 output = "Ca"
-types = ["no SA+L-type", "no SA+L-type old age", "SA+L-type", "SA+L-type old age",]
+types = ["no SA+VGCC", "no SA+VGCC old age", "SA+VGCC", "SA+VGCC old age",]
 markers = ["s", "s", "o", "o"]
 fillstyles = ["full", "none", "full", "none"]
 stim_dict = {

@@ -39,7 +39,7 @@ file_spine_ER_dend_ER_dend_Ca = os.path.join("..", "1_spine_different_Ca_amp_Ca_
                                       "model_Ca_dend_RyR2CaM_RyR3CaM_1.2_um_dend_spine_%s_ms_%s.h5")
 t_init = 3000
 output = "Ca"
-types = [r"no SA no L-type no $\mathrm{IP_3R}$",r"no SA + L-type no $\mathrm{IP_3R}$", r"no SA + L-type + $\mathrm{IP_3R}$", r"SA no L-type no $\mathrm{IP_3R}$",r"SA + L-type no $\mathrm{IP_3R}$", r"SA + L-type + $\mathrm{IP_3R}$",]
+types = [r"no SA no VGCC no $\mathrm{IP_3R}$",r"no SA + VGCC no $\mathrm{IP_3R}$", r"no SA + VGCC + $\mathrm{IP_3R}$", r"SA no VGCC no $\mathrm{IP_3R}$",r"SA + VGCC no $\mathrm{IP_3R}$", r"SA + VGCC + $\mathrm{IP_3R}$",]
 markers = ["o", "^", "s",  "o", "^", "s"]
 fillstyles = ["none", "none", "none", "full", "full", "full"]
 stim_dict = {

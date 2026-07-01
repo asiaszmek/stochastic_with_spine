@@ -655,8 +655,16 @@ def make_distance_figs(directories, stim_dict, output, types, markers,
                             label=types[i], marker=markers[i],
                             fillstyle=fillstyles[i], color=colors[fname],
                             linewidth=0, elinewidth=1)
-        ax1[k].set_title("Stimulation %s (ms)"% dur)      
-        ax2[k].set_title("Stimulation %s (ms)"% dur)      
+        if k == 0:
+            ax1[k].set_title(r"1 EPSP")
+            ax2[k].set_title(r"1 EPSP")
+        elif k == 1:
+            ax1[k].set_title(r"4 EPSP at 100 Hz")
+            ax2[k].set_title(r"4 EPSP at 100 Hz")
+        else:
+            ax1[k].set_title(r"1 sec of 100 Hz")
+            ax2[k].set_title(r"1 sec of 100 Hz")
+            
         ax1[k].set_ylabel(ylabel)
         ax1[k].set_xlabel(xlabel)
         ax2[k].set_ylabel(ylabel)

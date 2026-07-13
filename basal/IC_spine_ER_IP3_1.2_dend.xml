@@ -29,7 +29,7 @@
     <NanoMolarity specieID="Cyt_SERCA_Ca" value="208" />
     <NanoMolarity specieID="Cyt_SERCA_Ca2" value="30" />
 
-    <NanoMolarity specieID="LeakER" value="100" />
+    <NanoMolarity specieID="LeakER" value="120" />
  
     <NanoMolarity specieID="STIM_2CaER" value="380" />
     <NanoMolarity specieID="STIM_2" value="12" />
@@ -48,7 +48,7 @@
     <NanoMolarity specieID="IP5P_IP3" value="3" />
     <NanoMolarity specieID="IP5P_IP4" value="30" />
     <!--Gallimore's values-->
-    <NanoMolarity specieID="DagK"               value="273"  />
+    <NanoMolarity specieID="DagK"               value="373"  />
  
   </ConcentrationSet>
 

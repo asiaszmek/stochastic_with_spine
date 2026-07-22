@@ -843,7 +843,7 @@
     <Product specieID="Ca"/>
 
     <forwardRate> 4e-5 </forwardRate>
-    <reverseRate> 1.e-05      </reverseRate>
+    <reverseRate> 4e-05      </reverseRate>
     <Q10>   0.2   </Q10>
    </Reaction>
     
@@ -1106,7 +1106,7 @@
      <Product specieID="RyR2CaMO2"/>
      <Product specieID="Ca"/>
     <forwardRate>5e-3</forwardRate>
-    <reverseRate>1.25e-3</reverseRate>
+    <reverseRate>5e-3</reverseRate>
   </Reaction>
 
 <Specie name="Tubby" id="Tubby" kdiff="4" kdiffunit="mu2/s"/>

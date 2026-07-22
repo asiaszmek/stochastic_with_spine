@@ -383,7 +383,7 @@
      <Product specieID="RyR2CaMO2"/>
      <Product specieID="Ca"/>
     <forwardRate>5e-3</forwardRate>
-    <reverseRate>5e-3</reverseRate>
+    <reverseRate>1.25e-3</reverseRate>
   </Reaction>
 
 <Specie name="Cyt_SERCA" id="Cyt_SERCA" kdiff="0" kdiffunit="mu2/s"/>
@@ -500,7 +500,7 @@
      <Product specieID="RyR2O1"/>
      <Product specieID="Ca"/>
     <forwardRate>5e-3</forwardRate>
-    <reverseRate>5e-3</reverseRate>
+    <reverseRate>1.25e-3</reverseRate>
   </Reaction>
   <Reaction name="RyR2flux2" id="RyR2flux2">
      <Reactant specieID="RyR2O2"/>
@@ -508,7 +508,7 @@
      <Product specieID="RyR2O2"/>
      <Product specieID="Ca"/>
     <forwardRate>5e-3</forwardRate>
-    <reverseRate>5e-3</reverseRate>
+    <reverseRate>1.25e-3</reverseRate>
   </Reaction>
     
 <Specie name="PMJ" id="PMJ" kdiff="0." kdiffunit="mu2/s"/>
@@ -1134,7 +1134,7 @@
     <Product specieID="Ca"/>
 
     <forwardRate> 4e-5 </forwardRate>
-    <reverseRate> 4e-05      </reverseRate>
+    <reverseRate> 1.e-05      </reverseRate>
     <Q10>   0.2   </Q10>
    </Reaction>
     

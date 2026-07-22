@@ -65,7 +65,7 @@ Keizer and Smith -->
      <Product specieID="RyR2O1"/>
      <Product specieID="Ca"/>
     <forwardRate>5e-3</forwardRate>
-    <reverseRate>1.25e-3</reverseRate>
+    <reverseRate>5e-3</reverseRate>
   </Reaction>
   <Reaction name = "RyR2flux2" id="RyR2flux2">
      <Reactant specieID="RyR2O2"/>
@@ -73,7 +73,7 @@ Keizer and Smith -->
      <Product specieID="RyR2O2"/>
      <Product specieID="Ca"/>
     <forwardRate>5e-3</forwardRate>
-    <reverseRate>1.25e-3</reverseRate>
+    <reverseRate>5e-3</reverseRate>
   </Reaction>
     
 </ReactionScheme>

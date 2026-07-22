@@ -714,8 +714,8 @@
     <Reactant specieID="PI4P"/>   
     <Product specieID="Pip2"/>
 
-    <forwardRate> 1.5e-5    </forwardRate>
-    <reverseRate> 0.000162  </reverseRate>
+    <forwardRate> 1.5e-6    </forwardRate>
+    <reverseRate> 0.000162e-1  </reverseRate>
     <Q10>         0.2           </Q10>
 </Reaction>
 

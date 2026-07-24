@@ -1057,77 +1057,152 @@
 
     
 
-<Specie name="IP3R" id="IP3R" kdiff="0" kdiffunit="mu2/s"/>
-  <Specie name="IP3RIP3" id="IP3RIP3" kdiff="0" kdiffunit="mu2/s"/>
-  <Specie name="IP3RO" id="IP3RO" kdiff="0" kdiffunit="mu2/s"/>
-  <Specie name="IP3RC" id="IP3RC" kdiff="0" kdiffunit="mu2/s"/>
-  <Specie name="IP3RC2" id="IP3RC2" kdiff="0" kdiffunit="mu2/s"/>
-  <Specie name="IP3RC3" id="IP3RC3" kdiff="0" kdiffunit="mu2/s"/>
-
-  <Specie name="IP3RC4" id="IP3RC4" kdiff="0" kdiffunit="mu2/s"/>
-  <Reaction name="IP3R+IP3" id="IP3R+IP3">
+<Specie name="IP3R" id="IP3R" kdiff="0" kdiffunit="mu2/s"/> <Specie name="IP3RIP3" id="IP3RIP3" kdiff="0" kdiffunit="mu2/s"/> <Specie name="IP3RC" id="IP3RC" kdiff="0" kdiffunit="mu2/s"/> <Specie name="Pa" id="Pa" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="Pb" id="Pb" kdiff="0" kdiffunit="mu2/s"/> 
+  <Specie name="IP3RC2" id="IP3RC2" kdiff="0" kdiffunit="mu2/s"/> <Specie name="Sa" id="Sa" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="Sb" id="Sb" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="Ia" id="Ia" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="Ib" id="Ib" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="IP3RO" id="IP3RO" kdiff="0" kdiffunit="mu2/s"/> <Specie name="IP3ROb" id="IP3ROb" kdiff="0" kdiffunit="mu2/s"/> <Reaction name="IP3R+IP3" id="IP3R+IP3">
     <Reactant specieID="IP3R"/>
     <Reactant specieID="IP3"/>
     <Product specieID="IP3RIP3"/>
 
-    <forwardRate> 1000e-6   </forwardRate>
-    <reverseRate> 25800e-3       </reverseRate>
+    <forwardRate> 6676e-6   </forwardRate>
+    <reverseRate> 200e-3       </reverseRate>
     <Q10>         0.2           </Q10>
   </Reaction>
 
-  <Reaction name="IP3RIP3+Ca" id="IP3RIP3+Ca">
-    <Reactant specieID="IP3RIP3"/>
+  <Reaction name="IP3R+Ca" id="IP3R+Ca">
+    <Reactant specieID="IP3R"/>
     <Reactant specieID="Ca"/>
-    <Product specieID="IP3RO"/>
-    
-    <forwardRate> 8000e-6   </forwardRate>
-    <reverseRate> 2000e-3    </reverseRate>
+    <Product specieID="IP3RC"/>
+
+    <forwardRate> 5000e-6   </forwardRate>
+    <reverseRate> 1e-3       </reverseRate>
     <Q10>         0.2           </Q10>
   </Reaction>
 
-   <Reaction name="IP3R+Ca" id="IP3R+Ca">                                                                      
-    <Reactant specieID="IP3R"/>                                                                      
-    <Reactant specieID="Ca"/>                                                                     
-    <Product specieID="IP3RC"/>                                                                 
-                                                                                                                
-    <forwardRate> 8.889e-6  </forwardRate>                                                                       
-    <reverseRate> 5e-3      </reverseRate>                                                                      
-    <Q10>         0.2           </Q10>                                                                          
-  </Reaction>                                                                                                   
-                                                                                                                
-  <Reaction name="IP3RC+Ca" id="IP3C+Ca">
+  <Reaction name="IP3RC--Pa" id="IP3RC-Pa">
     <Reactant specieID="IP3RC"/>
-    <Reactant specieID="Ca"/>
+    <Product specieID="Pa"/>
+
+    <forwardRate> 0.3e-3   </forwardRate>
+    <reverseRate> 700e-3       </reverseRate>
+    <Q10>         0.2           </Q10>
+  </Reaction>
+
+  <Reaction name="Pa--Pb" id="Pa-Pb">
+    <Reactant specieID="Pa"/>
+    <Product specieID="Pb"/>
+
+    <forwardRate> 500e-3   </forwardRate>
+    <reverseRate> 100e-3       </reverseRate>
+    <Q10>         0.2           </Q10>
+  </Reaction>
+ 
+  <Reaction name="Pb+CaER" id="Pb+CaER">
+    <Reactant specieID="Pb"/>
+    <Reactant specieID="CaER"/>
     <Product specieID="IP3RC2"/>
 
-    <forwardRate> 20e-6   </forwardRate>
-    <reverseRate> 10e-3       </reverseRate>
+    <forwardRate> 5000e-6   </forwardRate>
+    <reverseRate> 150e-3       </reverseRate>
     <Q10>         0.2           </Q10>
   </Reaction>
 
-  <Reaction name="IP3RC2+Ca" id="IP3C2+Ca">
+  <Reaction name="IP3RC2--Sa" id="IP3RC2-Sa">
     <Reactant specieID="IP3RC2"/>
-    <Reactant specieID="Ca"/>
-    
-    <Product specieID="IP3RC3"/>
-    
-    <forwardRate> 40e-6   </forwardRate>
-    <reverseRate> 15e-3       </reverseRate>
+    <Product specieID="Sa"/>
+
+    <forwardRate> 3000e-3   </forwardRate>
+    <reverseRate> 250e-3       </reverseRate>
     <Q10>         0.2           </Q10>
   </Reaction>
-  <Reaction name="IP3RC3+Ca" id="IP3C3+Ca">
-    <Reactant specieID="IP3RC3"/>
+
+  <Reaction name="Sa+Ca--Sb" id="Sa+Ca-Sb">
+    <Reactant specieID="Sa"/>
     <Reactant specieID="Ca"/>
-    
-    <Product specieID="IP3RC4"/>
-    
-    <forwardRate> 60e-6   </forwardRate>
+    <Product specieID="Sb"/>
+
+    <forwardRate> 5000e-6   </forwardRate>
     <reverseRate> 20e-3       </reverseRate>
     <Q10>         0.2           </Q10>
   </Reaction>
+
+
+   <Reaction name="IP3RIP3+Ca" id="IP3RIP3+Ca">
+    <Reactant specieID="IP3RIP3"/>
+    <Reactant specieID="Ca"/>
+    <Product specieID="A11"/>
+
+    <forwardRate> 500e-6   </forwardRate>
+    <reverseRate> 667e-3       </reverseRate>
+    <Q10>         0.2           </Q10>
+  </Reaction>
+
+
+  <Reaction name="IP3RC+IP3" id="IP3RC+IP3">
+    <Reactant specieID="IPRC"/>
+    <Reactant specieID="IP3"/>
+    <Product specieID="A11"/>
+
+    <forwardRate> 1540e-6   </forwardRate>
+    <reverseRate> 18e-3       </reverseRate>
+    <Q10>         0.2           </Q10>
+  </Reaction>
+
+
+  <Reaction name="A11--Oa" id="A11--Oa">
+    <Reactant specieID="A11"/>
+    <Product specieID="IP3RO"/>
+
+    <forwardRate> 1800e-3   </forwardRate>
+    <reverseRate> 330e-3       </reverseRate>
+    <Q10>         0.2           </Q10>
+  </Reaction>
+
+  <Reaction name="Oa--Ob" id="Oa--Ob">
+    <Reactant specieID="IP3RO"/>
+    <Product specieID="IP3ROb"/>
+
+    <forwardRate> 133e-3   </forwardRate>
+    <reverseRate> 1500e-3       </reverseRate>
+    <Q10>         0.2           </Q10>
+  </Reaction>
+
+  <Reaction name="Ob+CaER--Oc" id="Ob+CaER--Oc">
+    <Reactant specieID="IP3ROb"/>
+    <Reactant specieID="CaER"/>
+    <Product specieID="IP3ROc"/>
+
+    <forwardRate> 70e-6   </forwardRate>
+    <reverseRate> 2000e-3       </reverseRate>
+    <Q10>         0.2           </Q10>
+  </Reaction>
+
+   <Reaction name="Oc--Ia" id="Oc--Ia">
+    <Reactant specieID="IP3ROc"/>
+    <Product specieID="Ia"/>
+
+    <forwardRate> 630e-3   </forwardRate>
+    <reverseRate> 400e-3       </reverseRate>
+    <Q10>         0.2           </Q10>
+  </Reaction>
+
+  <Reaction name="Ia+Ca--Ib" id="Ia+Ca--Ib">
+    <Reactant specieID="Ia"/>
+    <Reactant specieID="Ca"/>
+    <Product specieID="Ib"/>
+
+    <forwardRate> 60e-6   </forwardRate>
+    <reverseRate> 16e-3       </reverseRate>
+    <Q10>         0.2           </Q10>
+  </Reaction>
+
+
   
- 
-<Reaction name="IP3R_Ob-flux_Ia" id="IP3R_Ob-fluxa">
+<Reaction name="IP3R_Oa-flux_Ia" id="IP3R_Oa-fluxa">
     <Reactant specieID="IP3RO"/>
     <Reactant specieID="CaER"/>
     <Product specieID="IP3RO"/>
@@ -1137,7 +1212,29 @@
     <reverseRate> 4e-05      </reverseRate>
     <Q10>   0.2   </Q10>
    </Reaction>
-    
+
+   <Reaction name="IP3R_Ob-flux_Ia" id="IP3R_Ob-fluxa">
+    <Reactant specieID="IP3ROb"/>
+    <Reactant specieID="CaER"/>
+    <Product specieID="IP3ROb"/>
+    <Product specieID="Ca"/>
+
+    <forwardRate> 4e-5 </forwardRate>
+    <reverseRate> 4e-05      </reverseRate>
+    <Q10>   0.2   </Q10>
+   </Reaction>
+
+   <Reaction name="IP3R_Oc-flux_Ia" id="IP3R_Oc-fluxa">
+    <Reactant specieID="IP3ROc"/>
+    <Reactant specieID="CaER"/>
+    <Product specieID="IP3ROc"/>
+    <Product specieID="Ca"/>
+
+    <forwardRate> 4e-5 </forwardRate>
+    <reverseRate> 4e-05      </reverseRate>
+    <Q10>   0.2   </Q10>
+   </Reaction>
+
 
  <Specie name="CaCbuf" id="CaCbuf" kdiff="10" kdiffunit="mu2/s"/>
   <Specie name="Cbuf" id="Cbuf" kdiff="10" kdiffunit="mu2/s"/>

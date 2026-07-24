@@ -37,7 +37,7 @@ def read_in_files(flist):
 flist_pip_cycling = [
     "Rxn_module_Ca.xml",
     "Rxn_module_mGLuR.xml",
-    "Rxn_module_IP3R.xml",
+    "Rxn_module_IP3R_Dawson_Freeman.xml",
     "Rxn_module_GluBuf.xml",
     "Rxn_module_SERCA2.xml",
     "Rxn_module_GluBuf.xml",
@@ -54,7 +54,7 @@ flist_no_ER_spine_basal = [
     "Rxn_module_SERCA2.xml",
     "Rxn_module_SOCE.xml",
     "Rxn_module_mGLuR.xml",
-    "Rxn_module_IP3R.xml"
+    "Rxn_module_IP3R_Dawson_Freeman.xml"
 
     ]
 flist_no_ER_spine_HFGlu = [
@@ -68,12 +68,12 @@ flist_no_ER_spine_HFGlu = [
 
 flist_no_ER_spine_HFGlu_IP3 = flist_no_ER_spine_HFGlu+[
     "Rxn_module_mGLuR.xml",
-    "Rxn_module_IP3R.xml"
+    "Rxn_module_IP3R_Dawson_Freeman.xml"
 ]
 
 flist_no_ER_spine_basal_IP3 = flist_no_ER_spine_basal + [
     "Rxn_module_mGLuR.xml",
-    "Rxn_module_IP3R.xml"
+    "Rxn_module_IP3R_Dawson_Freeman.xml"
 ]
 
 flist_no_ER_spine_basal_old_age = [
@@ -86,7 +86,7 @@ flist_no_ER_spine_basal_old_age = [
 
 flist_no_ER_IP3_spine_basal_old_age = flist_no_ER_spine_basal_old_age + [
     "Rxn_module_mGLuR.xml",
-    "Rxn_module_IP3R.xml"
+    "Rxn_module_IP3R_Dawson_Freeman.xml"
     ]
 
 
@@ -107,12 +107,12 @@ flist_ER_IP3_spine_basal_old_age = flist_no_ER_IP3_spine_basal_old_age+ [
     ]
 flist_ER_spine_basal_IP3 = flist_ER_spine_basal + [
     "Rxn_module_mGLuR.xml",
-    "Rxn_module_IP3R.xml",
+    "Rxn_module_IP3R_Dawson_Freeman.xml",
     "Rxn_module_GluBuf.xml",
 ]
 flist_ER_spine_HFGlu_IP3 = flist_ER_spine_HFGlu + [
     "Rxn_module_mGLuR.xml",
-    "Rxn_module_IP3R.xml",
+    "Rxn_module_IP3R_Dawson_Freeman.xml",
     "Rxn_module_GluBuf.xml",
 ]
 
@@ -125,14 +125,14 @@ flist_ER_spine_stim = flist_ER_spine_basal + [ "Rxn_module_NMDAR.xml",]
 
 flist_ER_spine_stim_IP3 = flist_ER_spine_stim + [
     "Rxn_module_mGLuR.xml",
-    "Rxn_module_IP3R.xml",
+    "Rxn_module_IP3R_Dawson_Freeman.xml",
     "Rxn_module_GluBuf.xml",
 ]
 flist_no_ER_spine_stim = flist_no_ER_spine_basal + ["Rxn_module_NMDAR.xml"]
 
 flist_no_ER_spine_stim_IP3 = flist_no_ER_spine_stim + [
     "Rxn_module_mGLuR.xml",
-    "Rxn_module_IP3R.xml",
+    "Rxn_module_IP3R_Dawson_Freeman.xml",
     "Rxn_module_GluBuf.xml",
 ]
 
@@ -150,26 +150,26 @@ flist_ER_spine_stim_Fluo4FF = flist_ER_spine_stim + [
     ]
 
 flist_ER_spine_stim_Fluo4FF_IP3 = flist_ER_spine_stim + [
-    "Rxn_module_Fluo4FF.xml", "Rxn_module_mGLuR.xml", "Rxn_module_IP3R.xml"]
+    "Rxn_module_Fluo4FF.xml", "Rxn_module_mGLuR.xml", "Rxn_module_IP3R_Dawson_Freeman.xml"]
 
 flist_no_ER_spine_stim_Fluo4FF = flist_no_ER_spine_stim + [
      "Rxn_module_Fluo4FF.xml"]
 
 flist_no_ER_spine_stim_Fluo4FF_IP3 = flist_no_ER_spine_stim + [
-    "Rxn_module_Fluo4FF.xml", "Rxn_module_mGLuR.xml", "Rxn_module_IP3R.xml"]
+    "Rxn_module_Fluo4FF.xml", "Rxn_module_mGLuR.xml", "Rxn_module_IP3R_Dawson_Freeman.xml"]
 
 flist_ER_spine_stim_OGB5N = flist_ER_spine_stim + [
     "Rxn_module_OGB5N.xml",
     ]
 
 flist_ER_spine_stim_OGB5N_IP3 = flist_ER_spine_stim + [
-    "Rxn_module_OGB5N.xml", "Rxn_module_mGLuR.xml", "Rxn_module_IP3R.xml"]
+    "Rxn_module_OGB5N.xml", "Rxn_module_mGLuR.xml", "Rxn_module_IP3R_Dawson_Freeman.xml"]
 
 flist_no_ER_spine_stim_OGB5N = flist_no_ER_spine_stim + [
      "Rxn_module_OGB5N.xml"]
 
 flist_no_ER_spine_stim_OGB5N_IP3 = flist_no_ER_spine_stim + [
-    "Rxn_module_OGB5N.xml", "Rxn_module_mGLuR.xml", "Rxn_module_IP3R.xml"]
+    "Rxn_module_OGB5N.xml", "Rxn_module_mGLuR.xml", "Rxn_module_IP3R_Dawson_Freeman.xml"]
 
 
 flist_ER_spine_stim_jRGECO1 = flist_ER_spine_HFGlu + [
@@ -196,13 +196,13 @@ flist_ER_spine_stim_Fluo5F = flist_ER_spine_stim + [
     ]
 
 flist_ER_spine_stim_Fluo5F_IP3 = flist_ER_spine_stim + [
-    "Rxn_module_Fluo5F.xml", "Rxn_module_mGLuR.xml", "Rxn_module_IP3R.xml"]
+    "Rxn_module_Fluo5F.xml", "Rxn_module_mGLuR.xml", "Rxn_module_IP3R_Dawson_Freeman.xml"]
 
 flist_no_ER_spine_stim_Fluo5F = flist_no_ER_spine_stim + [
      "Rxn_module_Fluo5F.xml"]
 
 flist_no_ER_spine_stim_Fluo5F_IP3 = flist_no_ER_spine_stim + [
-    "Rxn_module_Fluo5F.xml", "Rxn_module_mGLuR.xml", "Rxn_module_IP3R.xml"]
+    "Rxn_module_Fluo5F.xml", "Rxn_module_mGLuR.xml", "Rxn_module_IP3R_Dawson_Freeman.xml"]
 
 
 if __name__ == "__main__":

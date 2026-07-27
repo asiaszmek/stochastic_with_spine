@@ -357,8 +357,8 @@ Change to original Avrama's values
     <Reactant specieID="IP5P"            />
     <Product  specieID="IP5P_IP3"        />
     
-    <forwardRate> 2.52e-06      </forwardRate>
-    <reverseRate> 72e-04      </reverseRate>
+    <forwardRate> 9e-06      </forwardRate>
+    <reverseRate> 72e-03      </reverseRate>
     <Q10>         0.2           </Q10>
   </Reaction>
 
@@ -375,8 +375,8 @@ Change to original Avrama's values
     <Reactant specieID="IP5P"            />
     <Product  specieID="IP5P_IP4"        />
     
-    <forwardRate> 1.6e-5      </forwardRate>
-    <reverseRate> 72e-04      </reverseRate>
+    <forwardRate> 0.95e-4      </forwardRate>
+    <reverseRate> 72e-03      </reverseRate>
     <Q10>         0.2           </Q10>
   </Reaction>
 

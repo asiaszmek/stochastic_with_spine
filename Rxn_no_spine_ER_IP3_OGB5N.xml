@@ -457,72 +457,34 @@
 <Specie name="Cyt_SERCA" id="Cyt_SERCA" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Cyt_SERCA_Ca" id="Cyt_SERCA_Ca" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Cyt_SERCA_Ca2" id="Cyt_SERCA_Ca2" kdiff="0" kdiffunit="mu2/s"/>
-  <Specie name="ER_SERCA_Ca2" id="ER_SERCA_Ca2" kdiff="0" kdiffunit="mu2/s"/>
-  <Specie name="ER_SERCA_Ca" id="ER_SERCA_Ca" kdiff="0" kdiffunit="mu2/s"/>
-  <Specie name="ER_SERCA" id="ER_SERCA" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="LeakER" id="LeakER" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="CRT" id="CRT" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="CRTP" id="CRTP" kdiff="0" kdiffunit="mu2/s"/>
      
-
   <Reaction name="Cyt_SERCA_1a" id="Cyt_SERCA_1a">
     <Reactant specieID="Ca"/>
     <Reactant specieID="Cyt_SERCA"/>
     <Product specieID="Cyt_SERCA_Ca"/>
     
-    <forwardRate>2e-4</forwardRate>
-    <reverseRate>87.3e-3</reverseRate>
+    <forwardRate>0.0017147</forwardRate>
+    <reverseRate>0.84263</reverseRate>
     <Q10>0.2</Q10>
   </Reaction>
-
+ 
   <Reaction name="Cyt_SERCA_1b" id="Cyt_SERCA_1b">
     <Reactant specieID="Ca"/>
     <Reactant specieID="Cyt_SERCA_Ca"/>
     <Product specieID="Cyt_SERCA_Ca2"/>
-    
-    <forwardRate>1e-4</forwardRate>
-    <reverseRate>167.4e-3</reverseRate>
+        
+    <forwardRate>0.00085735</forwardRate>
+    <reverseRate>1.68526</reverseRate>
     <Q10>0.2</Q10>
   </Reaction>
-
-
-  <Reaction name="Cyt_SERCA_1c" id="Cyt_SERCA_1c">
+<Reaction name="Cyt_SERCA_1d" id="Cyt_SERCA_1d">
     <Reactant specieID="Cyt_SERCA_Ca2"/>
-    <Product specieID="ER_SERCA_Ca2"/>
-    <forwardRate>0.6e-3</forwardRate>
-    <reverseRate>0.097e-3</reverseRate>
-    <Q10>0.2</Q10>
-  </Reaction>
-
-  <Reaction name="Cyt_SERCA_1d" id="Cyt_SERCA_1d">
-    <Reactant specieID="CaER"/>
-    <Reactant specieID="ER_SERCA"/>
-    <Product specieID="ER_SERCA_Ca"/>
-    <forwardRate>3e-7</forwardRate>    
-    <reverseRate>30.02-e3</reverseRate>
-
-    <Q10>0.2</Q10>
-  </Reaction>
-
-  
-  <Reaction name="Cyt_SERCA_1e" id="Cyt_SERCA_1e">
-    
-    <Reactant specieID="CaER"/>
-    <Reactant specieID="ER_SERCA_Ca"/>
-    <Product specieID="ER_SERCA_Ca2"/>
-    <forwardRate>1e-7</forwardRate>    
-    <reverseRate>60.04e-3</reverseRate>
-
-    <Q10>0.2</Q10>
-  </Reaction>
-
-
-
-  <Reaction name="Cyt_SERCA_1f" id="Cyt_SERCA_1f">
-    <Reactant specieID="ER_SERCA"/>
+    <Product specieID="CaER" power="2"/>
     <Product specieID="Cyt_SERCA"/>
-    <forwardRate>0.4e-3</forwardRate>
-    <reverseRate>1.2e-6</reverseRate>
+    <forwardRate>50e-3</forwardRate>
     <Q10>0.2</Q10>
   </Reaction>
 

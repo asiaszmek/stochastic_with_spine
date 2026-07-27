@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <ReactionScheme>
-<!-- This is SERCA2 scheme from Bartol et al 2015, originally introduced by Higgins et al 2008 (senior author: James Sneyd)-->
+<!-- This is SERCA2 scheme from Bartol et al 2015, originally introduced by Higgins et al 2006 (senior author: James Sneyd)-->
    
   <Specie name="CaER" id="CaER" kdiff="10." kdiffunit="mu2/s"/>
   <Specie name="Cyt_SERCA" id="Cyt_SERCA" kdiff="0" kdiffunit="mu2/s"/>
@@ -49,7 +49,7 @@
     <Reactant specieID="ER_SERCA"/>
     <Product specieID="ER_SERCA_Ca"/>
     <forwardRate>3e-7</forwardRate>    
-    <reverseRate>30.02-e3</reverseRate>
+    <reverseRate>30.02e-3</reverseRate>
 
     <Q10>0.2</Q10>
   </Reaction>
@@ -69,10 +69,10 @@
 
 
   <Reaction name = "Cyt_SERCA_1f" id="Cyt_SERCA_1f">
-    <Reactant specieID="ER_SERCA"/>
-    <Product specieID="Cyt_SERCA"/>
-    <forwardRate>0.4e-3</forwardRate>
-    <reverseRate>1.2e-6</reverseRate>
+    <Reactant specieID="Cyt_SERCA"/>
+    <Product specieID="ER_SERCA"/>
+    <forwardRate>1.2e-6</forwardRate>
+    <reverseRate>0.4e-3</reverseRate>
     <Q10>0.2</Q10>
   </Reaction>
 

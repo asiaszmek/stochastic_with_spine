@@ -779,21 +779,41 @@
     <Reactant specieID="IP3"/>
     <Product specieID="IP3RIP3"/>
 
-    <forwardRate> 6676e-6   </forwardRate>
+    <forwardRate> 6670e-6   </forwardRate>
     <reverseRate> 200e-3       </reverseRate>
     <Q10>         0.2           </Q10>
   </Reaction>
 
+  <Reaction name="IP3RIP3+Ca" id="IP3RIP3+Ca">
+    <Reactant specieID="IP3RIP3"/>
+    <Reactant specieID="Ca"/>
+    <Product specieID="IP3RA11"/>
+
+    <forwardRate> 500e-6   </forwardRate>
+    <reverseRate> 667e-3       </reverseRate>
+    <Q10>         0.2           </Q10>
+  </Reaction>
+  
   <Reaction name="IP3R+Ca" id="IP3R+Ca">
     <Reactant specieID="IP3R"/>
     <Reactant specieID="Ca"/>
     <Product specieID="IP3RC"/>
 
-    <forwardRate> 5000e-6   </forwardRate>
-    <reverseRate> 1e-3       </reverseRate>
+    <forwardRate> 50e-6   </forwardRate>
+    <reverseRate> 1.71e-3       </reverseRate>
     <Q10>         0.2           </Q10>
   </Reaction>
 
+  <Reaction name="IP3RC+IP3" id="IP3RC+IP3">
+    <Reactant specieID="IP3RC"/>
+    <Reactant specieID="IP3"/>
+    <Product specieID="IP3RA11"/>
+
+    <forwardRate> 15.40e-6   </forwardRate>
+    <reverseRate> 18e-3       </reverseRate>
+    <Q10>         0.2           </Q10>
+  </Reaction>
+  
   <Reaction name="IP3RC--IP3RPa" id="IP3RC-IP3RPa">
     <Reactant specieID="IP3RC"/>
     <Product specieID="IP3RPa"/>
@@ -838,28 +858,6 @@
 
     <forwardRate> 5000e-6   </forwardRate>
     <reverseRate> 20e-3       </reverseRate>
-    <Q10>         0.2           </Q10>
-  </Reaction>
-
-
-   <Reaction name="IP3RIP3+Ca" id="IP3RIP3+Ca">
-    <Reactant specieID="IP3RIP3"/>
-    <Reactant specieID="Ca"/>
-    <Product specieID="IP3RA11"/>
-
-    <forwardRate> 500e-6   </forwardRate>
-    <reverseRate> 667e-3       </reverseRate>
-    <Q10>         0.2           </Q10>
-  </Reaction>
-
-
-  <Reaction name="IP3RC+IP3" id="IP3RC+IP3">
-    <Reactant specieID="IP3RC"/>
-    <Reactant specieID="IP3"/>
-    <Product specieID="IP3RA11"/>
-
-    <forwardRate> 1540e-6   </forwardRate>
-    <reverseRate> 18e-3       </reverseRate>
     <Q10>         0.2           </Q10>
   </Reaction>
 

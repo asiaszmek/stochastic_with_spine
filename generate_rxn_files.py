@@ -39,7 +39,7 @@ flist_pip_cycling = [
     "Rxn_module_mGLuR.xml",
     "Rxn_module_IP3R_Dawson_Freeman.xml",
     "Rxn_module_GluBuf.xml",
-    "Rxn_module_SERCA2.xml",
+    "Rxn_module_buffering_SERCA2.xml",
     "Rxn_module_GluBuf.xml",
     "Rxn_module_SOCE.xml",
     "Rxn_module_RyR2CaM_KeizerSmith.xml",
@@ -51,7 +51,7 @@ flist_no_ER_spine_basal = [
     "Rxn_module_CaCbuf.xml",
     "Rxn_module_GluBuf.xml",
     "Rxn_module_RyR2CaM_KeizerSmith.xml",
-    "Rxn_module_SERCA2.xml",
+    "Rxn_module_buffering_SERCA2.xml",
     "Rxn_module_SOCE.xml",
     "Rxn_module_mGLuR.xml",
     "Rxn_module_IP3R_Dawson_Freeman.xml"
@@ -62,7 +62,7 @@ flist_no_ER_spine_HFGlu = [
     "Rxn_module_NMDAR_0_Mg.xml",
     "Rxn_module_GluBuf.xml",
     "Rxn_module_RyR2CaM_KeizerSmith.xml",
-    "Rxn_module_SERCA2.xml",
+    "Rxn_module_buffering_SERCA2.xml",
     "Rxn_module_SOCE.xml",
     ]
 
@@ -79,7 +79,7 @@ flist_no_ER_spine_basal_IP3 = flist_no_ER_spine_basal + [
 flist_no_ER_spine_basal_old_age = [
     "Rxn_module_Ca_old_age.xml",
     "Rxn_module_RyR2CaM_KeizerSmith.xml",
-    "Rxn_module_SERCA2.xml",
+    "Rxn_module_buffering_SERCA2.xml",
     "Rxn_module_RyR2_KeizerSmith.xml",
     "Rxn_module_SOCE.xml",
     ]

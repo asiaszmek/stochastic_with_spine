@@ -37,7 +37,6 @@
 
     <NanoMolarity specieID="IP3R"      value="100"     />
     <NanoMolarity specieID="IP4"      value="2"     />
-    <NanoMolarity specieID="IP3"      value="13"     />
     <NanoMolarity specieID="IP2"      value="54"     />
     <NanoMolarity specieID="I"      value="587"     />
     <NanoMolarity specieID="IP3K" value="900" />

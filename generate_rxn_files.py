@@ -43,6 +43,7 @@ flist_pip_cycling = [
     "Rxn_module_GluBuf.xml",
     "Rxn_module_SOCE.xml",
     "Rxn_module_RyR2CaM_KeizerSmith.xml",
+    "Rxn_module_RyR3CaM_KeizerSmith.xml",
     "Rxn_module_Tubby.xml"
     ]
 

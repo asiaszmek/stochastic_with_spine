@@ -34,8 +34,10 @@
     <NanoMolarity specieID="STIM_2CaER" value="380" />
     <NanoMolarity specieID="STIM_2" value="12" />
     <NanoMolarity specieID="STIM_4" value="1" />
-
-    <NanoMolarity specieID="IP3R"      value="100"     />
+    <NanoMolarity specieID="I"      value="70"     />
+    <NanoMolarity specieID="IP2"      value="10"     />
+    <NanoMolarity specieID="IP3R"      value="13"     />
+    <NanoMolarity specieID="IP3RSb"      value="87"     />
     <NanoMolarity specieID="IP3K" value="900" />
     <NanoMolarity specieID="IP5P" value="1800" />
     <!--Gallimore's values-->
@@ -63,24 +65,25 @@
     <PicoSD specieID="GqaGTP" value="0"/>
     <PicoSD specieID="GqaGDP" value="0"/>
     
-    <PicoSD  specieID="Plc"  value="16"    />
-    <PicoSD  specieID="PlcCa"  value="1"   />
-    <PicoSD  specieID="PlcCaPip2"  value="3"   />
+    <PicoSD  specieID="Plc"  value="17"    />
+    <PicoSD  specieID="PlcCaPip2"  value="2"   />
     <PicoSD  specieID="PlcPip2"  value="78"    />
     <PicoSD  specieID="PlcCaGqaGTP"  value="0"    />
     <PicoSD  specieID="PlcGqaGTP"  value="0"    />
-    <PicoSD  specieID="PlcGqaGTPPip2"  value="0"    />
+    <PicoSD  specieID="PlcGqaGTPPip2"  value="1.4"    />
 
-    <PicoSD  specieID="Pip2" value="4400"  />
-    <PicoSD  specieID="PI" value="213490"/>
-    <PicoSD  specieID="PI4P" value="39705"  />
+    <PicoSD specieID="Pip2" value="3699" />
+    <PicoSD  specieID="PI" value="214060"/>
+    <PicoSD  specieID="PI4P" value="39832"  />
+    <PicoSD specieID="Dag" value="82" />
+    <PicoSD specieID="DagKdag" value="1" />
 
 
     <PicoSD  specieID="PA" value="0"  />
     <PicoSD specieID="RyR2CaM"      value="10"    />
     <PicoSD specieID="RyR3CaM"      value="1"    />
 
-    <PicoSD  specieID="Pip2_Tubby" value="3239"  />
+    <PicoSD  specieID="Pip2_Tubby" value="3194"  />
   </SurfaceDensitySet>
 
 </InitialConditions> 

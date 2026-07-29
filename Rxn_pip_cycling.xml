@@ -930,7 +930,7 @@
     <Reactant specieID="CaER"/>
     <Reactant specieID="ER_SERCA"/>
     <Product specieID="ER_SERCA_Ca"/>
-    <forwardRate>3e-7</forwardRate>    
+    <forwardRate>2e-7</forwardRate>    
     <reverseRate>30.02e-3</reverseRate>
 
     <Q10>0.2</Q10>

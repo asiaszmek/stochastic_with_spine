@@ -39,7 +39,7 @@ flist_pip_cycling = [
     "Rxn_module_mGLuR.xml",
     "Rxn_module_IP3R.xml",
     "Rxn_module_GluBuf.xml",
-    "Rxn_module_SERCA2.xml",
+    "Rxn_module_buffering_SERCA2.xml",
     "Rxn_module_GluBuf.xml",
     "Rxn_module_SOCE.xml",
     "Rxn_module_RyR2CaM_KeizerSmith.xml",

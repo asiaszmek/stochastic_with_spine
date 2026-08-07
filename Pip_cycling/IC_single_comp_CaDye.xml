@@ -42,7 +42,7 @@
     <!--Gallimore's values-->
     <NanoMolarity specieID="DagK"               value="400"  />
     <NanoMolarity specieID="Dye" value="9000" />
-    <NanoMolarity specieID="CaDye" value="1000" />
+    <NanoMolarity specieID="DyeCa" value="1000" />
   </ConcentrationSet>
 
 

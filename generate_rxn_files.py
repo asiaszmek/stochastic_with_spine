@@ -47,6 +47,20 @@ flist_pip_cycling = [
     "Rxn_module_Tubby.xml"
     ]
 
+flist_pip_cycling_ca = [
+    "Rxn_module_Ca.xml",
+    "Rxn_module_mGLuR.xml",
+    "Rxn_module_IP3R.xml",
+    "Rxn_module_GluBuf.xml",
+    "Rxn_module_buffering_SERCA2.xml",
+    "Rxn_module_GluBuf.xml",
+    "Rxn_module_SOCE.xml",
+    "Rxn_module_RyR2CaM_KeizerSmith.xml",
+    "Rxn_module_RyR3CaM_KeizerSmith.xml",
+    "Rxn_module_CalciumGreen.xml"
+    ]
+
+
 flist_no_ER_spine_basal = [
     "Rxn_module_Ca.xml",
     "Rxn_module_CaCbuf.xml",
@@ -211,6 +225,11 @@ if __name__ == "__main__":
     # 1 no mGluR no RyR
     my_rxn_f = read_in_files(flist_pip_cycling)
     with  open("Rxn_pip_cycling.xml", "w") as f:
+        f.write(etree.tostring(my_rxn_f, pretty_print=True).decode("utf-8"))
+
+
+    my_rxn_f = read_in_files(flist_pip_cycling_ca)
+    with  open("Rxn_pip_cycling_CaDye.xml", "w") as f:
         f.write(etree.tostring(my_rxn_f, pretty_print=True).decode("utf-8"))
 
     my_rxn_f = read_in_files(flist_no_ER_spine_basal)

@@ -2,7 +2,7 @@
   <InjectionStim injectionSite="dend01:submembrane" specieID="GluGlubuf">
     <onset>60000</onset>
     <duration>1</duration>
-    <rate>40</rate>
+    <rate>20</rate>
     <period>5</period>
     <end>80000</end>
   </InjectionStim>

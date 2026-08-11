@@ -108,8 +108,8 @@ https://doi.org/10.1371/journal.pcbi.1008360 0.01 1/ms
     <Product  specieID="IP3RO"               />
     <Product  specieID="Ca"               />
 
-    <forwardRate> 4e-5 </forwardRate>
-    <reverseRate> 4e-05      </reverseRate>
+    <forwardRate> 8e-5 </forwardRate>
+    <reverseRate> 8e-05      </reverseRate>
     <Q10>   0.2   </Q10>
    </Reaction>
     

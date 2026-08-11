@@ -1180,7 +1180,38 @@
     <forwardRate>5e-3</forwardRate>
     <reverseRate>5e-3</reverseRate>
   </Reaction>
-<Specie name="Tubby" id="Tubby" kdiff="4" kdiffunit="mu2/s"/>
+<Specie name="Cyt_SERCA3" id="Cyt_SERCA3" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="Cyt_SERCA3_Ca" id="Cyt_SERCA3_Ca" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="Cyt_SERCA3_Ca2" id="Cyt_SERCA3_Ca2" kdiff="0" kdiffunit="mu2/s"/>
+  <Reaction name="Cyt_SERCA3_1a" id="Cyt_SERCA3_1a">
+    <Reactant specieID="Ca"/>
+    <Reactant specieID="Cyt_SERCA3"/>
+    <Product specieID="Cyt_SERCA3_Ca"/>
+    
+    <forwardRate>0.0012</forwardRate>
+    <reverseRate>0.84263</reverseRate>
+    <Q10>0.2</Q10>
+  </Reaction>
+ 
+  <Reaction name="Cyt_SERCA3_1b" id="Cyt_SERCA3_1b">
+    <Reactant specieID="Ca"/>
+    <Reactant specieID="Cyt_SERCA3_Ca"/>
+    <Product specieID="Cyt_SERCA3_Ca2"/>
+        
+    <forwardRate>0.0006</forwardRate>
+    <reverseRate>1.68526</reverseRate>
+    <Q10>0.2</Q10>
+  </Reaction>
+<Reaction name="Cyt_SERCA3_1d" id="Cyt_SERCA3_1d">
+    <Reactant specieID="Cyt_SERCA3_Ca2"/>
+    <Product specieID="CaER" power="2"/>
+    <Product specieID="Cyt_SERCA3"/>
+    <forwardRate>140e-3</forwardRate>
+    <Q10>0.2</Q10>
+  </Reaction>
+
+
+  <Specie name="Tubby" id="Tubby" kdiff="4" kdiffunit="mu2/s"/>
   <Specie name="Pip2_Tubby" id="Pip2_Tubby" kdiff="0" kdiffunit="mu2/s"/>
   <Reaction name="Pip2+Tubby-&gt;Pip2_Tubby" id="Pip2+Tubby--Pip2_Tubby">
     <Reactant specieID="Pip2"/>

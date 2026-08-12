@@ -62,6 +62,22 @@ flist_pip_cycling_ca = [
     "Rxn_module_CalciumGreen.xml"
     ]
 
+flist_pip_cycling_ca_old_age = [
+    "Rxn_module_Ca_old_age.xml",
+    "Rxn_module_mGLuR.xml",
+    "Rxn_module_IP3R.xml",
+    "Rxn_module_GluBuf.xml",
+    "Rxn_module_SERCA2.xml",
+    "Rxn_module_GluBuf.xml",
+    "Rxn_module_SOCE.xml",
+    "Rxn_module_RyR2CaM_KeizerSmith.xml",
+    "Rxn_module_RyR3CaM_KeizerSmith.xml",
+    "Rxn_module_RyR2_KeizerSmith.xml",
+    "Rxn_module_RyR3.xml",
+    "Rxn_module_SERCA3.xml",
+    "Rxn_module_CalciumGreen.xml"
+    ]
+
 
 flist_no_ER_spine_basal = [
     "Rxn_module_Ca.xml",
@@ -234,6 +250,10 @@ if __name__ == "__main__":
     with  open("Rxn_pip_cycling_CaDye.xml", "w") as f:
         f.write(etree.tostring(my_rxn_f, pretty_print=True).decode("utf-8"))
 
+    my_rxn_f = read_in_files(flist_pip_cycling_ca_old_age)
+    with  open("Rxn_pip_cycling_old_age_CaDye.xml", "w") as f:
+        f.write(etree.tostring(my_rxn_f, pretty_print=True).decode("utf-8"))
+    
     my_rxn_f = read_in_files(flist_no_ER_spine_basal)
     with  open("Rxn_no_spine_ER_bas.xml", "w") as f:
         f.write(etree.tostring(my_rxn_f, pretty_print=True).decode("utf-8"))

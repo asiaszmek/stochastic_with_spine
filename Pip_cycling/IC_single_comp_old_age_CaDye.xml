@@ -33,7 +33,7 @@
     <NanoMolarity specieID="Cyt_SERCA3_Ca" value="64"/>
     <NanoMolarity specieID="Cyt_SERCA3_Ca2" value="2"/>
 
-    <NanoMolarity specieID="LeakER" value="490" />
+    <NanoMolarity specieID="LeakER" value="245" />
  
     <NanoMolarity specieID="STIM_2CaER" value="380" />
     <NanoMolarity specieID="STIM_2" value="12" />
@@ -66,7 +66,8 @@
     <!-- doi.org/10.3390/ijms22115867 -->
     <PicoSD  specieID="MgluR" value="16"  />
     <PicoSD  specieID="GluMgluR" value="0"  />
-    <PicoSD specieID="MgluRGq" value="363"/>
+    <!-- https://pmc.ncbi.nlm.nih.gov/articles/PMC8378132/-->
+    <PicoSD specieID="MgluRGq" value="180"/>
     <PicoSD specieID="Gqabg" value="4248"/>
     <PicoSD specieID="GluMgluRGq" value="5"/>
     <PicoSD specieID="GqaGTP" value="0"/>

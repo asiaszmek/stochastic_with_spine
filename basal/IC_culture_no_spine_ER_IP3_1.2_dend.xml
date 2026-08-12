@@ -85,6 +85,7 @@
     <NanoMolarity specieID="Cyt_SERCA"       value="0"     />
     <NanoMolarity specieID="Cyt_SERCA_Ca"       value="0"     />
     <NanoMolarity specieID="Cyt_SERCA_Ca2"       value="0"     />
+    <NanoMolarity specieID="IP3R"      value="0"     />
     <NanoMolarity specieID="LeakER" value="0" />
     <NanoMolarity specieID="STIM_2" value="0" />
     <NanoMolarity specieID="STIM_2CaER" value="0" />
@@ -119,7 +120,7 @@
     <NanoMolarity specieID="LeakER" value="0" />
     <NanoMolarity specieID="STIM_2" value="0" />
     <NanoMolarity specieID="STIM_2CaER" value="0" />
-  <NanoMolarity specieID="MgluR"              value="50"     />
+    <NanoMolarity specieID="MgluR"              value="50"     />
     <NanoMolarity specieID="MgluRGq"              value="761"     />
     <NanoMolarity specieID="GluMgluRGq"              value="0"     />
     <NanoMolarity specieID="Gqabg"              value="7300"  />
@@ -136,7 +137,8 @@
     <NanoMolarity specieID="GqaGDP"      value="82"     />
     <NanoMolarity  specieID="Dag" value="2680"  />
     <NanoMolarity  specieID="DagKdag" value="18"  />
-    <NanoMolarity  specieID="PA" value="0"  /> 
+    <NanoMolarity  specieID="PA" value="0"  />
+    <NanoMolarity specieID="IP3R"      value="0"     />
    
   </ConcentrationSet>
  
@@ -147,7 +149,7 @@
     <NanoMolarity specieID="LeakER" value="0" />
     <NanoMolarity specieID="STIM_2" value="0" />
     <NanoMolarity specieID="STIM_2CaER" value="0" />
-    
+    <NanoMolarity specieID="IP3R"      value="0"     />
   </ConcentrationSet>
 
 </InitialConditions> 

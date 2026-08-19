@@ -58,7 +58,7 @@
     <PicoSD specieID="PMJ" value="6"/>
     <PicoSD specieID="Orai" value="199"/>
     <PicoSD specieID="OraiSTIM_4" value="1"/>
-    <PicoSD specieID="RyR2CaM"      value="10"    />
+    <PicoSD specieID="RyR2CaM"      value="5"    />
     <PicoSD specieID="RyR3CaM"      value="3"    />
 
     <PicoSD  specieID="MgluR" value="20"  />

@@ -84,7 +84,7 @@
     <PicoSD  specieID="Dag" value="351"  />
     <PicoSD  specieID="DagKdag" value="18"  />
     <PicoSD  specieID="PA" value="0.1"  />
-    <PicoSD specieID="RyR2CaM"      value="10"    />
+    <PicoSD specieID="RyR2CaM"      value="5"    />
   </SurfaceDensitySet>
   <ConcentrationSet region="PSD">
     <NanoMolarity specieID="pmca2b"      value="3651"    />

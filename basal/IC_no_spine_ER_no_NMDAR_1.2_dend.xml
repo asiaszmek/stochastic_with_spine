@@ -54,7 +54,7 @@
     <PicoSD specieID="pmca1aCa" value="0"/>
     <PicoSD specieID="PMJ" value="6"/>
     <PicoSD specieID="Orai" value="200"/>
-    <PicoSD specieID="RyR2CaM"      value="10"    />
+    <PicoSD specieID="RyR2CaM"      value="5"    />
     <PicoSD  specieID="MgluR" value="20"  />
     <PicoSD  specieID="GluMgluR" value="0"  />
     <PicoSD specieID="MgluRGq" value="440"/>

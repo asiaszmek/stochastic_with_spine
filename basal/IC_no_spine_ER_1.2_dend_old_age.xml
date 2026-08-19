@@ -43,8 +43,8 @@
     <PicoSD specieID="pmca1aCa" value="0"/>
     <PicoSD specieID="PMJ" value="6"/>
     <PicoSD specieID="Orai" value="100"/>
-    <PicoSD specieID="RyR2CaM"      value="10"    />
-    <PicoSD specieID="RyR2"      value="10"    />
+    <PicoSD specieID="RyR2CaM"      value="5"    />
+    <PicoSD specieID="RyR2"      value="5"    />
   </SurfaceDensitySet>
   <ConcentrationSet region="PSD">
     <NanoMolarity specieID="CaOutLeak" value="1875"/>

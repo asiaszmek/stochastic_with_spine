@@ -61,7 +61,7 @@
     <PicoSD specieID="PMJ" value="6"/>
     <PicoSD specieID="Orai" value="198.5"/>
     <PicoSD specieID="OraiSTIM_4" value="1.3333"/>
-    <PicoSD specieID="RyR2CaM"      value="10"    />
+    <PicoSD specieID="RyR2CaM"      value="5"    />
     <PicoSD specieID="RyR3CaM"      value="3"    />
 
     <PicoSD  specieID="MgluR" value="18"  />
@@ -88,7 +88,7 @@
     <PicoSD  specieID="Dag" value="356"  />
     <PicoSD  specieID="DagKdag" value="4"  />
     <PicoSD  specieID="PA" value="0.16"  />
-    <PicoSD specieID="RyR2CaM"      value="10"    />
+    <PicoSD specieID="RyR2CaM"      value="5"    />
   </SurfaceDensitySet>
   <ConcentrationSet region="PSD">
     <NanoMolarity specieID="pmca2b"      value="3651"    />

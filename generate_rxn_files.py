@@ -66,6 +66,7 @@ flist_pip_cycling_ca_old_age = [
     "Rxn_module_Ca_old_age.xml",
     "Rxn_module_mGLuR.xml",
     "Rxn_module_IP3R.xml",
+    "Rxn_module_IP3R_oxi.xml",
     "Rxn_module_GluBuf.xml",
     "Rxn_module_SERCA2.xml",
     "Rxn_module_GluBuf.xml",

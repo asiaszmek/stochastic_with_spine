@@ -846,6 +846,56 @@
    </Reaction>
     
 
+ <Specie name="oIP3R" id="oIP3R" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="oIP3RIP3" id="oIP3RIP3" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="oIP3RO" id="oIP3RO" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="oIP3RC" id="oIP3RC" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="oIP3RC2" id="oIP3RC2" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="oIP3RC3" id="oIP3RC3" kdiff="0" kdiffunit="mu2/s"/>
+
+  <Specie name="oIP3RC4" id="oIP3RC4" kdiff="0" kdiffunit="mu2/s"/>
+  <Reaction name="oIP3R+IP3" id="oIP3R+IP3">
+    <Reactant specieID="oIP3R"/>
+    <Reactant specieID="IP3"/>
+    <Product specieID="oIP3RIP3"/>
+
+    <forwardRate> 1000e-6   </forwardRate>
+    <reverseRate> 6.45       </reverseRate>
+    <Q10>         0.2           </Q10>
+  </Reaction>
+
+  <Reaction name="oIP3RIP3+Ca" id="oIP3RIP3+Ca">
+    <Reactant specieID="oIP3RIP3"/>
+    <Reactant specieID="Ca"/>
+    <Product specieID="oIP3RO"/>
+    
+    <forwardRate> 8000e-6   </forwardRate>
+    <reverseRate> 2000e-3    </reverseRate>
+    <Q10>         0.2           </Q10>
+  </Reaction>
+
+   <Reaction name="oIP3R+Ca" id="oIP3R+Ca">                                                                      
+    <Reactant specieID="oIP3R"/>                                                                      
+    <Reactant specieID="Ca"/>                                                                     
+    <Product specieID="oIP3RC"/>                                                                 
+                                                                                                                
+    <forwardRate> 8.889e-6  </forwardRate>                                                                       
+    <reverseRate> 5e-3      </reverseRate>                                                                      
+    <Q10>         0.2           </Q10>                                                                          
+  </Reaction>                                                                                                   
+                                                                                                                
+  <Reaction name="oIP3R_Ob-flux_Ia" id="oIP3R_Ob-fluxa">
+    <Reactant specieID="oIP3RO"/>
+    <Reactant specieID="CaER"/>
+    <Product specieID="oIP3RO"/>
+    <Product specieID="Ca"/>
+
+    <forwardRate> 8e-5 </forwardRate>
+    <reverseRate> 8e-05      </reverseRate>
+    <Q10>   0.2   </Q10>
+   </Reaction>
+    
+
  <Specie name="GluOut" id="GluOut" kdiff="320" kdiffunit="mu2/s"/>
   <Specie name="GluBuf" id="GluBuf" kdiff="320" kdiffunit="mu2/s"/>
   <Specie name="GluGlubuf" id="GluGlubuf" kdiff="320" kdiffunit="mu2/s"/>

@@ -43,7 +43,9 @@
     <NanoMolarity specieID="IP3"      value="13"     />
     <NanoMolarity specieID="IP4"      value="10"     />
     <!-- doi: 10.1016/j.neurobiolaging.2013.10.090 lower IP3R1 expression-->
-    <NanoMolarity specieID="IP3R"      value="50"     />
+    <NanoMolarity specieID="IP3R"      value="40"     />
+    <NanoMolarity specieID="oIP3R"      value="40"     />
+
     <NanoMolarity specieID="IP3K" value="450" />
     <NanoMolarity specieID="IP5P" value="500" />
     <!--Gallimore's values-->

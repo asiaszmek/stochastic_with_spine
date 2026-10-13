@@ -1,0 +1,25 @@
+<StimulationSet>
+  <InjectionStim specieID="Ca" injectionSite="sa1[0].pointA">
+    <rates>3001.00 84
+3002.00 27
+3003.00 12
+3004.00 8
+3005.00 5
+3006.00 3
+3007.00 2
+3008.00 1
+3011.00 0
+</rates>
+  </InjectionStim>
+  <InjectionStim specieID="GluGlubuf" injectionSite="sa1[0].pointA">
+    <rates>3001.00 481
+3002.00 177
+3003.00 65
+3004.00 24
+3005.00 9
+3006.00 3
+3007.00 1
+3008.00 0
+</rates>
+  </InjectionStim>
+</StimulationSet>

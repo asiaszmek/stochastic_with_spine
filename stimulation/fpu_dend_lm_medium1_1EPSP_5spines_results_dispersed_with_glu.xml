@@ -189,14 +189,16 @@
 </rates>
   </InjectionStim>
   <InjectionStim specieID="Ca" injectionSite="sa1[0].pointA">
-    <rates>3001.00 50
-3002.00 9
-3003.00 6
-3004.00 4
-3005.00 3
-3006.00 2
-3007.00 1
-3009.00 0
+    <rates>3001.00 158
+3002.00 27
+3003.00 18
+3004.00 13
+3005.00 8
+3006.00 5
+3007.00 4
+3008.00 2
+3010.00 1
+3012.00 0
 </rates>
   </InjectionStim>
   <InjectionStim specieID="GluGlubuf" injectionSite="sa1[0].pointA">

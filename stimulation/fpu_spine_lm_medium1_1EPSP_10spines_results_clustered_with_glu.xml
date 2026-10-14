@@ -1,13 +1,16 @@
 <StimulationSet>
   <InjectionStim specieID="Ca" injectionSite="sa1[0].pointA">
-    <rates>3001.00 67
-3002.00 15
-3003.00 8
-3004.00 6
-3005.00 4
-3006.00 2
-3008.00 1
-3010.00 0
+    <rates>3001.00 212
+3002.00 46
+3003.00 26
+3004.00 18
+3005.00 12
+3006.00 8
+3007.00 5
+3008.00 3
+3009.00 2
+3010.00 1
+3013.00 0
 </rates>
   </InjectionStim>
   <InjectionStim specieID="GluGlubuf" injectionSite="sa1[0].pointA">

@@ -602,12 +602,12 @@ def make_distance_figs(directories, stim_dict, output, types, markers,
                        fillstyles, length=42, spine_idx=21, t_init=3000,
                        xlabel=r"Auc head/Auc basal",
                        ylabel=r"Spatial spread ($\unit{\micro\metre}$))",
-                       max_ca=False, colors={}):
+                       max_ca=True, colors={}):
     if not colors:
         colors = {}
         for fname in directories:
             colors[fname] = "tab:blue"
-    if max_ca is True:
+    if max_ca:
         xlabel = r"$\mathrm{max\left(Ca_{head}^{2+}\right)}\, (\unit{\micro\Molar})$"
     fig1, ax1 = plt.subplots(1, len(stim_dict.keys()),
                              figsize=(len(stim_dict.keys())*5, 5))
@@ -683,8 +683,8 @@ def make_distance_figs(directories, stim_dict, output, types, markers,
 def area_over_250_mean(directories, stim_dict, output, types, markers,
                          fillstyles, length=42, spine_idx=21, t_init=3000,
                          xlabel=r"Auc head/Auc basal",
-                         ylabel=r"Auc dendrite/Auc basal)", max_ca=False):
-    if max_ca is True:
+                         ylabel=r"Auc dendrite/Auc basal", max_ca=False):
+    if max_ca:
         xlabel = r"$\mathrm{max\left(Ca_{head}^{2+}\right)}\, (\unit{\micro\Molar})$"
     fig1, ax1 = plt.subplots(1, len(stim_dict.keys()),
                              figsize=(len(stim_dict.keys())*5, 5))

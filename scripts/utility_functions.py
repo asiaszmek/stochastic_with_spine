@@ -427,7 +427,7 @@ def get_distance(conc_dict, dt, t_init, stim_len, spine_idx, rollo=True,
         except ValueError:
             continue
 
-        ca_lim = ca_ctrl+5*ca_std
+        ca_lim = 2.5*ca_ctrl#+5*ca_std
         indices = []
         for j in range(spine_idx, shape):
             
@@ -479,7 +479,7 @@ def get_distance(conc_dict, dt, t_init, stim_len, spine_idx, rollo=True,
 
 
 def get_blob(conc_dict, dt, t_init, stim_len, spine_idx, rollo=True,
-             interval=700):
+             interval=1000):
     
     decays = np.zeros((len(conc_dict), 1))
     shape = conc_dict["trial0"].shape[0]
@@ -592,7 +592,10 @@ def fit_exp(time, ca_conc, dt, duration=2000, t_init=3000, stim_len=3000, spatia
     return popt[1]
 
 
-
+stim_len = {"1EPSP": 0,
+            "4EPSP_100Hz": 0,
+            "100EPSP_100Hz": 0,
+            }
 
 
 def make_distance_figs(directories, stim_dict, output, types, markers,
@@ -639,7 +642,7 @@ def make_distance_figs(directories, stim_dict, output, types, markers,
                     else:
                         auch[j] = head_ca[trial][1, t_start:].sum()/(len(head_ca[trial][1, t_start:])*head_ca[trial][1,:t_start].mean())
                     
-                spread = get_distance(dend_ca, dt, t_init=t_init, stim_len=int(dur),
+                spread = get_distance(dend_ca, dt, t_init=t_init, stim_len=stim_len[dur],
                                       spine_idx=spine_idx)
                 auc_head_m.append(auch.mean())
                 

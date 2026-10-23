@@ -32,7 +32,11 @@ region_list = ["dend01", "dend02", "dend03", "dend04", "dend05", "dend06", "dend
                "dend11", "dend12", "dend13", "dend14", "dend15", "dend16", "dend17",  "dend18", "dend18", "dend19", "dend20",
                "dend21"]
 
+
+specie = "CaMCa4"
+
 if __name__ == '__main__':
+    print("ER_no_ER_aucdend_auchead_%s.png" %specie)
     directories = [file_no_ER_ctrl, file_dend_ER_ctrl, file_spine_ER_dend_ER, file_spine_ER_no_dend_ER]
     fig1, fig2, fig3 = utils.max_vs_auc_head_neck_dend(directories,
                                                        stim_dict, output,
@@ -40,9 +44,13 @@ if __name__ == '__main__':
                                                        fillstyles,
                                                        length=42,
                                                        which_dend=["dend11"],
-                                                       t_init=3000)
+                                                       t_init=3000,
+                                                       specie=specie)
        
-
-    fig1.savefig("ER_no_ER_aucdend_auchead.png", dpi=100, bbox_inches="tight")
-    fig2.savefig("ER_no_ER_maxdend_maxhead.png", dpi=100, bbox_inches="tight")
-    fig3.savefig("ER_no_ER_aucneck_auchead.png", dpi=100, bbox_inches="tight")
+    print("ER_no_ER_aucdend_auchead_%s.png" %specie)
+    fig1.savefig("ER_no_ER_aucdend_auchead_%s.png" %specie,
+                 dpi=100, bbox_inches="tight")
+    fig2.savefig("ER_no_ER_maxdend_maxhead_%s.png" %specie, dpi=100,
+                 bbox_inches="tight")
+    fig3.savefig("ER_no_ER_aucneck_auchead_%s.png" %specie, dpi=100,
+                 bbox_inches="tight")

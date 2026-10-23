@@ -427,7 +427,7 @@ def get_distance(conc_dict, dt, t_init, stim_len, spine_idx, rollo=True,
         except ValueError:
             continue
 
-        ca_lim = 2.5*ca_ctrl#+5*ca_std
+        ca_lim = ca_ctrl+5*ca_std
         indices = []
         for j in range(spine_idx, shape):
             
@@ -602,13 +602,13 @@ def make_distance_figs(directories, stim_dict, output, types, markers,
                        fillstyles, length=42, spine_idx=21, t_init=3000,
                        xlabel=r"Auc head/Auc basal",
                        ylabel=r"Spatial spread ($\unit{\micro\metre}$))",
-                       max_ca=True, colors={}):
+                       max_ca=True, colors={}, specie="Ca"):
     if not colors:
         colors = {}
         for fname in directories:
             colors[fname] = "tab:blue"
     if max_ca:
-        xlabel = r"$\mathrm{max\left(Ca_{head}^{2+}\right)}\, (\unit{\micro\Molar})$"
+        xlabel = r"$\mathrm{max\left(%s_{head}^{2+}\right)}\, (\unit{\micro\Molar})$" % specie
     fig1, ax1 = plt.subplots(1, len(stim_dict.keys()),
                              figsize=(len(stim_dict.keys())*5, 5))
     fig2, ax2 = plt.subplots(1, len(stim_dict.keys()),
@@ -627,8 +627,8 @@ def make_distance_figs(directories, stim_dict, output, types, markers,
                     print("Cound not open ", fname % (dur, inj))
                     continue
         
-                dend_ca, time_dict = get_conc(my_data, "Ca", region_list, output)
-                head_ca, time_head_dict = get_conc(my_data, "Ca", ['head'], output)
+                dend_ca, time_dict = get_conc(my_data, specie, region_list, output)
+                head_ca, time_head_dict = get_conc(my_data, specie, ['head'], output)
                 dt = time_dict["trial0"][1]-time_dict["trial0"][0]
                 t_start = int(t_init/dt)
                
@@ -640,9 +640,14 @@ def make_distance_figs(directories, stim_dict, output, types, markers,
                     if max_ca is True:
                         auch[j] = head_ca[trial][1,:].max()/1000
                     else:
-                        auch[j] = head_ca[trial][1, t_start:].sum()/(len(head_ca[trial][1, t_start:])*head_ca[trial][1,:t_start].mean())
-                    
-                spread = get_distance(dend_ca, dt, t_init=t_init, stim_len=stim_len[dur],
+                        if specie == "Ca":
+                            auch[j] = head_ca[trial][1, t_start:].sum()/(len(head_ca[trial][1, t_start:])*head_ca[trial][1,:t_start].mean())
+                            
+                        else:
+                            auch[j] = head_ca[trial][1, t_start:].sum()
+                            
+                spread = get_distance(dend_ca, dt, t_init=t_init,
+                                      stim_len=stim_len[dur],
                                       spine_idx=spine_idx)
                 auc_head_m.append(auch.mean())
                 
@@ -737,8 +742,8 @@ def area_over_250_mean(directories, stim_dict, output, types, markers,
                             label=types[i], marker=markers[i],
                             fillstyle=fillstyles[i], color="tab:blue",
                             linewidth=0)
-        ax1[k].set_title("Stimulation %s (ms)"% dur)      
-        ax2[k].set_title("Stimulation %s (ms)"% dur)      
+        ax1[k].set_title("Stimulation %s"% dur)      
+        ax2[k].set_title("Stimulation %s"% dur)      
         ax1[k].set_ylabel(ylabel)
         ax1[k].set_xlabel(xlabel)
         ax2[k].set_ylabel(ylabel)
@@ -752,7 +757,8 @@ def area_over_250_mean(directories, stim_dict, output, types, markers,
 
 
 def max_vs_auc_head_neck_dend(directories, stim_dict, output, types, markers,
-                       fillstyles, length=42, which_dend=["dend11"], t_init=3000):
+                              fillstyles, length=42, which_dend=["dend11"],
+                              t_init=3000, specie="Ca"):
     fig_dh, ax_dh = plt.subplots(1, len(stim_dict.keys()),
                                  figsize=(len(stim_dict.keys())*5, 5))
     fig_max_dh, ax_max_dh = plt.subplots(1, len(stim_dict.keys()),
@@ -781,10 +787,13 @@ def max_vs_auc_head_neck_dend(directories, stim_dict, output, types, markers,
                     print("Cound not open ", fname % (dur, inj))
                     continue
         
-                dend_ca, time_dict = get_conc(my_data, "Ca", which_dend, output)
-                head_ca, time_head_dict = get_conc(my_data, "Ca", ['head'], output)
-                neck_ca, time_head_dict = get_conc(my_data, "Ca", ['neck'], output)
-               
+                dend_ca, time_dict = get_conc(my_data, specie,
+                                              which_dend, output)
+                head_ca, time_head_dict = get_conc(my_data, specie, ['head'],
+                                                   output)
+                neck_ca, time_head_dict = get_conc(my_data, specie, ['neck'],
+                                                   output)
+                
                 dt = time_dict["trial0"][1]-time_dict["trial0"][0]
                 t_start = int(t_init/dt)
                
@@ -804,9 +813,16 @@ def max_vs_auc_head_neck_dend(directories, stim_dict, output, types, markers,
                     except ValueError:
                         break
                     maxd[j] = dend_ca[trial][:, t_start:].mean(axis=0).max()
-                    auch[j] = head_ca[trial][1, t_start:].sum()/(len(head_ca[trial][1, t_start:])*head_ca[trial][1,:t_start].mean())
-                    aucn[j] = neck_ca[trial][:, t_start:].sum()/(len(head_ca[trial][1, t_start:])*neck_ca[trial][:,:t_start].mean())
-                    aucd[j] = dend_ca[trial][:, t_start:].sum()/2/(len(head_ca[trial][1, t_start:])*dend_ca[trial][:, :t_start].mean())
+                    if specie == "Ca":
+                        auch[j] = head_ca[trial][1, t_start:].sum()/(len(head_ca[trial][1, t_start:])*head_ca[trial][1,:t_start].mean())
+                        aucn[j] = neck_ca[trial][:, t_start:].sum()/(len(head_ca[trial][1, t_start:])*neck_ca[trial][:,:t_start].mean())
+                        aucd[j] = dend_ca[trial][:, t_start:].sum()/2/(len(head_ca[trial][1, t_start:])*dend_ca[trial][:, :t_start].mean())
+                    else:
+                        auch[j] = head_ca[trial][1, t_start:].sum()
+                        aucn[j] = neck_ca[trial][:, t_start:].sum()
+                        aucd[j] = dend_ca[trial][:, t_start:].sum()/2
+                                                                
+                                                                    
                     
              
                 auc_head_m.append(auch.mean())
@@ -826,8 +842,10 @@ def max_vs_auc_head_neck_dend(directories, stim_dict, output, types, markers,
                                   yerr=max_dend_e, label=types[i],
                                   marker=markers[i], fillstyle=fillstyles[i],
                                   color="tab:blue", linewidth=0)
-            ax_dh[k].errorbar(x=auc_head_m, y=auc_dend_m, xerr=auc_head_e, yerr=auc_dend_e,label=types[i], marker=markers[i],
-                              fillstyle=fillstyles[i], color="tab:blue", linewidth=0)
+            ax_dh[k].errorbar(x=auc_head_m, y=auc_dend_m, xerr=auc_head_e,
+                              yerr=auc_dend_e,label=types[i], marker=markers[i],
+                              fillstyle=fillstyles[i], color="tab:blue",
+                              linewidth=0)
             ax_nh[k].errorbar(x=auc_head_m, y=auc_neck_m, xerr=auc_head_e,
                               yerr=auc_neck_e, label=types[i],
                               marker=markers[i], fillstyle=fillstyles[i],
@@ -835,18 +853,19 @@ def max_vs_auc_head_neck_dend(directories, stim_dict, output, types, markers,
 
            
         if not k:
-            ax_max_dh[k].set_ylabel(r"Max dend Ca ($\unit{\nano\Molar}$)")
-            ax_dh[k].set_ylabel("Auc dend Ca/Auc basal")
-            ax_nh[k].set_ylabel("Auc neck Ca/Auc basal")                
-        ax_max_dh[k].set_xlabel(r"Max head Ca ($\unit{\micro\Molar}$)")
-        ax_dh[k].set_xlabel("Auc head Ca/Auc basal")
-        ax_nh[k].set_xlabel("Auc head Ca/Auc basal")
-        ax_max_dh[k].set_title("Stimulation %s (ms)"% dur)
-        ax_dh[k].set_title("Stimulation %s (ms)"% dur)
-        ax_nh[k].set_title("Stimulation %s (ms)"% dur)
-    pretty_axis(ax_max_dh)
-    pretty_axis(ax_dh)
-    pretty_axis(ax_nh)
+            ax_max_dh[k].set_ylabel(r"Max dend %s ($\unit{\nano\Molar}$)"
+                                    % specie)
+            ax_dh[k].set_ylabel("Auc dend %s/Auc basal" % specie)
+            ax_nh[k].set_ylabel("Auc neck %s/Auc basal" % specie)                
+        ax_max_dh[k].set_xlabel(r"Max head %s ($\unit{\micro\Molar}$)" % specie)
+        ax_dh[k].set_xlabel("Auc head %s/Auc basal" % specie)
+        ax_nh[k].set_xlabel("Auc head %s/Auc basal" % specie)
+        ax_max_dh[k].set_title("Stimulation %s"% dur)
+        ax_dh[k].set_title("Stimulation %s"% dur)
+        ax_nh[k].set_title("Stimulation %s"% dur)
+    #pretty_axis(ax_max_dh)
+    #pretty_axis(ax_dh)
+    #pretty_axis(ax_nh)
     ax_max_dh[0].legend()         
     ax_dh[0].legend()
     ax_nh[0].legend()

@@ -39,10 +39,11 @@ spine_dend = "dend11"
 region_list = ["dend01", "dend02", "dend03", "dend04", "dend05", "dend06", "dend07","dend08", "dend08", "dend09", "dend10",
                "dend11", "dend12", "dend13", "dend14", "dend15", "dend16", "dend17",  "dend18", "dend18", "dend19", "dend20",
                "dend21"]
-spine_idx = 21
+
 if __name__ == '__main__':
     rollo = False
     dirs = [file_dend_ER_ctrl, file_dend_ER_oa, file_spine_ER_dend_ER, file_spine_ER_dend_ER_oa] 
     fig = utils.make_distance_figs(dirs, stim_dict, output, types, markers,
-                                   fillstyles, length=42, spine_idx=21, t_init=t_init, max_ca=True)
+                                   fillstyles, length=42,
+                                   t_init=t_init, max_ca=True)
     fig.savefig("Spatial_spread_ER_no_ER_old_age_%s.png" % rollo, dpi=100, bbox_inches="tight")

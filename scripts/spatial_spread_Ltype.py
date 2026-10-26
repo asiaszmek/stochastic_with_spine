@@ -30,17 +30,14 @@ fillstyles = ["none", "full", "none", "full", "full"]
 stim_dict = {
     "1EPSP": [1, 5, 10, 15, 20],
     "4EPSP_100Hz": [1, 5, 10, 15, 20],
-    "100EPSP_100Hz": [1, 5, 10, 15, 20],
+    #"100EPSP_100Hz": [1, 5, 10, 15, 20],
 }
-spine_dend = "dend11"
-region_list = ["dend01", "dend02", "dend03", "dend04", "dend05", "dend06", "dend07","dend08", "dend08", "dend09", "dend10",
-               "dend11", "dend12", "dend13", "dend14", "dend15", "dend16", "dend17",  "dend18", "dend18", "dend19", "dend20",
-               "dend21"]
-spine_idx = 21
+specie="Ca"
 if __name__ == '__main__':
     rollo = False
     dirs = [file_dend_ER_ctrl,file_dend_ER_dend_Ca, file_spine_ER_dend_ER,
             file_spine_ER_dend_ER_dend_Ca]#, file_no_ER_Ltype]
     fig = utils.make_distance_figs(dirs, stim_dict, output, types, markers,
-                                   fillstyles, length=42, spine_idx=21, t_init=t_init, max_ca=True)
-    fig.savefig("Spatial_spread_Ltype_%s.png" % rollo, dpi=100, bbox_inches="tight")
+                                   fillstyles, length=42, t_init=t_init,
+                                   max_ca=True,specie=specie)
+    fig.savefig("Spatial_spread_Ltype_%s.png" %specie, dpi=100, bbox_inches="tight")

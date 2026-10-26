@@ -407,7 +407,7 @@ def get_conc(my_file, specie, region_list, output):
     return conc_dict, time_dict
 
 
-def get_distance(conc_dict, dt, t_init, stim_len, spine_idx, rollo=True,
+def get_distance(conc_dict, dt, t_init, stim_len,rollo=True,
                  interval=700):
     
     decays = np.zeros((len(conc_dict), 1))
@@ -426,8 +426,9 @@ def get_distance(conc_dict, dt, t_init, stim_len, spine_idx, rollo=True,
        
         except ValueError:
             continue
-
-        ca_lim = ca_ctrl+5*ca_std
+        spine_idx = np.unravel_index(concentration[:new_beg].argmax(),
+                                     concentration[:new_beg].shape)[0]
+        ca_lim = 2.5*ca_ctrl#+5*ca_std
         indices = []
         for j in range(spine_idx, shape):
             
@@ -474,7 +475,7 @@ def get_distance(conc_dict, dt, t_init, stim_len, spine_idx, rollo=True,
             if rollo:
                 new_beg = new_beg + new_idx -100
         decays[i] = len(indices)/2*0.5
-        
+        print(indices)
     return decays
 
 
@@ -504,11 +505,12 @@ def get_blob(conc_dict, dt, t_init, stim_len, spine_idx, rollo=True,
     return decays
 
 
-
-def max_vs_distance(conc, dt, t_init, spine_idx=49, length=51):
+def max_vs_distance(conc, dt, t_init, length=51):
     out_conc = np.zeros((len(conc.values()), spine_idx))
     start = int(t_init/dt)
     for i, (key, concentration) in enumerate(conc.items()):
+        spine_idx = np.unravel_idx(concentration[start:].argmax(),
+                                   concentration[start:].shape) 
         for j in range(spine_idx):
             #print(spine_idx+j, spine_idx-j, out_conc.shape[1], len(concentration))
             out_conc[i, j] = max(max(concentration[spine_idx+j, start:]),
@@ -530,6 +532,7 @@ def get_max_basal(conc, dt, t_init, spine_idx, length):
 
        
     return np.array(basal)
+
 
 def mean_vs_distance(conc, dt, t_init, period=500,  length=51):
     out_conc = np.zeros((len(conc.values()), spine_idx))
@@ -565,7 +568,9 @@ def get_mean_basal(conc, dt, t_init, length):
        
     return np.array(basal)
 
-def fit_exp(time, ca_conc, dt, duration=2000, t_init=3000, stim_len=3000, spatial=False):
+
+def fit_exp(time, ca_conc, dt, duration=2000, t_init=3000, stim_len=3000,
+            spatial=False):
 
     if not spatial:
         ca_conc_mean = ca_conc[:int(t_init/dt)].mean()
@@ -599,7 +604,7 @@ stim_len = {"1EPSP": 0,
 
 
 def make_distance_figs(directories, stim_dict, output, types, markers,
-                       fillstyles, length=42, spine_idx=21, t_init=3000,
+                       fillstyles, length=42, t_init=3000,
                        xlabel=r"Auc head/Auc basal",
                        ylabel=r"Spatial spread ($\unit{\micro\metre}$))",
                        max_ca=True, colors={}, specie="Ca"):
@@ -645,10 +650,8 @@ def make_distance_figs(directories, stim_dict, output, types, markers,
                             
                         else:
                             auch[j] = head_ca[trial][1, t_start:].sum()
-                            
                 spread = get_distance(dend_ca, dt, t_init=t_init,
-                                      stim_len=stim_len[dur],
-                                      spine_idx=spine_idx)
+                                      stim_len=stim_len[dur])
                 auc_head_m.append(auch.mean())
                 
                 auc_head_e.append(auch.std()/trials**0.5)

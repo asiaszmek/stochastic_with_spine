@@ -5,7 +5,7 @@
     <xi:include href="../Rxn_spine_ER_old_age.xml" />
     <xi:include href="../morph_diam_1.2_um_50_um_dendrite.xml" />
     <xi:include href="../basal/IC_spine_ER_1.2_dend_old_age.xml" />
-    <xi:include href="../stimulation/fpu_spine_lm_medium1_100EPSP_100Hz_1spines_results_dispersed.xml"/>
+    <xi:include href="../stimulation/old_age_fpu_spine_lm_medium1_100EPSP_100Hz_1spines_results_dispersed.xml"/>
     <xi:include href="../IO_Ca_SOCE_RyR2CaM_RyR3CaM.xml" />
 
     <!--2D means the morphology is interpreted like a flatworm, 3D for

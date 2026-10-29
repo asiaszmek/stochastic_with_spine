@@ -10,23 +10,23 @@ colors = {"1.2": 'tab:blue',
           "6.0": 'tab:green'}
 
 file_no_ER_ctrl = os.path.join("..", "1_spine_different_Ca_amp",
-                                "model_1.2_um_dend_spine_%s_ms_%s.h5")
+                                "model_1.2_um_dend_spine_%s_%d_stim.h5")
 file_dend_ER_ctrl = os.path.join("..", "1_spine_different_Ca_amp",
-                                  "model_RyR2CaM_1.2_um_dend_spine_%s_ms_%s.h5")
+                                  "model_RyR2CaM_1.2_um_dend_spine_%s_%d_stim.h5")
 file_spine_ER_dend_ER = os.path.join("..", "1_spine_different_Ca_amp",
-                                      "model_RyR2CaM_RyR3CaM_1.2_um_dend_spine_%s_ms_%s.h5")
+                                      "model_RyR2CaM_RyR3CaM_1.2_um_dend_spine_%s_%d_stim.h5")
 file_spine_ER_no_dend_ER = os.path.join("..", "1_spine_different_Ca_amp",
-                                         "model_RyR3CaM_1.2_um_dend_spine_%s_ms_%s.h5")
+                                         "model_RyR3CaM_1.2_um_dend_spine_%s_%d_stim.h5")
 file_dend_ER_dend_Ca = os.path.join("..", "1_spine_different_Ca_amp_Ca_dend",
-                                  "model_Ca_dend_RyR2CaM_1.2_um_dend_spine_%s_ms_%s.h5")
+                                  "model_Ca_dend_RyR2CaM_1.2_um_dend_spine_%s_%d_stim.h5")
 file_dend_ER_dend_Ca_old_age = os.path.join("..", "1_spine_different_Ca_amp_Ca_dend",
-                                  "model_Ca_dend_RyR2CaM_old_age_1.2_um_dend_spine_%s_ms_%s.h5")
+                                  "model_Ca_dend_RyR2CaM_old_age_1.2_um_dend_spine_%s_%d_stim.h5")
 file_spine_ER_dend_ER_dend_Ca_old_age = os.path.join("..",
                                                      "1_spine_different_Ca_amp_Ca_dend",
-                                                     "model_Ca_dend_RyR2CaM_RyR3CaM_old_age_1.2_um_dend_spine_%s_ms_%s.h5")
+                                                     "model_Ca_dend_RyR2CaM_RyR3CaM_old_age_1.2_um_dend_spine_%s_%d_stim.h5")
 file_spine_ER_dend_ER_dend_Ca = os.path.join("..",
                                              "1_spine_different_Ca_amp_Ca_dend",
-                                             "model_Ca_dend_RyR2CaM_RyR3CaM_1.2_um_dend_spine_%s_ms_%s.h5")
+                                             "model_Ca_dend_RyR2CaM_RyR3CaM_1.2_um_dend_spine_%s_%d_stim.h5")
 
 t_init = 3000
 output = "Ca"
@@ -34,14 +34,9 @@ types = ["no SA+VGCC", "no SA+VGCC old age", "SA+VGCC", "SA+VGCC old age",]
 markers = ["s", "s", "o", "o"]
 fillstyles = ["full", "none", "full", "none"]
 stim_dict = {
-    "4": ["01750", "03500", "07000", "10500"],
-    "40": ["0175", "0350", "0700", "1050"],
-    "400": ["017.5", "035", "070", "105", "210"],
+    "1EPSP": [1, 5, 10, 15, 20],
+    "4EPSP_100Hz": [1, 5, 10, 15, 20],
 }
-spine_dend = "dend11"
-region_list = ["dend01", "dend02", "dend03", "dend04", "dend05", "dend06", "dend07","dend08", "dend08", "dend09", "dend10",
-               "dend11", "dend12", "dend13", "dend14", "dend15", "dend16", "dend17",  "dend18", "dend18", "dend19", "dend20",
-               "dend21"]
 
 if __name__ == '__main__':
     rollo = False

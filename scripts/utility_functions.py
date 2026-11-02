@@ -760,7 +760,7 @@ def area_over_250_mean(directories, stim_dict, output, types, markers,
 
 
 def max_vs_auc_head_neck_dend(directories, stim_dict, output, types, markers,
-                              fillstyles, length=42, which_dend=["dend11"],
+                              fillstyles, length=102, which_dend=["dend25"],
                               t_init=3000, specie="Ca"):
     fig_dh, ax_dh = plt.subplots(1, len(stim_dict.keys()),
                                  figsize=(len(stim_dict.keys())*5, 5))

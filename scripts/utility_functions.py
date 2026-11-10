@@ -423,11 +423,13 @@ def get_distance(conc_dict, dt, t_init, stim_len,rollo=True,
         ca_std = concentration[:, int(1000/dt):new_beg].std()
         try:
             ca_max = concentration[:, new_beg:].max()/2 #ca_ctrl+6*ca_std
-       
         except ValueError:
             continue
-        spine_idx = np.unravel_index(concentration[:new_beg].argmax(),
-                                     concentration[:new_beg].shape)[0]
+        if concentration.shape[0] == 102:
+            spine_idx = 51#np.unravel_index(concentration[:new_beg].argmax(),
+                    #                 concentration[:new_beg].shape)[0]
+        else:
+            spine_idx = 21
         ca_lim = 2.5*ca_ctrl#+5*ca_std
         indices = []
         for j in range(spine_idx, shape):
@@ -450,8 +452,8 @@ def get_distance(conc_dict, dt, t_init, stim_len,rollo=True,
             else:
                 break
 
-            if rollo:
-                new_beg = new_beg +new_idx -100
+            
+            new_beg = new_beg +new_idx
     
         new_beg = int((t_init)/dt)         
         for j in range(spine_idx-1, -1, -1):
@@ -472,10 +474,9 @@ def get_distance(conc_dict, dt, t_init, stim_len,rollo=True,
                 indices.append(j+1)
             else:
                 break
-            if rollo:
-                new_beg = new_beg + new_idx -100
+            new_beg = new_beg + new_idx
         decays[i] = len(indices)/2*0.5
-        print(indices)
+     
     return decays
 
 
@@ -495,7 +496,7 @@ def get_blob(conc_dict, dt, t_init, stim_len, spine_idx, rollo=True,
         ca_std = concentration[:, int(1000/dt):new_beg].std()
         try:
             ca_max = concentration[:, new_beg:].max()/2 #ca_ctrl+6*ca_std
-       
+
         except ValueError:
             continue
 

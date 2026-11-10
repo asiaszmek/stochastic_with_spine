@@ -1,48 +1,95 @@
 <StimulationSet>
-  <InjectionStim injectionSite="sa1[0].pointA" specieID="Glu">
-    <onset>6000</onset>
+  <InjectionStim injectionSite="sa1[0].pointA" specieID="GluGlubuf">
+    <onset>3000</onset>
     <duration>1</duration>
-    <rate>500</rate>
+    <rate>40000</rate>
     <period>             10              </period>
-    <end>6045</end>
+    <end>3045</end>
     <interTrainInterval>  200           </interTrainInterval>
     <numTrains>           15              </numTrains>
   </InjectionStim>
+   <!-- <InjectionStim injectionSite="sa1[0].pointA" specieID="GluBuf"> -->
+   <!--  <onset>3010</onset> -->
+   <!--  <duration>1</duration> -->
+   <!--  <period>             10              </period> -->
+   <!--  <rate>40000</rate> -->
+   <!--  <end>3050</end> -->
+   <!--  <interTrainInterval>  200           </interTrainInterval> -->
+   <!--  <numTrains>           15              </numTrains> -->
+   <!-- </InjectionStim> -->
    <InjectionStim injectionSite="sa1[0].pointA" specieID="CaCbuf">
-    <onset>6010</onset>
-    <duration>1</duration>
-    <rate>50</rate>
+    <onset>3000</onset>
+    <duration>2</duration>
+    <rate>15</rate>
     <period>             10              </period>
-    <end>6045</end>
+    <end>3045</end>
     <interTrainInterval>  200           </interTrainInterval>
     <numTrains>           15              </numTrains>
   </InjectionStim>
+
+   
+  <InjectionStim injectionSite="sa1[0].pointA" specieID="V">
+    <onset>3000</onset>
+    <duration>10</duration>
+    <rate>1</rate>
+    <end>4545</end>
+    <period>             200              </period>
+    
+  </InjectionStim>
+
+  <InjectionStim injectionSite="sa1[0].pointA" specieID="VBuf">
+    <onset>4600</onset>
+    <duration>20</duration>
+    <rate>15</rate>
+    <end>4750</end>
+  </InjectionStim>
+
+
   
-  <InjectionStim injectionSite="sa1[0].pointA" specieID="GluBuf">
-    <onset>6005</onset>
-    <duration>1</duration>
-    <period>             10              </period>
-    <rate>100</rate>
-    <end>6050</end>
+  <InjectionStim injectionSite="dend26:submembrane" specieID="CaCbuf">
+    <onset>3000</onset>
+    <duration>4</duration>
+    <rate>50</rate>
+    <period>10</period>
     <interTrainInterval>  200           </interTrainInterval>
     <numTrains>           15              </numTrains>
+    <end>10020</end>
   </InjectionStim>
-
-  <InjectionStim injectionSite="sa1[0].pointA" specieID="GluBuf">
-    <onset>6045</onset>
-    <duration>1</duration>
-    <period>             10              </period>
-    <rate>400</rate>
-    <end>6060</end>
+  <InjectionStim injectionSite="dend25:submembrane" specieID="CaCbuf">
+    <onset>3000</onset>
+    <duration>4</duration>
+    <rate>50</rate>
+    <period>10</period>
     <interTrainInterval>  200           </interTrainInterval>
     <numTrains>           15              </numTrains>
+    <end>10020</end>
   </InjectionStim>
-
-  <InjectionStim injectionSite="sa1[0].pointA" specieID="GluBuf">
-    <onset>9045</onset>
-    <duration>15</duration>
-    <rate>1100</rate>
-    <end>9100</end>
+  <InjectionStim injectionSite="dend27:submembrane" specieID="CaCbuf">
+    <onset>3000</onset>
+    <duration>4</duration>
+    <rate>50</rate>
+    <period>10</period>
+    <interTrainInterval>  200           </interTrainInterval>
+    <numTrains>           15              </numTrains>
+    <end>10020</end>
+  </InjectionStim>
+  <InjectionStim injectionSite="dend24:submembrane" specieID="CaCbuf">
+    <onset>3000</onset>
+    <duration>4</duration>
+    <rate>50</rate>
+    <period>10</period>
+    <interTrainInterval>  200           </interTrainInterval>
+    <numTrains>           15              </numTrains>
+    <end>10020</end>
+  </InjectionStim>
+  <InjectionStim injectionSite="dend28:submembrane" specieID="CaCbuf">
+    <onset>3000</onset>
+    <duration>4</duration>
+    <rate>50</rate>
+    <period>10</period>
+    <interTrainInterval>  200           </interTrainInterval>
+    <numTrains>           15              </numTrains>
+    <end>10020</end>
   </InjectionStim>
 
 </StimulationSet>

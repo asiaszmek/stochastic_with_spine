@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!--10.1016/s0006-291x(05)81278-1 -->
+<ReactionScheme>1
+  <Specie name="Fluro4" id="Dye" kdiff="75" kdiffunit="mu2/s" />
+  <Specie name="Fluro4Ca" id="DyeCa" kdiff="75" kdiffunit="mu2/s" />
+  <Reaction name = "Dye_r" id="Dye_r">
+    <Reactant specieID="Ca"/>
+    <Reactant specieID="Dye"/>
+    <Product specieID="DyeCa"/>
+
+    <forwardRate>2.63e-5</forwardRate>
+    <reverseRate>5e-3</reverseRate>
+  </Reaction>
+</ReactionScheme>

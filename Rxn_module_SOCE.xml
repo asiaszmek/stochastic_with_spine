@@ -1,6 +1,7 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="utf-8"?>
+
 <ReactionScheme>
- <Specie name="Ca" id="Ca" kdiff="100" kdiffunit="mu2/s" />
+ <Specie name="Ca" id="Ca" kdiff="223" kdiffunit="mu2/s" />
  
   <Specie name="PMJ" id="PMJ" kdiff="0." kdiffunit="mu2/s" />
   <Specie name="PMJ_STIM_4" id="PMJ_STIM_4" kdiff="0." kdiffunit="mu2/s" />
@@ -56,7 +57,7 @@
     <Reactant specieID="STIM_2" />
     <Reactant specieID="CaER" />
     <Product specieID="STIM_2CaER"/>
-    <forwardRate>8e-7</forwardRate>
+    <forwardRate>1.12e-6</forwardRate>
     <reverseRate>2e-3</reverseRate>
   </Reaction>
 

@@ -1,49 +1,177 @@
-<ReactionScheme><Specie name="Ca" id="Ca" kdiff="100" kdiffunit="mu2/s"/>
-  <Specie name="CaOut" id="CaOut" kdiff="10" kdiffunit="mu2/s"/>
+<ReactionScheme><Specie name="Ca" id="Ca" kdiff="223" kdiffunit="mu2/s"/>
+  <Specie name="CaOut" id="CaOut" kdiff="60" kdiffunit="mu2/s"/>
   <Specie name="CaOutLeak" id="CaOutLeak" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Leak" id="Leak" kdiff="0" kdiffunit="mu2/s"/>
 
   <Specie name="fixedbuffer" id="fixedbuffer" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="fixedbufferCa" id="fixedbufferCa" kdiff="0" kdiffunit="mu2/s"/>
-  <Specie name="Calbin" id="Calbin" kdiff="9.3" kdiffunit="mu2/s"/>
-  <Specie name="CalbinC" id="CalbinC" kdiff="9.3" kdiffunit="mu2/s"/>
+  <Specie name="Calbin" id="Calbin" kdiff="20" kdiffunit="mu2/s"/>
+  <Specie name="CalbinC" id="CalbinC" kdiff="20" kdiffunit="mu2/s"/>
   
-  <Specie name="pmca" id="pmca" kdiff="0" kdiffunit="mu2/s"/>
+ 
   <Specie name="ncx" id="ncx" kdiff="0" kdiffunit="mu2/s"/>
-  <Specie name="pmcaCa" id="pmcaCa" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="ncxCa" id="ncxCa" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="pmca2b" id="pmca2b" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="pmca2bCa" id="pmca2bCa" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="pmca1a" id="pmca1a" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="pmca1aCa" id="pmca1aCa" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="CaMCa4pmca2b" id="CaMCa4pmca2b" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="CaMCa4pmca2bCa" id="CaMCa4pmca2bCa" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="CaMCa4pmca1a" id="CaMCa4pmca1a" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="CaMCa4pmca1aCa" id="CaMCa4pmca1aCa" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="CaMpmca2b" id="CaMpmca2b" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="CaMpmca1a" id="CaMpmca1a" kdiff="0" kdiffunit="mu2/s"/>
+
  
   <Specie name="Ng" id="Ng" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="NgCaM" id="NgCaM" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="CaM" id="CaM" kdiff="4" kdiffunit="mu2/s"/>
-  <Specie name="CaMCa2C" id="CaMCa2C" kdiff="4" kdiffunit="mu2/s"/>
+  <Specie name="CaM_0_1" id="CaM_0_1" kdiff="4" kdiffunit="mu2/s"/>
   <Specie name="CaMCa2N" id="CaMCa2N" kdiff="4" kdiffunit="mu2/s"/>
+  <Specie name="CaM_1_0" id="CaM_1_0" kdiff="4" kdiffunit="mu2/s"/>
+  <Specie name="CaM_1_1" id="CaM_1_1" kdiff="4" kdiffunit="mu2/s"/>
+  <Specie name="CaM_1_2" id="CaM_1_2" kdiff="4" kdiffunit="mu2/s"/>
+  <Specie name="CaMCa2C" id="CaMCa2C" kdiff="4" kdiffunit="mu2/s"/>
+  <Specie name="CaM_2_1" id="CaM_2_1" kdiff="4" kdiffunit="mu2/s"/>
   <Specie name="CaMCa4" id="CaMCa4" kdiff="4" kdiffunit="mu2/s"/>
-  <Reaction name="Ca_pump1a" id="Ca_pump1a">
-    <Reactant specieID="Ca"/>
-    <Reactant specieID="pmca"/>
-    <Product specieID="pmcaCa"/>
 
-    <forwardRate>0.5e-4</forwardRate>
-    <reverseRate>0.007</reverseRate>
+
+  <Reaction name="Ca_pump1a_1" id="Ca_pump1a_1">
+    <Reactant specieID="Ca"/>
+    <Reactant specieID="pmca1a"/>
+    <Product specieID="pmca1aCa"/>
+
+    <forwardRate>10e-6</forwardRate>
+    <reverseRate>50e-3</reverseRate>
   </Reaction>
 
-  <Reaction name="Ca_pump1b" id="Ca_pump1b">
-    <Reactant specieID="pmcaCa"/>
-    <Product specieID="pmca"/>
+ 
+  <Reaction name="Ca_pump1a_2" id="Ca_pump1a_2">
+    <Reactant specieID="pmca1aCa"/>
+    <Product specieID="pmca1a"/>
     <Product specieID="CaOut"/>
     
-    <forwardRate>0.0035</forwardRate>
+    <forwardRate>12e-3</forwardRate>
     <reverseRate>0</reverseRate>
   </Reaction>
 
+
+  <Reaction name="Ca_pump2b_1" id="Ca_pump2b_1">
+    <Reactant specieID="Ca"/>
+    <Reactant specieID="pmca2b"/>
+    <Product specieID="pmca2bCa"/>
+
+    <forwardRate>80e-6</forwardRate>
+    <reverseRate>50e-3</reverseRate>
+  </Reaction>
+
+  <Reaction name="Ca_pump2b_2" id="Ca_pump2b_2">
+    <Reactant specieID="pmca2bCa"/>
+    <Product specieID="pmca2b"/>
+    <Product specieID="CaOut"/>
+    
+    <forwardRate>12e-3</forwardRate>
+    <reverseRate>0</reverseRate>
+  </Reaction>
+
+  <Reaction name="Ca_CaMCa4pump1a_1" id="Ca_CaMCa4pump1a_1">
+    <Reactant specieID="Ca"/>
+    <Reactant specieID="CaMCa4pmca1a"/>
+    <Product specieID="CaMCa4pmca1aCa"/>
+
+    <forwardRate>50e-6</forwardRate>
+    <reverseRate>10e-3</reverseRate>
+  </Reaction>
+
+ 
+  <Reaction name="Ca_CaMCa4pump1a_2" id="Ca_CaMCa4pump1a_2">
+    <Reactant specieID="CaMCa4pmca1aCa"/>
+    <Product specieID="CaMCa4pmca1a"/>
+    <Product specieID="CaOut"/>
+    
+    <forwardRate>30e-3</forwardRate>
+    <reverseRate>0</reverseRate>
+  </Reaction>
+
+
+  <Reaction name="Ca_CaMCa4pump2b_1" id="Ca_CaMCa4pump2b_1">
+    <Reactant specieID="Ca"/>
+    <Reactant specieID="CaMCa4pmca2b"/>
+    <Product specieID="CaMCa4pmca2bCa"/>
+
+    <forwardRate>50e-6</forwardRate>
+    <reverseRate>10e-3</reverseRate>
+  </Reaction>
+
+  <Reaction name="Ca_CaMCa4pump2b_2" id="Ca_CaMCa4pump2b_2">
+    <Reactant specieID="CaMCa4pmca2bCa"/>
+    <Product specieID="CaMCa4pmca2b"/>
+    <Product specieID="CaOut"/>
+    
+    <forwardRate>30e-3</forwardRate>
+    <reverseRate>0</reverseRate>
+  </Reaction>
+ 
+
+  <Reaction name="CaMCa4pump1a_bind" id="CaMCa4pump1a_bind">
+    <Reactant specieID="CaMCa4"/>
+    <Reactant specieID="pmca1a"/>
+    <Product specieID="CaMCa4pmca1a"/>
+
+    <forwardRate>8e-5</forwardRate>
+    <reverseRate>2e-3</reverseRate>
+  </Reaction>
+
+    <Reaction name="CaMCa4pump2b_bind" id="CaMCa4pump2b_bind">
+    <Reactant specieID="CaMCa4"/>
+    <Reactant specieID="pmca2b"/>
+    <Product specieID="CaMCa4pmca2b"/>
+
+    <forwardRate>8e-5</forwardRate>
+    <reverseRate>0.02e-3</reverseRate>
+  </Reaction>
+
+
+  <Reaction name="CaMCa4pump2b_Ca_unbind" id="CaMCa4pump2b_Ca_unbind">
+    <Reactant specieID="CaMCa4pmca2b"/>
+    <Product specieID="CaMpmca2b"/>
+    <Product specieID="Ca" power="4"/>
+    <forwardRate>0.0314e-3</forwardRate>
+    <reverseRate>152.49e-15</reverseRate>
+  </Reaction>
+
+  <Reaction name="CaMCa4pump1a_Ca_unbind" id="CaMCa4pump1a_Ca_unbind">
+    <Reactant specieID="CaMCa4pmca1a"/>
+    <Product specieID="CaMpmca1a"/>
+    <Product specieID="Ca" power="4"/>
+    <forwardRate>0.0957e-3</forwardRate>
+    <reverseRate>1.006e-15</reverseRate>
+  </Reaction>
+ 
+
+  <Reaction name="CaMpump1a_Ca_unbind" id="CaMpump1a_Ca_unbind">
+    <Reactant specieID="CaMpmca1a"/>
+    <Product specieID="pmca1a"/>
+    <Product specieID="CaM"/>
+    <forwardRate>0.0614e-3</forwardRate>
+
+  </Reaction>
+
+  <Reaction name="CaMpump2b_Ca_unbind" id="CaMpump2b_Ca_unbind">
+    <Reactant specieID="CaMpmca2b"/>
+    <Product specieID="pmca2b"/>
+    <Product specieID="CaM"/>
+    <forwardRate>0.034e-3</forwardRate>
+  </Reaction>
+  
+  
   <Reaction name="Ca_pump2a" id="Ca_pump2a">
     <Reactant specieID="Ca"/>
     <Reactant specieID="ncx"/>
     <Product specieID="ncxCa"/>
     
-    <forwardRate>1.68e-5</forwardRate>
-    <reverseRate>0.0112</reverseRate>
+    <forwardRate>3.e-4</forwardRate>
+    <reverseRate>0.3</reverseRate>
   </Reaction>
   
   <Reaction name="Ca_pump2b" id="Ca_pump2b">
@@ -51,7 +179,7 @@
     <Product specieID="ncx"/>
     <Product specieID="CaOut"/>
 
-    <forwardRate>0.0056</forwardRate>
+    <forwardRate>0.6</forwardRate>
     <reverseRate>0</reverseRate>
   </Reaction>
   <Reaction name="Ca_leak1" id="Ca_leak1">
@@ -91,42 +219,6 @@
     <Q10>0.2</Q10>
   </Reaction>
   
-  <Reaction name="CaMC_bind" id="CaMC_bind">
-    <Reactant specieID="CaM"/>
-    <Reactant specieID="Ca" n="2"/>
-    <Product specieID="CaMCa2C"/>
-    <forwardRate>6e-6</forwardRate>
-    <reverseRate>9.1e-3</reverseRate>
-    <Q10>0.2</Q10>
-  </Reaction>
-  <Reaction name="CaMCa2C_bind" id="CaMCa2C_bind">
-    <Reactant specieID="CaMCa2C"/>
-    <Reactant specieID="Ca" n="2"/>
-    <Product specieID="CaMCa4"/>
-    <forwardRate>0.1e-3</forwardRate>
-    <reverseRate>1000e-3</reverseRate>
-    <Q10>0.2</Q10>
-  </Reaction>
-  <Reaction name="CaMN_bind" id="CaMN_bind">
-    <Reactant specieID="CaM"/>
-    <Reactant specieID="Ca" n="2"/>
-    <Product specieID="CaMCa2N"/>
-    
-    <forwardRate>0.1e-3</forwardRate>
-    <reverseRate>1000e-3</reverseRate>
-    
-  </Reaction>
-
-  <Reaction name="CaMCa2N_bind" id="CaMCa2N_bind">
-    <Reactant specieID="CaMCa2N"/>
-    <Reactant specieID="Ca" n="2"/>
-    <Product specieID="CaMCa4"/>
-    
-    <forwardRate>6e-6</forwardRate>
-    <reverseRate>9.1e-3</reverseRate>
-    
-  </Reaction>
-
   <Reaction name="NgCaM_bind" id="NgCaM_bind">
     <Reactant specieID="CaM"/>
     <Reactant specieID="Ng"/>
@@ -136,46 +228,185 @@
     <Q10>0.2</Q10>
   </Reaction>
 
-<Specie name="Glu" id="Glu" kdiff="10" kdiffunit="mu2/s"/>
-  <Specie name="GluOut" id="GluOut" kdiff="10" kdiffunit="mu2/s"/>
-  <Specie name="GluBuf" id="GluBuf" kdiff="10" kdiffunit="mu2/s"/>
-  <Specie name="NR2BC" id="NR2BC" kdiff="0" kdiffunit="mu2/s"/>
-  <Specie name="NR2BO" id="NR2BO" kdiff="0" kdiffunit="mu2/s"/>
-<Reaction name="NR2BC-C1" id="NR2BC-C1">
-    <Reactant specieID="NR2BC"/>
-    <Reactant specieID="Glu"/>
-    <Product specieID="NR2BO"/>
-"/&gt;
-    <forwardRate>0.072e-6</forwardRate>
-    <reverseRate>6.6e-3</reverseRate>
- </Reaction>
 
- <Reaction name="NR2B0flux" id="NR2B0flux">
-    <Reactant specieID="NR2BO"/>
-    <Reactant specieID="CaOut"/>
-    <Product specieID="NR2BO"/>
-    <Product specieID="Ca"/>
-    <forwardRate>5e-6</forwardRate>
-    <reverseRate>1e-6</reverseRate>
+  <Reaction name="reaction1" id="reaction1">
+    <Reactant specieID="Ca"/>
+    <Reactant specieID="CaM"/>
+    <Product specieID="CaM_1_0"/>
+    <forwardRate>2.137e-05</forwardRate>
+    <reverseRate>0.0398</reverseRate>
+  </Reaction>
+  <Reaction name="reaction3" id="reaction3">
+    <Reactant specieID="Ca"/>
+    <Reactant specieID="CaM_0_1"/>
+    <Product specieID="CaM_1_1"/>
+    <forwardRate>2.137e-05</forwardRate>
+    <reverseRate>0.0398</reverseRate>
+  </Reaction>
+  <Reaction name="reaction5" id="reaction5">
+    <Reactant specieID="Ca"/>
+    <Reactant specieID="CaMCa2N"/>
+    <Product specieID="CaM_1_2"/>
+    <forwardRate>2.137e-05</forwardRate>
+    <reverseRate>0.0398</reverseRate>
+  </Reaction>
+  <Reaction name="reaction7" id="reaction7">
+    <Reactant specieID="Ca"/>
+    <Reactant specieID="CaM_1_0"/>
+    <Product specieID="CaMCa2C"/>
+    <forwardRate>0.000955</forwardRate>
+    <reverseRate>0.933</reverseRate>
+  </Reaction>
+  <Reaction name="reaction9" id="reaction9">
+    <Reactant specieID="Ca"/>
+    <Reactant specieID="CaM_1_1"/>
+    <Product specieID="CaM_2_1"/>
+    <forwardRate>0.0009545</forwardRate>
+    <reverseRate>0.933</reverseRate>
+  </Reaction>
+  <Reaction name="reaction11" id="reaction11">
+    <Reactant specieID="Ca"/>
+    <Reactant specieID="CaM_1_2"/>
+    <Product specieID="CaMCa4"/>
+    <forwardRate>0.000955</forwardRate>
+    <reverseRate>0.933</reverseRate>
+  </Reaction>
+  <Reaction name="reaction13" id="reaction13">
+    <Reactant specieID="Ca"/>
+    <Reactant specieID="CaM"/>
+    <Product specieID="CaM_0_1"/>
+    <forwardRate>0.010715</forwardRate>
+    <reverseRate>794.328</reverseRate>
+  </Reaction>
+  <Reaction name="reaction15" id="reaction15">
+    <Reactant specieID="Ca"/>
+    <Reactant specieID="CaM_0_1"/>
+    <Product specieID="CaMCa2N"/>
+    <forwardRate>0.00195</forwardRate>
+    <reverseRate>3.63</reverseRate>
+  </Reaction>
+  <Reaction name="reaction17" id="reaction17">
+    <Reactant specieID="Ca"/>
+    <Reactant specieID="CaM_1_0"/>
+    <Product specieID="CaM_1_1"/>
+    <forwardRate>0.01075</forwardRate>
+    <reverseRate>794.328</reverseRate>
+  </Reaction>
+  <Reaction name="reaction19" id="reaction19">
+    <Reactant specieID="Ca"/>
+    <Reactant specieID="CaM_1_1"/>
+    <Product specieID="CaM_1_2"/>
+    <forwardRate>0.00195</forwardRate>
+    <reverseRate>3.63</reverseRate>
+  </Reaction>
+  <Reaction name="reaction21" id="reaction21">
+    <Reactant specieID="Ca"/>
+    <Reactant specieID="CaMCa2C"/>
+    <Product specieID="CaM_2_1"/>
+    <forwardRate>0.010715</forwardRate>
+    <reverseRate>794.328</reverseRate>
+  </Reaction>
+  <Reaction name="reaction23" id="reaction23">
+    <Reactant specieID="Ca"/>
+    <Reactant specieID="CaM_2_1"/>
+    <Product specieID="CaMCa4"/>
+    <forwardRate>0.00195</forwardRate>
+    <reverseRate>3.63</reverseRate>
   </Reaction>
 
+  
+<Specie name="Glu" id="Glu" kdiff="320" kdiffunit="mu2/s"/>
+ 
+  <Specie name="GluOut" id="GluOut" kdiff="320" kdiffunit="mu2/s"/>
+  <Specie name="GluBuf" id="GluBuf" kdiff="320" kdiffunit="mu2/s"/>
+  <Specie name="GluGlubuf" id="GluGlubuf" kdiff="320" kdiffunit="mu2/s"/>
+  <Specie name="Glubuf" id="Glubuf" kdiff="320" kdiffunit="mu2/s"/>
+  <Specie name="NMDARC" id="NMDARC" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="NMDARC1" id="NMDARC1" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="NMDARC2" id="NMDARC2" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="NMDARD" id="NMDARD" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="NMDARO" id="NMDARO" kdiff="0" kdiffunit="mu2/s"/>
+  
+  
+  
+<Reaction name="NMDARC-C1" id="NMDARC-C1">
+    <Reactant specieID="NMDARC"/>
+    <Reactant specieID="Glu"/>
+    <Product specieID="NMDARC1"/>
+    <forwardRate>2e-5</forwardRate>
+    <reverseRate>11e-3</reverseRate>
+ </Reaction>
 
+  <Reaction name="NMDARC1-C2" id="NMDARC1-C2">
+    <Reactant specieID="NMDARC1"/>
+    <Reactant specieID="Glu"/>
+    <Product specieID="NMDARC2"/>
+    <forwardRate>16.8e-3</forwardRate>
+    <reverseRate>3.6e-3</reverseRate>
+ </Reaction>
+   
+
+  <Reaction name="NMDARC2-D" id="NMDARC2-D">
+    <Reactant specieID="NMDARC2"/>
+    <Product specieID="NMDARD"/>
+    <forwardRate>8.4e-3</forwardRate>
+    <reverseRate>6.8e-3</reverseRate>
+  </Reaction>
+
+   <Reaction name="NMDARC2-0" id="NMDARC2-0">
+    <Reactant specieID="NMDARC2"/>
+    <Product specieID="NMDARO"/>
+    <forwardRate>93e-3</forwardRate>
+    <reverseRate>183.2e-3</reverseRate>
+  </Reaction>
+
+  
+
+  <Reaction name="NMDAROflux" id="NMDARO-flux">
+    <Reactant specieID="NMDARO"/>
+    <Reactant specieID="CaOut"/>
+    <Product specieID="NMDARO"/>
+    <Product specieID="Ca"/>
+    <forwardRate>1.5e-5</forwardRate>
+    <reverseRate>0</reverseRate>
+  </Reaction>
+
+  
   <Reaction name="Glu--GluOut" id="Glu--GluOut">
     <Reactant specieID="Glu"/>
     <Product specieID="GluOut"/>
   
-    <forwardRate>0.5e-1</forwardRate>
-    <reverseRate>0.02e-5</reverseRate>
+    <forwardRate>1e-3</forwardRate>
+    <reverseRate>4e-9</reverseRate>
     <Q10>0.2</Q10>
   </Reaction>
 
+
+   
   <Reaction name="GluOut+GluBuf--NULL" id="GluOut_buf--NULL">
     <Reactant specieID="Glu"/>
     <Reactant specieID="GluBuf"/>
-    <forwardRate>5e-03</forwardRate>
+    <forwardRate>5e-02</forwardRate>
     <reverseRate>0</reverseRate>
   </Reaction>
-    
+
+  <Reaction name="GluGlubufGlu+Glubuf" id="GluGlubufGlu+Glubuf">
+    <Reactant specieID="GluGlubuf"/>
+    <Product specieID="Glubuf"/>
+    <Product specieID="Glu"/>
+    <forwardRate>20e-03</forwardRate>
+    <reverseRate>0</reverseRate>
+  </Reaction>
+  
+  <Reaction name="GluOut+GlubufNULL" id="GluOut_GlubufNULL">
+    <Reactant specieID="GluOut"/>
+    <Reactant specieID="Glubuf"/>
+    <forwardRate>1e-06</forwardRate>
+    <reverseRate>0</reverseRate>
+  </Reaction>
+
+  
+ 
 <Specie name="CaER" id="CaER" kdiff="10." kdiffunit="mu2/s"/>
   <Specie name="RyR2CaM" id="RyR2CaM" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="RyR2CaMC1" id="RyR2CaMC1" kdiff="0" kdiffunit="mu2/s"/>
@@ -238,7 +469,7 @@
      <Product specieID="RyR2CaMO1"/>
      <Product specieID="Ca"/>
     <forwardRate>5e-3</forwardRate>
-    <reverseRate>1.5e-3</reverseRate>
+    <reverseRate>5e-3</reverseRate>
     </Reaction>
   <Reaction name="RyR2CaMflux2" id="RyR2CaMflux2">
      <Reactant specieID="RyR2CaMO2"/>
@@ -246,7 +477,7 @@
      <Product specieID="RyR2CaMO2"/>
      <Product specieID="Ca"/>
     <forwardRate>5e-3</forwardRate>
-    <reverseRate>1.5e-3</reverseRate>
+    <reverseRate>5e-3</reverseRate>
   </Reaction>
 
 <Specie name="Cyt_SERCA" id="Cyt_SERCA" kdiff="0" kdiffunit="mu2/s"/>
@@ -261,8 +492,8 @@
     <Reactant specieID="Cyt_SERCA"/>
     <Product specieID="Cyt_SERCA_Ca"/>
     
-    <forwardRate>17147e-7</forwardRate>
-    <reverseRate>8426.3e-4</reverseRate>
+    <forwardRate>0.0034294</forwardRate>
+    <reverseRate>0.84263</reverseRate>
     <Q10>0.2</Q10>
   </Reaction>
  
@@ -271,8 +502,8 @@
     <Reactant specieID="Cyt_SERCA_Ca"/>
     <Product specieID="Cyt_SERCA_Ca2"/>
         
-    <forwardRate>17147e-7</forwardRate>
-    <reverseRate>8426.3e-4</reverseRate>
+    <forwardRate>0.0017147</forwardRate>
+    <reverseRate>1.68526</reverseRate>
     <Q10>0.2</Q10>
   </Reaction>
 <Reaction name="Cyt_SERCA_1d" id="Cyt_SERCA_1d">
@@ -355,7 +586,7 @@
     <Reactant specieID="STIM_2"/>
     <Reactant specieID="CaER"/>
     <Product specieID="STIM_2CaER"/>
-    <forwardRate>8e-7</forwardRate>
+    <forwardRate>1.12e-6</forwardRate>
     <reverseRate>2e-3</reverseRate>
   </Reaction>
 
@@ -400,12 +631,12 @@
   </Reaction>
 
   
-<Specie name="jRGECO1" id="jRGECO1" kdiff="4" kdiffunit="mu2/s"/>
-  <Specie name="Ca2jRGECO1" id="Ca2jRGECO1" kdiff="4" kdiffunit="mu2/s"/>
-  <Reaction name="2Ca+jRGECO1--Ca2jRGECO1" id="2Ca+jRGECO1--Ca2jRGECO1">
+<Specie name="Dye" id="Dye" kdiff="4" kdiffunit="mu2/s"/>
+  <Specie name="CaDye" id="CaDye" kdiff="4" kdiffunit="mu2/s"/>
+  <Reaction name="2Ca+Dye--Ca2Dye" id="2Ca+Dye--Ca2Dye">
     <Reactant specieID="Ca" power="2"/>
-    <Reactant specieID="jRGECO1"/>
-    <Product specieID="Ca2jRGECO1"/>
+    <Reactant specieID="Dye"/>
+    <Product specieID="CaDye"/>
 
     <forwardRate> 1.14e-7   </forwardRate>
     <reverseRate> 3e-3   </reverseRate>

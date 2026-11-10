@@ -90,7 +90,7 @@ if __name__ == '__main__':
             else:
                 where = fname[j].split('_')[-1]
                 axrr[i].set_ylabel(where)
-            if specie == "CaFluo4FF":
+            if specie == "CaDye":
                 print(fname[j])
                 print(data[j][:,which[i]].max())
             if args.logscale and specie == 'Ca':

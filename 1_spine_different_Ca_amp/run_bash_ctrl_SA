@@ -1,0 +1,10 @@
+/usr/lib/jvm/java-8-openjdk-amd64/bin/java -jar /home/jszmek/new_neurord/neurord-3.2.3-all-deps.jar -Dneurord.trials=8 model_RyR3CaM_1.2_um_dend_spine_1EPSP_1_stim.xml
+/usr/lib/jvm/java-8-openjdk-amd64/bin/java -jar /home/jszmek/new_neurord/neurord-3.2.3-all-deps.jar -Dneurord.trials=8 model_RyR3CaM_1.2_um_dend_spine_1EPSP_2_stim.xml
+/usr/lib/jvm/java-8-openjdk-amd64/bin/java -jar /home/jszmek/new_neurord/neurord-3.2.3-all-deps.jar -Dneurord.trials=8 model_RyR3CaM_1.2_um_dend_spine_1EPSP_3_stim.xml
+/usr/lib/jvm/java-8-openjdk-amd64/bin/java -jar /home/jszmek/new_neurord/neurord-3.2.3-all-deps.jar -Dneurord.trials=8 model_RyR3CaM_1.2_um_dend_spine_1EPSP_5_stim.xml
+/usr/lib/jvm/java-8-openjdk-amd64/bin/java -jar /home/jszmek/new_neurord/neurord-3.2.3-all-deps.jar -Dneurord.trials=8 model_RyR3CaM_1.2_um_dend_spine_1EPSP_8_stim.xml
+/usr/lib/jvm/java-8-openjdk-amd64/bin/java -jar /home/jszmek/new_neurord/neurord-3.2.3-all-deps.jar -Dneurord.trials=8 model_RyR3CaM_1.2_um_dend_spine_4EPSP_100Hz_1_stim.xml
+/usr/lib/jvm/java-8-openjdk-amd64/bin/java -jar /home/jszmek/new_neurord/neurord-3.2.3-all-deps.jar -Dneurord.trials=8 model_RyR3CaM_1.2_um_dend_spine_4EPSP_100Hz_2_stim.xml
+/usr/lib/jvm/java-8-openjdk-amd64/bin/java -jar /home/jszmek/new_neurord/neurord-3.2.3-all-deps.jar -Dneurord.trials=8 model_RyR3CaM_1.2_um_dend_spine_4EPSP_100Hz_3_stim.xml
+/usr/lib/jvm/java-8-openjdk-amd64/bin/java -jar /home/jszmek/new_neurord/neurord-3.2.3-all-deps.jar -Dneurord.trials=8 model_RyR3CaM_1.2_um_dend_spine_4EPSP_100Hz_5_stim.xml
+/usr/lib/jvm/java-8-openjdk-amd64/bin/java -jar /home/jszmek/new_neurord/neurord-3.2.3-all-deps.jar -Dneurord.trials=8 model_RyR3CaM_1.2_um_dend_spine_4EPSP_100Hz_8_stim.xml

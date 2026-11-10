@@ -41,8 +41,8 @@ def Parser():
                         help='input h5 files')
     parser.add_argument('--species', default="Ca",
                         help='Ca, RyRO, CaER, CaOut, RyRO, Fura')
-    parser.add_argument('--scale', default="linear",
-                        help='linear, log')
+    parser.add_argument('--output', default="Ca",
+                        help='Ca, __main__')
 
     return parser
 
@@ -51,8 +51,10 @@ def Parser():
 
 
 if __name__ == '__main__':
-    specie_list = ["Ca"]
-    specie = "Ca"
+
+    args = Parser().parse_args()
+    specie = args.species
+    output = args.output
     base = "dend"
     reg_list = [base, "dend01", "dend02", "dend03", "dend04", "dend05",
                 "dend06", "dend07", "dend08", "dend09",]
@@ -63,25 +65,45 @@ if __name__ == '__main__':
     if len(sys.argv) == 1:
         sys.exit('No filename given')
     for fname in sys.argv[1:]:
+        print(fname)
         my_file = h5py.File(fname, 'r')
         conc_dict = {}
         time_dict = {}
+        vmin = 1200
+        vmax = 0
+        peak = []
         for trial in my_file.keys():
             if trial == "model":
                 continue
-            conc, voxels = utils.get_dynamics_in_region(my_file,
-                                                        specie_list,
-                                                        reg_list, trial, "__main__")
+            try:
+                conc, voxels = utils.get_dynamics_in_region(my_file,
+                                                            [specie],
+                                                            reg_list, trial,
+                                                            output)
+                time = utils.get_times(my_file, trial, output)
+            except KeyError:
+                conc, voxels = utils.get_dynamics_in_region(my_file,
+                                                            [specie],
+                                                            reg_list, trial,
+                                                            "__main__")
+                time = utils.get_times(my_file, trial, "__main__")
+                
             conc_dict[trial] = conc
-            time = utils.get_times(my_file, trial, "__main__")
             time_dict[trial] = time
-        vmin = 0
-        vmax = 1200
+            new_max = conc_dict[trial].max()
+            new_min = conc_dict[trial].min()
+            peak.append(vmax)
+            if len(np.where(conc[3000:]>202.5)[0])>1:
+                print(len(np.where(conc[3000:]>202.5)[1]))
+                #print(set(np.where(conc[3000:]>202.5)[0][1]))
+            if new_max > vmax:
+                vmax = new_max
+            if new_min < vmin:
+                vmin = new_min
+
+        print(np.mean(peak), np.std(peak))
         diam = fname.split("diam_")[-1][:3]
-        # for key in conc_dict:
-        #     new_max = conc_dict[key].max()
-        #     if new_max > vmax:
-        #         vmax = new_max
+
         for key in conc_dict:
             fig, ax = plt.subplots(1, 1)
             time = time_dict[key]
@@ -100,7 +122,7 @@ if __name__ == '__main__':
                          fontsize=14)
             fig.savefig(fname[:-3]+"_"+key+".png", dpi=100,
                         bbox_inches="tight")
-    
+            plt.close()
     
     
  

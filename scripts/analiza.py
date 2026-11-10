@@ -45,6 +45,34 @@ if __name__ == '__main__':
                                               trial=trial)
                 except KeyError:
                     pass
+                try:
+                    utils.save_concentrations(my_file, fname[:-3], 'dye',
+                                              trial=trial)
+                except KeyError:
+                    pass
+                try:
+                    utils.save_concentrations(my_file, fname[:-3], 'Ca',
+                                              trial=trial)
+                except KeyError:
+                    pass
+
+                
+                try:
+                    utils.save_concentrations(my_file, fname[:-3], 'PSD',
+                                              trial=trial)
+                except KeyError:
+                    pass
+
+                try:
+                    utils.save_concentrations(my_file, fname[:-3], 'head',
+                                              trial=trial)
+                except KeyError:
+                    pass
+                try:
+                    utils.save_concentrations(my_file, fname[:-3], 'neck',
+                                              trial=trial)
+                except KeyError:
+                    pass
 
                 utils.save_concentrations(my_file, fname[:-3], '__main__',
                                           trial=trial)

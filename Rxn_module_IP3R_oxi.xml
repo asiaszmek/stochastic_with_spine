@@ -1,0 +1,117 @@
+<?xml version="1.0"?>
+<ReactionScheme>
+<!--this part should be identical for all reaction files-->
+  
+  <!-- Receptor States:
+       IP3R  state
+       IP3RO  state
+       IP3RIP3  bound IP3R
+       IP3RC  bound IP3R
+       IP3RC2
+       IP3RC3
+       IP3RC4
+       THis is Doi's model Doi et al 201
+  -->
+  <!-- you can specify the units of the diffusion constant. If they are not specified they are assumed to be micron^2/second, (microns written "mu" here) it should understand microns, mm, and m for distances and seconds and ms for times -->
+  <!-- This code is implemented CaMKII_bimols Rns -0.44, 0.28, 0.088. Fix 3 products 2rxns break down to 2nd order rxn : LbARG/IP35P1P2 -->
+  <!-- last rxn of IP35p1p2 was wrong reactant:fixed on Aug,8th,2008
+   Chosen katp=1 sec(not 10 sec) is enough   -->
+  <!-- Suggested by avrama Ca kdiff=600 for helping fast decay on Feb.24th 2009-->
+
+  <!--TODO add bAR desensitization!-->
+  <Specie name="Ca" id="Ca" kdiff="223" kdiffunit="mu2/s" />
+  <Specie name="CaER" id="CaER" kdiff="10." kdiffunit="mu2/s"/>
+  
+  <Specie name="oIP3R"          id="oIP3R"          kdiff="0"     kdiffunit="mu2/s"/>
+  <Specie name="oIP3RIP3"          id="oIP3RIP3"          kdiff="0"     kdiffunit="mu2/s"/>
+  <Specie name="oIP3RO"           id="oIP3RO"           kdiff="0"     kdiffunit="mu2/s"/>
+  <Specie name="oIP3RC"           id="oIP3RC"           kdiff="0"     kdiffunit="mu2/s"/>
+  <Specie name="oIP3RC2"                  id="oIP3RC2"           kdiff="0"     kdiffunit="mu2/s"/>
+  <Specie name="oIP3RC3"                  id="oIP3RC3"           kdiff="0"     kdiffunit="mu2/s"/>
+
+  <Specie name="oIP3RC4"          id="oIP3RC4"          kdiff="0"     kdiffunit="mu2/s"/>
+  <Specie name="IP3"            id="IP3"           kdiff="220." kdiffunit="mu2/s"/>
+ 
+  <Reaction name = "oIP3R+IP3" id="oIP3R+IP3">
+    <Reactant specieID="oIP3R"           />
+    <Reactant specieID="IP3"              />
+    <Product  specieID="oIP3RIP3"               />
+
+    <forwardRate> 1000e-6   </forwardRate>
+    <reverseRate> 6.45       </reverseRate>
+    <Q10>         0.2           </Q10>
+  </Reaction>
+
+  <Reaction name = "oIP3RIP3+Ca" id="oIP3RIP3+Ca">
+    <Reactant specieID="oIP3RIP3"           />
+    <Reactant specieID="Ca"           />
+    <Product  specieID="oIP3RO"               />
+    
+    <forwardRate> 8000e-6   </forwardRate>
+    <reverseRate> 2000e-3    </reverseRate>
+    <Q10>         0.2           </Q10>
+  </Reaction>
+
+   <Reaction name = "oIP3R+Ca" id="oIP3R+Ca">                                                                      
+    <Reactant specieID="oIP3R"           />                                                                      
+    <Reactant specieID="Ca"              />                                                                     
+    <Product  specieID="oIP3RC"               />                                                                 
+                                                                                                                
+    <forwardRate> 8.889e-6  </forwardRate>                                                                       
+    <reverseRate> 5e-3      </reverseRate>                                                                      
+    <Q10>         0.2           </Q10>                                                                          
+  </Reaction>                                                                                                   
+                                                                                                                
+  <!--4. oIP3R_Pa <-> oIP3R_Pb -->
+  <Reaction name = "oIP3RC+Ca" id="IP3C+Ca">
+    <Reactant specieID="oIP3RC"           />
+    <Reactant specieID="Ca"              />
+    <Product  specieID="oIP3RC2"               />
+
+    <forwardRate> 20e-6   </forwardRate>
+    <reverseRate> 10e-3       </reverseRate>
+    <Q10>         0.2           </Q10>
+  </Reaction>
+
+  <Reaction name = "oIP3RC2+Ca" id="IP3C2+Ca">
+    <Reactant specieID="oIP3RC2"           />
+    <Reactant specieID="Ca"              />
+    
+    <Product  specieID="oIP3RC3"               />
+    
+    <forwardRate> 40e-6   </forwardRate>
+    <reverseRate> 15e-3       </reverseRate>
+    <Q10>         0.2           </Q10>
+  </Reaction>
+  <Reaction name = "oIP3RC3+Ca" id="IP3C3+Ca">
+    <Reactant specieID="oIP3RC3"           />
+    <Reactant specieID="Ca"              />
+    
+    <Product  specieID="oIP3RC4"               />
+    
+    <forwardRate> 60e-6   </forwardRate>
+    <reverseRate> 20e-3       </reverseRate>
+    <Q10>         0.2           </Q10>
+  </Reaction>
+  
+ 
+<!--     Hong Qi, Linxi Li & Jianwei Shuai 2015 gives 0.5e-3 ms-1
+Breit et al 2018 has RyR permeability 30 x higher than oIP3RO
+Lower oIP3R flux by a factor of 10
+
+doi:10.1016/j.ceca.2003.10.009 has 0.0085 1/ms, 
+https://doi.org/10.1371/journal.pcbi.1008360 0.01 1/ms
+-->
+   <Reaction name = "oIP3R_Ob-flux_Ia" id="oIP3R_Ob-fluxa">
+    <Reactant specieID="oIP3RO"           />
+    <Reactant specieID="CaER"           />
+    <Product  specieID="oIP3RO"               />
+    <Product  specieID="Ca"               />
+
+    <forwardRate> 8e-5 </forwardRate>
+    <reverseRate> 8e-05      </reverseRate>
+    <Q10>   0.2   </Q10>
+   </Reaction>
+    
+
+ </ReactionScheme>

@@ -23,7 +23,7 @@
 
   <!--https://pmc.ncbi.nlm.nih.gov/articles/PMC2774461/-->
   <Specie name="CaER" id="CaER" kdiff="10." kdiffunit="mu2/s"/>
-  <Specie name="Ca" id="Ca" kdiff="100." kdiffunit="mu2/s"/>
+  <Specie name="Ca" id="Ca" kdiff="223." kdiffunit="mu2/s"/>
   <Specie name="Cyt_SERCA3" id="Cyt_SERCA3" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Cyt_SERCA3_Ca" id="Cyt_SERCA3_Ca" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Cyt_SERCA3_Ca2" id="Cyt_SERCA3_Ca2" kdiff="0" kdiffunit="mu2/s"/>
@@ -40,8 +40,8 @@
     <Reactant specieID="Cyt_SERCA3"/>
     <Product specieID="Cyt_SERCA3_Ca"/>
     
-    <forwardRate>6000e-7</forwardRate>
-    <reverseRate>8426.3e-4</reverseRate>
+    <forwardRate>0.0012</forwardRate>
+    <reverseRate>0.84263</reverseRate>
     <Q10>0.2</Q10>
   </Reaction>
  
@@ -50,8 +50,8 @@
     <Reactant specieID="Cyt_SERCA3_Ca"/>
     <Product specieID="Cyt_SERCA3_Ca2"/>
         
-    <forwardRate>6000e-7</forwardRate>
-    <reverseRate>8426.3e-4</reverseRate>
+    <forwardRate>0.0006</forwardRate>
+    <reverseRate>1.68526</reverseRate>
     <Q10>0.2</Q10>
   </Reaction>
 <!-- Stryer states that serca pumps less than 100 molecules/s

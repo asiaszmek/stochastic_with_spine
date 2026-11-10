@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <ReactionScheme>
-  <Specie name="Ca" id="Ca" kdiff="100" kdiffunit="mu2/s" />
+  <Specie name="Ca" id="Ca" kdiff="223" kdiffunit="mu2/s" />
   <Specie name="CaER" id="CaER" kdiff="10." kdiffunit="mu2/s"/>
   <Specie name="RyR2"            id="RyR2"           kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="RyR2C1"            id="RyR2C1"           kdiff="0" kdiffunit="mu2/s"/>
@@ -65,7 +65,7 @@ Keizer and Smith -->
      <Product specieID="RyR2O1"/>
      <Product specieID="Ca"/>
     <forwardRate>5e-3</forwardRate>
-    <reverseRate>1.5e-3</reverseRate>
+    <reverseRate>5e-3</reverseRate>
   </Reaction>
   <Reaction name = "RyR2flux2" id="RyR2flux2">
      <Reactant specieID="RyR2O2"/>
@@ -73,7 +73,7 @@ Keizer and Smith -->
      <Product specieID="RyR2O2"/>
      <Product specieID="Ca"/>
     <forwardRate>5e-3</forwardRate>
-    <reverseRate>1.5e-3</reverseRate>
+    <reverseRate>5e-3</reverseRate>
   </Reaction>
     
 </ReactionScheme>

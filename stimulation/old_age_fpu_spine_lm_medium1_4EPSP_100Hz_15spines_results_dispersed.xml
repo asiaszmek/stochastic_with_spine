@@ -2,7 +2,7 @@
   <InjectionStim specieID="Ca" injectionSite="sa1[0].pointA">
     <rates>3001.00 41
 3002.00 107
-3003.00 614
+3003.00 611
 3004.00 257
 3005.00 261
 3006.00 290

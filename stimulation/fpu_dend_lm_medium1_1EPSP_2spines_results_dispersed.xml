@@ -2,7 +2,7 @@
   <InjectionStim specieID="Ca" injectionSite="dend01:submembrane">
     <rates>3003.00 1
 3005.00 2
-3007.00 3
+3006.00 3
 3014.00 2
 3018.00 1
 3026.00 0
@@ -11,7 +11,7 @@
   <InjectionStim specieID="Ca" injectionSite="dend02:submembrane">
     <rates>3003.00 1
 3005.00 2
-3007.00 3
+3006.00 3
 3014.00 2
 3018.00 1
 3026.00 0
@@ -20,7 +20,7 @@
   <InjectionStim specieID="Ca" injectionSite="dend03:submembrane">
     <rates>3003.00 1
 3005.00 2
-3007.00 3
+3006.00 3
 3014.00 2
 3018.00 1
 3026.00 0
@@ -29,7 +29,7 @@
   <InjectionStim specieID="Ca" injectionSite="dend04:submembrane">
     <rates>3003.00 1
 3005.00 2
-3007.00 3
+3006.00 3
 3014.00 2
 3018.00 1
 3026.00 0
@@ -38,7 +38,7 @@
   <InjectionStim specieID="Ca" injectionSite="dend05:submembrane">
     <rates>3003.00 1
 3005.00 2
-3007.00 3
+3006.00 3
 3014.00 2
 3018.00 1
 3026.00 0
@@ -47,7 +47,7 @@
   <InjectionStim specieID="Ca" injectionSite="dend06:submembrane">
     <rates>3003.00 1
 3005.00 2
-3007.00 3
+3006.00 3
 3014.00 2
 3018.00 1
 3026.00 0
@@ -56,7 +56,7 @@
   <InjectionStim specieID="Ca" injectionSite="dend07:submembrane">
     <rates>3003.00 1
 3005.00 2
-3007.00 3
+3006.00 3
 3014.00 2
 3018.00 1
 3026.00 0
@@ -65,7 +65,7 @@
   <InjectionStim specieID="Ca" injectionSite="dend08:submembrane">
     <rates>3003.00 1
 3005.00 2
-3007.00 3
+3006.00 3
 3014.00 2
 3018.00 1
 3026.00 0
@@ -74,7 +74,7 @@
   <InjectionStim specieID="Ca" injectionSite="dend09:submembrane">
     <rates>3003.00 1
 3005.00 2
-3007.00 3
+3006.00 3
 3014.00 2
 3018.00 1
 3026.00 0
@@ -83,7 +83,7 @@
   <InjectionStim specieID="Ca" injectionSite="dend10:submembrane">
     <rates>3003.00 1
 3005.00 2
-3007.00 3
+3006.00 3
 3014.00 2
 3018.00 1
 3026.00 0
@@ -92,7 +92,7 @@
   <InjectionStim specieID="Ca" injectionSite="dend11:submembrane">
     <rates>3003.00 1
 3005.00 2
-3007.00 3
+3006.00 3
 3014.00 2
 3018.00 1
 3026.00 0
@@ -101,7 +101,7 @@
   <InjectionStim specieID="Ca" injectionSite="dend12:submembrane">
     <rates>3003.00 1
 3005.00 2
-3007.00 3
+3006.00 3
 3014.00 2
 3018.00 1
 3026.00 0
@@ -110,7 +110,7 @@
   <InjectionStim specieID="Ca" injectionSite="dend13:submembrane">
     <rates>3003.00 1
 3005.00 2
-3007.00 3
+3006.00 3
 3014.00 2
 3018.00 1
 3026.00 0
@@ -119,7 +119,7 @@
   <InjectionStim specieID="Ca" injectionSite="dend14:submembrane">
     <rates>3003.00 1
 3005.00 2
-3007.00 3
+3006.00 3
 3014.00 2
 3018.00 1
 3026.00 0
@@ -128,7 +128,7 @@
   <InjectionStim specieID="Ca" injectionSite="dend15:submembrane">
     <rates>3003.00 1
 3005.00 2
-3007.00 3
+3006.00 3
 3014.00 2
 3018.00 1
 3026.00 0
@@ -137,7 +137,7 @@
   <InjectionStim specieID="Ca" injectionSite="dend16:submembrane">
     <rates>3003.00 1
 3005.00 2
-3007.00 3
+3006.00 3
 3014.00 2
 3018.00 1
 3026.00 0
@@ -146,7 +146,7 @@
   <InjectionStim specieID="Ca" injectionSite="dend17:submembrane">
     <rates>3003.00 1
 3005.00 2
-3007.00 3
+3006.00 3
 3014.00 2
 3018.00 1
 3026.00 0
@@ -155,7 +155,7 @@
   <InjectionStim specieID="Ca" injectionSite="dend18:submembrane">
     <rates>3003.00 1
 3005.00 2
-3007.00 3
+3006.00 3
 3014.00 2
 3018.00 1
 3026.00 0
@@ -164,7 +164,7 @@
   <InjectionStim specieID="Ca" injectionSite="dend19:submembrane">
     <rates>3003.00 1
 3005.00 2
-3007.00 3
+3006.00 3
 3014.00 2
 3018.00 1
 3026.00 0
@@ -173,7 +173,7 @@
   <InjectionStim specieID="Ca" injectionSite="dend20:submembrane">
     <rates>3003.00 1
 3005.00 2
-3007.00 3
+3006.00 3
 3014.00 2
 3018.00 1
 3026.00 0
@@ -182,7 +182,7 @@
   <InjectionStim specieID="Ca" injectionSite="dend21:submembrane">
     <rates>3003.00 1
 3005.00 2
-3007.00 3
+3006.00 3
 3014.00 2
 3018.00 1
 3026.00 0
@@ -191,7 +191,7 @@
   <InjectionStim specieID="Ca" injectionSite="dend22:submembrane">
     <rates>3003.00 1
 3005.00 2
-3007.00 3
+3006.00 3
 3014.00 2
 3018.00 1
 3026.00 0
@@ -200,7 +200,7 @@
   <InjectionStim specieID="Ca" injectionSite="dend23:submembrane">
     <rates>3003.00 1
 3005.00 2
-3007.00 3
+3006.00 3
 3014.00 2
 3018.00 1
 3026.00 0
@@ -209,7 +209,7 @@
   <InjectionStim specieID="Ca" injectionSite="dend24:submembrane">
     <rates>3003.00 1
 3005.00 2
-3007.00 3
+3006.00 3
 3014.00 2
 3018.00 1
 3026.00 0
@@ -218,7 +218,7 @@
   <InjectionStim specieID="Ca" injectionSite="dend25:submembrane">
     <rates>3003.00 1
 3005.00 2
-3007.00 3
+3006.00 3
 3014.00 2
 3018.00 1
 3026.00 0
@@ -227,7 +227,7 @@
   <InjectionStim specieID="Ca" injectionSite="dend26:submembrane">
     <rates>3003.00 1
 3005.00 2
-3007.00 3
+3006.00 3
 3014.00 2
 3018.00 1
 3026.00 0
@@ -236,7 +236,7 @@
   <InjectionStim specieID="Ca" injectionSite="dend27:submembrane">
     <rates>3003.00 1
 3005.00 2
-3007.00 3
+3006.00 3
 3014.00 2
 3018.00 1
 3026.00 0
@@ -245,7 +245,7 @@
   <InjectionStim specieID="Ca" injectionSite="dend28:submembrane">
     <rates>3003.00 1
 3005.00 2
-3007.00 3
+3006.00 3
 3014.00 2
 3018.00 1
 3026.00 0
@@ -254,7 +254,7 @@
   <InjectionStim specieID="Ca" injectionSite="dend29:submembrane">
     <rates>3003.00 1
 3005.00 2
-3007.00 3
+3006.00 3
 3014.00 2
 3018.00 1
 3026.00 0
@@ -263,7 +263,7 @@
   <InjectionStim specieID="Ca" injectionSite="dend30:submembrane">
     <rates>3003.00 1
 3005.00 2
-3007.00 3
+3006.00 3
 3014.00 2
 3018.00 1
 3026.00 0
@@ -272,7 +272,7 @@
   <InjectionStim specieID="Ca" injectionSite="dend31:submembrane">
     <rates>3003.00 1
 3005.00 2
-3007.00 3
+3006.00 3
 3014.00 2
 3018.00 1
 3026.00 0
@@ -281,7 +281,7 @@
   <InjectionStim specieID="Ca" injectionSite="dend32:submembrane">
     <rates>3003.00 1
 3005.00 2
-3007.00 3
+3006.00 3
 3014.00 2
 3018.00 1
 3026.00 0
@@ -290,7 +290,7 @@
   <InjectionStim specieID="Ca" injectionSite="dend33:submembrane">
     <rates>3003.00 1
 3005.00 2
-3007.00 3
+3006.00 3
 3014.00 2
 3018.00 1
 3026.00 0
@@ -299,7 +299,7 @@
   <InjectionStim specieID="Ca" injectionSite="dend34:submembrane">
     <rates>3003.00 1
 3005.00 2
-3007.00 3
+3006.00 3
 3014.00 2
 3018.00 1
 3026.00 0
@@ -308,7 +308,7 @@
   <InjectionStim specieID="Ca" injectionSite="dend35:submembrane">
     <rates>3003.00 1
 3005.00 2
-3007.00 3
+3006.00 3
 3014.00 2
 3018.00 1
 3026.00 0
@@ -317,7 +317,7 @@
   <InjectionStim specieID="Ca" injectionSite="dend36:submembrane">
     <rates>3003.00 1
 3005.00 2
-3007.00 3
+3006.00 3
 3014.00 2
 3018.00 1
 3026.00 0
@@ -326,7 +326,7 @@
   <InjectionStim specieID="Ca" injectionSite="dend37:submembrane">
     <rates>3003.00 1
 3005.00 2
-3007.00 3
+3006.00 3
 3014.00 2
 3018.00 1
 3026.00 0
@@ -335,7 +335,7 @@
   <InjectionStim specieID="Ca" injectionSite="dend38:submembrane">
     <rates>3003.00 1
 3005.00 2
-3007.00 3
+3006.00 3
 3014.00 2
 3018.00 1
 3026.00 0
@@ -344,7 +344,7 @@
   <InjectionStim specieID="Ca" injectionSite="dend39:submembrane">
     <rates>3003.00 1
 3005.00 2
-3007.00 3
+3006.00 3
 3014.00 2
 3018.00 1
 3026.00 0
@@ -353,7 +353,7 @@
   <InjectionStim specieID="Ca" injectionSite="dend40:submembrane">
     <rates>3003.00 1
 3005.00 2
-3007.00 3
+3006.00 3
 3014.00 2
 3018.00 1
 3026.00 0
@@ -362,7 +362,7 @@
   <InjectionStim specieID="Ca" injectionSite="dend41:submembrane">
     <rates>3003.00 1
 3005.00 2
-3007.00 3
+3006.00 3
 3014.00 2
 3018.00 1
 3026.00 0
@@ -371,7 +371,7 @@
   <InjectionStim specieID="Ca" injectionSite="dend42:submembrane">
     <rates>3003.00 1
 3005.00 2
-3007.00 3
+3006.00 3
 3014.00 2
 3018.00 1
 3026.00 0
@@ -380,7 +380,7 @@
   <InjectionStim specieID="Ca" injectionSite="dend43:submembrane">
     <rates>3003.00 1
 3005.00 2
-3007.00 3
+3006.00 3
 3014.00 2
 3018.00 1
 3026.00 0
@@ -389,7 +389,7 @@
   <InjectionStim specieID="Ca" injectionSite="dend44:submembrane">
     <rates>3003.00 1
 3005.00 2
-3007.00 3
+3006.00 3
 3014.00 2
 3018.00 1
 3026.00 0
@@ -398,7 +398,7 @@
   <InjectionStim specieID="Ca" injectionSite="dend45:submembrane">
     <rates>3003.00 1
 3005.00 2
-3007.00 3
+3006.00 3
 3014.00 2
 3018.00 1
 3026.00 0
@@ -407,7 +407,7 @@
   <InjectionStim specieID="Ca" injectionSite="dend46:submembrane">
     <rates>3003.00 1
 3005.00 2
-3007.00 3
+3006.00 3
 3014.00 2
 3018.00 1
 3026.00 0
@@ -416,7 +416,7 @@
   <InjectionStim specieID="Ca" injectionSite="dend47:submembrane">
     <rates>3003.00 1
 3005.00 2
-3007.00 3
+3006.00 3
 3014.00 2
 3018.00 1
 3026.00 0
@@ -425,7 +425,7 @@
   <InjectionStim specieID="Ca" injectionSite="dend48:submembrane">
     <rates>3003.00 1
 3005.00 2
-3007.00 3
+3006.00 3
 3014.00 2
 3018.00 1
 3026.00 0
@@ -434,7 +434,7 @@
   <InjectionStim specieID="Ca" injectionSite="dend49:submembrane">
     <rates>3003.00 1
 3005.00 2
-3007.00 3
+3006.00 3
 3014.00 2
 3018.00 1
 3026.00 0
@@ -443,7 +443,7 @@
   <InjectionStim specieID="Ca" injectionSite="dend50:submembrane">
     <rates>3003.00 1
 3005.00 2
-3007.00 3
+3006.00 3
 3014.00 2
 3018.00 1
 3026.00 0
@@ -452,7 +452,7 @@
   <InjectionStim specieID="Ca" injectionSite="dend51:submembrane">
     <rates>3003.00 1
 3005.00 2
-3007.00 3
+3006.00 3
 3014.00 2
 3018.00 1
 3026.00 0
@@ -468,14 +468,14 @@
 3007.00 65
 3008.00 67
 3009.00 68
-3012.00 67
+3011.00 67
 3013.00 66
-3014.00 65
+3014.00 64
 3015.00 63
 3016.00 62
 3017.00 60
 3018.00 59
-3019.00 58
+3019.00 57
 3020.00 56
 3021.00 55
 3022.00 53
@@ -505,14 +505,14 @@
 3051.00 28
 3053.00 27
 3055.00 26
-3057.00 25
-3059.00 24
+3056.00 25
+3058.00 24
 3061.00 23
 3063.00 22
 3065.00 21
 3067.00 20
 3070.00 19
-3073.00 18
+3072.00 18
 3075.00 17
 3078.00 16
 3081.00 15
@@ -530,7 +530,7 @@
 3156.00 3
 3173.00 2
 3198.00 1
-3253.00 0
+3254.00 0
 </rates>
   </InjectionStim>
 </StimulationSet>

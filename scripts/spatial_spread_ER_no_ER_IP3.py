@@ -24,9 +24,9 @@ types = ["ER no SA", "ER no SA+IP3R", "ER+SA", "ER+SA+IP3R"]
 markers = ["o", "o", "s", "s"]
 fillstyles = ["none", "full", "none", "full"]
 stim_dict = {
-    "1EPSP": [1, 5, 10, 15, 20],
-    "4EPSP_100Hz": [1, 5, 10, 15, 20],
-    "100EPSP_100Hz": [1, 5, 10, 15, 20],
+    "1EPSP": [1, 2, 3, 5, 8],
+    "4EPSP_100Hz": [1, 2, 3, 5, 8],
+    "100EPSP_100Hz": [1, 2, 3, 5, 8],
 }
 spine_dend = "dend11"
 region_list = ["dend01", "dend02", "dend03", "dend04", "dend05", "dend06", "dend07","dend08", "dend08", "dend09", "dend10",

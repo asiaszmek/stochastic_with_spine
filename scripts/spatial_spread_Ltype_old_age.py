@@ -34,8 +34,8 @@ types = ["no SA+VGCC", "no SA+VGCC old age", "SA+VGCC", "SA+VGCC old age",]
 markers = ["s", "s", "o", "o"]
 fillstyles = ["full", "none", "full", "none"]
 stim_dict = {
-    "1EPSP": [1, 5, 10, 15, 20],
-    "4EPSP_100Hz": [1, 5, 10, 15, 20],
+    "1EPSP": [1, 2, 3, 5, 8],
+    "4EPSP_100Hz": [1, 2, 3, 5, 8],
 }
 
 if __name__ == '__main__':

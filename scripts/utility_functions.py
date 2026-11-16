@@ -661,8 +661,8 @@ def make_distance_figs(directories, stim_dict, output, types, markers,
                 ax2[k].plot(auch, spread,label=types[i], marker=markers[i],
                             fillstyle=fillstyles[i], color="tab:blue",
                             linewidth=0)
-            print(auc_head_m, spread_m, spread_e)
-            ax1[k].errorbar(auc_head_m, spread_m, yerr=spread_e,
+            print(auc_head_m, auc_head_e, spread_m, spread_e)
+            ax1[k].errorbar(auc_head_m, spread_m,xerr=auc_head_e, yerr=spread_e,
                             ecolor=colors[fname],
                             label=types[i], marker=markers[i],
                             fillstyle=fillstyles[i], color=colors[fname],

@@ -37,16 +37,20 @@ stim_dict = {
     "1EPSP": [1, 2, 3, 5, 8],
     "4EPSP_100Hz": [1, 2, 3, 5, 8],
 }
-
+specie="Ca"
 if __name__ == '__main__':
-    rollo = False
     dirs = [
         file_dend_ER_dend_Ca, file_dend_ER_dend_Ca_old_age,
         file_spine_ER_dend_ER_dend_Ca,
         file_spine_ER_dend_ER_dend_Ca_old_age,
     ]
-    fig = utils.make_distance_figs(dirs, stim_dict, output, types, markers,
-                                   fillstyles, length=42, t_init=t_init,
-                                   max_ca=True)
-    fig.savefig("Spatial_spread_Ltype_old_age_%s.png" % rollo, dpi=100,
-                bbox_inches="tight")
+    fig1, fig2, fig3 = utils.make_distance_figs(dirs, stim_dict, output, types, markers,
+                                          fillstyles, length=102, t_init=t_init, specie=specie,
+                                          max_ca=True)
+    fig1.savefig("Spatial_spread_Ltype_old_age_%s.png" % specie, dpi=100,
+                 bbox_inches="tight")
+    fig2.savefig("Head_%s_vs_dend_%s_spread_Ltype_old_age.png" % (specie, specie)
+                 , dpi=100,
+                 bbox_inches="tight")
+    fig3.savefig("Dend_%s_spatial_spread_Ltype_old_age.png" %  specie, dpi=100,
+                 bbox_inches="tight")

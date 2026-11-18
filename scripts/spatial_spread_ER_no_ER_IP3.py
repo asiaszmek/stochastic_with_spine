@@ -35,9 +35,11 @@ region_list = ["dend01", "dend02", "dend03", "dend04", "dend05", "dend06", "dend
 
 specie = "Ca"
 if __name__ == '__main__':
-    rollo = False
     dirs = [file_dend_ER_ctrl, file_dend_ER_ctrl_IP3, file_spine_ER_dend_ER, file_spine_ER_dend_ER_IP3]
-    fig = utils.make_distance_figs(dirs, stim_dict, output, types, markers,
-                                   fillstyles, length=42,
-                                   t_init=t_init, max_ca=True, specie=specie)
-    fig.savefig("Spatial_spread_ER_no_ER_IP3R_%s.png" % specie, dpi=100, bbox_inches="tight")
+    fig1, fig2, fig3 = utils.make_distance_figs(dirs, stim_dict, output, types, markers,
+                                                fillstyles, length=42,
+                                                t_init=t_init, max_ca=True, specie=specie)
+    fig1.savefig("Spatial_spread_ER_no_ER_IP3R_%s.png" % specie, dpi=100, bbox_inches="tight")
+    fig3.savefig("Dend_%s_spread_ER_no_ER_IP3R_%s.png" % (specie, specie), dpi=100, bbox_inches="tight")
+    fig2.savefig("Head_%s_vs_dend_%s_ER_no_ER_IP3R.png" % specie,
+                 dpi=100, bbox_inches="tight")

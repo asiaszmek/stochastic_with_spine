@@ -28,8 +28,8 @@ types = ["ER no SA ctrl", "ER no SA old age", "ER+SA ctrl", "ER+SA old age"]
 markers = ["s", "s", "o", "o"]
 fillstyles = ["full", "none", "full", "none"]
 stim_dict = {
-    "1EPSP": [1, 5, 10, 15, 20],
-    "4EPSP_100Hz": [1, 5, 10, 15, 20],
+    "1EPSP": [1, 2, 3, 5, 8],
+    "4EPSP_100Hz": [1, 2, 3, 5, 8],
 }
 
 if __name__ == '__main__':
@@ -38,7 +38,6 @@ if __name__ == '__main__':
                                                        stim_dict, output,
                                                        types, markers,
                                                        fillstyles,
-                                                       length=102,
                                                        which_dend=["dend25"],
                                                        t_init=3000)
        

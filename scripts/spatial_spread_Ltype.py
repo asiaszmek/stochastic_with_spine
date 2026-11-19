@@ -30,15 +30,18 @@ fillstyles = ["none", "full", "none", "full", "full"]
 stim_dict = {
     "1EPSP": [1, 2, 3, 5, 8],
     "4EPSP_100Hz": [1, 2, 3, 5, 8],
-    #"100EPSP_100Hz": [1, 5, 10, 15, 20],
 }
 specie="Ca"
 if __name__ == '__main__':
     dirs = [file_dend_ER_ctrl,file_dend_ER_dend_Ca, file_spine_ER_dend_ER,
             file_spine_ER_dend_ER_dend_Ca]#, file_no_ER_Ltype]
-    fig1, fig2, fig3 = utils.make_distance_figs(dirs, stim_dict, output, types, markers,
-                                                fillstyles, length=42, t_init=t_init,
+    fig1, fig2, fig3 = utils.make_distance_figs(dirs, stim_dict, output,
+                                                types, markers,
+                                                fillstyles, t_init=t_init,
                                                 max_ca=True,specie=specie)
-    fig1.savefig("Spatial_spread_Ltype_%s.png" %specie, dpi=100, bbox_inches="tight")
-    fig1.savefig("Head_%s_vs_dend_%s_Ltype.png" % (specie, specie), dpi=100, bbox_inches="tight")
-    fig3.savefig("Dend_%s_spatial_spread_Ltype.png" %specie, dpi=100, bbox_inches="tight")
+    fig1.savefig("Spatial_spread_Ltype_%s.png" % specie, dpi=100,
+                 bbox_inches="tight")
+    fig1.savefig("Head_%s_vs_dend_%s_Ltype.png" % (specie, specie), dpi=100,
+                 bbox_inches="tight")
+    fig3.savefig("Dend_%s_spatial_spread_Ltype.png" %specie, dpi=100,
+                 bbox_inches="tight")

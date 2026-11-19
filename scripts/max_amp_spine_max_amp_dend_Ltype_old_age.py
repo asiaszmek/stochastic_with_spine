@@ -34,14 +34,9 @@ types = ["no SA+L-type", "no SA+L-type old age", "SA+L-type", "SA+L-type old age
 markers = ["s", "s", "o", "o"]
 fillstyles = ["full", "none", "full", "none"]
 stim_dict = {
-    "4": ["01750", "03500", "07000", "10500"],
-    "40": ["0175", "0350", "0700", "1050"],
-    "400": ["017.5", "035", "070", "105", "210"],
+    "1EPSP": [1, 2, 3, 5, 8],
+    "4EPSP_100Hz": [1, 2, 3, 5, 8],
 }
-spine_dend = "dend11"
-region_list = ["dend01", "dend02", "dend03", "dend04", "dend05", "dend06", "dend07","dend08", "dend08", "dend09", "dend10",
-               "dend11", "dend12", "dend13", "dend14", "dend15", "dend16", "dend17",  "dend18", "dend18", "dend19", "dend20",
-               "dend21"]
 
 if __name__ == '__main__':
     dirs = [
@@ -51,9 +46,12 @@ if __name__ == '__main__':
     ]
     fig1, fig2, fig3 = utils.max_vs_auc_head_neck_dend(dirs, stim_dict, output,
                                                        types, markers,
-                                                       fillstyles, length=42,
-                                                       which_dend=["dend11"],
+                                                       fillstyles,
+                                                       which_dend=["dend25"],
                                                        t_init=3000)
-    fig1.savefig("Old_age_Ltype_ER_aucdend_auchead.png", dpi=100, bbox_inches="tight")
-    fig2.savefig("Old_age_Ltype_ER_maxdend_maxhead.png", dpi=100, bbox_inches="tight")
-    fig3.savefig("Old_age_Ltype_ER_aucneck_auchead.png", dpi=100, bbox_inches="tight")
+    fig1.savefig("Old_age_Ltype_ER_aucdend_auchead.png", dpi=100,
+                 bbox_inches="tight")
+    fig2.savefig("Old_age_Ltype_ER_maxdend_maxhead.png", dpi=100,
+                 bbox_inches="tight")
+    fig3.savefig("Old_age_Ltype_ER_aucneck_auchead.png", dpi=100,
+                 bbox_inches="tight")

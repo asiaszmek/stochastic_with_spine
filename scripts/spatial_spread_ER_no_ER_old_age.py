@@ -37,13 +37,16 @@ stim_dict = {
 specie = "Ca"
 if __name__ == '__main__':
     dirs = [file_dend_ER_ctrl, file_dend_ER_oa, file_spine_ER_dend_ER, file_spine_ER_dend_ER_oa] 
-    fig1, fig2, fig3 = utils.make_distance_figs(dirs, stim_dict, output, types, markers,
-                                          fillstyles, length=102, specie=specie,
-                                   t_init=t_init, max_ca=True)
+    fig1, fig2, fig3 = utils.make_distance_figs(dirs, stim_dict, output,
+                                                types, markers,
+                                                fillstyles, specie=specie,
+                                                t_init=t_init, max_ca=True)
     fig1.savefig("Spatial_spread_ER_no_ER_old_age_%s.png" % specie, dpi=100,
                  bbox_inches="tight")
-    fig2.savefig("Head_%s_vs_dend_%s_spread_ER_no_ER_old_age.png" % (specie, specie),
+    fig2.savefig("Head_%s_vs_dend_%s_spread_ER_no_ER_old_age.png" % (specie,
+                                                                     specie),
                  dpi=100,
                  bbox_inches="tight")
-    fig3.savefig("Dend_%s_spatial_spread_ER_no_ER_old_age.png" %  specie, dpi=100,
+    fig3.savefig("Dend_%s_spatial_spread_ER_no_ER_old_age.png" %  specie,
+                 dpi=100,
                  bbox_inches="tight")

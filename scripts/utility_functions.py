@@ -407,13 +407,39 @@ def get_conc(my_file, specie, region_list, output):
     return conc_dict, time_dict
 
 
-def get_distance(conc_dict, dt, t_init, stim_len,rollo=True,
-                 interval=700):
+def fit_exp(time, ca_conc, dt, duration=1000, t_init=3000):
+
+   
+    ca_conc_mean = ca_conc[:int(t_init/dt)].mean()
+    ca_conc = ca_conc[int(t_init/dt):] - ca_conc_mean
     
+    time = time[int(t_init/dt):] - t_init
+    try:
+        max_idx = ca_conc.argmax()
+    except ValueError:
+        return 0
+    ca_conc_log = ca_conc[max_idx:duration+max_idx]
+    
+    new_time = time[max_idx:duration+max_idx]-time[max_idx]
+    try:
+        popt, pcov = curve_fit(lambda t, a, b, c: a*np.exp(-t/b)+c,
+                               new_time, ca_conc_log)
+    except ValueError:
+        return 0
+    except TypeError:
+        return 0
+    if popt[1] > 2000:
+        print(popt[1])
+        return
+    return popt[1]
+
+
+
+def get_distance(conc_dict, dt, t_init, stim_len, interval=700):
+    shape = conc_dict["trial0"].shape[0]    
     decays = np.zeros((len(conc_dict), 1))
-    shape = conc_dict["trial0"].shape[0]
-    find_max = conc_dict["trial0"].argmax()
-    full_shape = conc_dict["trial0"].shape
+    dend_max = np.zeros((len(conc_dict), 1))
+
     
     for i, concentration in enumerate(conc_dict.values()):
         ca_conc = np.zeros((shape,))
@@ -421,17 +447,11 @@ def get_distance(conc_dict, dt, t_init, stim_len,rollo=True,
         new_beg = int((t_init)/dt)
         ca_ctrl = concentration[:, int(1000/dt):new_beg].mean(axis=(0,1))
         ca_std = concentration[:, int(1000/dt):new_beg].std()
-        try:
-            ca_max = concentration[:, new_beg:].max()/2 #ca_ctrl+6*ca_std
-        except ValueError:
-            continue
-        if concentration.shape[0] == 102:
-            spine_idx = 51#np.unravel_index(concentration[:new_beg].argmax(),
-                    #                 concentration[:new_beg].shape)[0]
-        else:
-            spine_idx = 21
+        
+        spine_idx = concentration.shape[0]//2 
         ca_lim = 2.5*ca_ctrl#+5*ca_std
         indices = []
+
         for j in range(spine_idx, shape):
             
             try:
@@ -451,9 +471,8 @@ def get_distance(conc_dict, dt, t_init, stim_len,rollo=True,
                     indices.append(j-1)
             else:
                 break
-
-            
-            new_beg = new_beg +new_idx
+           
+            new_beg = new_beg + new_idx
     
         new_beg = int((t_init)/dt)         
         for j in range(spine_idx-1, -1, -1):
@@ -475,13 +494,13 @@ def get_distance(conc_dict, dt, t_init, stim_len,rollo=True,
             else:
                 break
             new_beg = new_beg + new_idx
+
         decays[i] = len(indices)/2*0.5
      
-    return decays
+    return decays, dend_max
 
 
-def get_blob(conc_dict, dt, t_init, stim_len, spine_idx, rollo=True,
-             interval=1000):
+def get_blob(conc_dict, dt, t_init, stim_len, spine_idx, interval=1000):
     
     decays = np.zeros((len(conc_dict), 1))
     shape = conc_dict["trial0"].shape[0]
@@ -502,7 +521,6 @@ def get_blob(conc_dict, dt, t_init, stim_len, spine_idx, rollo=True,
 
         ca_lim = ca_ctrl + 5*ca_std
         indices = np.where(concentration[:, new_beg:] > ca_lim)
-        print(indices)
     return decays
 
 
@@ -570,43 +588,11 @@ def get_mean_basal(conc, dt, t_init, length):
     return np.array(basal)
 
 
-def fit_exp(time, ca_conc, dt, duration=2000, t_init=3000, stim_len=3000,
-            spatial=False):
 
-    if not spatial:
-        ca_conc_mean = ca_conc[:int(t_init/dt)].mean()
-        ca_conc = ca_conc[int((t_init+stim_len)/dt):] - ca_conc_mean
-        
-        time = time[int((t_init+stim_len)/dt):] - t_init - stim_len
-        
-        try:
-            ca_conc_log = ca_conc[:duration]
-            new_time = time[:duration]
-            
-        except IndexError:
-            return 0
-        try:
-            popt, pcov = curve_fit(lambda t, a, b, c: a*np.exp(-t/b)+c,
-                                   new_time, ca_conc_log)
-        except RuntimeError:
-            return 0
-        
-        return popt[1]
-    popt, pcov = curve_fit(lambda t, a, b, c: a*np.exp(-abs(t)/b)+c,
-                           time, ca_conc-(ca_conc[0]+ca_conc[-1])/2)
-
-    return popt[1]
-
-
-stim_len = {"1EPSP": 0,
-            "4EPSP_100Hz": 0,
-            "100EPSP_100Hz": 0,
-            }
 
 
 def make_distance_figs(directories, stim_dict, output, types, markers,
-                       fillstyles, length=42, t_init=3000,
-                       xlabel=r"Auc head/Auc basal",
+                       fillstyles, t_init=3000, xlabel=r"Auc head/Auc basal",
                        ylabel=r"Spatial spread ($\unit{\micro\metre}$))",
                        max_ca=True, colors={}, specie="Ca"):
     if not colors:
@@ -618,13 +604,27 @@ def make_distance_figs(directories, stim_dict, output, types, markers,
     fig1, ax1 = plt.subplots(1, len(stim_dict.keys()),
                              figsize=(len(stim_dict.keys())*5, 5))
     fig2, ax2 = plt.subplots(1, len(stim_dict.keys()),
-                              figsize=(len(stim_dict.keys())*5, 5))
+                             figsize=(len(stim_dict.keys())*5, 5))
+    fig3, ax3 = plt.subplots(1, 1,
+                             figsize=(5, 5))
+    dend_ca_dict_m = {}
+    dend_ca_dict_e = {}
+    spread_dict_m = {}
+    spread_dict_e = {}
     for k, dur in enumerate(stim_dict.keys()):
         for i, fname in  enumerate(directories):
             auc_head_m = []
             auc_head_e = []
             spread_m = []
             spread_e = []
+            dend_ca_m = []
+            dend_ca_e = []
+
+            if fname not in  dend_ca_dict_m:
+                 dend_ca_dict_m[fname] = []
+                 dend_ca_dict_e[fname] = []
+                 spread_dict_m[fname] = []
+                 spread_dict_e[fname] = []
             for inj in stim_dict[dur]:
                 print(fname % (dur, inj))
                 try:
@@ -651,42 +651,199 @@ def make_distance_figs(directories, stim_dict, output, types, markers,
                             
                         else:
                             auch[j] = head_ca[trial][1, t_start:].sum()
-                spread = get_distance(dend_ca, dt, t_init=t_init,
-                                      stim_len=stim_len[dur])
+                spread, dend_max = get_distance(dend_ca, dt,
+                                                t_init=t_init,
+                                                stim_len=0)
+
                 auc_head_m.append(auch.mean())
-                
                 auc_head_e.append(auch.std()/trials**0.5)
+                dend_ca_dict_m[fname].append(dend_max.mean())
+                dend_ca_dict_e[fname].append(dend_max.std()/trials**0.5)
+                dend_ca_m.append(dend_max.mean())
+                dend_ca_e.append(dend_max.std()/trials**0.5)
+
                 spread_m.append(spread.mean())
                 spread_e.append(spread.std()/trials**0.5)
-                ax2[k].plot(auch, spread,label=types[i], marker=markers[i],
-                            fillstyle=fillstyles[i], color="tab:blue",
-                            linewidth=0)
-            print(auc_head_m, auc_head_e, spread_m, spread_e)
-            ax1[k].errorbar(auc_head_m, spread_m,xerr=auc_head_e, yerr=spread_e,
+                spread_dict_m[fname].append(spread.mean())
+                spread_dict_e[fname].append(spread.std()/trials**0.5)
+
+            ax1[k].errorbar(auc_head_m, spread_m, xerr=auc_head_e,
+                            yerr=spread_e,
                             ecolor=colors[fname],
                             label=types[i], marker=markers[i],
-                            fillstyle=fillstyles[i], color=colors[fname],
+                            fillstyle=fillstyles[i],
+                            color=colors[fname],
                             linewidth=0, elinewidth=1)
+
+            ax2[k].errorbar(auc_head_m, dend_ca_m, yerr=dend_ca_e,
+                            xerr=auc_head_e,
+                            label=types[i], marker=markers[i],
+                            fillstyle=fillstyles[i],
+                            color=colors[fname],
+                            linewidth=0, elinewidth=1)
+           
+           
+       
+
+    for i, key in enumerate(spread_dict_m.keys()):
+         ax3.errorbar(dend_ca_dict_m[key], spread_dict_m[key],
+                      yerr=spread_dict_e[key], xerr=dend_ca_dict_e[key],
+                      label=types[i], marker=markers[i],
+                      fillstyle=fillstyles[i], color=colors[fname],
+                      linewidth=0, elinewidth=1)
+         print(dend_ca_dict_e[key], spread_dict_e[key])
+         
+    ax1[0].set_title(r"1 EPSP")
+    ax2[0].set_title(r"1 EPSP")
+    ax1[1].set_title(r"4 EPSP at 100 Hz")
+    ax2[1].set_title(r"4 EPSP at 100 Hz")
+    ax1[0].set_ylabel(ylabel)
+    ax1[0].set_xlabel(xlabel)
+    ax2[0].set_ylabel(r"$\mathrm{max\left(%s_{dend}^{2+}\right)}\, (\unit{\nano\Molar})$" % specie)
+    ax2[0].set_xlabel(xlabel)
+    ax3.set_xlabel(r"$\mathrm{max\left(%s_{dend}^{2+}\right)}\, (\unit{\nano\Molar})$" % specie)
+    ax3.set_ylabel(ylabel)
+    pretty_axis(ax1)
+    pretty_axis(ax2)
+    
+    ax1[1].legend()
+    ax2[0].legend()
+    ax3.legend()
+    return fig1, fig2, fig3
+
+
+def make_decay_figs(directories, stim_dict, output, types, markers,
+                    fillstyles, t_init=3000,
+                    xlabel=r"Auc head/Auc basal",
+                    ylabel=r"Time decay ($\unit{\milli\second}$))",
+                    max_ca=True, colors={}, specie="Ca"):
+    if not colors:
+        colors = {}
+        for fname in directories:
+            colors[fname] = "tab:blue"
+    if max_ca:
+        xlabel = r"$\mathrm{max\left(%s_{head}^{2+}\right)}\, (\unit{\micro\Molar})$" % specie
+    fig1, ax1 = plt.subplots(1, len(stim_dict.keys()),
+                             figsize=(len(stim_dict.keys())*5, 5))
+    fig2, ax2 = plt.subplots(1, len(stim_dict.keys()),
+                             figsize=(len(stim_dict.keys())*5, 5))
+    fig3, ax3 = plt.subplots(1, 1,
+                             figsize=(5, 5))
+    dend_ca_dict_m = {}
+    dend_ca_dict_e = {}
+    t_decay_dict_m = {}
+    t_decay_dict_e = {}
+    for k, dur in enumerate(stim_dict.keys()):
+        for i, fname in  enumerate(directories):
+            auc_head_m = []
+            auc_head_e = []
+            t_decay_m = []
+            t_decay_e = []
+            dend_ca_m = []
+            dend_ca_e = []
+
+            if fname not in  dend_ca_dict_m:
+                 dend_ca_dict_m[fname] = []
+                 dend_ca_dict_e[fname] = []
+                 t_decay_dict_m[fname] = []
+                 t_decay_dict_e[fname] = []
+            for inj in stim_dict[dur]:
+                print(fname % (dur, inj))
+                try:
+                    my_data = h5py.File(fname % (dur, inj))
+                except FileNotFoundError:
+                    print("Cound not open ", fname % (dur, inj))
+                    continue
+        
+                dend_ca, time_dict = get_conc(my_data, specie, region_list, output)
+                head_ca, time_head_dict = get_conc(my_data, specie, ['head'], output)
+                dt = time_dict["trial0"][1]-time_dict["trial0"][0]
+                t_start = int(t_init/dt)
+               
+                length = time_dict["trial0"][-1] - t_start
+         
+                trials = len(dend_ca.keys())
+                auch = np.zeros((trials))
+                t_decay = np.zeros((trials))
+                dend_max = np.zeros((trials))
+
+                for j, trial in enumerate(dend_ca.keys()):
+                    if len(dend_ca[trial]) == 102:
+                        spine_idx = 51
+                    else:
+                        spine_idx = len(dend_ca[trial])//2
+                    if max_ca is True:
+                        auch[j] = head_ca[trial][1,:].max()/1000
+                    else:
+                        if specie == "Ca":
+                            auch[j] = head_ca[trial][1, t_start:].sum()/(len(head_ca[trial][1, t_start:])*head_ca[trial][1,:t_start].mean())
+                            
+                        else:
+                            auch[j] = head_ca[trial][1, t_start:].sum()
+                    stim_dend = dend_ca[trial][spine_idx,:]
+                    
+                    t_decay[j] = fit_exp(time_dict[trial], stim_dend,
+                                         dt, t_init=t_init)
+                    dend_max[j] = max(stim_dend)
+                print(t_decay)
+                auc_head_m.append(auch.mean())
+                auc_head_e.append(auch.std()/trials**0.5)
+                dend_ca_dict_m[fname].append(dend_max.mean())
+                dend_ca_dict_e[fname].append(dend_max.std()/trials**0.5)
+                dend_ca_m.append(dend_max.mean())
+                dend_ca_e.append(dend_max.std()/trials**0.5)
+
+                t_decay_m.append(t_decay.mean())
+                t_decay_e.append(t_decay.std()/trials**0.5)
+                t_decay_dict_m[fname].append(t_decay.mean())
+                t_decay_dict_e[fname].append(t_decay.std()/trials**0.5)
+
+            ax1[k].errorbar(auc_head_m, t_decay_m,xerr=auc_head_e,
+                            yerr=t_decay_e,
+                            ecolor=colors[fname],
+                            label=types[i], marker=markers[i],
+                            fillstyle=fillstyles[i],
+                            color=colors[fname],
+                            linewidth=0, elinewidth=1)
+
+            ax2[k].errorbar(auc_head_m, dend_ca_m, yerr=dend_ca_e,
+                            xerr=auc_head_e,
+                            label=types[i], marker=markers[i],
+                            fillstyle=fillstyles[i], color="tab:blue",
+                            linewidth=0, elinewidth=1)
+           
+           
         if k == 0:
             ax1[k].set_title(r"1 EPSP")
             ax2[k].set_title(r"1 EPSP")
+            
         elif k == 1:
             ax1[k].set_title(r"4 EPSP at 100 Hz")
             ax2[k].set_title(r"4 EPSP at 100 Hz")
-        else:
-            ax1[k].set_title(r"1 sec of 100 Hz")
-            ax2[k].set_title(r"1 sec of 100 Hz")
+            
             
         ax1[k].set_ylabel(ylabel)
         ax1[k].set_xlabel(xlabel)
-        ax2[k].set_ylabel(ylabel)
+        ax2[k].set_ylabel(r"$\mathrm{max\left(%s_{dend}^{2+}\right)}\, (\unit{\nano\Molar})$" % specie)
         ax2[k].set_xlabel(xlabel)
 
+    for i, key in enumerate(t_decay_dict_m.keys()):
+         ax3.errorbar(dend_ca_dict_m[key], t_decay_dict_m[key],
+                      xerr=dend_ca_dict_e[key],
+                      yerr=t_decay_dict_e[key],
+                      label=types[i], marker=markers[i],
+                      fillstyle=fillstyles[i], color="tab:blue",
+                      linewidth=0, elinewidth=1)
+         print(dend_ca_dict_m[key], t_decay_dict_m[key])
+    ax3.set_xlabel(r"$\mathrm{max\left(%s_{dend}^{2+}\right)}\, (\unit{\nano\Molar})$" % specie)
+    ax3.set_ylabel(ylabel)
     pretty_axis(ax1)
     pretty_axis(ax2)
+    
     ax1[1].legend()
     ax2[0].legend()
-    return fig1
+    ax3.legend()
+    return fig1, fig2, fig3
 
 
 def area_over_250_mean(directories, stim_dict, output, types, markers,
@@ -731,21 +888,23 @@ def area_over_250_mean(directories, stim_dict, output, types, markers,
                     else:
                         auch[j] = head_ca[trial][1, t_start:].sum()/(len(head_ca[trial][1, t_start:])*head_ca[trial][1,:t_start].mean())
                     
-                spread = get_blob(dend_ca, dt, t_init=t_init, stim_len=int(dur),
+                spread = get_blob(dend_ca, dt, t_init=t_init,
+                                  stim_len=int(dur),
                                   spine_idx=spine_idx)
                 auc_head_m.append(auch.mean())
                 
                 auc_head_e.append(auch.std()/trials**0.5)
                 spread_m.append(spread.mean())
                 spread_e.append(spread.std()/trials**0.5)
-                ax2[k].plot(auch, spread,label=types[i], marker=markers[i],
+                ax2[k].plot(auch, spread,label=types[i],
+                            marker=markers[i],
                             fillstyle=fillstyles[i], color="tab:blue",
-                            linewidth=0)
+                            linewidth=0, elinewidth=1)
             print(auc_head_m, spread_m, spread_e)
             ax1[k].errorbar(auc_head_m, spread_m, spread_e,
                             label=types[i], marker=markers[i],
                             fillstyle=fillstyles[i], color="tab:blue",
-                            linewidth=0)
+                            linewidth=0, elinewidth=1)
         ax1[k].set_title("Stimulation %s"% dur)      
         ax2[k].set_title("Stimulation %s"% dur)      
         ax1[k].set_ylabel(ylabel)
@@ -761,7 +920,7 @@ def area_over_250_mean(directories, stim_dict, output, types, markers,
 
 
 def max_vs_auc_head_neck_dend(directories, stim_dict, output, types, markers,
-                              fillstyles, length=102, which_dend=["dend25"],
+                              fillstyles, which_dend=["dend25"],
                               t_init=3000, specie="Ca"):
     fig_dh, ax_dh = plt.subplots(1, len(stim_dict.keys()),
                                  figsize=(len(stim_dict.keys())*5, 5))
@@ -797,8 +956,12 @@ def max_vs_auc_head_neck_dend(directories, stim_dict, output, types, markers,
                                                    output)
                 neck_ca, time_head_dict = get_conc(my_data, specie, ['neck'],
                                                    output)
-                
-                dt = time_dict["trial0"][1]-time_dict["trial0"][0]
+                try:
+                    dt = time_dict["trial0"][1]-time_dict["trial0"][0]
+                except IndexError:
+                    print("Cound not open ", fname % (dur, inj))
+                    continue
+                    
                 t_start = int(t_init/dt)
                
                 length = time_dict["trial0"][-1] - t_start
@@ -820,11 +983,11 @@ def max_vs_auc_head_neck_dend(directories, stim_dict, output, types, markers,
                     if specie == "Ca":
                         auch[j] = head_ca[trial][1, t_start:].sum()/(len(head_ca[trial][1, t_start:])*head_ca[trial][1,:t_start].mean())
                         aucn[j] = neck_ca[trial][:, t_start:].sum()/(len(head_ca[trial][1, t_start:])*neck_ca[trial][:,:t_start].mean())
-                        aucd[j] = dend_ca[trial][:, t_start:].sum()/2/(len(head_ca[trial][1, t_start:])*dend_ca[trial][:, :t_start].mean())
+                        aucd[j] = dend_ca[trial][1, t_start:].sum()/(len(head_ca[trial][1, t_start:])*dend_ca[trial][1, :t_start].mean())
                     else:
                         auch[j] = head_ca[trial][1, t_start:].sum()
                         aucn[j] = neck_ca[trial][:, t_start:].sum()
-                        aucd[j] = dend_ca[trial][:, t_start:].sum()/2
+                        aucd[j] = dend_ca[trial][1, t_start:].sum()
                                                                 
                                                                     
                     
@@ -842,18 +1005,26 @@ def max_vs_auc_head_neck_dend(directories, stim_dict, output, types, markers,
 
               
                 
-            ax_max_dh[k].errorbar(x=max_head_m, y=max_dend_m, xerr=max_head_e,
-                                  yerr=max_dend_e, label=types[i],
-                                  marker=markers[i], fillstyle=fillstyles[i],
-                                  color="tab:blue", linewidth=0)
-            ax_dh[k].errorbar(x=auc_head_m, y=auc_dend_m, xerr=auc_head_e,
-                              yerr=auc_dend_e,label=types[i], marker=markers[i],
+            ax_max_dh[k].errorbar(x=max_head_m, y=max_dend_m,
+                                  xerr=max_head_e,
+                                  yerr=max_dend_e,
+                                  label=types[i],
+                                  marker=markers[i],
+                                  fillstyle=fillstyles[i],
+                                  color="tab:blue", linewidth=0,
+                                  elinewidth=1)
+            ax_dh[k].errorbar(x=auc_head_m, y=auc_dend_m,
+                              xerr=auc_head_e, yerr=auc_dend_e,
+                              label=types[i], marker=markers[i],
                               fillstyle=fillstyles[i], color="tab:blue",
-                              linewidth=0)
-            ax_nh[k].errorbar(x=auc_head_m, y=auc_neck_m, xerr=auc_head_e,
+                              linewidth=0, elinewidth=1)
+            ax_nh[k].errorbar(x=auc_head_m, y=auc_neck_m,
+                              xerr=auc_head_e,
                               yerr=auc_neck_e, label=types[i],
-                              marker=markers[i], fillstyle=fillstyles[i],
-                              color="tab:blue", linewidth=0)
+                              marker=markers[i],
+                              fillstyle=fillstyles[i],
+                              color="tab:blue", linewidth=0,
+                              elinewidth=1)
 
            
         if not k:

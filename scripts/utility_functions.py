@@ -429,8 +429,7 @@ def fit_exp(time, ca_conc, dt, duration=1000, t_init=3000):
     except TypeError:
         return 0
     if popt[1] > 2000:
-        print(popt[1])
-        return
+        return 
     return popt[1]
 
 
@@ -443,7 +442,7 @@ def get_distance(conc_dict, dt, t_init, stim_len, interval=700):
     
     for i, concentration in enumerate(conc_dict.values()):
         ca_conc = np.zeros((shape,))
-      
+
         new_beg = int((t_init)/dt)
         ca_ctrl = concentration[:, int(1000/dt):new_beg].mean(axis=(0,1))
         ca_std = concentration[:, int(1000/dt):new_beg].std()
@@ -451,7 +450,7 @@ def get_distance(conc_dict, dt, t_init, stim_len, interval=700):
         spine_idx = concentration.shape[0]//2 
         ca_lim = 2.5*ca_ctrl#+5*ca_std
         indices = []
-
+        dend_max[i] = concentration[spine_idx].max()
         for j in range(spine_idx, shape):
             
             try:
@@ -531,7 +530,6 @@ def max_vs_distance(conc, dt, t_init, length=51):
         spine_idx = np.unravel_idx(concentration[start:].argmax(),
                                    concentration[start:].shape) 
         for j in range(spine_idx):
-            #print(spine_idx+j, spine_idx-j, out_conc.shape[1], len(concentration))
             out_conc[i, j] = max(max(concentration[spine_idx+j, start:]),
                                  max(concentration[spine_idx-j, start:]))
     
@@ -561,7 +559,6 @@ def mean_vs_distance(conc, dt, t_init, period=500,  length=51):
         full_shape = concentration.shape
         spine_idx = np.unravel_index(find_max, full_shape)[0]
         for j in range(spine_idx):
-            #print(spine_idx+j, spine_idx-j, out_conc.shape[1], len(concentration))
             out_conc[i, j] = (concentration[spine_idx+j,
                                             start:start+period].mean()+
                               concentration[spine_idx-j,
@@ -666,7 +663,7 @@ def make_distance_figs(directories, stim_dict, output, types, markers,
                 spread_e.append(spread.std()/trials**0.5)
                 spread_dict_m[fname].append(spread.mean())
                 spread_dict_e[fname].append(spread.std()/trials**0.5)
-
+            print(auc_head_m, spread_m, spread_e)
             ax1[k].errorbar(auc_head_m, spread_m, xerr=auc_head_e,
                             yerr=spread_e,
                             ecolor=colors[fname],
@@ -691,7 +688,6 @@ def make_distance_figs(directories, stim_dict, output, types, markers,
                       label=types[i], marker=markers[i],
                       fillstyle=fillstyles[i], color=colors[fname],
                       linewidth=0, elinewidth=1)
-         print(dend_ca_dict_e[key], spread_dict_e[key])
          
     ax1[0].set_title(r"1 EPSP")
     ax2[0].set_title(r"1 EPSP")
@@ -785,7 +781,7 @@ def make_decay_figs(directories, stim_dict, output, types, markers,
                     t_decay[j] = fit_exp(time_dict[trial], stim_dend,
                                          dt, t_init=t_init)
                     dend_max[j] = max(stim_dend)
-                print(t_decay)
+
                 auc_head_m.append(auch.mean())
                 auc_head_e.append(auch.std()/trials**0.5)
                 dend_ca_dict_m[fname].append(dend_max.mean())
@@ -834,7 +830,7 @@ def make_decay_figs(directories, stim_dict, output, types, markers,
                       label=types[i], marker=markers[i],
                       fillstyle=fillstyles[i], color="tab:blue",
                       linewidth=0, elinewidth=1)
-         print(dend_ca_dict_m[key], t_decay_dict_m[key])
+
     ax3.set_xlabel(r"$\mathrm{max\left(%s_{dend}^{2+}\right)}\, (\unit{\nano\Molar})$" % specie)
     ax3.set_ylabel(ylabel)
     pretty_axis(ax1)
